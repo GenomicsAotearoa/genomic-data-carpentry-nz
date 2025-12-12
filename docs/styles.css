@@ -1,0 +1,209 @@
+/* Import Roboto and Mukta font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@300;400;500;700&display=swap');
+
+/* Apply font globally */
+body, h1, h2, h3, h4, h5, h6, p, a, button, table, blockquote {
+    font-family: 'Mukta', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+/* global font bigger */
+html, body {
+  font-size: 20px;
+}
+
+/* General page styling */
+body {
+    background-color: #F4F7FB;
+    color: #2E2F33;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+/* image align */
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+/* Sections */
+section {
+    border: 1px solid #D7DFEE;
+    background-color: #FFFFFF;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0px 2px 5px rgba(0,0,0,0.05);
+}
+
+/* Headings */
+h1, h2, h3 {
+    color: #024E7C; 
+    border-bottom: 2px solid #D7DFEE;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    margin-top: 0;
+    margin-bottom: 1em;
+}
+
+h1 { font-size: 2em; }
+h2 { font-size: 1.7em; }
+h3 { font-size: 1.4em; }
+h4 { font-size: 1.2em; }
+h5 { font-size: 1em; }
+h6 { font-size: 0.9em; }
+
+h4, h5, h6 {
+    color: #024E7C;
+    border-bottom: 0;
+    padding-bottom: 3px;
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+}
+
+/* Custom GA block */
+.ga-logo-block,
+.ga-logo-block a {
+    color: #FFFFFF !important;
+}
+.ga-logo-block a:hover {
+    color: #D7DFEE !important;
+}
+
+/* Remove the underline ONLY in this block */
+.ga-logo-block .no-underline-h2 {
+    border-bottom: none !important;
+}
+
+
+
+/* Links */
+a {
+    color: #024E7C; /* updated link colour */
+    text-decoration: none;
+}
+a:hover {
+    color: #0271B0; /* lighter hover blue */
+    text-decoration: underline;
+}
+
+/* Buttons */
+button, .nav-button {
+    background-color: #024E7C; /* updated button colour */
+    color: #FFFFFF;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+button:hover, .nav-button:hover {
+    background-color: #0271B0; /* lighter hover */
+    transform: translateY(-2px);
+}
+
+/* Base callout styling (applies to all types) */
+.callout-note,
+.callout-tip,
+.callout-warning,
+.callout-important,
+.callout-caution,
+.callout-question {
+  font-size: 1em;
+  padding: 0em;
+  background-color: #FFFFFF !important;   /* force white background */
+}
+
+
+/* Borders per callout type */
+.callout-note {
+    border-left: 4px solid #0271B0;
+}
+
+.callout-tip {
+    border-left: 4px solid #3CA86B;
+}
+
+.callout-warning,
+.callout-caution {
+    border-left: 4px solid #E19C00;
+}
+
+.callout-important {
+    border-left: 4px solid #D83434;
+}
+
+/* Inside every callout: tables, rows, headers, cells → always white */
+.callout-note * ,
+.callout-tip * ,
+.callout-warning * ,
+.callout-important * ,
+.callout-caution * ,
+.callout-question * {
+    background-color: #FFFFFF !important;
+}
+
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    box-shadow: 0px 2px 5px rgba(0,0,0,0.05);
+}
+table th, table td {
+    border: 1px solid #D7DFEE;
+    padding: 10px;
+    text-align: left;
+}
+table th {
+    background-color: #E9EEFA;
+    color: #024E7C; /* updated blue */
+}
+table tr:nth-child(even) {
+    background-color: #F4F7FB;
+}
+table tr:hover {
+    background-color: #E9EEFA;
+}
+
+/* Blockquotes */
+blockquote {
+    border-left: 4px solid #024E7C;
+    background: #E9EEFA;
+    padding: 15px;
+    margin: 20px 0;
+    color: #2E2F33;
+    font-style: italic;
+}
+
+/* Content boxes */
+.content-box {
+    background-color: #FFFFFF;
+    border: 1px solid #D7DFEE;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+}
+
+/* Navigation container */
+.page-navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #D7DFEE;
+}
+
+.code-block-title, .quarto-code-title {
+  display: block;
+  color: #024E7C;
+  background: #E9EEFA;
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 6px 6px 0 0;
+  font-size: 1em;
+}

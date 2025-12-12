@@ -1,0 +1,20 @@
+{
+  "index.qmd": {
+    "index.html": "3dfbaf36"
+  },
+  "planning-for-submission.qmd": {
+    "planning-for-submission.html": "4fe26298"
+  },
+  "data-storage-and-management.qmd": {
+    "data-storage-and-management.html": "c24640fe"
+  },
+  "data-wrangling-and-processing.qmd": {
+    "data-wrangling-and-processing.html": "4950596c"
+  },
+  "organisation-tidiness.qmd": {
+    "organisation-tidiness.html": "26c56854"
+  },
+  "test-styling.qmd": {
+    "test-styling.html": "97a34150"
+  }
+}

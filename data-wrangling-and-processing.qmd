@@ -1,0 +1,20 @@
+---
+title: ""
+format: html
+---
+
+# Genomic data wrangling and processing
+
+Your data is now on a server/cloud/local computer, ready for analysis. Now what?
+
+- quality encoding  
+- fastqc in depth  (use to teach intro shell )
+- paired edn singl edn?
+- short read vs long read  (rnaseq vs genome assembly)  
+- intro to data types and words you'll hear:
+    - VCF files
+    - BAM files  
+    - contigs, assembly, annotation, N50  
+    - gtfs    
+
+- NOT trimming   - can be covered in respective data type workshop. 

@@ -1,0 +1,117 @@
+---
+title: "test styling"
+format: html
+---
+
+::: {.callout-note}
+stuff in note
+:::
+
+::: {.callout-warning}
+stuff in warning
+:::
+
+::: {.callout-tip}
+stuff in tip
+:::
+
+::: {.callout-important}
+stuff in importnat
+:::
+
+::: {.callout-caution}
+stuff in caution
+:::
+
+::: {.callout-note collapse="true"}
+stuff in note
+:::
+
+::: {.callout-warning collapse="true"}
+stuff in warning
+:::
+
+::: {.callout-tip collapse="true"}
+stuff in tip
+:::
+
+::: {.callout-important collapse="true"}
+stuff in importnat
+:::
+
+::: {.callout-caution collapse="true"}
+stuff in caution
+:::
+
+
+::: {.callout-note appearance="minimal"}
+stuff in note appearance minimal
+:::
+
+::: {.callout-warning appearance="minimal"}
+stuff in warning appearance="minimal"
+:::
+
+::: {.callout-tip appearance="minimal"}
+stuff in tip appearance="minimal"
+:::
+
+::: {.callout-important appearance="minimal"}
+stuff in importnat appearance="minimal"
+:::
+
+::: {.callout-caution appearance="minimal"}
+stuff in caution appearance="minimal"
+:::
+
+
+::: {.callout-warning appearance="minimal"}
+# EXERCISE 🧠🏋️‍♀️ - 3 mins
+
+Text
+
+::: {.callout-tip collapse="true" appearance="minimal"}
+# SOLUTIONS
+ -  text 
+ 
+
+:::
+
+:::
+
+
+# Header 1
+
+text
+
+## Header 2
+
+text
+
+### Header 3
+
+text
+
+#### Header 4
+
+text
+
+##### Header 5
+
+text
+
+
+# code blocks
+
+```bash
+bash code block
+```
+
+```{r}
+# r code block
+getwd()
+```
+
+
+
+

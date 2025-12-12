@@ -1,0 +1,20 @@
+---
+title: ""
+format: html
+---
+
+# Genomic data storage and management
+
+Your data has been sequenced, now what?
+
+storage, management and duty of care
+
+- projects on reannz  
+- HCS, aoraki for otago, auckland uni one?  
+- public data  
+    - SRA/ncbi (upload and download?)
+    - SRA metadata submission  
+    - ensembl embl-ebi  
+    - ADGR, kaitiaki  
+- FAIR and CARE 
+- rakeiora platform walled garden metaphor  

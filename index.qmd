@@ -1,0 +1,44 @@
+---
+title: ""
+format: html
+---
+
+# Genomic Data Carpentry (Aotearoa edition)
+
+![](theme-images/GDC-A_image.png)
+
+## Getting started with genomics
+
+This is a beginner-friendly workshop, designed to get you started with the world of genomics. Whatever you're doing---whether it's transcriptomics, genome assembly, variant calling, metagenomics, or something else---if you will be using genomic data this workshop is for you! 
+
+## What's covered in this workshop
+
+- Organisation---from messy lab books and excel spreadsheets to tidy, computer-friendly data  
+- Working with sequencing facilities and understanding genomic data types  
+- Data storage repositories, public facilities, and principles of FAIR and CARE 
+- Quality control, wrangling of raw reads and an introduction to genomic terminology  
+
+## What's NOT covered in this workshop
+
+- Non-NGS sequencing and services (e.g., Sanger sequencing, qPCR, genotyping)  
+
+
+## Attribution
+
+Copyright 
+
+https://datacarpentry.github.io/organization-genomics/  
+https://datacarpentry.github.io/wrangling-genomics/
+
+
+::: {.ga-logo-block style="background: #024E7C; text-align:center; padding-top: 0.5rem; padding-bottom: 1rem; padding-left: 1.5rem; padding-right: 1.5rem; border-radius: 8px; max-width: 800px; margin: 0 auto;"}
+
+
+## {.no-underline-h2 style="background: #024E7C; text-align:center;"}
+
+[![](theme-images/GA-Logo-BioinformaticsTraining-white.png){width=80%}](https://genomicsaotearoa.github.io/BioinformaticsTrainingProgramme/)
+
+Made with ❤️ and 
+[Quarto](https://genomicsaotearoa.github.io/reproducibility_with_git_and_quarto/quarto_overview.html)
+
+:::
