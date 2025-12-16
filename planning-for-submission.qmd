@@ -7,15 +7,20 @@ format: html
 
 You've done your experiment, extracted some DNA or RNA, and want to sequence it, but now what?
 
-- flow cells 101, millions of reads vs smaples  
-- workign with NZ sequencing facilities   
-- fastq, gz, r1 and r2 files  
-- illumina vs pacbio vs nanopore 
+## Quality control of DNA/RNA
+
+Short section. Need to pass ceraint cut offs, do nanopdrop qubit bioanalyzer. the seq facility will ask for these in teh submission form. MOre on submission later (last section)
+
 
 ## Sequencing libraries  
 
 The first thing that needs to be done for Illumina, PacBio or Oxford Nanopore (ONT) sequencing is to turn the DNA or RNA sample into something called a *library*. This converts the raw nucleic acids into a form that the sequencer can actually read. This is generally done by the technician that will also sequence your samples, but some labs may do library prep in-house (i.e., *you* may do it yourself!). Nanopore is a little different, in that it can sequence native RNA directly, with minimal prep before sequencing. DNA library preparation for ONT sequencing is also generally simpler than for Illumina and PacBio. This is because the technology used to sequence the DNA/RNA using ONT is quite different to how Illumina and PacBio achieve it--more on that in the next section on flow cells.
 
+::: {.callout-note collapse="true"}
+# Illumina lib prep molecular workflow diagram
+![](figures/illumina-libprep-01.png)
+
+:::
 
 Library preparation (for Illumina and PacBio) generally involves the following steps, and takes 1-2 days in the lab: 
 
@@ -31,7 +36,14 @@ Ends are cleaned up so adapters can be ligated efficiently.
 
 5. **Adapter ligation**  
 Adapters are short sequences that enable library binding to the flow cell (Illumina) or capture for SMRTbells (PacBio).  
-Some kits combine this with indexing.  
+Some kits combine this with indexing.
+
+::: {.callout-note collapse="true"}
+# PacBio lib prep - SMRTbell adapters
+![](figures/pacbio-libprep-01.png)
+
+Note: the SMRTbell technology allows HiFi (high fidelity) long read sequencing. The DNA becomes circularised, which allows the polymerase to make repeated passes around the DNA and the consensus sequence therefore has a higher accuracy than single pass sequencing.
+:::
 
 6. **Indexing (barcoding)**  
 Indices allow multiple samples to be pooled together and sequenced on the same flow cell, then computationally separated afterward (called mulitplexing and demultiplexing).      
@@ -44,6 +56,12 @@ Some protocols use PCR to enrich adapter-ligated molecules; others (e.g., some P
 
 9. **Final QC and quantification**  
 Using Qubit, Bioanalyzer/Tapestation/Fragment Analyzer, etc. This step ensures your library meets sequencing requirements.  
+
+::: {.callout-note collapse="true"}
+# Bioanalyzer trace of final library
+![](figures/illumina-libprep-02.png)
+
+:::
 
 There are different library prep methods for each platform that you will also need to chose. This will depend on a few things, such as:  
 
@@ -84,51 +102,186 @@ Size selection ensures that fragments fall within the size range the sequencer e
 
 ## Flow cells and sequencing platforms 101
 
-A flow cell is the physical surface inside the sequencing machine (or platform) where the actual reading of DNA or RNA occurs. Although Illumina, PacBio, and Oxford Nanopore (ONT) all call their consumables “flow cells,” the underlying technologies are very different.
+The three major sequencing platform and consumables companies are Illumina, PacBio (Pacific Biosystems) and Oxford Nanopore Technologies (ONT). Each make different platforms/instruments that can handle different levels of throughput, but the chemistry and the 'reading' of the sequencing is the main point of difference between the three companies.
+
+A few examples of the different platforms are:
+
+**Illumina**  
+
+- MiSeq  
+- NextSeq  
+- NovaSeq  
+
+**PacBio**  
+
+- Sequel II  
+- Revio  
+
+**Oxford Nanopore Technologies**  
+
+- MinION  
+- GridION  
+- PromethION  
+
+A **flow cell** is the physical surface inside the sequencing machine (or platform) where the actual reading of DNA or RNA occurs. There are different sizes you can chose from, depending on how many reads you need. Although Illumina, PacBio, and ONT all call their consumables “flow cells,” the underlying technologies are very different.
 
 For the most part, and in-depth knowledge of how these flow cells work is not needed to get you started with your sequencing project. 
 
 Here are the basic differences:
 
 | Feature | Illumina | PacBio (HiFi / SMRT) | Oxford Nanopore (ONT) |
-|--------|----------|------------------------|-------------------------|
+|--------|----------------|---------------------|----------------------|
 | **How sequencing works** | Sequencing-by-synthesis (fluorescent nucleotides added one base at a time) | Single-molecule real-time sequencing (polymerase incorporates fluorescent bases inside ZMWs) | Nanopore sensing (changes in ionic current as DNA/RNA passes through a pore) |
 | **Flow cell structure** | Patterned flow cell with billions of oligos that form clonal clusters | SMRT Cell containing millions of Zero-Mode Waveguides (ZMWs) | Membrane embedded with thousands of protein nanopores |
 | **What binds to the flow cell** | Libraries bind via adapters to oligos → amplified into clusters | A single SMRTbell + polymerase complex loads into each ZMW | DNA or RNA strand with a motor protein threads into a nanopore |
 | **Signal detected** | Fluorescent signal imaged each cycle | Fluorescent flashes when each base is incorporated | Changes in electrical current across the pore |
 | **Amplification?** | Yes — cluster generation required | No — true single-molecule reads | No (PCR-free), though can use PCR in library prep |
 | **Typical read length** | 100–300 bp | 10–25 kb HiFi reads | 10 kb to >100 kb (ultra-long >1 Mb possible) |
-| **Can sequence native RNA?** | No | No | Yes — direct RNA sequencing |
-| **Strengths** | High accuracy, high throughput, cost-efficient | Highly accurate long reads; excellent for haplotype resolution | Ultra-long reads; portable; real-time analysis; can detect base mods |
-| **Limitations** | Short reads only | Lower throughput than Illumina; expensive | Higher raw error rate; pore lifetime limits yield |
+| **Can sequence native RNA?** | No — convert to cDNA library | No — convert to cDNA library | Yes — direct RNA sequencing |
+| **Strengths** | High accuracy, high throughput, cost-efficient, chemistry highly compatible with different species/tissues | Highly accurate long reads; excellent for haplotype resolution | Ultra-long reads; portable; real-time analysis; can detect base mods |
+| **Limitations** | Short reads only | Lower throughput than Illumina; expensive | Higher raw error rate; pore lifetime limits yield and susceptible to clogging |
 | **Best used for** | Standard RNA-seq (DGE); de novo transcriptomes; high-depth short-read assays; metagenomics; error-correcting long reads | Genome assembly (chromosome-level with HiFi); full-length RNA (Iso-Seq for isoforms); structural variant detection | Field-based sequencing (e.g, rapid microbial identification); genome assembly; native RNA including modification detection (e.g., methylation) |
 
-
-Choosing a platform to do your sequencing comes down to the question you are trying to answer. See the table above 'Best use for' for some examples of why you might pick one platform over another.
 
 
 
 #### Decision points 🤔
 
-- The question is not *how many samples are you sequencing*, but rather, *how many reads do you need?* This will determine what size flow cell you need, and to some extent, which platform you will use, as different platforms have different capacity (e.g,. Illumna NextSeq is a medium size platform, NovaSeq is a larger size platform). The number of reads you need scale with the size of the genome and/or complexity of your transcriptome. 
+Choosing a platform to do your sequencing comes down to the question you are trying to answer. See the last row in the table above 'Best use for' for some examples of why you might pick one platform over another!  
 
-::: {.callout-tip }
-# As a general rule of thumb:
+When you get in contact with a sequencing facility, the question they will ask you is not *how many samples are you sequencing*, but rather, *how many reads do you need?* This will determine what size flow cell you need, and to some extent, which platform you will use, as different platforms have different capacity (e.g,. Illumina NextSeq is a 'medium throughput' platform, NovaSeq is a 'large throughput' platform). The number of reads you need scale with the size of the genome and/or complexity of your transcriptome. 
 
-**Transcriptome sequencing**  
+***As a general rule of thumb,*** for ***transcriptome sequencing*** you will need:
 
-| Purpose / Type                       | Approx Reads per Sample | 
-|-------------------------------------|-----------------------|
+**Table 1:** Reads per sample  
+
+| Purpose / Type | Approx reads per sample | 
+|----------------------|---------------------|
 | Gene expression profiling            | 5–25 million          | 
 | Complete expression + alternative splicing | 30–60+ million   | 
-| De novo transcriptome assembly       | ~100+ million         | 
+| *De novo* transcriptome assembly       | ~100+ million         | 
 
 \
 
-**Genome sequencing**  
+The next thing the sequencing facility will ask you if you are doing short-read sequencing (Illumina) is do you want *single-end* or *paired-end* reads. This refers to whether you want a single read (read 1), sequenced from only one end of the library molecule (fragment), or if you want two reads per library molecule (read 1 and read 2, antisense and sense strands). Paired-end costs more, but gives you more resolution.
 
-| Genome size      | Example species         | Approx genome size | Approx reads per sample |
-|-----------------|------------------------|-----------------|-----------------------|
+There are ***pros*** and ***cons*** to choosing either chemistry:
+
+**Table 2:** Single-end vs paired-end chemistry (short-read Illumina sequencing)   
+
+| Chemistry | Pros | Cons |
+|-----|---------|---------|
+| **Single-end (SE)** | Lower cost, fewer reads required (may be able to do more samples); sufficient for basic gene-level DGE | Limited splice/isoform resolution; less confident mapping when mapping to a genome |
+| **Paired-end (PE)** | Better alignment; improved splice junction and isoform detection; more robust for complex transcriptomes or *de novo* transcriptome assembly | Higher cost; ~2× sequencing required (two reads per fragment) |
+
+\
+
+Lastly, if you are doing short-read sequencing (i.e., Illumina), the sequencing facility will ask you *what read length you want*. You can typically chose from between 50bp-300bp (platform-dependent). The choice between a lower or higher read length will be a balance of cost (higher read length = higher cost) and the level of information you need (complex, novel or *de novo* transcriptomes require higher read lengths; more straight forward analyses with well-annotated genomes can utilise lower read lengths). In contrast, for long-read sequencing platforms (ONT and PacBio), you do not specify a fixed read length. Instead, reads are generated as single, continuous sequences, and their length is determined by the size of the input molecules, the library preparation method, and the sequencing chemistry.
+
+Choosing a ***read length*** is a ***trade-off between cost, and the amount of information*** you will recover:
+
+**Table 3:** Read length (short-read Illumina sequencing) 
+
+| Read length | Pros | Cons |
+|-----|----------|----------|
+| **50 bp** | Lowest cost; highest sample multiplexing; sufficient for basic gene-level DGE in well-annotated genomes | Poor isoform and splice junction resolution; higher multi-mapping |
+| **100 bp** | Good balance of cost and information; reliable splice junction detection; widely used for standard RNA-seq | Slightly lower throughput than 50 bp; may miss very complex isoforms |
+| **150 bp** | Improved isoform resolution; better mapping across repetitive regions; useful for novel transcript discovery | Higher cost; fewer reads per run |
+| **300 bp** | Maximum per-read information; helpful for *de novo* transcriptome assembly | Rarely necessary for Illumina RNA-seq; expensive; reduced throughput |
+
+\
+
+
+***Example RNAseq scenario:*** 
+
+You are working on a mouse model of cancer genomics. You want to do differential gene expression analysis to compare tumour samples to non-cancerous control tissue, to see if you can find genes that are up or down regulated in the cancerous tissue. You have 40 RNA samples, and since your species has a high-quality reference genome and annotation (i.e., mouse: Mus musculus), you know you have a "good" genome assembly and annotations to map your sequencing data back to (more on "good" genomes later!). The mouse genome is ~2.7 Gb (= 2,700,000,000 bp), diploid, with ~20,000 protein-coding genes.
+
+You are particularly interested in alternative splicing and novel splice junctions, as you suspect that cancer-associated genes are often regulated at the isoform level. 
+
+You will sequence your samples at the Otago Genomics Facility, and see on [their website](https://www.otago.ac.nz/genomics) they have an Illumina MiSeq and an Illumina NextSeq 2000. 
+
+::: {.callout-note collapse="true"}
+# Which platform will you chose?
+
+The Illumina NextSeq 2000 is a 'medium' sized short read sequencing platform, ideal for standard RNAseq, and is well-suited to this project. It can output up to 540Gb.  
+
+The Illumina MiSeq is a 'small' sized short read sequencing platform, better suited to QC or amplicon sequencing, and can output up to 30Gb. It is too small for this project.  
+
+[Illumina benchtop sequencing platforms comparison](https://sapac.illumina.com/systems/sequencing-platforms.html)  
+
+:::
+
+ 
+Next you need to decide how many reads you need. 
+
+Based on table 1 above, how many reads do you need per sample?
+
+::: {.callout-note collapse="true"}
+# Reads per sample choice:
+
+You decide you need 30 million reads per sample. You pick the lower end of the scale, as you suspect the genes you are most interested in will be highly expressed, and don't expect your tissue to have a particular high transcript diversity that would require more reads. 
+
+You work out what minimum output you need from the flow cell:   
+30 mil reads * 40 samples = 1200 million reads (1.2B).
+
+::: 
+
+
+Now you need to decide if you want paired-end or single end reads.
+
+Based on table 2 above, what would you pick?
+
+::: {.callout-note collapse="true"}
+# Paired-end vs single end choice:
+
+Paired-end sequencing will give better detection of novel isoforms and splice junctions
+
+This doubles the number of reads generated per fragment and will give you better resolution.
+
+:::
+
+You now need to decide which read length you need. Given the mouse genome is well-annotated, but you are looking for potentially novel isoforms, which read length would you pick, based on table 3?
+
+::: {.callout-note collapse="true"}
+# Read length choice:
+
+50 bp would be a good choice for a well-annotated genome like mouse for standard RNAseq, but does not suit this experiment, as you are looking for novel isoforms/alternative splicing.
+
+100bp is probably the best choice, balancing cost with novel isoform discovery. 
+
+You could also chose 150bp, if you want to be sure you'd capture novel isoforms, especially if they are quite long or complex genes - and don't mind a higher cost.
+
+:::
+
+You are now ready to pick your flow cell. Check out the [Illumina NextSeq2000 flow cell specifications](https://sapac.illumina.com/systems/sequencing-platforms/nextseq-1000-2000/specifications.html) and chose which flow cell will suit this project best. There are four flow cells in ascending output size you can choose from: P1, P2, P3 and P4. 
+
+::: {.callout-note collapse="true"}
+# Which flow cell will you pick?
+
+Based on paired end sequencing using 100bp read length (i.e., 2 x 100bp):  
+
+Total reads needed for your experiment: 1.2 billion reads.  
+Calculation: 1.2 billion reads x 100 (bp) x 2 (PE) = 240 Gb (240 gigabase pairs, or 240 billion individual DNA bases sequenced).  
+
+- P1 → No 100bp option and way too low  
+- P2 → 80 Gb  (too low for 1.2B demand)  
+- P3 → 240 Gb (fits 1.2B reads requirement exactly)  
+- P4 → 360 Gb (oversized for this project)  
+
+Note: the maximum output stated for the flow cell is under optimal conditions, so the P3 flow cell choice just fits, but it is possible you will have less reads then anticipated (e.g., instead of 30 mil reads per sample, you may get 28 mil per sample). 
+
+:::
+
+Congratulations! You are now ready to sequence your RNAseq samples.  
+
+\ 
+
+
+
+For **Genome sequencing** you will need:
+
+| Genome size  | Example species    | Approx genome size | Approx reads per sample |
+|--------------|------------------------|------------------|-------------------------|
 | Tiny             | Virus                  | <0.1 Mb         | 0.1–0.5 million       |
 | Small            | Bacteria               | 5 Mb            | 5–10 million          | 
 | Medium           | Yeast                  | 12 Mb           | 10–20 million         | 
@@ -136,30 +289,81 @@ Choosing a platform to do your sequencing comes down to the question you are try
 | Very Large       | Human                  | 3 Gb            | 600–1,200 million     | 
 | Huge             | Wheat                  | 16 Gb           | 6–12 billion          | 
 
+Where Mb = megabase pairs (*i.e.,* 1 Mb = 1,000,000 bp)
+
+\
+
+***Example DNAseq scenario:***
+
+You are want to *de novo* assemble the genome of the New Zealand swamp maire (*Syzygium maire*), a critically-endangered, endemic myrtaceae species, which is under threat from the pathogen myrtle rust. 
+
+Based on genome sizes of related Syzygium and Myrtaceae species (e.g., *Syzygium aromaticum* ~370 Mb, *S. grande* ~405 Mb), you expect the *S. maire* genome to be on the order of ~350–400 Mb.
+
+*De novo* genome assembly requires long read sequencing to resolve the longest contiguous sequences possible (ideally the full chromosome length, but that is often not easy to achieve!). 
+
+::: {.callout-note collapse="false"}
+# Which long-read sequencing platform should you chose?
+
+There are two long-read platforms -- PacBio and ONT.
+ **PacBio better for larger genomes than ONT? Ask someone who knows this to fill in.**
+
 
 :::
 
-ADD IN: how to calculate coverage. 
+
+coverage. talking about average coverage - really repetitive regions  can have very low covergae, other more easily resolved sections will have higher coverage.  
+heterozygosity homozygosity. 
 
 
 
 
-- Are you doing all your samples in one batch, or will you have multiple batches? Technical variation can occur, so you may want to wait and do all samples at once on one larger flow cell, or make sure you randomise samples across sequencing batches. 
-- Paired end vs single end chemistry? ADD IN RULE OF THUMB 
+[Balkwill *et al.* 2024. Tree Genetics & Genomes.](https://doi.org/10.1007/s11295-024-01659-5)
+
+Question:
+
+The authors also used Illumina sequencing in this paper.
+What did they use it for? Why do you think they chose to do Illumina sequencing for these samples rather than PacBio?
+
+A: 30 x samples at low coverage for resequencing. 
+A: cost, accuracy at SNP level. 
+
+
+>Note of caution: Batch variation. Are you doing all your samples in one batch, or will you have multiple batches? Technical variation can occur, so you may want to wait and do all samples at once on one larger flow cell, or make sure you randomise samples across sequencing batches. 
+
 
 
 
 ## NZ NGS sequencing facilities and services
 
-Services:  
-[Otago Genomics Facility (OGF)](https://www.otago.ac.nz/genomics) have Illumina NextSeq and MiSeq, and ONT P2 Solo and MinION.  
-[Massey Genome Service (MGS)](https://www.massey.ac.nz/about/clinics-and-services-for-the-public/massey-genome-service/) have two Illumina MiSeq  
+**Sequencing facilities:**   
+
+> Current as of: December 2025
+
+*Note: here we only mention instruments for NGS sequencing; some of these facilities also perform other non-NGS sequencing e.g., Sanger.*
+
+[Otago Genomics Facility (OGF)](https://www.otago.ac.nz/genomics)  
+Location: The University of Otago, Biochemistry Building.  
+
+- Illumina NextSeq 2000  
+- Illumina MiSeq
+- ONT P2 Solo  
+- ONT MinION
+ 
+[Massey Genome Service (MGS)](https://www.massey.ac.nz/about/clinics-and-services-for-the-public/massey-genome-service/)  
+Location: Massey University, 
+
+- 2 x Illumina MiSeq  
+
 [Auckland Genomics](https://www.genomics.auckland.ac.nz/) 
 
 Non-service platforms around New Zealand:  
-Novaseq at AgResearch - they will do if have time and you ask nicely
-PacBio new at auckland
-Lincoln have MGI
+
+- AgResearch (Invermay) have a NovaSeq - they will do it if have time and you ask nicely  
+- PacBio new at auckland  
+- Lincoln have MGI - compatible with Illumina libraries.  
 
 
-## illumina vs pacbio vs nanopore - what's best for your samples?
+### working with NZ seq facilities
+
+stuff on submission process, show example form ?
+

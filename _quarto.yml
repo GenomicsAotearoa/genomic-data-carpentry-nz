@@ -16,22 +16,14 @@ website:
         href: test-styling.qmd
       - text: "Home"
         href: index.qmd
-      - section: "Organisation and tidy data"
+      - text: "Organisation and tidy data"
         href: organisation-tidiness.qmd
-        contents:
-          - episode_placeholder.qmd 
-      - section: "Planning for submission"
+      - text: "Planning for submission"
         href: planning-for-submission.qmd
-        contents:
-          - episode_placeholder.qmd
-      - section: "Genomic data storage and management"
+      - text: "Genomic data storage and management"
         href: data-storage-and-management.qmd
-        contents:
-          - episode_placeholder.qmd
-      - section: "Genomic data wrangling and processing"
+      - text: "Genomic data wrangling and processing"
         href: data-wrangling-and-processing.qmd
-        contents:
-          - episode_placeholder.qmd
 
     
     tools:
