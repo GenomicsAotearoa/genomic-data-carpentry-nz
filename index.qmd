@@ -22,6 +22,19 @@ This is a beginner-friendly workshop, designed to get you started with the world
 
 - Non-NGS sequencing and services (e.g., Sanger sequencing, qPCR, genotyping)  
 
+## Glossary
+
+| Term  | Definition |
+|------|------------|
+| bp   | Base pair |
+| HCS   | High Capacity Storage |
+| HPC   | High Performance Computing |
+| Mb   | Megabase pair (1,000,000 bp) |
+| Gb   | Gigabase pair (1,000,000,000 bp) |
+| NGS  | Next-generation sequencing |
+| SE / PE | Single-end / Paired-end |
+
+
 
 ## Attribution
 

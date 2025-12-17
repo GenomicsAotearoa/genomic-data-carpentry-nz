@@ -169,11 +169,9 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
   <li><a href="#discussion" id="toc-discussion" class="nav-link" data-scroll-target="#discussion">DISCUSSION 💬</a></li>
   </ul></li>
-  <li><a href="#flow-cells-and-sequencing-platforms-101" id="toc-flow-cells-and-sequencing-platforms-101" class="nav-link" data-scroll-target="#flow-cells-and-sequencing-platforms-101">Flow cells and sequencing platforms 101</a>
-  <ul class="collapse">
+  <li><a href="#flow-cells-and-sequencing-platforms-101" id="toc-flow-cells-and-sequencing-platforms-101" class="nav-link" data-scroll-target="#flow-cells-and-sequencing-platforms-101">Flow cells and sequencing platforms 101</a></li>
   <li><a href="#decision-points" id="toc-decision-points" class="nav-link" data-scroll-target="#decision-points">Decision points 🤔</a></li>
-  </ul></li>
-  <li><a href="#nz-ngs-sequencing-facilities-and-services" id="toc-nz-ngs-sequencing-facilities-and-services" class="nav-link" data-scroll-target="#nz-ngs-sequencing-facilities-and-services">NZ NGS sequencing facilities and services</a>
+  <li><a href="#nz-sequencing-facilities-and-services" id="toc-nz-sequencing-facilities-and-services" class="nav-link" data-scroll-target="#nz-sequencing-facilities-and-services">NZ sequencing facilities and services</a>
   <ul class="collapse">
   <li><a href="#working-with-nz-seq-facilities" id="toc-working-with-nz-seq-facilities" class="nav-link" data-scroll-target="#working-with-nz-seq-facilities">working with NZ seq facilities</a></li>
   </ul></li>
@@ -192,11 +190,17 @@ ul.task-list li input[type="checkbox"] {
 <p>You’ve done your experiment, extracted some DNA or RNA, and want to sequence it, but now what?</p>
 <section id="quality-control-of-dnarna" class="level2">
 <h2 class="anchored" data-anchor-id="quality-control-of-dnarna">Quality control of DNA/RNA</h2>
-<p>Short section. Need to pass ceraint cut offs, do nanopdrop qubit bioanalyzer. the seq facility will ask for these in teh submission form. MOre on submission later (last section)</p>
+<p>Your DNA or RNA samples will need to pass certain quality cut-offs for sequencing, which the sequencing facility will ask for and will have thresholds they require upon submission (e.g., see the <a href="https://www.otago.ac.nz/genomics/project-sample-info/requirements">Otago Genomics Facility requirements here</a>). After you have done your extractions in the lab, you should perform QC with:</p>
+<ol type="1">
+<li><p>A spectrophotometer (e.g., NanoDrop), which will give you a good indication of the purity/contamination of your sample through 260/280 and 260/230 ratios. The NanoDrop is not a very reliable instrument for concentration of your nucleic acid.</p></li>
+<li><p>A fluorescent-based quantification method (e.g, Qubit), which will give you a very accurate indication of concentration of your nucleic acid (but not of any contaminants)</p></li>
+<li><p>A fragment analysis instrument (e.g., Agilent 2100 Bioanalyzer, Agilent 5300 Fragment Analyzer or Agilent TapeStation), which you can think of like a high tech agarose gel. It will give you a good indication of your 28S/18S ratio for RNA (this is used to determine the overall RIN - RNA integrity number) or your fragment size distribution for DNA.</p></li>
+</ol>
+<p>Together, these will give you an almost complete picture of your sample, ready for sequencing. Note that if your samples are below threshold quality, there are protocols that can allow for lower quality or degraded samples. Ideally, this should only be done if there is no option to re-extract, re-purify or repeat the experiment.</p>
 </section>
 <section id="sequencing-libraries" class="level2">
 <h2 class="anchored" data-anchor-id="sequencing-libraries">Sequencing libraries</h2>
-<p>The first thing that needs to be done for Illumina, PacBio or Oxford Nanopore (ONT) sequencing is to turn the DNA or RNA sample into something called a <em>library</em>. This converts the raw nucleic acids into a form that the sequencer can actually read. This is generally done by the technician that will also sequence your samples, but some labs may do library prep in-house (i.e., <em>you</em> may do it yourself!). Nanopore is a little different, in that it can sequence native RNA directly, with minimal prep before sequencing. DNA library preparation for ONT sequencing is also generally simpler than for Illumina and PacBio. This is because the technology used to sequence the DNA/RNA using ONT is quite different to how Illumina and PacBio achieve it–more on that in the next section on flow cells.</p>
+<p>The first thing that needs to be done for Illumina, PacBio or Oxford Nanopore (ONT) sequencing is to turn the DNA or RNA sample into something called a <em>library</em>. This converts the raw nucleic acids into a form that the sequencer can actually read. This is generally done by the technician that will also sequence your samples, but some labs may do library prep in-house (i.e., <em>you</em> may do it yourself!). Nanopore is a little different, in that it can sequence native RNA directly, with minimal prep before sequencing. DNA library preparation for ONT sequencing is also generally simpler than for Illumina and PacBio. This is because the technology used to sequence the DNA/RNA using ONT is quite different to how Illumina and PacBio achieve it–more on that in the next section on <a href="#flow-cells-and-sequencing-platforms-101">flow cells and sequencing platforms 101</a></p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -261,7 +265,7 @@ Using Qubit, Bioanalyzer/Tapestation/Fragment Analyzer, etc. This step ensures y
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Bioanalyzer trace of final library
+Bioanalyzer trace of final library (Illumina mRNA lib prep)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -271,7 +275,7 @@ Bioanalyzer trace of final library
 </div>
 </div>
 </div>
-<p>There are different library prep methods for each platform that you will also need to chose. This will depend on a few things, such as:</p>
+<p>There are different library prep methods (i.e., protocols) for each platform that you will also need to chose. This will depend on a few things, such as:</p>
 <ul>
 <li>The quality of your RNA/DNA (e.g., high-quality RNA allows polyA selection; degraded samples may require ribo-depletion or specialised kits).<br>
 </li>
@@ -328,7 +332,7 @@ Why do you think size selection is such an important step? What would happen if 
 <div class="callout-body-container callout-body">
 <p>Size selection ensures that fragments fall within the size range the sequencer expects. Without it, you may get:</p>
 <ul>
-<li><p>adapter dimers (which waste sequencing reads as they take up ‘real estate’)</p></li>
+<li><p>adapter dimers (which waste sequencing reads as they take up ‘real estate’ on the flow cell)</p></li>
 <li><p>too-short fragments (which cluster preferentially, causing over-representation and distorts the data e.g., sequencing may read into adapters or flow cell)<br>
 </p></li>
 <li><p>too-long fragments (which may not fully sequence or reduce yield)</p></li>
@@ -445,8 +449,9 @@ Why do you think size selection is such an important step? What would happen if 
 </tr>
 </tbody>
 </table>
-<section id="decision-points" class="level4">
-<h4 class="anchored" data-anchor-id="decision-points">Decision points 🤔</h4>
+</section>
+<section id="decision-points" class="level2">
+<h2 class="anchored" data-anchor-id="decision-points">Decision points 🤔</h2>
 <p>Choosing a platform to do your sequencing comes down to the question you are trying to answer. See the last row in the table above ‘Best use for’ for some examples of why you might pick one platform over another!</p>
 <p>When you get in contact with a sequencing facility, the question they will ask you is not <em>how many samples are you sequencing</em>, but rather, <em>how many reads do you need?</em> This will determine what size flow cell you need, and to some extent, which platform you will use, as different platforms have different capacity (e.g,. Illumina NextSeq is a ‘medium throughput’ platform, NovaSeq is a ‘large throughput’ platform). The number of reads you need scale with the size of the genome and/or complexity of your transcriptome.</p>
 <p><strong><em>As a general rule of thumb,</em></strong> for <strong><em>transcriptome sequencing</em></strong> you will need:</p>
@@ -603,7 +608,7 @@ Paired-end vs single end choice:
 </div>
 <div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Paired-end sequencing will give better detection of novel isoforms and splice junctions</p>
+<p>Paired-end sequencing will give better detection of novel isoforms and splice junctions.</p>
 <p>This doubles the number of reads generated per fragment and will give you better resolution.</p>
 </div>
 </div>
@@ -648,7 +653,7 @@ Calculation: 1.2 billion reads x 100 (bp) x 2 (PE) = 240 Gb (240 gigabase pairs,
 </li>
 <li>P2 → 80 Gb (too low for 1.2B demand)<br>
 </li>
-<li>P3 → 240 Gb (fits 1.2B reads requirement exactly)<br>
+<li>P3 → 240 Gb (fits 1.2B reads requirement exactly - best choice!)<br>
 </li>
 <li>P4 → 360 Gb (oversized for this project)</li>
 </ul>
@@ -658,6 +663,8 @@ Calculation: 1.2 billion reads x 100 (bp) x 2 (PE) = 240 Gb (240 gigabase pairs,
 </div>
 <p>Congratulations! You are now ready to sequence your RNAseq samples.</p>
 <p>&nbsp;</p>
+<p>Now let’s look at <strong>DNA sequencing</strong> in more detail.</p>
+<p>DNA sequencing may refer to whole genome, whole exome, or targeted sequencing approaches. <strong>FILL in a bit more here by someone who knows DNAseq better</strong></p>
 <p>For <strong>Genome sequencing</strong> you will need:</p>
 <table class="caption-top table">
 <colgroup>
@@ -714,12 +721,16 @@ Calculation: 1.2 billion reads x 100 (bp) x 2 (PE) = 240 Gb (240 gigabase pairs,
 </tbody>
 </table>
 <p>Where Mb = megabase pairs (<em>i.e.,</em> 1 Mb = 1,000,000 bp)</p>
+<p>Coverage. talking about average coverage - really repetitive regions can have very low covergae, other more easily resolved sections will have higher coverage.</p>
+<p>heterozygosity homozygosity.</p>
+<p>haplotypes etc.</p>
+<p>Stick mostly to decision points - not a huge lecture/tutorial on genome/ DNA biology. Assume learners haev a genetics background - they just have not yet translated that knowledge into a practical application of NGS.</p>
 <p><br>
 </p>
 <p><strong><em>Example DNAseq scenario:</em></strong></p>
 <p>You are want to <em>de novo</em> assemble the genome of the New Zealand swamp maire (<em>Syzygium maire</em>), a critically-endangered, endemic myrtaceae species, which is under threat from the pathogen myrtle rust.</p>
 <p>Based on genome sizes of related Syzygium and Myrtaceae species (e.g., <em>Syzygium aromaticum</em> ~370 Mb, <em>S. grande</em> ~405 Mb), you expect the <em>S. maire</em> genome to be on the order of ~350–400 Mb.</p>
-<p><em>De novo</em> genome assembly requires long read sequencing to resolve the longest contiguous sequences possible (ideally the full chromosome length, but that is often not easy to achieve!).</p>
+<p><em>De novo</em> genome assembly requires long read sequencing to resolve the longest contiguous sequences possible (ideally the full chromosome length, but that is often not easy or possible to achieve!).</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -736,24 +747,38 @@ Which long-read sequencing platform should you chose?
 </div>
 </div>
 </div>
-<p>coverage. talking about average coverage - really repetitive regions can have very low covergae, other more easily resolved sections will have higher coverage.<br>
-heterozygosity homozygosity.</p>
 <p><a href="https://doi.org/10.1007/s11295-024-01659-5">Balkwill <em>et al.</em> 2024. Tree Genetics &amp; Genomes.</a></p>
-<p>Question:</p>
 <p>The authors also used Illumina sequencing in this paper. What did they use it for? Why do you think they chose to do Illumina sequencing for these samples rather than PacBio?</p>
-<p>A: 30 x samples at low coverage for resequencing. A: cost, accuracy at SNP level.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solutions:
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Answer: 30 x samples at low coverage for resequencing.<br>
+Answer: cost, accuracy at SNP level. dont need to resolve full genomes as that was not their question.</p>
+</div>
+</div>
+</div>
 <blockquote class="blockquote">
-<p>Note of caution: Batch variation. Are you doing all your samples in one batch, or will you have multiple batches? Technical variation can occur, so you may want to wait and do all samples at once on one larger flow cell, or make sure you randomise samples across sequencing batches.</p>
+<p>Note 1: Batch variation. Are you doing all your samples in one batch, or will you have multiple batches? Technical variation can occur, so you may want to wait and do all samples at once on one larger flow cell, or make sure you randomise samples across sequencing batches.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Note 2: DNAseq vs RNAseq. You may have noticed we call it ‘RNAseq’, even though we convert the RNA into DNA before sequencing! By convention, this is still called RNAseq, to differentiate it from true DNAseq.</p>
 </blockquote>
 </section>
-</section>
-<section id="nz-ngs-sequencing-facilities-and-services" class="level2">
-<h2 class="anchored" data-anchor-id="nz-ngs-sequencing-facilities-and-services">NZ NGS sequencing facilities and services</h2>
-<p><strong>Sequencing facilities:</strong></p>
+<section id="nz-sequencing-facilities-and-services" class="level2">
+<h2 class="anchored" data-anchor-id="nz-sequencing-facilities-and-services">NZ sequencing facilities and services</h2>
 <blockquote class="blockquote">
 <p>Current as of: December 2025</p>
 </blockquote>
-<p><em>Note: here we only mention instruments for NGS sequencing; some of these facilities also perform other non-NGS sequencing e.g., Sanger.</em></p>
+<p><strong>Sequencing facilities which offer NGS services:</strong></p>
 <p><a href="https://www.otago.ac.nz/genomics">Otago Genomics Facility (OGF)</a><br>
 Location: The University of Otago, Biochemistry Building.</p>
 <ul>
@@ -763,24 +788,41 @@ Location: The University of Otago, Biochemistry Building.</p>
 <li>ONT P2 Solo<br>
 </li>
 <li>ONT MinION</li>
+<li>NanoString nCounter Analysis System (non-NGS)</li>
 </ul>
+<p>Performs: Moderate to large scale RNAseq, DNAseq, amplicon seq etc</p>
 <p><a href="https://www.massey.ac.nz/about/clinics-and-services-for-the-public/massey-genome-service/">Massey Genome Service (MGS)</a><br>
-Location: Massey University,</p>
+Location: Massey University</p>
 <ul>
-<li>2 x Illumina MiSeq</li>
+<li>2 x Illumina MiSeq<br>
+</li>
+<li>Applied Biosystems 3500xl capillary instrumentation (non-NGS).</li>
 </ul>
+<p>Performs: small scale RNA or DNAseq, single gene (Sanger sequencing)</p>
 <p><a href="https://www.genomics.auckland.ac.nz/">Auckland Genomics</a></p>
-<p>Non-service platforms around New Zealand:</p>
 <ul>
-<li>AgResearch (Invermay) have a NovaSeq - they will do it if have time and you ask nicely<br>
-</li>
-<li>PacBio new at auckland<br>
-</li>
-<li>Lincoln have MGI - compatible with Illumina libraries.</li>
+<li>platforms: Illumina and ONT. They dont list on their website which ones they have.</li>
+</ul>
+<p>Procotocol available - dont want to go into too much detail but becoems another decision point. Massey offer TruSeq lib prep. Auckland uses the newer kit. (slightly higher input required than the newer chemistry, both are very robust options. Newer one is supposed to be faster and better for more degarded RNA. Higher multiplexing for new kit 384 vs 96 for truseq).</p>
+<p>See here for <a href="https://knowledge.illumina.com/library-preparation/rna-library-prep/library-preparation-rna-library-prep-faq-list/000005928">comparison between Illumina TruSeq stranded and Illumina stranded mRNA kits</a></p>
+<p><strong><em>Non-NGS sequencing around New Zealand:</em></strong></p>
+<p><strong>Lincoln</strong><br>
+- DNA sequencing service (Sanger)</p>
+<p><strong>Otago</strong> - Genetic Analysis Service (GAS) (Sanger)</p>
+<p><strong><em>Non-service platforms around New Zealand:</em></strong></p>
+<p><strong>AgResearch</strong><br>
+- GenomNZ https://www.agresearch.co.nz/products-and-services/genomnz/ (Invermay) have a NovaSeq - they will do it if they have time and you ask nicely. They are a commercial animal DNA genotyping laboratory.</p>
+<p><strong>Lincoln</strong><br>
+- have MGI - compatible with Illumina libraries. not on website.</p>
+<p>other</p>
+<p><strong>Custom science</strong> (supplier, does not do the sequencing for you)</p>
+<ul>
+<li>New <a href="https://www.customscience.co.nz/kindstar-new-zealand">PacBio Revio in Auckland</a></li>
 </ul>
 <section id="working-with-nz-seq-facilities" class="level3">
 <h3 class="anchored" data-anchor-id="working-with-nz-seq-facilities">working with NZ seq facilities</h3>
 <p>stuff on submission process, show example form ?</p>
+<p>how do you get data back from them ? how do they transfer it?</p>
 
 
 </section>

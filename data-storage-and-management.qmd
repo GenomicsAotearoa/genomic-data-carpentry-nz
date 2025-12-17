@@ -9,12 +9,80 @@ Your data has been sequenced, now what?
 
 storage, management and duty of care
 
+## Storage
+
+Genomic data files are huge, and for one project you will often have several hundred gigabytes (GB) to sometimes terabytes (TB) of data (more on the actual genomic file types in the next section [Data wrangling and processing](data-wrangling-and-processing.qmd)). You won't be able to store and analyse these on your local computer, so you'll need to make use of a high capacity storage (HCS) and high performance computing (HPC).
+
+## REANNZ - Research and Education Advanced Network New Zealand
+
+https://www.reannz.co.nz/products-and-services/high-performance-computing-and-data-analytics
+
 - projects on reannz  
-- HCS, aoraki for otago, auckland uni one?  
-- public data  
-    - SRA/ncbi (upload and download?)
-    - SRA metadata submission  
+
+## Aoraki at the University of Otago
+
+
+## other unis storage options?
+
+
+## Ethical data storage
+
+
+### FAIR and CARE 
+
+In 2016, the [FAIR principles](https://www.go-fair.org/fair-principles/) were published in *Scientific Data*. 
+These guidelines set to provide a standard through which to improve digital assets:
+
+- **F**indability  
+- **A**ccessibility  
+- **I**nteroperability  
+- **R**euse  
+
+Open science advocates have embraced this framework, while others critise its lack of protection of data, for not considering the rights and interest of those that should hold governance over data, in particular, indigenous peoples.  
+
+The CARE framework has also been proposed by [Global Indigenous Data Analysis](https://www.gida-global.org/care), to complement the existing FAIR principles:
+
+- **C**ollective benefit  
+- **A**uthority to control  
+- **R**esponsibility  
+- **E**thics  
+
+![](figures/fair-care.png)
+
+The AGDR and Rakeiora platform are examples of services that have adopted these CARE principles:
+
+### Aotearoa Genomic Data Repository
+
+Kaitiaki
+
+
+### rakeiora platform 
+
+we have chosen a ‘walled garden’ approach to this infrastructure. This means that all genomic data and health data, and its analysis, are undertaken only within this computational environment – the data never leave and are certainly never downloaded to a researcher’s own computer or a hospital clinical laboratory computer. 
+walled garden metaphor 
+
+
+
+ 
+## Public data
+
+You are probably familiar with using the [NIH NCBI database](https://www.ncbi.nlm.nih.gov/), hosted by the United States Government, for things such as BLAST searches and literature searches. 
+
+NCBI has a repository called the Sequence Read Archive (SRA), which is where a large proportion of genomic data from all over the world is stored, as publicly available raw, high-throughput, sequencing data. 
+
+If your data has no ethical concerns, this can be a great resource for making your data freely available as easily citeable in publications.  
+
+Here we will not go into detail on how to either download or upload data to the SRA (see [documentation on their website](https://www.ncbi.nlm.nih.gov/sra)). But some points to be aware of are:
+
+- You may want to start with making a [BioProject](https://www.ncbi.nlm.nih.gov/bioproject/) for your specific project, which will link all of your sequencing data together under one umbrella (as a general rule, 1 publication = 1 BioProject).  
+
+- You'll need to also make [BioSample](https://www.ncbi.nlm.nih.gov/biosample) submission/s, which will be linked to the matching sequence data in the SRA, and all houses under one BioProject accession number. BioSamples describe the unique biological attributes of your sample (e.g, species, sex, age, location, tissue). This is often (but not strictly) 1 BioSample = 1 library. 
+
+- 
+
+ SHOW EXAMPLE FROM OWN DATA? screenshot of bipproject example, biosampler ecxample, SRA example. 
+
+This is not the only public repository of sequence reads, some other examples include: [European Nucleotide Archive (ENA)](https://www.ebi.ac.uk/ena/browser/home), the DNA data bank of Japan [DDBJ Sequence Read Archive (DRA)](https://www.ddbj.nig.ac.jp/dra/index-e.html), 
+
+
     - ensembl embl-ebi  
-    - ADGR, kaitiaki  
-- FAIR and CARE 
-- rakeiora platform walled garden metaphor  
