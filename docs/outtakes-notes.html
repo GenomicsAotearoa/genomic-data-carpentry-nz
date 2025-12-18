@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>data-storage-and-management – Genomic Data Carpentry (Aotearoa edition)</title>
+<title>outtakes-notes – Genomic Data Carpentry (Aotearoa edition)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./data-wrangling-and-processing.html" rel="next">
-<link href="./planning-for-submission.html" rel="prev">
+<link href="./index.html" rel="next">
+<link href="./test-styling.html" rel="prev">
 <link href="./theme-images/GA-image-black-favicon.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -75,7 +75,6 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="styles.css">
 <meta property="og:title" content="– Genomic Data Carpentry (Aotearoa edition)">
 <meta property="og:description" content="">
-<meta property="og:image" content="figures/reannz-01.png">
 <meta property="og:site_name" content="Genomic Data Carpentry (Aotearoa edition)">
 </head>
 
@@ -88,7 +87,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./data-storage-and-management.html">Genomic data storage and management</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./outtakes-notes.html">_outtakes/notes</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -124,7 +123,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./outtakes-notes.html" class="sidebar-item-text sidebar-link">
+  <a href="./outtakes-notes.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">_outtakes/notes</span></a>
   </div>
 </li>
@@ -148,7 +147,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./data-storage-and-management.html" class="sidebar-item-text sidebar-link active">
+  <a href="./data-storage-and-management.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Genomic data storage and management</span></a>
   </div>
 </li>
@@ -168,20 +167,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#genomic-data-storage-and-management" id="toc-genomic-data-storage-and-management" class="nav-link active" data-scroll-target="#genomic-data-storage-and-management">Genomic data storage and management</a>
-  <ul>
-  <li><a href="#genomic-data-files" id="toc-genomic-data-files" class="nav-link" data-scroll-target="#genomic-data-files">Genomic data files</a></li>
-  <li><a href="#research-and-education-advanced-network-new-zealand-reannz" id="toc-research-and-education-advanced-network-new-zealand-reannz" class="nav-link" data-scroll-target="#research-and-education-advanced-network-new-zealand-reannz">Research and Education Advanced Network New Zealand (REANNZ)</a></li>
-  <li><a href="#aoraki-at-the-university-of-otago" id="toc-aoraki-at-the-university-of-otago" class="nav-link" data-scroll-target="#aoraki-at-the-university-of-otago">Aoraki at the University of Otago</a></li>
-  <li><a href="#other-universities-hpchcs-options" id="toc-other-universities-hpchcs-options" class="nav-link" data-scroll-target="#other-universities-hpchcs-options">Other universities HPC/HCS options?</a></li>
-  <li><a href="#ethical-data-management" id="toc-ethical-data-management" class="nav-link" data-scroll-target="#ethical-data-management">Ethical data management</a>
-  <ul class="collapse">
-  <li><a href="#fair-and-care" id="toc-fair-and-care" class="nav-link" data-scroll-target="#fair-and-care">FAIR and CARE</a></li>
-  <li><a href="#aotearoa-genomic-data-repository-agdr" id="toc-aotearoa-genomic-data-repository-agdr" class="nav-link" data-scroll-target="#aotearoa-genomic-data-repository-agdr">Aotearoa Genomic Data Repository (AGDR)</a></li>
-  <li><a href="#rakeiora-genomics-platform" id="toc-rakeiora-genomics-platform" class="nav-link" data-scroll-target="#rakeiora-genomics-platform">Rakeiora Genomics platform</a></li>
-  </ul></li>
-  <li><a href="#public-data" id="toc-public-data" class="nav-link" data-scroll-target="#public-data">Public data</a></li>
-  </ul></li>
+  <li><a href="#outtakes-and-notes" id="toc-outtakes-and-notes" class="nav-link active" data-scroll-target="#outtakes-and-notes">Outtakes and notes</a></li>
   </ul>
 </nav>
     </div>
@@ -191,110 +177,15 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="genomic-data-storage-and-management" class="level1">
-<h1>Genomic data storage and management</h1>
-<p>Your samples have been sequenced, now what?</p>
-<section id="genomic-data-files" class="level2">
-<h2 class="anchored" data-anchor-id="genomic-data-files">Genomic data files</h2>
-<p>Genomic data files are huge, and for one project you will often have several hundred gigabytes (GB) to sometimes terabytes (TB) of data (more on the actual genomic file types in the next section <a href="./data-wrangling-and-processing.html">Data wrangling and processing</a>). You most likely won’t be able to store and analyse these on your local computer, or transfer the files in the ‘traditional’ way using USB drives, so you’ll need to make use of a high capacity storage (HCS), high performance computing (HPC), and file transfer protocols (FTP). An introduction to genomics is also an introduction to the world of high performance computing!</p>
-<p><em>Caveat: small genomes such as bacteria often can be transferred, stored and analysed on your local computer.</em></p>
-<p>You have a few options of how you want to store and analyse your data, which may be through HPC/HCS services offered by your university or institute, or through the national computing and digital network REANNZ.</p>
-</section>
-<section id="research-and-education-advanced-network-new-zealand-reannz" class="level2">
-<h2 class="anchored" data-anchor-id="research-and-education-advanced-network-new-zealand-reannz">Research and Education Advanced Network New Zealand (REANNZ)</h2>
-<p>REANNZ is a Crown-owned membership organisation that powers Aotearoa’s research and education network. Launched in 2007, their high-performance national digital network (or NREN) helps members collaborate and contribute to data-intensive and complex science and research initiatives – both here in New Zealand and across the globe.</p>
-<p>They offer many products and services <a href="https://www.reannz.co.nz/">check out their website here</a>, but here we will focus on their <a href="https://www.reannz.co.nz/products-and-services/high-performance-computing-and-data-analytics">HPC platform</a> that you may chose to use to analyse your data.</p>
-<p><strong><em>Projects on REANNZ</em></strong></p>
-<p>To use the HPC services, you first need to make or be listed as a member on a ‘Project’. A ‘Project’ will have a code (e.g., nesi03181 or uoo00431) and will need to be linked to a funding source to charge back compute resources used. Multiple people can use one Project; this is often the preferable way to use a Project when collaborating on the same dataset or project. You’ll need to discuss whether you need your own Project, or can be added to an existing Project, with whoever is supplying the funding (most likely your PI / supervisor).</p>
-<p>Either way, first make your own account using your institutional details by logging in here: <a href="https://my.nesi.org.nz/">https://my.nesi.org.nz/</a>.</p>
-<p><img src="figures/reannz-01.png" class="img-fluid" style="width:100.0%"></p>
-<p>From there, you can apply/access/view your Projects, and manage the <a href="https://docs.nesi.org.nz/Getting_Started/Allocations/What_is_an_allocation/">compute resource allocation</a> of the Project.</p>
-<p>Once you have an account and a Project, you can start using the HPC by logging in to Open OnDemand here: <a href="ondemand.nesi.org.nz">ondemand.nesi.org.nz</a></p>
-<p><img src="figures/reannz-02.png" class="img-fluid" style="width:100.0%"></p>
-<p>Once logged in, you’ll see an app-based dashboard.</p>
-<p>Click on ‘Jupyter Lab’ and then you can chose a few different settings before launching. For the most part, you will only need to change the Project Code and the number of hours you need the session open for. You can leave the number of cores and memory per job as the default lowest settings.</p>
-<p><img src="figures/reannz-04.png" class="img-fluid" style="width:100.0%"></p>
-<p>Once the session is open, you can interact with your files through the directory structure on the left, and open either a Terminal or various other scripting programs through the Launcher. More on using the Terminal (also known as shell / unix shell / bash) in the next lesson.</p>
-<p>For each Project, you will have a <code style="color:blue">nobackup</code> and a <code style="color:blue">project</code> directory. Keep your raw files in the <code style="color:blue">project</code> directory and do your analysis in the <code style="color:blue">nobackup</code> directory. As you can guess by the name, this directory is not backed up, and is best used for working analyses. Additionally, files not modified after 90 days are auto deleted. Final analysed files and imprortant scripts should be copied into the <code style="color:blue">project</code> directory once you have completed your analysis. You may be surprised by how many intermediate files you make and how much ‘tinkering’ you do during your analyses–making use of the two directories helps keep your file system tidier.</p>
-<blockquote class="blockquote">
-<p>Note: It can be a good idea to back-up raw genomic files on a HCS–your inst</p>
-</blockquote>
-<p><strong><em>Getting your genomic files on to the REANNZ cluster</em></strong></p>
-<p><strong>FILL IN HERE</strong></p>
-<p>??no backup/project directories?</p>
-<p><strong><em>Want more info?</em></strong> REANNZ provide <a href="https://docs.nesi.org.nz/">extensive documentation</a> on how to use their High Performance Computing (HPC) platforms.</p>
-<blockquote class="blockquote">
-<p>In July 2025, the New Zealand eScience Infrastructure (NeSI) was integrated into REANNZ. You may have heard of NeSI before, but if not, it is good to be aware of the name, as you’ll see some legacy branding in the REANNZ documentation or log-in platform (<em>e.g.,</em> my.nesi.org.nz is still in use).</p>
-</blockquote>
-</section>
-<section id="aoraki-at-the-university-of-otago" class="level2">
-<h2 class="anchored" data-anchor-id="aoraki-at-the-university-of-otago">Aoraki at the University of Otago</h2>
-<p>If you are a University of Otago staff or student, you can use the “Aoraki” HPC cluster. Like REANNZ, you will also connect to the cluster through an Open OnDemand app-based interactive web page.</p>
-<p>https://rtis.cspages.otago.ac.nz/research-computing/cluster/index.html</p>
-</section>
-<section id="other-universities-hpchcs-options" class="level2">
-<h2 class="anchored" data-anchor-id="other-universities-hpchcs-options">Other universities HPC/HCS options?</h2>
-<p>Auckland?</p>
-</section>
-<section id="ethical-data-management" class="level2">
-<h2 class="anchored" data-anchor-id="ethical-data-management">Ethical data management</h2>
-<section id="fair-and-care" class="level3">
-<h3 class="anchored" data-anchor-id="fair-and-care">FAIR and CARE</h3>
-<p>In 2016, the <a href="https://www.go-fair.org/fair-principles/">FAIR principles</a> were published in <em>Scientific Data</em>. These guidelines set to provide a standard through which to improve digital assets:</p>
-<ul>
-<li><strong>F</strong>indability<br>
-</li>
-<li><strong>A</strong>ccessibility<br>
-</li>
-<li><strong>I</strong>nteroperability<br>
-</li>
-<li><strong>R</strong>euse</li>
-</ul>
-<p>Open science advocates have embraced this framework, while others critise its lack of protection of data, for not considering the rights and interest of those that should hold governance over data, in particular, indigenous peoples. In response to this, the CARE framework has also been proposed by <a href="https://www.gida-global.org/care">Global Indigenous Data Analysis</a>, to complement the existing FAIR principles:</p>
-<ul>
-<li><strong>C</strong>ollective benefit<br>
-</li>
-<li><strong>A</strong>uthority to control<br>
-</li>
-<li><strong>R</strong>esponsibility<br>
-</li>
-<li><strong>E</strong>thics</li>
-</ul>
-<p><img src="figures/fair-care.png" class="img-fluid"></p>
-<p>This story <a href="https://www.science.org/content/article/not-free-all-indigenous-communities-want-limits-how-their-data-are-shared">“Open with care; Indigenous researchers and communities are reshaping how Western science thinks about data ownership”</a> is an interesting read on these perspectives.</p>
-<p>The Aotearoa Genomic Data Repository (AGDR) and Rakeiora platform are examples of services that have adopted these CARE principles.</p>
-</section>
-<section id="aotearoa-genomic-data-repository-agdr" class="level3">
-<h3 class="anchored" data-anchor-id="aotearoa-genomic-data-repository-agdr">Aotearoa Genomic Data Repository (AGDR)</h3>
-<p>From the <a href="https://data.agdr.org.nz/">AGDR website</a>:</p>
-<p><em>“The Aotearoa Genomic Data Repository provides secure within-nation storage, management and sharing of non-human genomic data generated from biological and environmental samples originating in Aotearoa New Zealand. This resource has been developed to follow the principles of Māori Data Sovereignty, and to enable kaitiakitanga (guardianship), so that iwi, hapū and whānau (tribes, kinship groups and families) can effectively exercise their responsibilities as guardians over biological entities that are taonga (precious or treasured). While the repository is designed to facilitate the sharing of data — making it findable by researchers and interoperable with data held in other genomic repositories — the decision-making process regarding who can access the data is entirely in the hands of those holding kaitiakitanga over each data set.”</em>”</p>
-<p>The AGDR is enabled by MBIE funding to Genomics Aotearoa.</p>
-</section>
-<section id="rakeiora-genomics-platform" class="level3">
-<h3 class="anchored" data-anchor-id="rakeiora-genomics-platform">Rakeiora Genomics platform</h3>
-<p>The <a href="https://rakeiora.ac.nz/">Rakeiora Genomics Platform</a> is designed to enable and test pilot precision medicine research, linking genomics and health.</p>
-<p>They have chosen a <strong>walled garden</strong> approach to this infrastructure.</p>
-<p><em>“This means that all genomic data and health data, and its analysis, are undertaken only within this computational environment – the data never leave and are certainly never downloaded to a researcher’s own computer or a hospital clinical laboratory computer…<br>
-…Its modular nature will allow linkage (with consent) to other health data systems currently under development in Aotearoa New Zealand. This approach in particular addresses transparency of use and control over narratives. Lack of these features in other precision medicine platforms worldwide has led to significant problems for patients and research participants, including indigenous communities; learning from these negative experiences is key to avoid repeating them.”</em> – From the <a href="https://www.genomics-aotearoa.org.nz/our-work/health-projects/rakeiora-pathfinder-genomic-medicine">Genomics Aotearoa website.</a></p>
-</section>
-</section>
-<section id="public-data" class="level2">
-<h2 class="anchored" data-anchor-id="public-data">Public data</h2>
-<p>You are probably familiar with using the <a href="https://www.ncbi.nlm.nih.gov/">NIH NCBI database</a>, hosted by the United States Government, for things such as BLAST searches and literature searches.</p>
-<p>NCBI has a repository called the Sequence Read Archive (SRA), which is where a large proportion of genomic data from all over the world is stored, as publicly available raw, high-throughput, sequencing data.</p>
-<p>If your data has no ethical concerns, this can be a great resource for making your data freely available as easily citeable in publications.</p>
-<p>Here we will not go into detail on how to either download or upload data to the SRA (see <a href="https://www.ncbi.nlm.nih.gov/sra">documentation on their website</a>). But some points to be aware of are:</p>
-<ul>
-<li><p>You may want to start with making a <a href="https://www.ncbi.nlm.nih.gov/bioproject/">BioProject</a> for your specific project, which will link all of your sequencing data together under one umbrella (as a general rule, 1 publication = 1 BioProject).</p></li>
-<li><p>You’ll need to also make <a href="https://www.ncbi.nlm.nih.gov/biosample">BioSample</a> submission/s, which will be linked to the matching sequence data in the SRA, and all houses under one BioProject accession number. BioSamples describe the unique biological attributes of your sample (e.g, species, sex, age, location, tissue). This is often (but not strictly) 1 BioSample = 1 library.</p></li>
-<li></li>
-</ul>
-<p>Equally, if you are downloading data from the SRA, you can make use of BioProject and BioSample accessions to identify and orientate yourself to the data.</p>
-<p>SHOW EXAMPLE screenshot of bipproject example, biosampler ecxample, SRA example.</p>
-<p>This is not the only public repository of sequence reads, some other examples include: <a href="https://www.ebi.ac.uk/ena/browser/home">European Nucleotide Archive (ENA)</a> and the DNA data bank of Japan <a href="https://www.ddbj.nig.ac.jp/dra/index-e.html">DDBJ Sequence Read Archive (DRA)</a>,</p>
+<section id="outtakes-and-notes" class="level1">
+<h1>Outtakes and notes</h1>
+<p><strong><em>Non-NGS sequencing around New Zealand:</em></strong></p>
+<p><strong>Lincoln</strong><br>
+- DNA sequencing service (Sanger)</p>
+<p><strong>Otago</strong> - Genetic Analysis Service (GAS) (Sanger)</p>
+<p>go back over genmic data carpentry from the carpentries to see what else they go over.</p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -699,13 +590,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
-      <a href="./planning-for-submission.html" class="pagination-link" aria-label="Planning for submission">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Planning for submission</span>
+      <a href="./test-styling.html" class="pagination-link" aria-label="_test styles">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">_test styles</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./data-wrangling-and-processing.html" class="pagination-link" aria-label="Genomic data wrangling and processing">
-        <span class="nav-page-text">Genomic data wrangling and processing</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./index.html" class="pagination-link" aria-label="Home">
+        <span class="nav-page-text">Home</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

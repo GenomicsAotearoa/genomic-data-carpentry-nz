@@ -12,8 +12,10 @@ website:
     style: "docked"
     left:
     contents:
-      - text: "test styles"
+      - text: "_test styles"
         href: test-styling.qmd
+      - text: "_outtakes/notes"
+        href: outtakes-notes.qmd
       - text: "Home"
         href: index.qmd
       - text: "Organisation and tidy data"

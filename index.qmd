@@ -15,12 +15,15 @@ This is a beginner-friendly workshop, designed to get you started with the world
 
 - Organisation---from messy lab books and excel spreadsheets to tidy, computer-friendly data  
 - Working with sequencing facilities and understanding genomic data types  
-- Data storage repositories, public facilities, and principles of FAIR and CARE 
+- Data storage repositories, public services and facilities, and principles of FAIR and CARE 
 - Quality control, wrangling of raw reads and an introduction to genomic terminology  
 
 ## What's NOT covered in this workshop
 
-- Non-NGS sequencing and services (e.g., Sanger sequencing, qPCR, genotyping)  
+- Non-NGS sequencing and services (e.g., Sanger sequencing, qPCR, genotyping, probe-based applications such as microarrays and NanoString nCounter)  
+- Genomic analysis pipelines (beyond the basics of initial quality checks of raw reads) 
+- The basics of cluster or HPC resourcing and specialised software (e.g., we do not cover schedulers such as SLURM, partitions/CPUs/GPUs, chosing compute allocation allowance). See our workshop on [Introduction to Bash Scripting and HPC Job Scheduler](https://genomicsaotearoa.github.io/BioinformaticsTrainingProgramme/portfolio.html#introduction-to-bash-scripting-and-hpc-job-scheduler) for this.
+- Using shell, beyond the very basics (e.g., we do not cover writing/submitting bash scripts, modules, accessing the cluster using ssh) 
 
 ## Glossary
 
@@ -30,7 +33,9 @@ This is a beginner-friendly workshop, designed to get you started with the world
 | HCS   | High Capacity Storage |
 | HPC   | High Performance Computing |
 | Mb   | Megabase pair (1,000,000 bp) |
+| MB   | Megabyte |
 | Gb   | Gigabase pair (1,000,000,000 bp) |
+| GB   | Gigabyte |
 | NGS  | Next-generation sequencing |
 | SE / PE | Single-end / Paired-end |
 

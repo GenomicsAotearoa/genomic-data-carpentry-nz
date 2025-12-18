@@ -1,0 +1,17 @@
+---
+title: ""
+format: html
+---
+
+# Outtakes and notes
+
+***Non-NGS sequencing around New Zealand:***  
+
+**Lincoln**  
+- DNA sequencing service (Sanger)
+
+**Otago**
+- Genetic Analysis Service (GAS) (Sanger)
+
+
+go back over genmic data carpentry from the carpentries to see what else they go over. 

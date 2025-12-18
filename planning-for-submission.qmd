@@ -389,21 +389,13 @@ Performs: small scale RNA or DNAseq, single gene (Sanger sequencing)
 
 [Auckland Genomics](https://www.genomics.auckland.ac.nz/) 
 
-- platforms: Illumina and ONT. They dont list on their website which ones they have. 
+- platforms: Illumina and ONT. They don't list on their website which ones they have. 
 
 Procotocol available - dont want to go into too much detail but becoems another decision point. Massey offer TruSeq lib prep. Auckland uses the newer kit. (slightly higher input required than the newer chemistry, both are very robust options. Newer one is supposed to be faster and better for more degarded RNA. Higher multiplexing for new kit 384 vs 96 for truseq).
 
 See here for [comparison between Illumina TruSeq stranded and Illumina stranded mRNA kits](https://knowledge.illumina.com/library-preparation/rna-library-prep/library-preparation-rna-library-prep-faq-list/000005928)
 
 
-
-***Non-NGS sequencing around New Zealand:***  
-
-**Lincoln**  
-- DNA sequencing service (Sanger)
-
-**Otago**
-- Genetic Analysis Service (GAS) (Sanger)
 
 ***Non-service platforms around New Zealand:***
 
