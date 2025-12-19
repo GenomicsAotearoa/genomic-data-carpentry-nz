@@ -54,6 +54,10 @@ illumina lib prep 2 pic from llumina Stranded mRNA Prep, Ligation Protocol Docum
 pacbio smrtbell image pacific biosciences Template Preparation and Sequencing Guide P/N 000-710-821-13
 
 
+https://genomicsaotearoa.github.io/introduction-to-shell/
+
+
+
 ::: {.ga-logo-block style="background: #024E7C; text-align:center; padding-top: 0.5rem; padding-bottom: 1rem; padding-left: 1.5rem; padding-right: 1.5rem; border-radius: 8px; max-width: 800px; margin: 0 auto;"}
 
 
