@@ -164,7 +164,7 @@
     "href": "outtakes-notes.html",
     "title": "Outtakes and notes",
     "section": "",
-    "text": "Outtakes and notes\nNon-NGS sequencing around New Zealand:\nLincoln\n- DNA sequencing service (Sanger)\nOtago - Genetic Analysis Service (GAS) (Sanger)\ngo back over genmic data carpentry from the carpentries to see what else they go over.",
+    "text": "Outtakes and notes\nNon-NGS sequencing around New Zealand:\nLincoln\n- DNA sequencing service (Sanger)\nOtago - Genetic Analysis Service (GAS) (Sanger)\ngo back over genmic data carpentry from the carpentries to see what else they go over.\nAssembly QC: biological and technical assessments of the three Cs (contiguity, correctness, completeness). from : https://genomicsaotearoa.github.io/BioinformaticsTrainingProgramme/portfolio.html#long-read-genome-assembly",
     "crumbs": [
       "_outtakes/notes"
     ]
