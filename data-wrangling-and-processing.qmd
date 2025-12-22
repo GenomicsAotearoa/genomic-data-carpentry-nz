@@ -35,7 +35,7 @@ The `.gz` indicates it is a compressed gzip file. For most genomic analyses, you
 
 The `fastq` indicates the file is in [FASTQ format](https://en.wikipedia.org/wiki/FASTQ_format). FASTQ files are a text-based format that stores the raw read sequences, along with a quality score for each base.
 
-Here are the first 4 lines of a fastq file:
+The first 4 lines of a fastq file describe one sequence read:
 
 ![](figures/fastq-reads.png)
 
@@ -123,24 +123,7 @@ GTF file opened in a text editor:
 - fastqc in depth  (use to teach intro shell )
 
 
-
-## Good vs bad genomes
-
-Somewhat colloquially, you will hear geneticists refer to "good" genome assemblies and "bad" genome assemblies. But how do you know if the species you are working on has a good or bad genome, if it has one at all?
-
-There are a few metrics we use
-
-N50
-busco score 
-contig level, scaffold level, chromosome level. 
-
-Show two exmaples screenshot from NCBI of good and bad. (and excellent?)
-
-There also can be a good assembly - highly contiguos sequence (once the reads are assembled into bigger strings we call them contigs), as clsoe to actual chromosoems as possible
-and with it may or may not have good annotations - this is actually describing where all the genomic features are, e.g., gene start and end points, intron and exon coordinates, promoter regions, which genes are protein-coding, pseudogenes, snoRNA, tRNA, CDS, gene_id ; transcript_id ; db_xref 
-
-
-## Good vs bad genomes
+## Good genome, bad genome?
 
 You will often hear geneticists refer (somewhat colloquially) to *“good”* and *“bad”* genome assemblies. But what does this actually mean? And how can you tell whether a species you are working on has a good genome assembly?
 
@@ -148,7 +131,7 @@ In practice, we assess genome assemblies using a few metrics that capture **cont
 
 ***Common genome assembly metrics***
 
-- **Contiguity** is often measured as contig N50, which is the length cutoff for the longest contigs that contain 50% of the total genome length. In this era of long-read genome assemblies, a contig N50 over 1 Mb is generally considered good. [Excerpt taken from PacBio article.](https://www.pacb.com/blog/beyond-contiguity/)
+- **Contiguity** is often measured as contig and scaffold N50, which is the length cutoff for the longest contigs that contain 50% of the total genome length. In this era of long-read genome assemblies, a contig N50 over 1 Mb is generally considered good. [Excerpt taken from PacBio article.](https://www.pacb.com/blog/beyond-contiguity/)
 
   Also see [Wiki entry on N50/L50](https://en.wikipedia.org/wiki/N50,_L50,_and_related_statistics).  
 
@@ -156,12 +139,14 @@ In practice, we assess genome assemblies using a few metrics that capture **cont
 
 Reported as percentages of complete, duplicated, fragmented, and missing genes. <- change to example. 
 
-**Describing assembly level**  
 Genome assemblies can be described more qualitatively as (in order of less to more complete):
 
-  - **Contig-level** – sequences are assembled but not ordered or oriented  
-  - **Scaffold-level** – contigs linked together, often with gaps  
-  - **Chromosome-level** – scaffolds arranged into full chromosomes, often using Hi-C or linkage data
+  - **Contig-level** – sequences are assembled but not ordered or oriented. Often 100-200,000 contigs.  
+  - **Scaffold-level** – contigs linked together, often with gaps. None are placed (i.e., chromosome known) or localised (i.e., orientation on chromosome known).   
+  - **Chromosome-level** – one or more chromosomes complete, but some unplaced scaffolds may be present.  
+  - **Complete genome** - all chromosomes are resolved with no gaps. Not necessarily telomere-to-telomere (T2T).
+
+  See [NCBI Glossary for Assembly level](https://www.ncbi.nlm.nih.gov/datasets/docs/v2/glossary/).
 
 
 
@@ -183,7 +168,70 @@ A *good* genome assembly is typically one that is:
 
 It is important to distinguish between:
 
-**Genome assembly** i.e., the reconstructed DNA sequence itself, and the **Genome annotation**, which is the identification and labelling of genomic features, including gene structures (exons, introns, and CDS), non-coding RNAs (e.g., rRNA, tRNA and lncRNA), and associated identifiers such as `gene_id`, `transcript_id`, and database cross-references.
+**Genome assembly** i.e., the reconstructed DNA sequence itself, and the **Genome annotation**, which is the identification and labelling of genomic features, including gene structures (exons, introns, and CDS), non-coding RNAs (e.g., rRNA, tRNA and lncRNA), and associated identifiers such as gene_id, transcript_id, and database cross-references.
 
 
 A genome can be **well assembled but poorly annotated**, or vice versa.
+
+
+### EXERCISES 🧠🏋️‍♀️ (10 mins):
+
+***How would you describe this genome, based on the data below?***   
+[Human Genome assembly GRCh38.p14](https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_000001405.40/)
+
+![](figures/genome-assembly-human-01.png)
+Note: RefSeq is the curated database. GenBank is the non-curated, anyone-can-submit-to database.
+
+![](figures/genome-assembly-human-02.png)
+
+
+Jot down your thoughts before looking at the solution below.
+
+::: {.callout-note collapse="true"}
+# Human genome solution:
+
+Chromosome level - very high quality.
+busco score - very close to complete. 
+very good genome
+
+number of extra scaffolds and contigs is very low (470 s / 996 c - it can be thousands of extra so hundreds is pretty good!)
+
+scaffold and contig N50. describe these!
+
+:::
+
+\
+
+***How would you describe this genome, based on the data below?***  
+[*Nematostella vectensis* (sea anemone) Genome assembly ASM20922v1](https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_000209225.1/)
+
+![](figures/genome-assembly-nemvec-01.png)
+
+![](figures/genome-assembly-nemvec-02.png)
+
+Jot down your thoughts before looking at the solution below.
+
+::: {.callout-note collapse="true"}
+# Sea anemone solution:
+
+scaffold level - medium quality. but the N50 is below 1mb, at 472.6kb scaffold. not great! quite fragmented.
+
+busco score pretty good despite lack of placed scaffolds. contig/scaffold N50 - high enough that most genes are resolved. 
+
+assembly itself not amazing, but annotation is probably good enough for gene level compariosn with other species. 
+
+Larger scale structural variants and synteny difficult or erroneous to resolve. -> is this true? 
+
+::: {.callout-important collapse="true"}
+# Extra for experts
+
+Here is the original paper for the curious: [Putnam et al. 2007.](https://www.science.org/doi/10.1126/science.1139158)
+
+The authors claim the genome reveals *"ancestral eumetazoan genomic organization"*. How did they assess this and what conclusion did they make about the eumetazoan ancestor resemblance to modern vertebrates, sea anemones and prokaryotes? Do you think they had a 'good' enough genome to assess this?  
+
+::: 
+
+\
+
+:::
+

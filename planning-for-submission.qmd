@@ -200,7 +200,10 @@ Choosing a ***read length*** is a ***trade-off between cost, and the amount of i
 
 \
 
+::: {.callout-tip}
 
+
+# EXERCISE #1 🧠🏋️‍♀️ (10 mins)
 ***Example RNAseq scenario:*** 
 
 You are working on a mouse model of cancer genomics. You want to do differential gene expression analysis to compare tumour samples to non-cancerous control tissue, to see if you can find genes that are up or down regulated in the cancerous tissue. You have 40 RNA samples, and since your species has a high-quality reference genome and annotation (i.e., mouse: Mus musculus), you know you have a "good" genome assembly and annotations to map your sequencing data back to (more on "good" genomes later!). The mouse genome is ~2.7 Gb (= 2,700,000,000 bp), diploid, with ~20,000 protein-coding genes.
@@ -283,6 +286,9 @@ Note: the maximum output stated for the flow cell is under optimal conditions, s
 
 Congratulations! You are now ready to sequence your RNAseq samples.  
 
+
+:::
+
 \ 
 
 
@@ -313,6 +319,10 @@ Stick mostly to decision points - not a huge lecture/tutorial on genome/ DNA bio
 
 \
 
+
+::: {.callout-tip}
+
+# EXERCISE #2 🧠🏋️‍♀️ (10 mins)
 ***Example DNAseq scenario:***
 
 You are want to *de novo* assemble the genome of the New Zealand swamp maire (*Syzygium maire*), a critically-endangered, endemic myrtaceae species, which is under threat from the pathogen myrtle rust. 
@@ -325,14 +335,10 @@ Based on genome sizes of related Syzygium and Myrtaceae species (e.g., *Syzygium
 # Which long-read sequencing platform should you chose?
 
 There are two long-read platforms -- PacBio and ONT.
- **PacBio better for larger genomes than ONT? Ask someone who knows this to fill in.**
+ **PacBio better for throughput (amount of reads you can get back) and for accuracy than  than ONT? Ask someone who knows this to fill in.**
 
 
 :::
-
-
-
-
 
 
 
@@ -350,9 +356,9 @@ Answer: cost, accuracy at SNP level. dont need to resolve full genomes as that w
 
 :::
 
+\
 
-
-
+:::
 
 
 >Note 1: Batch variation. Are you doing all your samples in one batch, or will you have multiple batches? Technical variation can occur, so you may want to wait and do all samples at once on one larger flow cell, or make sure you randomise samples across sequencing batches. 

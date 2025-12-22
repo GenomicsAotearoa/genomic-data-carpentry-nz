@@ -92,7 +92,9 @@ These guidelines set to provide a standard through which to improve digital asse
 - **I**nteroperability  
 - **R**euse  
 
-Open science advocates have embraced this framework, while others critise its lack of protection of data, for not considering the rights and interest of those that should hold governance over data, in particular, indigenous peoples. In response to this, the CARE framework has also been proposed by [Global Indigenous Data Analysis](https://www.gida-global.org/care), to complement the existing FAIR principles:
+Part of conducting FAIR research is having a **reproducible** research pipeline. One way this can be done is by documenting your work on a version control system like GitHub. See our [GA workshop for more on Reproducibility with Git and Quarto](https://genomicsaotearoa.github.io/BioinformaticsTrainingProgramme/portfolio.html#reproducibility-with-git-and-quarto).
+
+Open science advocates have embraced this FAIR framework, while others critise its lack of protection of data, for not considering the rights and interest of those that should hold governance over data, in particular, indigenous peoples. In response to this, the CARE framework has also been proposed by [Global Indigenous Data Analysis](https://www.gida-global.org/care), to complement the existing FAIR principles:
 
 - **C**ollective benefit  
 - **A**uthority to control  
@@ -139,12 +141,11 @@ Here we will not go into detail on how to either download or upload data to the 
 - You may want to start with making a [BioProject](https://www.ncbi.nlm.nih.gov/bioproject/) for your specific project, which will link all of your sequencing data together under one umbrella (as a general rule, 1 publication = 1 BioProject).  
 
 - You'll need to also make [BioSample](https://www.ncbi.nlm.nih.gov/biosample) submission/s, which will be linked to the matching sequence data in the SRA, and all houses under one BioProject accession number. BioSamples describe the unique biological attributes of your sample (e.g, species, sex, age, location, tissue). This is often (but not strictly) 1 BioSample = 1 library. 
-
-- 
+ 
 
 Equally, if you are downloading data from the SRA, you can make use of BioProject and BioSample accessions to identify and orientate yourself to the data. 
 
- SHOW EXAMPLE screenshot of bipproject example, biosampler ecxample, SRA example. 
+SHOW EXAMPLE screenshot of bipproject example, biosampler ecxample, SRA example. 
 
 
-This is not the only public repository of sequence reads, some other examples include: [European Nucleotide Archive (ENA)](https://www.ebi.ac.uk/ena/browser/home) and the DNA data bank of Japan [DDBJ Sequence Read Archive (DRA)](https://www.ddbj.nig.ac.jp/dra/index-e.html), 
+This is not the only public repository of sequence reads, some other examples include: [European Nucleotide Archive (ENA)](https://www.ebi.ac.uk/ena/browser/home) and the DNA data bank of Japan [DDBJ Sequence Read Archive (DRA)](https://www.ddbj.nig.ac.jp/dra/index-e.html). These data banks are linked together via the [International Nucleotide Sequence Database Collaboration](https://www.insdc.org/). NCBI also details some of the [collaborative projects here](https://www.ncbi.nlm.nih.gov/genbank/collab/) (e.g., The Taxonomy Project, The Feature Table).

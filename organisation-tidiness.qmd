@@ -14,7 +14,7 @@ Organising a project that includes sequencing involves many components. There’
 When we think about the data for a sequencing project, we often start by thinking about the sequencing data that we get back from the sequencing centre. However, equally or more important is the data you’ve generated about the sequences before it ever goes to the sequencing centre. This is the data about the data, often called the metadata. Without the information about what you sequenced, the sequence data itself is useless.
 
 ::: {.callout-warning appearance="minimal"}
-# EXERCISE 🧠🏋️‍♀️ - 3 mins
+# EXERCISE 🧠🏋️‍♀️ (3 mins)
 
 What kind of data and information have you generated (or think you will generate) about your samples that can be considered metadata? How do you store this information?
 
@@ -48,7 +48,7 @@ The cardinal rules of using spreadsheet programs for data:
 ![](figures/organisation-01.png)
 
 ::: {.callout-warning appearance="minimal"}
-# EXERCISE 🧠🏋️‍♀️ -- 2 mins
+# EXERCISE 🧠🏋️‍♀️ (2 mins)
 
 Above is some potential spreadsheet data generated about a sequencing experiment. 
 

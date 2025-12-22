@@ -558,6 +558,16 @@ Why do you think size selection is such an important step? What would happen if 
 </table>
 <p><br>
 </p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+EXERCISE #1 🧠🏋️‍♀️ (10 mins)
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p><strong><em>Example RNAseq scenario:</em></strong></p>
 <p>You are working on a mouse model of cancer genomics. You want to do differential gene expression analysis to compare tumour samples to non-cancerous control tissue, to see if you can find genes that are up or down regulated in the cancerous tissue. You have 40 RNA samples, and since your species has a high-quality reference genome and annotation (i.e., mouse: Mus musculus), you know you have a “good” genome assembly and annotations to map your sequencing data back to (more on “good” genomes later!). The mouse genome is ~2.7 Gb (= 2,700,000,000 bp), diploid, with ~20,000 protein-coding genes.</p>
 <p>You are particularly interested in alternative splicing and novel splice junctions, as you suspect that cancer-associated genes are often regulated at the isoform level.</p>
@@ -668,6 +678,8 @@ Calculation: 1.2 billion reads x 100 (bp) x 2 (PE) = 240 Gb (240 gigabase pairs,
 </div>
 </div>
 <p>Congratulations! You are now ready to sequence your RNAseq samples.</p>
+</div>
+</div>
 <p>&nbsp;</p>
 <p>Now let’s look at <strong>DNA sequencing</strong> in more detail.</p>
 <p>DNA sequencing may refer to whole genome, whole exome, or targeted sequencing approaches. <strong>FILL in a bit more here by someone who knows DNAseq better</strong></p>
@@ -733,12 +745,22 @@ Calculation: 1.2 billion reads x 100 (bp) x 2 (PE) = 240 Gb (240 gigabase pairs,
 <p>Stick mostly to decision points - not a huge lecture/tutorial on genome/ DNA biology. Assume learners haev a genetics background - they just have not yet translated that knowledge into a practical application of NGS.</p>
 <p><br>
 </p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+EXERCISE #2 🧠🏋️‍♀️ (10 mins)
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p><strong><em>Example DNAseq scenario:</em></strong></p>
 <p>You are want to <em>de novo</em> assemble the genome of the New Zealand swamp maire (<em>Syzygium maire</em>), a critically-endangered, endemic myrtaceae species, which is under threat from the pathogen myrtle rust.</p>
 <p>Based on genome sizes of related Syzygium and Myrtaceae species (e.g., <em>Syzygium aromaticum</em> ~370 Mb, <em>S. grande</em> ~405 Mb), you expect the <em>S. maire</em> genome to be on the order of ~350–400 Mb.</p>
 <p><em>De novo</em> genome assembly requires long read sequencing to resolve the longest contiguous sequences possible (ideally the full chromosome length, but that is often not easy or possible to achieve!).</p>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -747,16 +769,16 @@ Which long-read sequencing platform should you chose?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-12" class="callout-12-contents callout-collapse collapse show">
+<div id="callout-13" class="callout-13-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
-<p>There are two long-read platforms – PacBio and ONT. <strong>PacBio better for larger genomes than ONT? Ask someone who knows this to fill in.</strong></p>
+<p>There are two long-read platforms – PacBio and ONT. <strong>PacBio better for throughput (amount of reads you can get back) and for accuracy than than ONT? Ask someone who knows this to fill in.</strong></p>
 </div>
 </div>
 </div>
 <p><a href="https://doi.org/10.1007/s11295-024-01659-5">Balkwill <em>et al.</em> 2024. Tree Genetics &amp; Genomes.</a></p>
 <p>The authors also used Illumina sequencing in this paper. What did they use it for? Why do you think they chose to do Illumina sequencing for these samples rather than PacBio?</p>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -765,11 +787,15 @@ Solutions:
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Answer: 30 x samples at low coverage for resequencing.<br>
 Answer: cost, accuracy at SNP level. dont need to resolve full genomes as that was not their question.</p>
 </div>
+</div>
+</div>
+<p><br>
+</p>
 </div>
 </div>
 <blockquote class="blockquote">
