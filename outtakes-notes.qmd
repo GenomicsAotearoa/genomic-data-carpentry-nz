@@ -18,3 +18,8 @@ go back over genmic data carpentry from the carpentries to see what else they go
 
 Assembly QC: biological and technical assessments of the three Cs (contiguity, correctness, completeness). from : https://genomicsaotearoa.github.io/BioinformaticsTrainingProgramme/portfolio.html#long-read-genome-assembly
 
+
+
+why would you chose internantional seq options over nz, cost, local. 
+
+intro to bioinformatics.

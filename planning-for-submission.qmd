@@ -11,11 +11,11 @@ You've done your experiment, extracted some DNA or RNA, and want to sequence it,
 
 Your DNA or RNA samples will need to pass certain quality cut-offs for sequencing, which the sequencing facility will ask for and will have thresholds they require upon submission (e.g., see the [Otago Genomics Facility requirements here](https://www.otago.ac.nz/genomics/project-sample-info/requirements)). After you have done your extractions in the lab, you should perform QC with:
 
-1. A spectrophotometer (e.g., NanoDrop), which will give you a good indication of the purity/contamination of your sample through 260/280 and 260/230 ratios. The NanoDrop is not a very reliable instrument for concentration of your nucleic acid.
+1. A spectrophotometer (e.g., NanoDrop, DeNovix), which will give you a good indication of the purity/contamination of your sample through 260/280 and 260/230 ratios. This method is not very reliable for determining concentration of your nucleic acid.
 
-2. A fluorescent-based quantification method (e.g, Qubit), which will give you a very accurate indication of concentration of your nucleic acid (but not of any contaminants)
+2. A fluorescent-based quantification method (e.g., Qubit), which will give you a very accurate indication of concentration of your nucleic acid (but not of any contaminants).
 
-3.  A fragment analysis instrument (e.g., Agilent 2100 Bioanalyzer, Agilent 5300 Fragment Analyzer or Agilent TapeStation), which you can think of like a high tech agarose gel. It will give you a good indication of your 28S/18S ratio for RNA (this is used to determine the overall RIN - RNA integrity number) or your fragment size distribution for DNA. 
+3.  A fragment analysis instrument (e.g., Agilent 2100 Bioanalyzer, Agilent 5300 Fragment Analyzer or Agilent TapeStation), which you can think of like a high-tech agarose gel. It will give you a good indication of your 28S/18S ratio for RNA (this is used to determine the overall RIN - RNA integrity number) or your fragment size distribution for DNA. 
 
 
 Together, these will give you an almost complete picture of your sample, ready for sequencing. Note that if your samples are below threshold quality, there are protocols that can allow for lower quality or degraded samples. Ideally, this should only be done if there is no option to re-extract, re-purify or repeat the experiment. 
@@ -203,7 +203,7 @@ Choosing a ***read length*** is a ***trade-off between cost, and the amount of i
 ::: {.callout-tip}
 
 
-# EXERCISE #1 🧠🏋️‍♀️ (10 mins)
+# EXERCISE #1 🧠🏋️‍♀️ (15 mins)
 ***Example RNAseq scenario:*** 
 
 You are working on a mouse model of cancer genomics. You want to do differential gene expression analysis to compare tumour samples to non-cancerous control tissue, to see if you can find genes that are up or down regulated in the cancerous tissue. You have 40 RNA samples, and since your species has a high-quality reference genome and annotation (i.e., mouse: Mus musculus), you know you have a "good" genome assembly and annotations to map your sequencing data back to (more on "good" genomes later!). The mouse genome is ~2.7 Gb (= 2,700,000,000 bp), diploid, with ~20,000 protein-coding genes.
@@ -423,3 +423,9 @@ other
 stuff on submission process, show example form ?
 
 how do you get data back from them ? how do they transfer it? 
+
+
+OGF gives you data back demultiplexed. I assume all other services in NZ do this too?
+
+Do anyone use basespace to share reads with people?
+

@@ -28,12 +28,15 @@ This is a beginner-friendly workshop, designed to get you started with the world
 ## Glossary
 
 | Term  | Definition |
-|------|------------|
+|----|--------------|
+| Adapter  | Short synthetic DNA sequence ligated to the DNA molecule during library prep which allows the molecule to bind to the flow cell during sequencing and also provides a primer binding site |
 | bp   | Base pair |
 | HCS   | High Capacity Storage |
 | HPC   | High Performance Computing |
+| Index | Also known as barcode. Short unique sequence added to each DNA molecule in one library, allowing the identification of that library/sample and thereby enabling pooling of the libraries (one run = cheaper). |
 | Mb   | Megabase pair (1,000,000 bp) |
 | MB   | Megabyte |
+| Multiplexing   | Sequencing multiple samples simultaneously in one run by combining libraries into one pool. Samples (i.e., libraries) are de-multiplexed (separated) *in silico* usually by the technician, based on unique indices.  |
 | Gb   | Gigabase pair (1,000,000,000 bp) |
 | GB   | Gigabyte |
 | NGS  | Next-generation sequencing |
@@ -43,19 +46,34 @@ This is a beginner-friendly workshop, designed to get you started with the world
 
 ## Attribution
 
-Copyright 
+Parts of this workshop were adapted from and inspired by content from The Carpentries [Data Carpentry lessons on Genomics.](https://datacarpentry.org/lessons/#genomics)  
 
-https://datacarpentry.github.io/organization-genomics/  
-https://datacarpentry.github.io/wrangling-genomics/
+::: {.callout-note collapse="true"}
+# Copyright information:
 
-illumina lib prep 1 pic from Illumina Stranded mRNA Prep, Ligation Data Sheet. M-GL-02143 v1.0
+All Carpentries instructional material is made available under the Creative Commons Attribution license CC BY 4.0. The material in this workshop is not endorsed by the Carpentries and has been adapted by Genomics Aotearoa for our own teaching purposes.
 
-illumina lib prep 2 pic from llumina Stranded mRNA Prep, Ligation Protocol Document # 1000000124518 v04
-pacbio smrtbell image pacific biosciences Template Preparation and Sequencing Guide P/N 000-710-821-13
+In this workshop, the following lessons were adapted from The Carpentries Data Carpentry in the manner stated below:
+
+- [Organisation and tidy data](organisation-tidiness.qmd) section has **re-used material** from [Project Organization and Management for Genomics.](https://datacarpentry.github.io/organization-genomics/)  
+
+- [Data Wrangling and Processing for Genomics](https://datacarpentry.github.io/wrangling-genomics/). Currently not using this workshop but likely to re-use.  
 
 
-https://genomicsaotearoa.github.io/introduction-to-shell/
+:::
 
+Other material used in this workshop:  
+
+- Illumina library prep molecular workflow diagram in [Planning for submission](planning-for-submission.qmd) from Illumina Stranded mRNA Prep, Ligation Data Sheet. M-GL-02143 v1.0  
+- Bioanalyzer trace of final mRNA library in [Planning for submission](planning-for-submission.qmd) from Illumina Stranded mRNA Prep, Ligation Protocol Document # 1000000124518 v04.  
+- PacBio SMRTbell adapters image in [Planning for submission](planning-for-submission.qmd) from Template Preparation and Sequencing Guide P/N 000-710-821-13.  
+- Material from our [Introduction to Shell](https://genomicsaotearoa.github.io/introduction-to-shell/) workshop is re-used in the [Genomic data wrangling and processing](data-wrangling-and-processing.qmd) section.  
+
+
+Definitions:   
+
+- **Re-used material:** Almost word-for-word, including images, with minor wording or styling modifications.   
+- **Minimally-adapted material:** Inspired by stylistic choices and general workflow, but material is primarily developed by Genomics Aotearoa. 
 
 
 ::: {.ga-logo-block style="background: #024E7C; text-align:center; padding-top: 0.5rem; padding-bottom: 1rem; padding-left: 1.5rem; padding-right: 1.5rem; border-radius: 8px; max-width: 800px; margin: 0 auto;"}
@@ -65,7 +83,7 @@ https://genomicsaotearoa.github.io/introduction-to-shell/
 
 [![](theme-images/GA-Logo-BioinformaticsTraining-white.png){width=80%}](https://genomicsaotearoa.github.io/BioinformaticsTrainingProgramme/)
 
-Made with ❤️ and 
+Made with [❤️](https://docs.carpentries.org/policies/coc/) and 
 [Quarto](https://genomicsaotearoa.github.io/reproducibility_with_git_and_quarto/quarto_overview.html)
 
 :::

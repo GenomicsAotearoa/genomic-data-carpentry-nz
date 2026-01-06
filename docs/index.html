@@ -181,6 +181,9 @@ ul.task-list li input[type="checkbox"] {
     </div>
 <!-- main -->
 <main class="content column-body" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<div class="workshop-banner">
+  WORK IN PROGRESS
+</div>
 
 
 
@@ -216,6 +219,10 @@ ul.task-list li input[type="checkbox"] {
 <section id="glossary" class="level2">
 <h2 class="anchored" data-anchor-id="glossary">Glossary</h2>
 <table class="caption-top table">
+<colgroup>
+<col style="width: 22%">
+<col style="width: 77%">
+</colgroup>
 <thead>
 <tr class="header">
 <th>Term</th>
@@ -224,16 +231,24 @@ ul.task-list li input[type="checkbox"] {
 </thead>
 <tbody>
 <tr class="odd">
+<td>Adapter</td>
+<td>Short synthetic DNA sequence ligated to the DNA molecule during library prep which allows the molecule to bind to the flow cell during sequencing and also provides a primer binding site</td>
+</tr>
+<tr class="even">
 <td>bp</td>
 <td>Base pair</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>HCS</td>
 <td>High Capacity Storage</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>HPC</td>
 <td>High Performance Computing</td>
+</tr>
+<tr class="odd">
+<td>Index</td>
+<td>Also known as barcode. Short unique sequence added to each DNA molecule in one library, allowing the identification of that library/sample and thereby enabling pooling of the libraries (one run = cheaper).</td>
 </tr>
 <tr class="even">
 <td>Mb</td>
@@ -244,18 +259,22 @@ ul.task-list li input[type="checkbox"] {
 <td>Megabyte</td>
 </tr>
 <tr class="even">
+<td>Multiplexing</td>
+<td>Sequencing multiple samples simultaneously in one run by combining libraries into one pool. Samples (i.e., libraries) are de-multiplexed (separated) <em>in silico</em> usually by the technician, based on unique indices.</td>
+</tr>
+<tr class="odd">
 <td>Gb</td>
 <td>Gigabase pair (1,000,000,000 bp)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>GB</td>
 <td>Gigabyte</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>NGS</td>
 <td>Next-generation sequencing</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>SE / PE</td>
 <td>Single-end / Paired-end</td>
 </tr>
@@ -264,17 +283,49 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="attribution" class="level2">
 <h2 class="anchored" data-anchor-id="attribution">Attribution</h2>
-<p>Copyright</p>
-<p>https://datacarpentry.github.io/organization-genomics/<br>
-https://datacarpentry.github.io/wrangling-genomics/</p>
-<p>illumina lib prep 1 pic from Illumina Stranded mRNA Prep, Ligation Data Sheet. M-GL-02143 v1.0</p>
-<p>illumina lib prep 2 pic from llumina Stranded mRNA Prep, Ligation Protocol Document # 1000000124518 v04 pacbio smrtbell image pacific biosciences Template Preparation and Sequencing Guide P/N 000-710-821-13</p>
-<p>https://genomicsaotearoa.github.io/introduction-to-shell/</p>
+<p>Parts of this workshop were adapted from and inspired by content from The Carpentries <a href="https://datacarpentry.org/lessons/#genomics">Data Carpentry lessons on Genomics.</a></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Copyright information:
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>All Carpentries instructional material is made available under the Creative Commons Attribution license CC BY 4.0. The material in this workshop is not endorsed by the Carpentries and has been adapted by Genomics Aotearoa for our own teaching purposes.</p>
+<p>In this workshop, the following lessons were adapted from The Carpentries Data Carpentry in the manner stated below:</p>
+<ul>
+<li><p><a href="./organisation-tidiness.html">Organisation and tidy data</a> section has <strong>re-used material</strong> from <a href="https://datacarpentry.github.io/organization-genomics/">Project Organization and Management for Genomics.</a></p></li>
+<li><p><a href="https://datacarpentry.github.io/wrangling-genomics/">Data Wrangling and Processing for Genomics</a>. Currently not using this workshop but likely to re-use.</p></li>
+</ul>
+</div>
+</div>
+</div>
+<p>Other material used in this workshop:</p>
+<ul>
+<li>Illumina library prep molecular workflow diagram in <a href="./planning-for-submission.html">Planning for submission</a> from Illumina Stranded mRNA Prep, Ligation Data Sheet. M-GL-02143 v1.0<br>
+</li>
+<li>Bioanalyzer trace of final mRNA library in <a href="./planning-for-submission.html">Planning for submission</a> from Illumina Stranded mRNA Prep, Ligation Protocol Document # 1000000124518 v04.<br>
+</li>
+<li>PacBio SMRTbell adapters image in <a href="./planning-for-submission.html">Planning for submission</a> from Template Preparation and Sequencing Guide P/N 000-710-821-13.<br>
+</li>
+<li>Material from our <a href="https://genomicsaotearoa.github.io/introduction-to-shell/">Introduction to Shell</a> workshop is re-used in the <a href="./data-wrangling-and-processing.html">Genomic data wrangling and processing</a> section.</li>
+</ul>
+<p>Definitions:</p>
+<ul>
+<li><strong>Re-used material:</strong> Almost word-for-word, including images, with minor wording or styling modifications.<br>
+</li>
+<li><strong>Minimally-adapted material:</strong> Inspired by stylistic choices and general workflow, but material is primarily developed by Genomics Aotearoa.</li>
+</ul>
 </section>
 <section id="section" class="level2 no-underline-h2 ga-logo-block" style="background: #024E7C; text-align:center;">
 <h2 class="no-underline-h2 anchored" style="background: #024E7C; text-align:center;" data-anchor-id="section"></h2>
 <p><a href="https://genomicsaotearoa.github.io/BioinformaticsTrainingProgramme/"><img src="theme-images/GA-Logo-BioinformaticsTraining-white.png" class="img-fluid" style="width:80.0%"></a></p>
-<p>Made with ❤️ and <a href="https://genomicsaotearoa.github.io/reproducibility_with_git_and_quarto/quarto_overview.html">Quarto</a></p>
+<p>Made with <a href="https://docs.carpentries.org/policies/coc/">❤️</a> and <a href="https://genomicsaotearoa.github.io/reproducibility_with_git_and_quarto/quarto_overview.html">Quarto</a></p>
 </section>
 
 

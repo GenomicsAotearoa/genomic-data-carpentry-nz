@@ -178,7 +178,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#fastqc---quality-scoring-of-raw-reads" id="toc-fastqc---quality-scoring-of-raw-reads" class="nav-link" data-scroll-target="#fastqc---quality-scoring-of-raw-reads">FASTQC - quality scoring of raw reads</a></li>
   <li><a href="#good-genome-bad-genome" id="toc-good-genome-bad-genome" class="nav-link" data-scroll-target="#good-genome-bad-genome">Good genome, bad genome?</a>
   <ul class="collapse">
-  <li><a href="#exercises-10-mins" id="toc-exercises-10-mins" class="nav-link" data-scroll-target="#exercises-10-mins">EXERCISES 🧠🏋️‍♀️ (10 mins):</a></li>
+  <li><a href="#exercises-6-mins" id="toc-exercises-6-mins" class="nav-link" data-scroll-target="#exercises-6-mins">EXERCISES 🧠🏋️‍♀️ (6 mins):</a></li>
   </ul></li>
   </ul></li>
   </ul>
@@ -186,6 +186,9 @@ ul.task-list li input[type="checkbox"] {
     </div>
 <!-- main -->
 <main class="content column-body" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<div class="workshop-banner">
+  WORK IN PROGRESS
+</div>
 
 
 
@@ -200,7 +203,7 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li>For most bioinformatics tools, there are no graphical interfaces. <strong>If you want to work in metagenomics or genomics, you’re going to need to use the CLI/ shell.</strong><br>
 </li>
-<li>The shell gives you power. The command line allows you to work more efficiently. Tasks that are repetitive (e.g.&nbsp;renaming hundreds of files) can be automated. Tasks that are tedious (e.g.&nbsp;testing a range of input parameters) can be simplified.<br>
+<li>The shell gives you power and allows you to work more efficiently. Tasks that are repetitive (e.g.&nbsp;renaming hundreds of files) can be automated. Tasks that are tedious (e.g.&nbsp;testing a range of input parameters) can be simplified.<br>
 </li>
 <li>To use remote computers or cloud computing, you often need to use the shell.</li>
 </ul>
@@ -278,7 +281,8 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 </tbody>
 </table>
-<p>bed file?</p>
+<p><br>
+</p>
 <p><strong>Real examples:</strong></p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
@@ -365,7 +369,7 @@ GTF
 <p>Reported as percentages of complete, duplicated, fragmented, and missing genes. &lt;- change to example.</p>
 <p>Genome assemblies can be described more qualitatively as (in order of less to more complete):</p>
 <ul>
-<li><strong>Contig-level</strong> – sequences are assembled but not ordered or oriented. Often 100-200,000 contigs.<br>
+<li><strong>Contig-level</strong> – sequences are assembled but not ordered or oriented. Often can be thousands to hundreds of thousands of contigs.<br>
 </li>
 <li><strong>Scaffold-level</strong> – contigs linked together, often with gaps. None are placed (i.e., chromosome known) or localised (i.e., orientation on chromosome known).<br>
 </li>
@@ -374,6 +378,8 @@ GTF
 <li><strong>Complete genome</strong> - all chromosomes are resolved with no gaps. Not necessarily telomere-to-telomere (T2T).</li>
 </ul>
 <p>See <a href="https://www.ncbi.nlm.nih.gov/datasets/docs/v2/glossary/">NCBI Glossary for Assembly level</a>.</p>
+<p><br>
+</p>
 <p><strong><em>What do we mean by a “good” genome?</em></strong></p>
 <p>A <em>good</em> genome assembly is typically one that is:</p>
 <ul>
@@ -384,24 +390,36 @@ Most expected genes are present (high BUSCO completeness).</p></li>
 <li><p><strong>Structurally accurate</strong><br>
 Large-scale errors such as mis-joins or collapsed repeats are minimised.</p></li>
 </ul>
+<p><br>
+</p>
 <p><strong><em>Assembly quality vs annotation quality</em></strong></p>
 <p>It is important to distinguish between:</p>
 <p><strong>Genome assembly</strong> i.e., the reconstructed DNA sequence itself, and the <strong>Genome annotation</strong>, which is the identification and labelling of genomic features, including gene structures (exons, introns, and CDS), non-coding RNAs (e.g., rRNA, tRNA and lncRNA), and associated identifiers such as gene_id, transcript_id, and database cross-references.</p>
 <p>A genome can be <strong>well assembled but poorly annotated</strong>, or vice versa.</p>
-<section id="exercises-10-mins" class="level3">
-<h3 class="anchored" data-anchor-id="exercises-10-mins">EXERCISES 🧠🏋️‍♀️ (10 mins):</h3>
-<p><strong><em>How would you describe this genome, based on the data below?</em></strong><br>
-<a href="https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_000001405.40/">Human Genome assembly GRCh38.p14</a></p>
+<section id="exercises-6-mins" class="level3">
+<h3 class="anchored" data-anchor-id="exercises-6-mins">EXERCISES 🧠🏋️‍♀️ (6 mins):</h3>
+<p><strong><em>How would you describe these genomes? Look at the assembly stats and make some notes of how ‘good’ you think each assembly is.</em></strong></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+EXERCISE #1 🧠🏋️‍♀️ (3 mins) - Human Genome Assembly
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><a href="https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_000001405.40/">Human Genome assembly GRCh38.p14</a></p>
 <p><img src="figures/genome-assembly-human-01.png" class="img-fluid"> Note: RefSeq is the curated database. GenBank is the non-curated, anyone-can-submit-to database.</p>
 <p><img src="figures/genome-assembly-human-02.png" class="img-fluid"></p>
-<p>Jot down your thoughts before looking at the solution below.</p>
+<p>Jot down your thoughts before looking at the solution below:</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Human genome solution:
+Human genome solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -415,29 +433,42 @@ Human genome solution:
 </div>
 <p><br>
 </p>
-<p><strong><em>How would you describe this genome, based on the data below?</em></strong><br>
-<a href="https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_000209225.1/"><em>Nematostella vectensis</em> (sea anemone) Genome assembly ASM20922v1</a></p>
-<p><img src="figures/genome-assembly-nemvec-01.png" class="img-fluid"></p>
-<p><img src="figures/genome-assembly-nemvec-02.png" class="img-fluid"></p>
-<p>Jot down your thoughts before looking at the solution below.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+</div>
+</div>
+<p><br>
+</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Sea anemone solution:
+EXERCISE #2 🧠🏋️‍♀️ (3 mins) - Sea Anemone Genome Assembly
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><a href="https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_000209225.1/"><em>Nematostella vectensis</em> (sea anemone) Genome assembly ASM20922v1</a></p>
+<p><img src="figures/genome-assembly-nemvec-01.png" class="img-fluid"></p>
+<p><img src="figures/genome-assembly-nemvec-02.png" class="img-fluid"></p>
+<p>Jot down your thoughts before looking at the solution below:</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Sea anemone solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>scaffold level - medium quality. but the N50 is below 1mb, at 472.6kb scaffold. not great! quite fragmented.</p>
 <p>busco score pretty good despite lack of placed scaffolds. contig/scaffold N50 - high enough that most genes are resolved.</p>
 <p>assembly itself not amazing, but annotation is probably good enough for gene level compariosn with other species.</p>
 <p>Larger scale structural variants and synteny difficult or erroneous to resolve. -&gt; is this true?</p>
 <div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -446,16 +477,18 @@ Extra for experts
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Here is the original paper for the curious: <a href="https://www.science.org/doi/10.1126/science.1139158">Putnam et al.&nbsp;2007.</a></p>
 <p>The authors claim the genome reveals <em>“ancestral eumetazoan genomic organization”</em>. How did they assess this and what conclusion did they make about the eumetazoan ancestor resemblance to modern vertebrates, sea anemones and prokaryotes? Do you think they had a ‘good’ enough genome to assess this?</p>
 </div>
 </div>
 </div>
+</div>
+</div>
+</div>
 <p><br>
 </p>
-</div>
 </div>
 </div>
 

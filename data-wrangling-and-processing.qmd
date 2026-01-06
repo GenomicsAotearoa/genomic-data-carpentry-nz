@@ -14,7 +14,7 @@ Command line interface (CLI) and graphic user interface (GUI) are different ways
 There are several reasons to learn how to use the CLI:
 
 - For most bioinformatics tools, there are no graphical interfaces. **If you want to work in metagenomics or genomics, you're going to need to use the CLI/ shell.**  
-- The shell gives you power. The command line allows you to work more efficiently. Tasks that are repetitive (e.g. renaming hundreds of files) can be automated. Tasks that are tedious (e.g. testing a range of input parameters) can be simplified.  
+- The shell gives you power and allows you to work more efficiently. Tasks that are repetitive (e.g. renaming hundreds of files) can be automated. Tasks that are tedious (e.g. testing a range of input parameters) can be simplified.  
 - To use remote computers or cloud computing, you often need to use the shell.
 
 Here we will show you a quick introduction to using the shell to quality check your raw reads. For more on the shell, see our workshops on [Introduction to Shell](https://genomicsaotearoa.github.io/BioinformaticsTrainingProgramme/portfolio.html#introduction-to-shell-for-bioinformatics) and 
@@ -86,8 +86,7 @@ You should also be aware that the extension on the file type is largely there ju
 | `.vcf`    | Variant Call Format     | Contains sequence variants called relative to a reference genome. Split into two sections; the header information and the records. See our [Intro R workshop, section on VCF files](https://genomicsaotearoa.github.io/Introduction-to-R/02-data-prelude/#how-variant-calls-are-stored-in-vcf-files).  |
 | `.gtf`    | General Feature Format    | Contains genome annotation data.   |
 
-
-bed file?
+\
 
 **Real examples:**
 
@@ -141,14 +140,14 @@ Reported as percentages of complete, duplicated, fragmented, and missing genes. 
 
 Genome assemblies can be described more qualitatively as (in order of less to more complete):
 
-  - **Contig-level** – sequences are assembled but not ordered or oriented. Often 100-200,000 contigs.  
+  - **Contig-level** – sequences are assembled but not ordered or oriented. Often can be thousands to hundreds of thousands of contigs.  
   - **Scaffold-level** – contigs linked together, often with gaps. None are placed (i.e., chromosome known) or localised (i.e., orientation on chromosome known).   
   - **Chromosome-level** – one or more chromosomes complete, but some unplaced scaffolds may be present.  
   - **Complete genome** - all chromosomes are resolved with no gaps. Not necessarily telomere-to-telomere (T2T).
 
   See [NCBI Glossary for Assembly level](https://www.ncbi.nlm.nih.gov/datasets/docs/v2/glossary/).
 
-
+\
 
 ***What do we mean by a “good” genome?***
 
@@ -163,6 +162,7 @@ A *good* genome assembly is typically one that is:
 - **Structurally accurate**  
   Large-scale errors such as mis-joins or collapsed repeats are minimised.
 
+\
 
 ***Assembly quality vs annotation quality***
 
@@ -174,9 +174,14 @@ It is important to distinguish between:
 A genome can be **well assembled but poorly annotated**, or vice versa.
 
 
-### EXERCISES 🧠🏋️‍♀️ (10 mins):
+### EXERCISES 🧠🏋️‍♀️ (6 mins):
 
-***How would you describe this genome, based on the data below?***   
+***How would you describe these genomes? Look at the assembly stats and make some notes of how 'good' you think each assembly is.***   
+
+
+::: {.callout-tip}
+
+# EXERCISE #1 🧠🏋️‍♀️ (3 mins) - Human Genome Assembly
 [Human Genome assembly GRCh38.p14](https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_000001405.40/)
 
 ![](figures/genome-assembly-human-01.png)
@@ -185,10 +190,10 @@ Note: RefSeq is the curated database. GenBank is the non-curated, anyone-can-sub
 ![](figures/genome-assembly-human-02.png)
 
 
-Jot down your thoughts before looking at the solution below.
+Jot down your thoughts before looking at the solution below:
 
 ::: {.callout-note collapse="true"}
-# Human genome solution:
+# Human genome solution
 
 Chromosome level - very high quality.
 busco score - very close to complete. 
@@ -202,17 +207,24 @@ scaffold and contig N50. describe these!
 
 \
 
-***How would you describe this genome, based on the data below?***  
+:::
+
+\
+
+::: {.callout-tip}
+
+# EXERCISE #2 🧠🏋️‍♀️ (3 mins) - Sea Anemone Genome Assembly
+
 [*Nematostella vectensis* (sea anemone) Genome assembly ASM20922v1](https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_000209225.1/)
 
 ![](figures/genome-assembly-nemvec-01.png)
 
 ![](figures/genome-assembly-nemvec-02.png)
 
-Jot down your thoughts before looking at the solution below.
+Jot down your thoughts before looking at the solution below:
 
 ::: {.callout-note collapse="true"}
-# Sea anemone solution:
+# Sea anemone solution
 
 scaffold level - medium quality. but the N50 is below 1mb, at 472.6kb scaffold. not great! quite fragmented.
 
@@ -231,7 +243,9 @@ The authors claim the genome reveals *"ancestral eumetazoan genomic organization
 
 ::: 
 
-\
 
 :::
 
+\
+
+:::

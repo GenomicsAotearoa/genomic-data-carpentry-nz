@@ -10,17 +10,17 @@ Your samples have been sequenced, now what?
 
 ## Genomic data files
 
-Genomic data files are huge, and for one project you will often have several hundred gigabytes (GB) to sometimes terabytes (TB) of data (more on the actual genomic file types in the next section [Data wrangling and processing](data-wrangling-and-processing.qmd)). You most likely won't be able to store and analyse these on your local computer, or transfer the files in the 'traditional' way using USB drives, so you'll need to make use of a high capacity storage (HCS), high performance computing (HPC), and file transfer protocols (FTP). An introduction to genomics is also an introduction to the world of high performance computing! 
+Genomic data files are huge, and for one project you will often have several hundred gigabytes (GB) to sometimes terabytes (TB) of data (more on the actual genomic file types in the next section [Data wrangling and processing](data-wrangling-and-processing.qmd)). You most likely won't be able to store and analyse these on your local computer, or transfer the files in the 'traditional' way using portable USB drives, so you'll need to make use of a high capacity storage (HCS), high performance computing (HPC), and file transfer protocols (FTP). An introduction to genomics is also an introduction to the world of high performance computing! 
 
-*Caveat: small genomes such as bacteria often can be transferred, stored and analysed on your local computer.* 
+*Caveat: small genomes such as from bacteria often can be transferred, stored and analysed on your local computer.* 
 
-You have a few options of how you want to store and analyse your data, which may be through HPC/HCS services offered by your university or institute, or through the national computing and digital network REANNZ.  
+You have a few options of how you want to store and analyse your data, which may be through HPC/HCS services offered by your University or Institute, or through the national computing and digital network REANNZ.  
 
 ## Research and Education Advanced Network New Zealand (REANNZ)
 
-REANNZ is a Crown-owned membership organisation that powers Aotearoa’s research and education network. Launched in 2007, their high-performance national digital network (or NREN) helps members collaborate and contribute to data-intensive and complex science and research initiatives – both here in New Zealand and across the globe.
+REANNZ is *"..a Crown-owned membership organisation that powers Aotearoa’s research and education network. Launched in 2007, their high-performance national digital network (or NREN) helps members collaborate and contribute to data-intensive and complex science and research initiatives – both here in New Zealand and across the globe."*
 
-They offer many products and services [check out their website here](https://www.reannz.co.nz/), but here we will focus on their [HPC platform](https://www.reannz.co.nz/products-and-services/high-performance-computing-and-data-analytics) that you may chose to use to analyse your data.  
+They offer many products and services -- [check out their website here](https://www.reannz.co.nz/) -- but here we will focus on their [HPC platform](https://www.reannz.co.nz/products-and-services/high-performance-computing-and-data-analytics) that you may chose to use to analyse your data.  
 
 ***Projects on REANNZ***
 
@@ -40,7 +40,7 @@ Once you have an account and a Project, you can start using the HPC by logging i
 
 Once logged in, you'll see an app-based dashboard. 
 
-Click on 'Jupyter Lab' and then you can chose a few different settings before launching. For the most part, you will only need to change the Project Code and the number of hours you need the session open for. You can leave the number of cores and memory per job as the default lowest settings.  
+Click on 'Jupyter Lab' and then you can chose a few different settings before launching. For the most part, you will only need to change the Project Code and the number of hours you need the session open. You can leave the number of cores and memory per job as the default lowest settings.  
 
 
 ![](figures/reannz-04.png){width=100%} 
@@ -49,17 +49,23 @@ Once the session is open, you can interact with your files through the directory
 
 For each Project, you will have a `nobackup`{style="color:blue"} and a `project`{style="color:blue"} directory. Keep your raw files in the `project`{style="color:blue"} directory and do your analysis in the `nobackup`{style="color:blue"} directory. As you can guess by the name, this directory is not backed up, and is best used for working analyses. Additionally, files not modified after 90 days are auto deleted. Final analysed files and imprortant scripts should be copied into the `project`{style="color:blue"} directory once you have completed your analysis. You may be surprised by how many intermediate files you make and how much 'tinkering' you do during your analyses--making use of the two directories helps keep your file system tidier. 
 
->Note: It can be a good idea to back-up raw genomic files on a HCS--your inst
+>Note: It can be a good idea to back-up raw genomic files on a HCS / reannz freezer?
 
 ***Getting your genomic files on to the REANNZ cluster***
+
+
+How do we actually get the genomic sequence files from the sequencing facility to the REANNZ cluster?
 
 **FILL IN HERE**
 
 
- ??no backup/project directories?
+GLOBUS
 
 
-***Want more info?*** REANNZ provide [extensive documentation](https://docs.nesi.org.nz/) on how to use their High Performance Computing (HPC) platforms.
+
+***Want more info?***  
+
+- REANNZ provide [extensive documentation](https://docs.nesi.org.nz/) on how to use their High Performance Computing (HPC) platforms.
 
 
 > In July 2025, the New Zealand eScience Infrastructure (NeSI) was integrated into REANNZ. You may have heard of NeSI before, but if not, it is good to be aware of the name, as you'll see some legacy branding in the REANNZ documentation or log-in platform (*e.g.,* my.nesi.org.nz is still in use). 
@@ -134,18 +140,32 @@ You are probably familiar with using the [NIH NCBI database](https://www.ncbi.nl
 
 NCBI has a repository called the Sequence Read Archive (SRA), which is where a large proportion of genomic data from all over the world is stored, as publicly available raw, high-throughput, sequencing data. 
 
-If your data has no ethical concerns, this can be a great resource for making your data freely available as easily citeable in publications.  
+If your data has no ethical concerns, this can be a great resource for making your data freely available and easily citeable in publications.  
 
 Here we will not go into detail on how to either download or upload data to the SRA (see [documentation on their website](https://www.ncbi.nlm.nih.gov/sra)). But some points to be aware of are:
 
-- You may want to start with making a [BioProject](https://www.ncbi.nlm.nih.gov/bioproject/) for your specific project, which will link all of your sequencing data together under one umbrella (as a general rule, 1 publication = 1 BioProject).  
+- A [BioProject](https://www.ncbi.nlm.nih.gov/bioproject/) is a way to link all the sequencing and biological data together under one umbrella (as a general rule, 1 publication = 1 BioProject, but many groups use a single BioProject for multiple publications). If you are uploading your own data, we recommend starting with creating a BioProject, which will then give you a single accession (e.g., PRJNA31257) to use for the next steps (BioSample + SRA raw read uploads).  
 
-- You'll need to also make [BioSample](https://www.ncbi.nlm.nih.gov/biosample) submission/s, which will be linked to the matching sequence data in the SRA, and all houses under one BioProject accession number. BioSamples describe the unique biological attributes of your sample (e.g, species, sex, age, location, tissue). This is often (but not strictly) 1 BioSample = 1 library. 
+- A [BioSample](https://www.ncbi.nlm.nih.gov/biosample) is a unique descriptor of the biological source material (e.g, all the biological metadata of your sample -- species, sex, age, location, tissue). This is often (but not strictly) set up as 1 BioSample = 1 library. Each BioSample accession will be linked to the matching sequence data in the SRA, and all housed under one BioProject accession number. 
  
-
 Equally, if you are downloading data from the SRA, you can make use of BioProject and BioSample accessions to identify and orientate yourself to the data. 
 
-SHOW EXAMPLE screenshot of bipproject example, biosampler ecxample, SRA example. 
+Example BioProject:
+
+::: {.callout-note collapse="true"}
+# Human airway smooth muscle transcriptome study
+
+You can see there are 16 SRA experiments and 16 BioSamples -- you can guess that these probably match one to one. 
+
+There are also GEO datasets (Gene Expression Omnibus) associated with this study, which are repositories for functional genomic data. These are a more processed form of the data e.g., count tables and differential expression data.  
+
+![](figures/bioproject-01a.png)  
+![](figures/bioproject-01b.png)  
+
+
+
+:::
+
 
 
 This is not the only public repository of sequence reads, some other examples include: [European Nucleotide Archive (ENA)](https://www.ebi.ac.uk/ena/browser/home) and the DNA data bank of Japan [DDBJ Sequence Read Archive (DRA)](https://www.ddbj.nig.ac.jp/dra/index-e.html). These data banks are linked together via the [International Nucleotide Sequence Database Collaboration](https://www.insdc.org/). NCBI also details some of the [collaborative projects here](https://www.ncbi.nlm.nih.gov/genbank/collab/) (e.g., The Taxonomy Project, The Feature Table).
