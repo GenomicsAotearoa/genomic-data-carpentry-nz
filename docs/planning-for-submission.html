@@ -179,7 +179,8 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#decision-points" id="toc-decision-points" class="nav-link" data-scroll-target="#decision-points">Decision points 🤔</a></li>
   <li><a href="#nz-sequencing-facilities-and-services" id="toc-nz-sequencing-facilities-and-services" class="nav-link" data-scroll-target="#nz-sequencing-facilities-and-services">NZ sequencing facilities and services</a>
   <ul class="collapse">
-  <li><a href="#working-with-nz-seq-facilities" id="toc-working-with-nz-seq-facilities" class="nav-link" data-scroll-target="#working-with-nz-seq-facilities">working with NZ seq facilities</a></li>
+  <li><a href="#working-with-nz-sequencing-facilities" id="toc-working-with-nz-sequencing-facilities" class="nav-link" data-scroll-target="#working-with-nz-sequencing-facilities">Working with NZ sequencing facilities</a></li>
+  <li><a href="#international-sequencing-services" id="toc-international-sequencing-services" class="nav-link" data-scroll-target="#international-sequencing-services">International sequencing services</a></li>
   </ul></li>
   </ul></li>
   </ul>
@@ -203,13 +204,16 @@ ul.task-list li input[type="checkbox"] {
 <ol type="1">
 <li><p>A spectrophotometer (e.g., NanoDrop, DeNovix), which will give you a good indication of the purity/contamination of your sample through 260/280 and 260/230 ratios. This method is not very reliable for determining concentration of your nucleic acid.</p></li>
 <li><p>A fluorescent-based quantification method (e.g., Qubit), which will give you a very accurate indication of concentration of your nucleic acid (but not of any contaminants).</p></li>
-<li><p>A fragment analysis instrument (e.g., Agilent 2100 Bioanalyzer, Agilent 5300 Fragment Analyzer or Agilent TapeStation), which you can think of like a high-tech agarose gel. It will give you a good indication of your 28S/18S ratio for RNA (this is used to determine the overall RIN - RNA integrity number) or your fragment size distribution for DNA.</p></li>
+<li><p>A fragment analysis instrument (e.g., Agilent 2100 Bioanalyzer, Agilent 5300 Fragment Analyzer or Agilent TapeStation), which you can think of like a high-tech agarose gel. It will give you a good indication of your 28S/18S ratio for RNA (this is used to determine the overall RIN - RNA integrity number*) or your fragment size distribution for DNA.</p></li>
 </ol>
-<p>Together, these will give you an almost complete picture of your sample, ready for sequencing. Note that if your samples are below threshold quality, there are protocols that can allow for lower quality or degraded samples. Ideally, this should only be done if there is no option to re-extract, re-purify or repeat the experiment.</p>
+<p>Together, these will give you an almost complete picture of your sample, ready for sequencing. Note that if your samples are below threshold quality, there are library prep protocols that can allow for lower quality or degraded samples. Ideally, this should only be done if there is no option to re-extract, re-purify or repeat the experiment.</p>
+<blockquote class="blockquote">
+<p>*RNA integrity number: note that for some protosome species (e.g., molluscs, arthropods) the <a href="https://www.nature.com/articles/s41598-019-55573-1">28S rRNA subunit has a hidden break</a>, which can negatively affect the RIN calculation. This results in the quality of the RNA appearing to be is worse than it actually is.</p>
+</blockquote>
 </section>
 <section id="sequencing-libraries" class="level2">
 <h2 class="anchored" data-anchor-id="sequencing-libraries">Sequencing libraries</h2>
-<p>The first thing that needs to be done for Illumina, PacBio or Oxford Nanopore (ONT) sequencing is to turn the DNA or RNA sample into something called a <em>library</em>. This converts the raw nucleic acids into a form that the sequencer can actually read. This is generally done by the technician that will also sequence your samples, but some labs may do library prep in-house (i.e., <em>you</em> may do it yourself!). Nanopore is a little different, in that it can sequence native RNA directly, with minimal prep before sequencing. DNA library preparation for ONT sequencing is also generally simpler than for Illumina and PacBio. This is because the technology used to sequence the DNA/RNA using ONT is quite different to how Illumina and PacBio achieve it–more on that in the next section on <a href="#flow-cells-and-sequencing-platforms-101">flow cells and sequencing platforms 101</a></p>
+<p>The first thing that needs to be done for Illumina, PacBio or Oxford Nanopore (ONT) sequencing is to turn the DNA or RNA sample into something called a <em>library</em>. This converts the raw nucleic acids into a form that the sequencer can actually read. This is generally done by the technician that will also sequence your samples, but some labs may do library prep in-house (i.e., <em>you</em> may do it yourself!). For Illumina and PacBio, RNA is first converted into DNA during the library prep process. ONT is a little different, in that it can sequence native RNA directly, with minimal prep before sequencing. DNA library preparation for ONT sequencing is also generally simpler than for Illumina and PacBio. This is because the technology used to sequence the DNA/RNA using ONT is quite different to how Illumina and PacBio achieve it–more on that in the next section on <a href="#flow-cells-and-sequencing-platforms-101">flow cells and sequencing platforms 101</a></p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -269,7 +273,7 @@ Some protocols use PCR to enrich adapter-ligated molecules; others (e.g., some P
 Using Qubit, Bioanalyzer/Tapestation/Fragment Analyzer, etc. This step ensures your library meets sequencing requirements.</p></li>
 </ol>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -278,13 +282,32 @@ Bioanalyzer trace of final library (Illumina mRNA lib prep)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><img src="figures/illumina-libprep-02.png" class="img-fluid"></p>
+<p>What do you think the two large narrow peaks are around 15 bp and 1500bp?</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+SOLUTION
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The two narrow peaks are ladder sequence. These are internal standards of known size we add in for quality control. These can also be used for concentration estimation, but fluorescence-based quantification (e.g., Qubit) is more accurate.</p>
 </div>
 </div>
 </div>
-<p>There are different library prep methods (i.e., protocols) for each platform that you will also need to chose. This will depend on a few things, such as:</p>
+<p><br>
+</p>
+</div>
+</div>
+</div>
+<p>There are different library prep methods (i.e., protocols) for each platform that you will need to chose. This will depend on a few things, such as:</p>
 <ul>
 <li>The quality of your RNA/DNA (e.g., high-quality RNA allows polyA selection; degraded samples may require ribo-depletion or specialised kits).<br>
 </li>
@@ -295,8 +318,8 @@ Bioanalyzer trace of final library (Illumina mRNA lib prep)
 <p>For example, if you are doing a ‘standard’ Illumina RNA sequencing project (e.g,. you plan to do differential gene expression analysis to compare different samples), a common choice is <strong>Illumina stranded mRNA library prep</strong>, which uses polyA selection to capture mRNA. However, you may chose <strong>Illumina total RNA library prep</strong> with ribo-depletion, which is more expensive, but it has some advantages such as: it can capture non-polyadenylated RNAs (more comprehensive RNA profile) and and is a better option if your samples are partially degraded (it can also handle FFPE samples).</p>
 <section id="discussion" class="level4">
 <h4 class="anchored" data-anchor-id="discussion">DISCUSSION 💬</h4>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -305,14 +328,14 @@ Why do you think polyA capture is used for ‘standard’ RNAseq?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Mature mRNAs have polyA tails, which can be selectively isolated using oligo DT coated beads that bind mature RNAs only. All other non-polyadenylated nucleic acids and cellular debris can then be washed away.</p>
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -321,14 +344,14 @@ Why do you think we bother adding “index” sequences to libraries at all? Why
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Indexing (barcoding) allows multiple samples to be pooled in a single sequencing run. This massively reduces cost and time. Because each library carries a unique index, the sequencer can mix them together, and downstream software can computationally separate (demultiplex) them accurately afterward.</p>
+<p>Indexing (barcoding) allows multiple samples to be pooled in a single sequencing run. This massively reduces cost and time. Because each library carries a unique index, they can be mixed (i.e., pooled) together and sequenced simultaneously, and downstream software can computationally separate (demultiplex) them accurately afterward.</p>
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -337,15 +360,35 @@ Why do you think size selection is such an important step? What would happen if 
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Size selection ensures that fragments fall within the size range the sequencer expects. Without it, you may get:</p>
 <ul>
-<li><p>adapter dimers (which waste sequencing reads as they take up ‘real estate’ on the flow cell)</p></li>
+<li><p>leftover adapter dimers (which waste sequencing reads as they take up ‘real estate’ on the flow cell)</p></li>
 <li><p>too-short fragments (which cluster preferentially, causing over-representation and distorts the data e.g., sequencing may read into adapters or flow cell)<br>
 </p></li>
 <li><p>too-long fragments (which may not fully sequence or reduce yield)</p></li>
 </ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+How do I know if I have things like adapter dimers in the final library??
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The final fragment analysis (e.g., Bioanalyzer) trace of the library will show you. See below a picture of a trace with adapter dimers present (~120-150bp peak).</p>
+<p><em>Tip: You can repeat the final wash step in the library prep protocol to remove adapter dimers and re-run Bioanalyzer to confirm. Sometimes a very small peak will still be present which will not overly affect the run (you can see one on the previous image above!)</em></p>
+<p><img src="figures/illumina-libprep-03.png" class="img-fluid"> Image from <a href="https://knowledge.illumina.com/library-preparation/general/library-preparation-general-reference_material-list/000003874">Illumina general knowledge base</a></p>
+</div>
+</div>
+</div>
+<p><br>
+</p>
 </div>
 </div>
 </div>
@@ -357,11 +400,9 @@ Why do you think size selection is such an important step? What would happen if 
 <p>A few examples of the different platforms are:</p>
 <p><strong>Illumina</strong></p>
 <ul>
-<li>MiSeq<br>
-</li>
-<li>NextSeq<br>
-</li>
-<li>NovaSeq</li>
+<li>MiSeq i100</li>
+<li>NextSeq 550 / 1000 / 2000</li>
+<li>NovaSeq 6000 / X</li>
 </ul>
 <p><strong>PacBio</strong></p>
 <ul>
@@ -379,7 +420,7 @@ Why do you think size selection is such an important step? What would happen if 
 </ul>
 <p>A <strong>flow cell</strong> is the physical surface inside the sequencing machine (or platform) where the actual reading of DNA or RNA occurs. There are different sizes you can chose from, depending on how many reads you need. Although Illumina, PacBio, and ONT all call their consumables “flow cells,” the underlying technologies are very different.</p>
 <p>For the most part, and in-depth knowledge of how these flow cells work is not needed to get you started with your sequencing project.</p>
-<p>Here are the basic differences:</p>
+<p>Here are the major differences:</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 11%">
@@ -561,10 +602,10 @@ Why do you think size selection is such an important step? What would happen if 
 </table>
 <p><br>
 </p>
-<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout callout-style-simple callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon"></i>
+<i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 EXERCISE #1 🧠🏋️‍♀️ (15 mins)
@@ -574,9 +615,9 @@ EXERCISE #1 🧠🏋️‍♀️ (15 mins)
 <p><strong><em>Example RNAseq scenario:</em></strong></p>
 <p>You are working on a mouse model of cancer genomics. You want to do differential gene expression analysis to compare tumour samples to non-cancerous control tissue, to see if you can find genes that are up or down regulated in the cancerous tissue. You have 40 RNA samples, and since your species has a high-quality reference genome and annotation (i.e., mouse: Mus musculus), you know you have a “good” genome assembly and annotations to map your sequencing data back to (more on “good” genomes later!). The mouse genome is ~2.7 Gb (= 2,700,000,000 bp), diploid, with ~20,000 protein-coding genes.</p>
 <p>You are particularly interested in alternative splicing and novel splice junctions, as you suspect that cancer-associated genes are often regulated at the isoform level.</p>
-<p>You will sequence your samples at the Otago Genomics Facility, and see on <a href="https://www.otago.ac.nz/genomics">their website</a> they have an Illumina MiSeq and an Illumina NextSeq 2000.</p>
+<p>You will sequence your samples at the Otago Genomics Facility, and see on <a href="https://www.otago.ac.nz/genomics">their website</a> they have an Illumina MiSeq and an Illumina NextSeq 2000. Use this <a href="https://sapac.illumina.com/systems/sequencing-platforms.html">Illumina benchtop sequencing platforms comparison</a> guide to help you decide.</p>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -585,18 +626,17 @@ Which platform will you chose?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>The Illumina NextSeq 2000 is a ‘medium’ sized short read sequencing platform, ideal for standard RNAseq, and is well-suited to this project. It can output up to 540Gb.</p>
 <p>The Illumina MiSeq is a ‘small’ sized short read sequencing platform, better suited to QC or amplicon sequencing, and can output up to 30Gb. It is too small for this project.</p>
-<p><a href="https://sapac.illumina.com/systems/sequencing-platforms.html">Illumina benchtop sequencing platforms comparison</a></p>
 </div>
 </div>
 </div>
 <p>Next you need to decide how many reads you need.</p>
 <p>Based on table 1 above, how many reads do you need per sample?</p>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -605,7 +645,7 @@ Reads per sample choice:
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>You decide you need 30 million reads per sample. You pick the lower end of the scale, as you suspect the genes you are most interested in will be highly expressed, and don’t expect your tissue to have a particular high transcript diversity that would require more reads.</p>
 <p>You work out what minimum output you need from the flow cell:<br>
@@ -613,10 +653,10 @@ Reads per sample choice:
 </div>
 </div>
 </div>
-<p>Now you need to decide if you want paired-end or single end reads.</p>
+<p>Now you need to decide if you want paired-end or single-end reads.</p>
 <p>Based on table 2 above, what would you pick?</p>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -625,7 +665,7 @@ Paired-end vs single end choice:
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Paired-end sequencing will give better detection of novel isoforms and splice junctions.</p>
 <p>This doubles the number of reads generated per fragment and will give you better resolution.</p>
@@ -634,7 +674,7 @@ Paired-end vs single end choice:
 </div>
 <p>You now need to decide which read length you need. Given the mouse genome is well-annotated, but you are looking for potentially novel isoforms, which read length would you pick, based on table 3?</p>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -643,7 +683,7 @@ Read length choice:
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>50 bp would be a good choice for a well-annotated genome like mouse for standard RNAseq, but does not suit this experiment, as you are looking for novel isoforms/alternative splicing.</p>
 <p>100bp is probably the best choice, balancing cost with novel isoform discovery.</p>
@@ -653,7 +693,7 @@ Read length choice:
 </div>
 <p>You are now ready to pick your flow cell. Check out the <a href="https://sapac.illumina.com/systems/sequencing-platforms/nextseq-1000-2000/specifications.html">Illumina NextSeq2000 flow cell specifications</a> and chose which flow cell will suit this project best. There are four flow cells in ascending output size you can choose from: P1, P2, P3 and P4.</p>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -662,21 +702,26 @@ Which flow cell will you pick?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Based on paired end sequencing using 100bp read length (i.e., 2 x 100bp):</p>
-<p>Total reads needed for your experiment: 1.2 billion reads.<br>
-Calculation: 1.2 billion reads x 100 (bp) x 2 (PE) = 240 Gb (240 gigabase pairs, or 240 billion individual DNA bases sequenced).</p>
+<p>Choices from earlier:</p>
+<ul>
+<li>Total reads needed for your experiment: 1.2 billion reads.<br>
+</li>
+<li>Paired end sequencing using 100bp read length (i.e., 2 x 100bp)</li>
+</ul>
+<p>Calculation: 1.2 billion reads x 100 (bp) x 2 (PE) = <strong>240 Gb output is needed</strong> (i.e., 240 gigabase pairs, or 240 billion individual DNA bases sequenced).</p>
+<p>Flow cell options:</p>
 <ul>
 <li>P1 → No 100bp option and way too low<br>
 </li>
 <li>P2 → 80 Gb (too low for 1.2B demand)<br>
 </li>
-<li>P3 → 240 Gb (fits 1.2B reads requirement exactly - best choice!)<br>
+<li><strong>P3 → 240 Gb (fits 1.2B reads requirement exactly - best choice!)</strong><br>
 </li>
 <li>P4 → 360 Gb (oversized for this project)</li>
 </ul>
-<p>Note: the maximum output stated for the flow cell is under optimal conditions, so the P3 flow cell choice just fits, but it is possible you will have less reads then anticipated (e.g., instead of 30 mil reads per sample, you may get 28 mil per sample).</p>
+<p>Note: the maximum output stated for the flow cell is under optimal conditions, so the P3 flow cell choice just fits, but it is possible you will have less reads then anticipated (e.g., instead of 30 mil reads per sample, you may 28 mil per sample).</p>
 </div>
 </div>
 </div>
@@ -685,7 +730,20 @@ Calculation: 1.2 billion reads x 100 (bp) x 2 (PE) = 240 Gb (240 gigabase pairs,
 </div>
 <p>&nbsp;</p>
 <p>Now let’s look at <strong>DNA sequencing</strong> in more detail.</p>
-<p>DNA sequencing may refer to whole genome, whole exome, or targeted sequencing approaches. <strong>FILL in a bit more here by someone who knows DNAseq better</strong></p>
+<p>DNA sequencing may refer to whole genome, whole exome, or targeted sequencing approaches.</p>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+FILL IN HERE
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>more explanation by someone who knows DNAseq better!</strong></p>
+</div>
+</div>
 <p>For <strong>Genome sequencing</strong> you will need:</p>
 <table class="caption-top table">
 <colgroup>
@@ -742,16 +800,28 @@ Calculation: 1.2 billion reads x 100 (bp) x 2 (PE) = 240 Gb (240 gigabase pairs,
 </tbody>
 </table>
 <p>Where Mb = megabase pairs (<em>i.e.,</em> 1 Mb = 1,000,000 bp)</p>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+FILL IN HERE
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Coverage. talking about average coverage - really repetitive regions can have very low covergae, other more easily resolved sections will have higher coverage.</p>
 <p>heterozygosity homozygosity.</p>
 <p>haplotypes etc.</p>
 <p>Stick mostly to decision points - not a huge lecture/tutorial on genome/ DNA biology. Assume learners haev a genetics background - they just have not yet translated that knowledge into a practical application of NGS.</p>
+</div>
+</div>
 <p><br>
 </p>
-<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout callout-style-simple callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon"></i>
+<i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 EXERCISE #2 🧠🏋️‍♀️ (10 mins)
@@ -759,11 +829,24 @@ EXERCISE #2 🧠🏋️‍♀️ (10 mins)
 </div>
 <div class="callout-body-container callout-body">
 <p><strong><em>Example DNAseq scenario:</em></strong></p>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+FILL IN - THIS EXERCISE NOT COMPLETE
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Probably needs one or two more ‘decision point’ exercises for learners.</p>
+</div>
+</div>
 <p>You are want to <em>de novo</em> assemble the genome of the New Zealand swamp maire (<em>Syzygium maire</em>), a critically-endangered, endemic myrtaceae species, which is under threat from the pathogen myrtle rust.</p>
 <p>Based on genome sizes of related Syzygium and Myrtaceae species (e.g., <em>Syzygium aromaticum</em> ~370 Mb, <em>S. grande</em> ~405 Mb), you expect the <em>S. maire</em> genome to be on the order of ~350–400 Mb.</p>
 <p><em>De novo</em> genome assembly requires long read sequencing to resolve the longest contiguous sequences possible (ideally the full chromosome length, but that is often not easy or possible to achieve!).</p>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -772,29 +855,38 @@ Which long-read sequencing platform should you chose?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-13" class="callout-13-contents callout-collapse collapse show">
+<div id="callout-18" class="callout-18-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
-<p>There are two long-read platforms – PacBio and ONT. <strong>PacBio better for throughput (amount of reads you can get back) and for accuracy than than ONT? Ask someone who knows this to fill in.</strong></p>
+<p>There are two long-read platforms – PacBio and ONT. <strong>PacBio better for throughput (amount of reads you can get back) and for accuracy than ONT. FILL IN.</strong></p>
 </div>
 </div>
 </div>
-<p><a href="https://doi.org/10.1007/s11295-024-01659-5">Balkwill <em>et al.</em> 2024. Tree Genetics &amp; Genomes.</a></p>
-<p>The authors also used Illumina sequencing in this paper. What did they use it for? Why do you think they chose to do Illumina sequencing for these samples rather than PacBio?</p>
+<p>The <em>S. maire</em> genome was published in 2024 by <a href="https://doi.org/10.1007/s11295-024-01659-5">Balkwill <em>et al.</em> 2024. Tree Genetics &amp; Genomes</a>. The authors also used Illumina sequencing in this paper. What did they use it for? Why do you think they chose to do Illumina sequencing for these samples rather than PacBio?</p>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Solutions:
+SOLUTIONS (collapse this once complete):
 </div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-14" class="callout-14-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+FILL IN - THIS EXERCISE NOT COMPLETE
+</div>
+</div>
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
 <p>Answer: 30 x samples at low coverage for resequencing.<br>
 Answer: cost, accuracy at SNP level. dont need to resolve full genomes as that was not their question.</p>
-</div>
 </div>
 </div>
 <p><br>
@@ -805,7 +897,7 @@ Answer: cost, accuracy at SNP level. dont need to resolve full genomes as that w
 <p>Note 1: Batch variation. Are you doing all your samples in one batch, or will you have multiple batches? Technical variation can occur, so you may want to wait and do all samples at once on one larger flow cell, or make sure you randomise samples across sequencing batches.</p>
 </blockquote>
 <blockquote class="blockquote">
-<p>Note 2: DNAseq vs RNAseq. You may have noticed we call it ‘RNAseq’, even though we convert the RNA into DNA before sequencing! By convention, this is still called RNAseq, to differentiate it from true DNAseq.</p>
+<p>Note 2: DNAseq vs RNAseq. You may have noticed we call it ‘RNAseq’, even though we convert the RNA into DNA before sequencing! By convention, this is still called RNAseq, to differentiate it from true DNAseq. ONT can directly sequence the RNA without converting it to DNA first; we call this native RNA sequencing.</p>
 </blockquote>
 </section>
 <section id="nz-sequencing-facilities-and-services" class="level2">
@@ -813,6 +905,19 @@ Answer: cost, accuracy at SNP level. dont need to resolve full genomes as that w
 <blockquote class="blockquote">
 <p>Current as of: December 2025</p>
 </blockquote>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+NOTE
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>not planning to go into detail at all on non-NGS services around NZ. Sticking to more higher throughput genomics.</p>
+</div>
+</div>
 <p><strong>Sequencing facilities which offer NGS services:</strong></p>
 <p><a href="https://www.otago.ac.nz/genomics">Otago Genomics Facility (OGF)</a><br>
 Location: The University of Otago, Biochemistry Building.</p>
@@ -838,7 +943,19 @@ Location: Massey University</p>
 <ul>
 <li>platforms: Illumina and ONT. They don’t list on their website which ones they have.</li>
 </ul>
-<p>Procotocol available - dont want to go into too much detail but becoems another decision point. Massey offer TruSeq lib prep. Auckland uses the newer kit. (slightly higher input required than the newer chemistry, both are very robust options. Newer one is supposed to be faster and better for more degarded RNA. Higher multiplexing for new kit 384 vs 96 for truseq).</p>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+FILL IN MORE DETAILS
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Procotocols available/ on offer- dont want to go into too much detail but becoems another decision point. Massey offer TruSeq lib prep. Auckland uses the newer kit. (slightly higher input required than the newer chemistry, both are very robust options. Newer one is supposed to be faster and better for more degarded RNA. Higher multiplexing for new kit 384 vs 96 for truseq).</p>
+</div>
+</div>
 <p>See here for <a href="https://knowledge.illumina.com/library-preparation/rna-library-prep/library-preparation-rna-library-prep-faq-list/000005928">comparison between Illumina TruSeq stranded and Illumina stranded mRNA kits</a></p>
 <p><strong><em>Non-service platforms around New Zealand:</em></strong></p>
 <p><strong>AgResearch</strong><br>
@@ -850,12 +967,40 @@ Location: Massey University</p>
 <ul>
 <li>New <a href="https://www.customscience.co.nz/kindstar-new-zealand">PacBio Revio in Auckland</a></li>
 </ul>
-<section id="working-with-nz-seq-facilities" class="level3">
-<h3 class="anchored" data-anchor-id="working-with-nz-seq-facilities">working with NZ seq facilities</h3>
-<p>stuff on submission process, show example form ?</p>
+<section id="working-with-nz-sequencing-facilities" class="level3">
+<h3 class="anchored" data-anchor-id="working-with-nz-sequencing-facilities">Working with NZ sequencing facilities</h3>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+FILL IN HERE
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>stuff on submission process, show example form and brief explanation of how to fill out?</p>
 <p>how do you get data back from them ? how do they transfer it?</p>
-<p>OGF gives you data back demultiplexed. I assume all other services in NZ do this too?</p>
+<p>Do all the seq facilities in NZ give you data back demultiplexed by default?</p>
 <p>Do anyone use basespace to share reads with people?</p>
+</div>
+</div>
+</section>
+<section id="international-sequencing-services" class="level3">
+<h3 class="anchored" data-anchor-id="international-sequencing-services">International sequencing services</h3>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+FILL IN HERE
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>International sequencing services - touch on this, why you may chose over NZ (or not chose!) then point towards the next section on ethical data management.</p>
+</div>
+</div>
 
 
 </section>

@@ -5,11 +5,11 @@ format: html
 
 # Genomic data wrangling and processing
 
-Your data is now on a server/cloud/local computer, ready for analysis. Now what?
+Your data is now on a server/cloud/compute system/local computer, ready for analysis. Now what?
 
 ## Command-line interface (CLI) vs graphical user interface (GUI)
 
-Command line interface (CLI) and graphic user interface (GUI) are different ways of interacting with a computer's operating system. They have different pros and cons. Most people are familiar with the GUI as it is the default interface for most software, particularly on Windows and Mac OS. When using the GUI, you see and interact with visual representations of files, folders, applications, and most other functions of your computer. When using the CLI, you work largely with text representations of software, files, folders, input and output. The shell is a program that allows you to control your computer by typing instructions on the CLI with a keyboard.
+Command line interface (CLI) and graphic user interface (GUI) are different ways of interacting with a computer's operating system. They have different pros and cons. Most people are familiar with the GUI (i.e., point and click) as it is the default interface for most software, particularly on Windows and Mac OS. When using the GUI, you see and interact with visual representations of files, folders, applications, and most other functions of your computer. When using the CLI, you work largely with text representations of software, files, folders, input and output. The shell is a program that allows you to control your computer by typing instructions on the CLI with a keyboard.
 
 There are several reasons to learn how to use the CLI:
 
@@ -65,7 +65,7 @@ From left to right, these are the quality scores in increasing order of quality:
 
 So, if a single base has a quality score of `!`{style="color:black"}, which corresponds to a Q-score of 0, this indicates exceptionally poor quality. The sequencing machine was not able to resolve which base it should be. Often these will be shown as N's. 
 
-Conversely, if a single base has a quality score of `I`{style="color:black"}, which corresponds to a Q-score of 40, this indicates very high quality. The sequencing machine was "very confident" that the base called is correct (Q40 indicates an error rate of 0.0001, i.e., a 1 in 10,000 chance of the base being called wrong. `I`{style="color:black"} is near the upper end of typically achieved quality values, but higher is possible. 
+Conversely, if a single base has a quality score of `I`{style="color:black"}, which corresponds to a Q-score of 40, this indicates very high quality. The sequencing machine was "very confident" that the base called is correct (Q40 indicates an error probabilty of 0.0001, i.e., a 1 in 10,000 chance of the base being called wrong, on average. `I`{style="color:black"} is near the upper end of typically achieved quality values, but higher is possible. 
 
 For more on quality scores, you can also read this [Illumina guide here](https://help.basespace.illumina.com/files-used-by-basespace/quality-scores). Note there are different types of encoding, but you will most frequently encounter [Phred](https://en.wikipedia.org/wiki/Phred_quality_score)+33.
 
@@ -119,8 +119,85 @@ GTF file opened in a text editor:
 
 ## FASTQC - quality scoring of raw reads
 
-- fastqc in depth  (use to teach intro shell )
+All `fastq` files, regardless of which kind of sequencing was performed, should be interrogated using a program called [FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/). Most HPC services (e.g., REANNZ) come with this program (and many other commonly used programs) pre-installed, so you likely will not need to install it anywhere. 
 
+FastQC will give you a good overview of the quality of the reads (i.e., how confidently each base was called by the sequencing platform) and a few other statistics about the reads.  Each statistic will be assigned a PASS, WARNING or FAIL:
+
+![](figures/fastqc-pass.png){width="8%"}  PASS   &nbsp;&nbsp;&nbsp;    ![](figures/fastqc-warn.png){width="8%"}  WARNING  &nbsp;&nbsp;&nbsp;    ![](figures/fastqc-fail.png){width="8%"}  FAIL  
+
+
+The following examples come from the '[Good Illumina Data](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/good_sequence_short_fastqc.html)' and '[Bad Illumina Data](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/bad_sequence_fastqc.html)' reports from the [Babraham Bioinformatics website](https://www.bioinformatics.babraham.ac.uk/index.html).  
+
+### EXAMPLES: Good vs bad sequence data 
+
+Below are the summarised pass, warning, fail statistics for the good (left) and bad (right) data. 
+![](figures/fastqc-good-bad-summary.png){width="80%"}
+
+Here we will choose a few of these as examples to delve into:
+
+#### Per base sequence quality
+The **per base sequence quality** is the first plot you can use to assess the quality. You can picture the reads as being all stacked on top of each other, and the average quality at each position (x-axis) shown as a boxplot (i.e., position 1 shows a boxplot of the quality scores of base pair #1 in all reads, position 2 shows a boxplot for base pair #2, and so on).
+
+The quality score is shown on the y-axis. A score of below Q20 (error probabilty = 0.01, or 1 in 100 bases are incorrect on average) is shown as red - boxplots that extend in to this section indicate positions in the read that are poor quality.  
+
+In general, when you are trimming your reads you should pick a quality cut off of at least Q30 (error probabilty = 0.001; 1 in 1000), and some researchers even use Q40 (error probabilty = 0.0001; 1 in 10,000) for newer data. If you are working with older data (10+ years old, sequenced before ~2014), you may need to pick Q20 as a cut-off. These plots help you decide what is best for your data. 
+
+After trimming reads, you should run FastQC again to compare how the average quality has changed and see how many reads are retained after trimming.  
+
+**Good data:** Per base sequence quality
+![](figures/fastqc-good-01.png)
+
+In this 'Bad data' below, we can see most reads are dropping in to the Q20 and below range from about base position 24 onwards to position 40. This is a typical pattern, where sequence quality tends to drop off around the 3' end for Illumina reads.  
+
+**Bad data:** Per base sequence quality
+![](figures/fastqc-bad-01.png)
+
+
+#### Per sequence quality scores
+
+The **per sequence quality scores** plots the Q-score per sequence, rather than per base position as above. The average Q-score for the whole read is taken, then plotted to show how many reads have that average score. Below we can see that for the good data and bad data, almost all reads sit above Q30. 
+
+
+**Good data:** Per sequence quality scores
+![](figures/fastqc-good-02.png)
+
+For the bad data, we can see that the larger peak of reads sits at a slightly lower (and wider) Q score, and there is a second peak at a very poor score of around Q17. These data show us that there may be a large proportion of reads with a high Q-score retained after trimming (good news!). The data has been given a 'pass' by FastQC, indicating it has not dropped below the threshold for this category to be given a warning or fail.  
+
+
+**Bad data:** Per sequence quality scores
+![](figures/fastqc-bad-02.png)
+
+
+
+#### Overrepresented sequences
+
+Multiple sources can cause overrepresented sequences in your dataset. It can be a true biological or experimental effect, for example if you expect a few genes to be exceptionally highly expressed or if you have done targeted amplicon sequencing. However, it often reflects an issue that may have happened during extraction or library prep. Contaminating rRNA is a common culprit in RNAseq, as rRNA exists at a much higher concentration than other mRNAs in the cell. You may have to make a judgement call whether your data is still useable if it is highly contaminated. While contaminating reads can be filtered out, you'll have less useable reads. PCR overamplification during the library prep can also be an issue - in which case it may be possible to repeat part of the library prep with less PCR cycles.
+
+For our good data, no overrepresented sequences were detected:
+
+![](figures/fastqc-good-03.png)
+
+Here is a snippet of our bad data, showing a 'warning' with multiple overrepresented sequences detected, and the count and percentage of the total reads is also shown:
+
+![](figures/fastqc-bad-03.png)
+
+FastQC looks for hits that are matches in a database of common contaminants. No hit was detected for any of these sequences, but it is worth BLASTing some of the highest count sequences to find the culprit.  
+
+::: {.callout-tip appearance="minimal"}
+# EXERCISE 🧠🏋️‍♀️ (1 min)
+
+What percentage of reads would need to be overrepresented for this category to be given a fail?  
+
+Use the [FastQC help guide here](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/3%20Analysis%20Modules/).
+
+::: {.callout-tip collapse="true"}
+# SOLUTION
+
+If any sequence is found to represent more than 1% of the total it will get a fail. 
+
+:::
+
+:::
 
 ## Good genome, bad genome?
 
@@ -176,10 +253,12 @@ A genome can be **well assembled but poorly annotated**, or vice versa.
 
 ### EXERCISES 🧠🏋️‍♀️ (6 mins):
 
-***How would you describe these genomes? Look at the assembly stats and make some notes of how 'good' you think each assembly is.***   
+***How would you describe these genomes?*** 
+
+Look at the assembly stats and make some notes of how 'good' you think each assembly is.  
 
 
-::: {.callout-tip}
+::: {.callout-tip appearance="minimal"}
 
 # EXERCISE #1 🧠🏋️‍♀️ (3 mins) - Human Genome Assembly
 [Human Genome assembly GRCh38.p14](https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_000001405.40/)
@@ -192,9 +271,11 @@ Note: RefSeq is the curated database. GenBank is the non-curated, anyone-can-sub
 
 Jot down your thoughts before looking at the solution below:
 
-::: {.callout-note collapse="true"}
+::: {.callout-note}
 # Human genome solution
 
+::: {.callout-caution}
+# FILL IN HERE
 Chromosome level - very high quality.
 busco score - very close to complete. 
 very good genome
@@ -202,6 +283,9 @@ very good genome
 number of extra scaffolds and contigs is very low (470 s / 996 c - it can be thousands of extra so hundreds is pretty good!)
 
 scaffold and contig N50. describe these!
+:::
+
+collapse solution when complete
 
 :::
 
@@ -211,7 +295,7 @@ scaffold and contig N50. describe these!
 
 \
 
-::: {.callout-tip}
+::: {.callout-tip appearance="minimal"}
 
 # EXERCISE #2 🧠🏋️‍♀️ (3 mins) - Sea Anemone Genome Assembly
 
@@ -223,9 +307,11 @@ scaffold and contig N50. describe these!
 
 Jot down your thoughts before looking at the solution below:
 
-::: {.callout-note collapse="true"}
+::: {.callout-note }
 # Sea anemone solution
 
+::: {.callout-caution}
+# FILL IN HERE
 scaffold level - medium quality. but the N50 is below 1mb, at 472.6kb scaffold. not great! quite fragmented.
 
 busco score pretty good despite lack of placed scaffolds. contig/scaffold N50 - high enough that most genes are resolved. 
@@ -234,12 +320,25 @@ assembly itself not amazing, but annotation is probably good enough for gene lev
 
 Larger scale structural variants and synteny difficult or erroneous to resolve. -> is this true? 
 
-::: {.callout-important collapse="true"}
+:::
+
+collapse="true"
+
+::: {.callout-important}
 # Extra for experts
 
 Here is the original paper for the curious: [Putnam et al. 2007.](https://www.science.org/doi/10.1126/science.1139158)
 
-The authors claim the genome reveals *"ancestral eumetazoan genomic organization"*. How did they assess this and what conclusion did they make about the eumetazoan ancestor resemblance to modern vertebrates, sea anemones and prokaryotes? Do you think they had a 'good' enough genome to assess this?  
+The authors claim the genome reveals *"ancestral eumetazoan genomic organization"*. How did they assess this and what conclusion did they make about the eumetazoan ancestor resemblance to modern vertebrates, sea anemones and protosomes? Do you think they had a 'good' enough genome to assess this?  
+
+::: {.callout-warning appearance="minimal"}
+# Extra for experts solution
+
+**NEED TO FACT CHECK THIS, COLLAPSE WHEN COMPLETE**
+
+The authors used synteny analysis. They found many major genes, such as Hox genes, retained the same intron/exon structure in sea anemones as vertebrates, but this was not retained in model protosome species. Based on this they conlcuded that sea anemone genomes more closely resemble vertebrates than protosome species (fly, nematode, annelid) do. While the genome assembly itself is quite fragmented, the annotations are quite good, indicating that any conclusions the authors made comparing genomes and a gene stucture level are likely quite robust, but it would not be feasible with this assembly to make any conclusions based on larger genomic structure (i.e., at closer to chromosome level).   
+
+:::
 
 ::: 
 
@@ -249,3 +348,6 @@ The authors claim the genome reveals *"ancestral eumetazoan genomic organization
 \
 
 :::
+
+
+# Workshop complete :) 

@@ -5,6 +5,9 @@ format: html
 
 # Outtakes and notes
 
+add a prerequisates section to the home page. this is a 'foundational' level workshop. As with all GA workshops, learners are expected to have a basic (undergraduate) level understanding of biological and genetic concepts. 
+
+
 ***Non-NGS sequencing around New Zealand:***  
 
 **Lincoln**  

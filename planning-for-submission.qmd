@@ -13,18 +13,19 @@ Your DNA or RNA samples will need to pass certain quality cut-offs for sequencin
 
 1. A spectrophotometer (e.g., NanoDrop, DeNovix), which will give you a good indication of the purity/contamination of your sample through 260/280 and 260/230 ratios. This method is not very reliable for determining concentration of your nucleic acid.
 
-2. A fluorescent-based quantification method (e.g., Qubit), which will give you a very accurate indication of concentration of your nucleic acid (but not of any contaminants).
+2. A fluorescent-based quantification method (e.g., Qubit), which will give you a very accurate indication of concentration of your nucleic acid (but not of any contaminants).  
 
-3.  A fragment analysis instrument (e.g., Agilent 2100 Bioanalyzer, Agilent 5300 Fragment Analyzer or Agilent TapeStation), which you can think of like a high-tech agarose gel. It will give you a good indication of your 28S/18S ratio for RNA (this is used to determine the overall RIN - RNA integrity number) or your fragment size distribution for DNA. 
+3.  A fragment analysis instrument (e.g., Agilent 2100 Bioanalyzer, Agilent 5300 Fragment Analyzer or Agilent TapeStation), which you can think of like a high-tech agarose gel. It will give you a good indication of your 28S/18S ratio for RNA (this is used to determine the overall RIN - RNA integrity number*) or your fragment size distribution for DNA. 
 
 
-Together, these will give you an almost complete picture of your sample, ready for sequencing. Note that if your samples are below threshold quality, there are protocols that can allow for lower quality or degraded samples. Ideally, this should only be done if there is no option to re-extract, re-purify or repeat the experiment. 
+Together, these will give you an almost complete picture of your sample, ready for sequencing. Note that if your samples are below threshold quality, there are library prep protocols that can allow for lower quality or degraded samples. Ideally, this should only be done if there is no option to re-extract, re-purify or repeat the experiment. 
 
+>*RNA integrity number: note that for some protosome species (e.g., molluscs, arthropods) the [28S rRNA subunit has a hidden break](https://www.nature.com/articles/s41598-019-55573-1), which can negatively affect the RIN calculation. This results in  the quality of the RNA appearing to be is worse than it actually is.  
 
 
 ## Sequencing libraries  
 
-The first thing that needs to be done for Illumina, PacBio or Oxford Nanopore (ONT) sequencing is to turn the DNA or RNA sample into something called a *library*. This converts the raw nucleic acids into a form that the sequencer can actually read. This is generally done by the technician that will also sequence your samples, but some labs may do library prep in-house (i.e., *you* may do it yourself!). Nanopore is a little different, in that it can sequence native RNA directly, with minimal prep before sequencing. DNA library preparation for ONT sequencing is also generally simpler than for Illumina and PacBio. This is because the technology used to sequence the DNA/RNA using ONT is quite different to how Illumina and PacBio achieve it--more on that in the next section on [flow cells and sequencing platforms 101](#flow-cells-and-sequencing-platforms-101)
+The first thing that needs to be done for Illumina, PacBio or Oxford Nanopore (ONT) sequencing is to turn the DNA or RNA sample into something called a *library*. This converts the raw nucleic acids into a form that the sequencer can actually read. This is generally done by the technician that will also sequence your samples, but some labs may do library prep in-house (i.e., *you* may do it yourself!). For Illumina and PacBio, RNA is first converted into DNA during the library prep process. ONT is a little different, in that it can sequence native RNA directly, with minimal prep before sequencing. DNA library preparation for ONT sequencing is also generally simpler than for Illumina and PacBio. This is because the technology used to sequence the DNA/RNA using ONT is quite different to how Illumina and PacBio achieve it--more on that in the next section on [flow cells and sequencing platforms 101](#flow-cells-and-sequencing-platforms-101)
 
 ::: {.callout-note collapse="true"}
 # Illumina lib prep molecular workflow diagram
@@ -71,9 +72,21 @@ Using Qubit, Bioanalyzer/Tapestation/Fragment Analyzer, etc. This step ensures y
 # Bioanalyzer trace of final library (Illumina mRNA lib prep)
 ![](figures/illumina-libprep-02.png)
 
+
+What do you think the two large narrow peaks are around 15 bp and 1500bp?
+
+::: {.callout-tip collapse="true"}
+# SOLUTION
+
+The two narrow peaks are ladder sequence. These are internal standards of known size we add in for quality control. These can also be used for concentration estimation, but fluorescence-based quantification (e.g., Qubit) is more accurate.    
+
 :::
 
-There are different library prep methods (i.e., protocols) for each platform that you will also need to chose. This will depend on a few things, such as:  
+\
+
+:::
+
+There are different library prep methods (i.e., protocols) for each platform that you will need to chose. This will depend on a few things, such as:  
 
 - The quality of your RNA/DNA (e.g., high-quality RNA allows polyA selection; degraded samples may require ribo-depletion or specialised kits).    
 - The species/tissue type you extracted your RNA/DNA from (e.g., plants have rRNA types that require plant-specific depletion kits, some tissues have high mitochondrial RNA content).    
@@ -83,30 +96,44 @@ For example, if you are doing a 'standard' Illumina RNA sequencing project (e.g,
 
 #### DISCUSSION 💬
 
-::: {.callout-note collapse="true"}
+::: {.callout-tip collapse="true"}
 # Why do you think polyA capture is used for 'standard' RNAseq?
 
 Mature mRNAs have polyA tails, which can be selectively isolated using oligo DT coated beads that bind mature RNAs only. All other non-polyadenylated nucleic acids and cellular debris can then be washed away.
 
 ::: 
 
-::: {.callout-note collapse="true"}
+::: {.callout-tip collapse="true"}
 # Why do you think we bother adding “index” sequences to libraries at all? Why not sequence each sample separately?
 
-Indexing (barcoding) allows multiple samples to be pooled in a single sequencing run. This massively reduces cost and time. Because each library carries a unique index, the sequencer can mix them together, and downstream software can computationally separate (demultiplex) them accurately afterward.
+Indexing (barcoding) allows multiple samples to be pooled in a single sequencing run. This massively reduces cost and time. Because each library carries a unique index, they can be mixed (i.e., pooled) together and sequenced simultaneously, and downstream software can computationally separate (demultiplex) them accurately afterward.
 
 :::
 
-::: {.callout-note collapse="true"}
+::: {.callout-tip collapse="true"}
 # Why do you think size selection is such an important step? What would happen if we skipped it?
 
 Size selection ensures that fragments fall within the size range the sequencer expects. Without it, you may get:
 
-- adapter dimers (which waste sequencing reads as they take up 'real estate' on the flow cell)  
+- leftover adapter dimers (which waste sequencing reads as they take up 'real estate' on the flow cell)  
 
 - too-short fragments (which cluster preferentially, causing over-representation and distorts the data e.g., sequencing may read into adapters or flow cell)    
 - too-long fragments (which may not fully sequence or reduce yield)   
 
+::: {.callout-tip collapse="true"}
+# How do I know if I have things like adapter dimers in the final library??
+
+The final fragment analysis (e.g., Bioanalyzer) trace of the library will show you. See below a picture of a trace with adapter dimers present (~120-150bp peak). 
+
+*Tip: You can repeat the final wash step in the library prep protocol to remove adapter dimers and re-run Bioanalyzer to confirm. Sometimes a very small peak will still be present which will not overly affect the run (you can see one on the previous image above!)*
+
+![](figures/illumina-libprep-03.png)
+Image from [Illumina general knowledge base](https://knowledge.illumina.com/library-preparation/general/library-preparation-general-reference_material-list/000003874)
+
+
+:::
+
+\
 
 :::
 
@@ -118,9 +145,9 @@ A few examples of the different platforms are:
 
 **Illumina**  
 
-- MiSeq  
-- NextSeq  
-- NovaSeq  
+- MiSeq i100
+- NextSeq 550 / 1000 / 2000
+- NovaSeq 6000 / X 
 
 **PacBio**  
 
@@ -137,7 +164,7 @@ A **flow cell** is the physical surface inside the sequencing machine (or platfo
 
 For the most part, and in-depth knowledge of how these flow cells work is not needed to get you started with your sequencing project. 
 
-Here are the basic differences:
+Here are the major differences:
 
 | Feature | Illumina | PacBio (HiFi / SMRT) | Oxford Nanopore (ONT) |
 |--------|----------------|---------------------|----------------------|
@@ -200,7 +227,7 @@ Choosing a ***read length*** is a ***trade-off between cost, and the amount of i
 
 \
 
-::: {.callout-tip}
+::: {.callout-tip appearance="minimal"}
 
 
 # EXERCISE #1 🧠🏋️‍♀️ (15 mins)
@@ -210,7 +237,7 @@ You are working on a mouse model of cancer genomics. You want to do differential
 
 You are particularly interested in alternative splicing and novel splice junctions, as you suspect that cancer-associated genes are often regulated at the isoform level. 
 
-You will sequence your samples at the Otago Genomics Facility, and see on [their website](https://www.otago.ac.nz/genomics) they have an Illumina MiSeq and an Illumina NextSeq 2000. 
+You will sequence your samples at the Otago Genomics Facility, and see on [their website](https://www.otago.ac.nz/genomics) they have an Illumina MiSeq and an Illumina NextSeq 2000. Use this [Illumina benchtop sequencing platforms comparison](https://sapac.illumina.com/systems/sequencing-platforms.html) guide to help you decide. 
 
 ::: {.callout-note collapse="true"}
 # Which platform will you chose?
@@ -219,7 +246,7 @@ The Illumina NextSeq 2000 is a 'medium' sized short read sequencing platform, id
 
 The Illumina MiSeq is a 'small' sized short read sequencing platform, better suited to QC or amplicon sequencing, and can output up to 30Gb. It is too small for this project.  
 
-[Illumina benchtop sequencing platforms comparison](https://sapac.illumina.com/systems/sequencing-platforms.html)  
+
 
 :::
 
@@ -239,7 +266,7 @@ You work out what minimum output you need from the flow cell:
 ::: 
 
 
-Now you need to decide if you want paired-end or single end reads.
+Now you need to decide if you want paired-end or single-end reads.
 
 Based on table 2 above, what would you pick?
 
@@ -270,17 +297,22 @@ You are now ready to pick your flow cell. Check out the [Illumina NextSeq2000 fl
 ::: {.callout-note collapse="true"}
 # Which flow cell will you pick?
 
-Based on paired end sequencing using 100bp read length (i.e., 2 x 100bp):  
+Choices from earlier:  
 
-Total reads needed for your experiment: 1.2 billion reads.  
-Calculation: 1.2 billion reads x 100 (bp) x 2 (PE) = 240 Gb (240 gigabase pairs, or 240 billion individual DNA bases sequenced).  
+- Total reads needed for your experiment: 1.2 billion reads.  
+- Paired end sequencing using 100bp read length (i.e., 2 x 100bp)  
+
+
+Calculation: 1.2 billion reads x 100 (bp) x 2 (PE) = **240 Gb output is needed** (i.e., 240 gigabase pairs, or 240 billion individual DNA bases sequenced).  
+
+Flow cell options:  
 
 - P1 → No 100bp option and way too low  
 - P2 → 80 Gb  (too low for 1.2B demand)  
-- P3 → 240 Gb (fits 1.2B reads requirement exactly - best choice!)  
+- **P3 → 240 Gb (fits 1.2B reads requirement exactly - best choice!)**  
 - P4 → 360 Gb (oversized for this project)  
 
-Note: the maximum output stated for the flow cell is under optimal conditions, so the P3 flow cell choice just fits, but it is possible you will have less reads then anticipated (e.g., instead of 30 mil reads per sample, you may get 28 mil per sample). 
+Note: the maximum output stated for the flow cell is under optimal conditions, so the P3 flow cell choice just fits, but it is possible you will have less reads then anticipated (e.g., instead of 30 mil reads per sample, you may 28 mil per sample). 
 
 :::
 
@@ -294,7 +326,15 @@ Congratulations! You are now ready to sequence your RNAseq samples.
 
 Now let's look at **DNA sequencing** in more detail.
 
-DNA sequencing may refer to whole genome, whole exome, or targeted sequencing approaches. **FILL in a bit more here by someone who knows DNAseq better**
+DNA sequencing may refer to whole genome, whole exome, or targeted sequencing approaches. 
+
+::: {.callout-caution}
+# FILL IN HERE 
+
+**more explanation by someone who knows DNAseq better!**
+
+
+:::
 
 For **Genome sequencing** you will need:
 
@@ -309,6 +349,9 @@ For **Genome sequencing** you will need:
 
 Where Mb = megabase pairs (*i.e.,* 1 Mb = 1,000,000 bp)
 
+::: {.callout-caution}
+# FILL IN HERE 
+
 Coverage. talking about average coverage - really repetitive regions  can have very low covergae, other more easily resolved sections will have higher coverage.  
 
 heterozygosity homozygosity. 
@@ -317,13 +360,21 @@ haplotypes etc.
 
 Stick mostly to decision points - not a huge lecture/tutorial on genome/ DNA biology. Assume learners haev a genetics background - they just have not yet translated that knowledge into a practical application of NGS. 
 
+
+:::
+
 \
 
 
-::: {.callout-tip}
+::: {.callout-tip appearance="minimal"}
 
-# EXERCISE #2 🧠🏋️‍♀️ (10 mins)
+# EXERCISE #2 🧠🏋️‍♀️ (10 mins) 
 ***Example DNAseq scenario:***
+
+::: {.callout-caution}
+# FILL IN - THIS EXERCISE NOT COMPLETE
+Probably needs one or two more 'decision point' exercises for learners. 
+:::
 
 You are want to *de novo* assemble the genome of the New Zealand swamp maire (*Syzygium maire*), a critically-endangered, endemic myrtaceae species, which is under threat from the pathogen myrtle rust. 
 
@@ -335,21 +386,21 @@ Based on genome sizes of related Syzygium and Myrtaceae species (e.g., *Syzygium
 # Which long-read sequencing platform should you chose?
 
 There are two long-read platforms -- PacBio and ONT.
- **PacBio better for throughput (amount of reads you can get back) and for accuracy than  than ONT? Ask someone who knows this to fill in.**
+ **PacBio better for throughput (amount of reads you can get back) and for accuracy than ONT. FILL IN.**
 
 
 :::
 
 
-
-[Balkwill *et al.* 2024. Tree Genetics & Genomes.](https://doi.org/10.1007/s11295-024-01659-5)
-
-
-The authors also used Illumina sequencing in this paper.
+The *S. maire* genome was published in 2024 by [Balkwill *et al.* 2024. Tree Genetics & Genomes](https://doi.org/10.1007/s11295-024-01659-5). The authors also used Illumina sequencing in this paper.
 What did they use it for? Why do you think they chose to do Illumina sequencing for these samples rather than PacBio?
 
-::: {.callout-note collapse="true"}
-# Solutions:
+::: {.callout-note}
+# SOLUTIONS (collapse this once complete):
+
+::: {.callout-caution}
+# FILL IN - THIS EXERCISE NOT COMPLETE
+:::
 
 Answer: 30 x samples at low coverage for resequencing.   
 Answer: cost, accuracy at SNP level. dont need to resolve full genomes as that was not their question.
@@ -363,13 +414,19 @@ Answer: cost, accuracy at SNP level. dont need to resolve full genomes as that w
 
 >Note 1: Batch variation. Are you doing all your samples in one batch, or will you have multiple batches? Technical variation can occur, so you may want to wait and do all samples at once on one larger flow cell, or make sure you randomise samples across sequencing batches. 
 
->Note 2: DNAseq vs RNAseq. You may have noticed we call it 'RNAseq', even though we convert the RNA into DNA before sequencing! By convention, this is still called RNAseq, to differentiate it from true DNAseq. 
+>Note 2: DNAseq vs RNAseq. You may have noticed we call it 'RNAseq', even though we convert the RNA into DNA before sequencing! By convention, this is still called RNAseq, to differentiate it from true DNAseq. ONT can directly sequence the RNA without converting it to DNA first; we call this native RNA sequencing. 
 
 
 
 ## NZ sequencing facilities and services
 
 > Current as of: December 2025
+
+::: {.callout-caution}
+# NOTE
+
+not planning to go into detail at all on non-NGS services around NZ. Sticking to more higher throughput genomics. 
+:::
 
 **Sequencing facilities which offer NGS services:**   
 
@@ -397,7 +454,12 @@ Performs: small scale RNA or DNAseq, single gene (Sanger sequencing)
 
 - platforms: Illumina and ONT. They don't list on their website which ones they have. 
 
-Procotocol available - dont want to go into too much detail but becoems another decision point. Massey offer TruSeq lib prep. Auckland uses the newer kit. (slightly higher input required than the newer chemistry, both are very robust options. Newer one is supposed to be faster and better for more degarded RNA. Higher multiplexing for new kit 384 vs 96 for truseq).
+
+::: {.callout-caution}
+# FILL IN MORE DETAILS
+Procotocols available/ on offer- dont want to go into too much detail but becoems another decision point. Massey offer TruSeq lib prep. Auckland uses the newer kit. (slightly higher input required than the newer chemistry, both are very robust options. Newer one is supposed to be faster and better for more degarded RNA. Higher multiplexing for new kit 384 vs 96 for truseq).
+:::
+
 
 See here for [comparison between Illumina TruSeq stranded and Illumina stranded mRNA kits](https://knowledge.illumina.com/library-preparation/rna-library-prep/library-preparation-rna-library-prep-faq-list/000005928)
 
@@ -418,14 +480,28 @@ other
 - New [PacBio Revio in Auckland](https://www.customscience.co.nz/kindstar-new-zealand )
 
 
-### working with NZ seq facilities
+### Working with NZ sequencing facilities
 
-stuff on submission process, show example form ?
+::: {.callout-caution}
+# FILL IN HERE
+
+stuff on submission process, show example form  and brief explanation of how to fill out?
 
 how do you get data back from them ? how do they transfer it? 
 
-
-OGF gives you data back demultiplexed. I assume all other services in NZ do this too?
+Do all the seq facilities in NZ give you data back demultiplexed by default?
 
 Do anyone use basespace to share reads with people?
+
+
+:::
+
+### International sequencing services
+
+::: {.callout-caution}
+# FILL IN HERE
+International sequencing services - touch on this, why you may chose over NZ (or not chose!) then point towards the next section on ethical data management. 
+:::
+
+
 

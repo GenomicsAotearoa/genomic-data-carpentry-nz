@@ -7,6 +7,12 @@ format: html
 
 Your samples have been sequenced, now what?
 
+::: {.callout-caution}
+# PICTURE NEEDED
+
+progress diagram picture could be nice in this section on all pages of this workshop (i.e, from bench top plan -> DNA molecule -> library -> seq -> data on computer). 
+
+:::
 
 ## Genomic data files
 
@@ -49,17 +55,21 @@ Once the session is open, you can interact with your files through the directory
 
 For each Project, you will have a `nobackup`{style="color:blue"} and a `project`{style="color:blue"} directory. Keep your raw files in the `project`{style="color:blue"} directory and do your analysis in the `nobackup`{style="color:blue"} directory. As you can guess by the name, this directory is not backed up, and is best used for working analyses. Additionally, files not modified after 90 days are auto deleted. Final analysed files and imprortant scripts should be copied into the `project`{style="color:blue"} directory once you have completed your analysis. You may be surprised by how many intermediate files you make and how much 'tinkering' you do during your analyses--making use of the two directories helps keep your file system tidier. 
 
->Note: It can be a good idea to back-up raw genomic files on a HCS / reannz freezer?
+>Note: It can be a good idea to back-up raw genomic files on a HCS / reannz freezer? **FILL**
 
 ***Getting your genomic files on to the REANNZ cluster***
 
+::: {.callout-caution}
+# FILL IN HERE
 
 How do we actually get the genomic sequence files from the sequencing facility to the REANNZ cluster?
 
-**FILL IN HERE**
-
-
 GLOBUS
+
+:::
+
+
+
 
 
 
@@ -81,7 +91,12 @@ https://rtis.cspages.otago.ac.nz/research-computing/cluster/index.html
 
 ## Other universities HPC/HCS options?
 
-Auckland?
+::: {.callout-caution}
+# FILL IN HERE
+
+Auckland? wellingotn? massey? UC? probably cant cover all but need to list some of these. 
+
+:::
 
 
 
@@ -146,7 +161,7 @@ Here we will not go into detail on how to either download or upload data to the 
 
 - A [BioProject](https://www.ncbi.nlm.nih.gov/bioproject/) is a way to link all the sequencing and biological data together under one umbrella (as a general rule, 1 publication = 1 BioProject, but many groups use a single BioProject for multiple publications). If you are uploading your own data, we recommend starting with creating a BioProject, which will then give you a single accession (e.g., PRJNA31257) to use for the next steps (BioSample + SRA raw read uploads).  
 
-- A [BioSample](https://www.ncbi.nlm.nih.gov/biosample) is a unique descriptor of the biological source material (e.g, all the biological metadata of your sample -- species, sex, age, location, tissue). This is often (but not strictly) set up as 1 BioSample = 1 library. Each BioSample accession will be linked to the matching sequence data in the SRA, and all housed under one BioProject accession number. 
+- A [BioSample](https://www.ncbi.nlm.nih.gov/biosample) is a unique descriptor of the biological source material (e.g, all the biological metadata of your sample -- species, sex, age, location, tissue, etc.). This is often (but not strictly) set up as 1 BioSample = 1 library. Each BioSample accession will be linked to the matching sequence data in the SRA, and all housed under one BioProject accession number. 
  
 Equally, if you are downloading data from the SRA, you can make use of BioProject and BioSample accessions to identify and orientate yourself to the data. 
 
@@ -169,3 +184,16 @@ There are also GEO datasets (Gene Expression Omnibus) associated with this study
 
 
 This is not the only public repository of sequence reads, some other examples include: [European Nucleotide Archive (ENA)](https://www.ebi.ac.uk/ena/browser/home) and the DNA data bank of Japan [DDBJ Sequence Read Archive (DRA)](https://www.ddbj.nig.ac.jp/dra/index-e.html). These data banks are linked together via the [International Nucleotide Sequence Database Collaboration](https://www.insdc.org/). NCBI also details some of the [collaborative projects here](https://www.ncbi.nlm.nih.gov/genbank/collab/) (e.g., The Taxonomy Project, The Feature Table).
+
+
+## DISCUSSION 💬
+
+1. What ethical considerations do you need to take into account when storing and sharing your data for your own personal project?
+
+2. 
+
+::: {.callout-caution}
+# FILL IN HERE
+Other discussion points?
+:::
+

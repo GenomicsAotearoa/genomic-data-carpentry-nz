@@ -18,10 +18,10 @@ When we think about the data for a sequencing project, we often start by thinkin
 
 What kind of data and information have you generated (or think you will generate) about your samples that can be considered metadata? How do you store this information?
 
-Discuss with the group. 
+Discuss with the group. When you are ready, click on 'Solutions' for a few examples of what these metadata could be. 
 
-::: {.callout-tip collapse="true" appearance="minimal"}
-# SOLUTIONS
+::: {.callout-note collapse="true"}
+# SOLUTIONS 
  - Experimental conditions describing the biological samples, such as: temperature, weight, length, treatment.
  - Laboratory/technical data, such as: protocol or kit used to extract DNA/RNA, specific processing equipment, concentrations or quality indicators (e.g., Nanodrop, Qubit, or Bioanalyzer results)  
  - Lab notebook notes about how you conducted those experiments.  
@@ -45,16 +45,19 @@ The cardinal rules of using spreadsheet programs for data:
 - Do not combine multiple pieces of information in one cell. Sometimes it just seems like one thing, but think if that’s the only way you’ll want to be able to use or sort that data. For example, instead of having a column with species and strain name (e.g. E. coli K12) you would have one column with the species name (E. coli) and another with the strain name (K12). Depending on the type of analysis you want to do, you may even separate the genus and species names into distinct columns.  
 - Export the cleaned data to a text-based format like CSV (comma-separated values) format. This ensures that anyone can use the data, and is required by most data repositories.  
 
-![](figures/organisation-01.png)
 
 ::: {.callout-tip appearance="minimal"}
 # EXERCISE 🧠🏋️‍♀️ (2 mins)
 
-Above is some potential spreadsheet data generated about a sequencing experiment. 
+Below is some potential spreadsheet data generated about a sequencing experiment. 
+
+![](figures/organisation-01.png)
 
 Discuss some of the problems with the spreadsheet data shown above. You can look at the image, or download the file to your computer via [this link](https://datacarpentry.github.io/organization-genomics/files/Ecoli_metadata_composite_messy.xlsx) and open it in Excel.
 
-::: {.callout-tip collapse="true" appearance="minimal"}
+When you are ready, click on 'Solutions' to see a clean version of the data.
+
+::: {.callout-note collapse="true" }
 # SOLUTIONS
 
 Here is a clean version of the data ([download link here](https://raw.githubusercontent.com/datacarpentry/wrangling-genomics/gh-pages/files/Ecoli_metadata_composite.tsv)). Note the following changes to make the data tidy:  
@@ -75,10 +78,36 @@ Here is a clean version of the data ([download link here](https://raw.githubuser
 
 ### Tidy data principles
 
-Best ways to name columns:
+The simplest principle of Tidy data is that we have one row in our spreadsheet for each observation or sample, and one column for every variable that we measure or report on. As simple as this sounds, it's very easily violated. Most data scientists agree that significant amounts of their time is spent tidying data for analysis. 
+
+The R package [Tidyverse](https://tidyverse.org/) was specifically developed to deal with data cleaning and manipulation for analysis. Sidenote: a Genomics Aotearoa workshop on data manipulation with tidyverse tools is in development!
+
+
+::: {.callout-tip appearance="minimal"}
+# EXERCISE 🧠🏋️‍♀️ (1 min)
+
+Have a look at these column names and the differences between the good names and names to avoid:
 
 ![](figures/organisation-03.png)
 
-Be careful of zero values versus missing values:
+What do you notice? Jot down your thoughts before looking at the 'Solutions' below:
+
+::: {.callout-note collapse="true" }
+# SOLUTIONS
+
+- Good column names avoid using spaces and any special characters beyond underscores (`_`{style="color:black"}) 
+- [Camel case](https://en.wikipedia.org/wiki/Camel_case) is often a good alternative naming convention   
+- Note hyphens (`-`{style="color:black"}) are also avoided as they can cause headaches with R.  
+- R also does not like column names that begin with a number (e.g., `Observation_01`{style="color:black"} is fine, `01_Observation`{style="color:black"} is not)
+
+:::
+
+:::
+
+There are lots of different conventions people use to represent missing values. You should especially avoid representing a missing value as a 0 (zero), as zero implies that a measurement was taken and the result was zero. 
+
+The best option is to leave missing values as blank or designate them as an NA in your spreadsheet. 
+
+See below a few common values used for indicating a missing value:
 
 ![](figures/organisation-04.png)

@@ -175,12 +175,21 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
   <li><a href="#other-genomic-file-types" id="toc-other-genomic-file-types" class="nav-link" data-scroll-target="#other-genomic-file-types">Other genomic file types</a></li>
   </ul></li>
-  <li><a href="#fastqc---quality-scoring-of-raw-reads" id="toc-fastqc---quality-scoring-of-raw-reads" class="nav-link" data-scroll-target="#fastqc---quality-scoring-of-raw-reads">FASTQC - quality scoring of raw reads</a></li>
+  <li><a href="#fastqc---quality-scoring-of-raw-reads" id="toc-fastqc---quality-scoring-of-raw-reads" class="nav-link" data-scroll-target="#fastqc---quality-scoring-of-raw-reads">FASTQC - quality scoring of raw reads</a>
+  <ul class="collapse">
+  <li><a href="#examples-good-vs-bad-sequence-data" id="toc-examples-good-vs-bad-sequence-data" class="nav-link" data-scroll-target="#examples-good-vs-bad-sequence-data">EXAMPLES: Good vs bad sequence data</a>
+  <ul class="collapse">
+  <li><a href="#per-base-sequence-quality" id="toc-per-base-sequence-quality" class="nav-link" data-scroll-target="#per-base-sequence-quality">Per base sequence quality</a></li>
+  <li><a href="#per-sequence-quality-scores" id="toc-per-sequence-quality-scores" class="nav-link" data-scroll-target="#per-sequence-quality-scores">Per sequence quality scores</a></li>
+  <li><a href="#overrepresented-sequences" id="toc-overrepresented-sequences" class="nav-link" data-scroll-target="#overrepresented-sequences">Overrepresented sequences</a></li>
+  </ul></li>
+  </ul></li>
   <li><a href="#good-genome-bad-genome" id="toc-good-genome-bad-genome" class="nav-link" data-scroll-target="#good-genome-bad-genome">Good genome, bad genome?</a>
   <ul class="collapse">
   <li><a href="#exercises-6-mins" id="toc-exercises-6-mins" class="nav-link" data-scroll-target="#exercises-6-mins">EXERCISES 🧠🏋️‍♀️ (6 mins):</a></li>
   </ul></li>
   </ul></li>
+  <li><a href="#workshop-complete" id="toc-workshop-complete" class="nav-link" data-scroll-target="#workshop-complete">Workshop complete :)</a></li>
   </ul>
 </nav>
     </div>
@@ -195,10 +204,10 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="genomic-data-wrangling-and-processing" class="level1">
 <h1>Genomic data wrangling and processing</h1>
-<p>Your data is now on a server/cloud/local computer, ready for analysis. Now what?</p>
+<p>Your data is now on a server/cloud/compute system/local computer, ready for analysis. Now what?</p>
 <section id="command-line-interface-cli-vs-graphical-user-interface-gui" class="level2">
 <h2 class="anchored" data-anchor-id="command-line-interface-cli-vs-graphical-user-interface-gui">Command-line interface (CLI) vs graphical user interface (GUI)</h2>
-<p>Command line interface (CLI) and graphic user interface (GUI) are different ways of interacting with a computer’s operating system. They have different pros and cons. Most people are familiar with the GUI as it is the default interface for most software, particularly on Windows and Mac OS. When using the GUI, you see and interact with visual representations of files, folders, applications, and most other functions of your computer. When using the CLI, you work largely with text representations of software, files, folders, input and output. The shell is a program that allows you to control your computer by typing instructions on the CLI with a keyboard.</p>
+<p>Command line interface (CLI) and graphic user interface (GUI) are different ways of interacting with a computer’s operating system. They have different pros and cons. Most people are familiar with the GUI (i.e., point and click) as it is the default interface for most software, particularly on Windows and Mac OS. When using the GUI, you see and interact with visual representations of files, folders, applications, and most other functions of your computer. When using the CLI, you work largely with text representations of software, files, folders, input and output. The shell is a program that allows you to control your computer by typing instructions on the CLI with a keyboard.</p>
 <p>There are several reasons to learn how to use the CLI:</p>
 <ul>
 <li>For most bioinformatics tools, there are no graphical interfaces. <strong>If you want to work in metagenomics or genomics, you’re going to need to use the CLI/ shell.</strong><br>
@@ -243,7 +252,7 @@ ul.task-list li input[type="checkbox"] {
 <p>From left to right, these are the quality scores in increasing order of quality:</p>
 <pre><code>!"#$%&amp;'()*+,-./0123456789:;&lt;=&gt;?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~</code></pre>
 <p>So, if a single base has a quality score of <code style="color:black">!</code>, which corresponds to a Q-score of 0, this indicates exceptionally poor quality. The sequencing machine was not able to resolve which base it should be. Often these will be shown as N’s.</p>
-<p>Conversely, if a single base has a quality score of <code style="color:black">I</code>, which corresponds to a Q-score of 40, this indicates very high quality. The sequencing machine was “very confident” that the base called is correct (Q40 indicates an error rate of 0.0001, i.e., a 1 in 10,000 chance of the base being called wrong. <code style="color:black">I</code> is near the upper end of typically achieved quality values, but higher is possible.</p>
+<p>Conversely, if a single base has a quality score of <code style="color:black">I</code>, which corresponds to a Q-score of 40, this indicates very high quality. The sequencing machine was “very confident” that the base called is correct (Q40 indicates an error probabilty of 0.0001, i.e., a 1 in 10,000 chance of the base being called wrong, on average. <code style="color:black">I</code> is near the upper end of typically achieved quality values, but higher is possible.</p>
 <p>For more on quality scores, you can also read this <a href="https://help.basespace.illumina.com/files-used-by-basespace/quality-scores">Illumina guide here</a>. Note there are different types of encoding, but you will most frequently encounter <a href="https://en.wikipedia.org/wiki/Phred_quality_score">Phred</a>+33.</p>
 <p>We can assess the quality score across all reads using software called <a href="https://www.bioinformatics.babraham.ac.uk/projects/fastqc/">FastQC</a>, and trim down reads to remove poorer quality bases below a set threshold (generally with newer sequence data, you can use Q30 or Q40 as a cut-off). We won’t cover trimming here, see our workshop on <a href="https://genomicsaotearoa.github.io/BioinformaticsTrainingProgramme/portfolio.html#rna-seq-data-analysis">RNA-seq Data Analysis</a> for a step-by-step guide.</p>
 <section id="other-genomic-file-types" class="level3">
@@ -352,9 +361,71 @@ GTF
 </section>
 <section id="fastqc---quality-scoring-of-raw-reads" class="level2">
 <h2 class="anchored" data-anchor-id="fastqc---quality-scoring-of-raw-reads">FASTQC - quality scoring of raw reads</h2>
-<ul>
-<li>fastqc in depth (use to teach intro shell )</li>
-</ul>
+<p>All <code>fastq</code> files, regardless of which kind of sequencing was performed, should be interrogated using a program called <a href="https://www.bioinformatics.babraham.ac.uk/projects/fastqc/">FastQC</a>. Most HPC services (e.g., REANNZ) come with this program (and many other commonly used programs) pre-installed, so you likely will not need to install it anywhere.</p>
+<p>FastQC will give you a good overview of the quality of the reads (i.e., how confidently each base was called by the sequencing platform) and a few other statistics about the reads. Each statistic will be assigned a PASS, WARNING or FAIL:</p>
+<p><img src="figures/fastqc-pass.png" class="img-fluid" style="width:8.0%"> PASS &nbsp;&nbsp;&nbsp; <img src="figures/fastqc-warn.png" class="img-fluid" style="width:8.0%"> WARNING &nbsp;&nbsp;&nbsp; <img src="figures/fastqc-fail.png" class="img-fluid" style="width:8.0%"> FAIL</p>
+<p>The following examples come from the ‘<a href="https://www.bioinformatics.babraham.ac.uk/projects/fastqc/good_sequence_short_fastqc.html">Good Illumina Data</a>’ and ‘<a href="https://www.bioinformatics.babraham.ac.uk/projects/fastqc/bad_sequence_fastqc.html">Bad Illumina Data</a>’ reports from the <a href="https://www.bioinformatics.babraham.ac.uk/index.html">Babraham Bioinformatics website</a>.</p>
+<section id="examples-good-vs-bad-sequence-data" class="level3">
+<h3 class="anchored" data-anchor-id="examples-good-vs-bad-sequence-data">EXAMPLES: Good vs bad sequence data</h3>
+<p>Below are the summarised pass, warning, fail statistics for the good (left) and bad (right) data. <img src="figures/fastqc-good-bad-summary.png" class="img-fluid" style="width:80.0%"></p>
+<p>Here we will choose a few of these as examples to delve into:</p>
+<section id="per-base-sequence-quality" class="level4">
+<h4 class="anchored" data-anchor-id="per-base-sequence-quality">Per base sequence quality</h4>
+<p>The <strong>per base sequence quality</strong> is the first plot you can use to assess the quality. You can picture the reads as being all stacked on top of each other, and the average quality at each position (x-axis) shown as a boxplot (i.e., position 1 shows a boxplot of the quality scores of base pair #1 in all reads, position 2 shows a boxplot for base pair #2, and so on).</p>
+<p>The quality score is shown on the y-axis. A score of below Q20 (error probabilty = 0.01, or 1 in 100 bases are incorrect on average) is shown as red - boxplots that extend in to this section indicate positions in the read that are poor quality.</p>
+<p>In general, when you are trimming your reads you should pick a quality cut off of at least Q30 (error probabilty = 0.001; 1 in 1000), and some researchers even use Q40 (error probabilty = 0.0001; 1 in 10,000) for newer data. If you are working with older data (10+ years old, sequenced before ~2014), you may need to pick Q20 as a cut-off. These plots help you decide what is best for your data.</p>
+<p>After trimming reads, you should run FastQC again to compare how the average quality has changed and see how many reads are retained after trimming.</p>
+<p><strong>Good data:</strong> Per base sequence quality <img src="figures/fastqc-good-01.png" class="img-fluid"></p>
+<p>In this ‘Bad data’ below, we can see most reads are dropping in to the Q20 and below range from about base position 24 onwards to position 40. This is a typical pattern, where sequence quality tends to drop off around the 3’ end for Illumina reads.</p>
+<p><strong>Bad data:</strong> Per base sequence quality <img src="figures/fastqc-bad-01.png" class="img-fluid"></p>
+</section>
+<section id="per-sequence-quality-scores" class="level4">
+<h4 class="anchored" data-anchor-id="per-sequence-quality-scores">Per sequence quality scores</h4>
+<p>The <strong>per sequence quality scores</strong> plots the Q-score per sequence, rather than per base position as above. The average Q-score for the whole read is taken, then plotted to show how many reads have that average score. Below we can see that for the good data and bad data, almost all reads sit above Q30.</p>
+<p><strong>Good data:</strong> Per sequence quality scores <img src="figures/fastqc-good-02.png" class="img-fluid"></p>
+<p>For the bad data, we can see that the larger peak of reads sits at a slightly lower (and wider) Q score, and there is a second peak at a very poor score of around Q17. These data show us that there may be a large proportion of reads with a high Q-score retained after trimming (good news!). The data has been given a ‘pass’ by FastQC, indicating it has not dropped below the threshold for this category to be given a warning or fail.</p>
+<p><strong>Bad data:</strong> Per sequence quality scores <img src="figures/fastqc-bad-02.png" class="img-fluid"></p>
+</section>
+<section id="overrepresented-sequences" class="level4">
+<h4 class="anchored" data-anchor-id="overrepresented-sequences">Overrepresented sequences</h4>
+<p>Multiple sources can cause overrepresented sequences in your dataset. It can be a true biological or experimental effect, for example if you expect a few genes to be exceptionally highly expressed or if you have done targeted amplicon sequencing. However, it often reflects an issue that may have happened during extraction or library prep. Contaminating rRNA is a common culprit in RNAseq, as rRNA exists at a much higher concentration than other mRNAs in the cell. You may have to make a judgement call whether your data is still useable if it is highly contaminated. While contaminating reads can be filtered out, you’ll have less useable reads. PCR overamplification during the library prep can also be an issue - in which case it may be possible to repeat part of the library prep with less PCR cycles.</p>
+<p>For our good data, no overrepresented sequences were detected:</p>
+<p><img src="figures/fastqc-good-03.png" class="img-fluid"></p>
+<p>Here is a snippet of our bad data, showing a ‘warning’ with multiple overrepresented sequences detected, and the count and percentage of the total reads is also shown:</p>
+<p><img src="figures/fastqc-bad-03.png" class="img-fluid"></p>
+<p>FastQC looks for hits that are matches in a database of common contaminants. No hit was detected for any of these sequences, but it is worth BLASTing some of the highest count sequences to find the culprit.</p>
+<div class="callout callout-style-simple callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+EXERCISE 🧠🏋️‍♀️ (1 min)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>What percentage of reads would need to be overrepresented for this category to be given a fail?</p>
+<p>Use the <a href="https://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/3%20Analysis%20Modules/">FastQC help guide here</a>.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+SOLUTION
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>If any sequence is found to represent more than 1% of the total it will get a fail.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
 </section>
 <section id="good-genome-bad-genome" class="level2">
 <h2 class="anchored" data-anchor-id="good-genome-bad-genome">Good genome, bad genome?</h2>
@@ -398,11 +469,12 @@ Large-scale errors such as mis-joins or collapsed repeats are minimised.</p></li
 <p>A genome can be <strong>well assembled but poorly annotated</strong>, or vice versa.</p>
 <section id="exercises-6-mins" class="level3">
 <h3 class="anchored" data-anchor-id="exercises-6-mins">EXERCISES 🧠🏋️‍♀️ (6 mins):</h3>
-<p><strong><em>How would you describe these genomes? Look at the assembly stats and make some notes of how ‘good’ you think each assembly is.</em></strong></p>
-<div class="callout callout-style-default callout-tip callout-titled">
+<p><strong><em>How would you describe these genomes?</em></strong></p>
+<p>Look at the assembly stats and make some notes of how ‘good’ you think each assembly is.</p>
+<div class="callout callout-style-simple callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon"></i>
+<i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 EXERCISE #1 🧠🏋️‍♀️ (3 mins) - Human Genome Assembly
@@ -414,33 +486,43 @@ EXERCISE #1 🧠🏋️‍♀️ (3 mins) - Human Genome Assembly
 <p><img src="figures/genome-assembly-human-02.png" class="img-fluid"></p>
 <p>Jot down your thoughts before looking at the solution below:</p>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 Human genome solution
 </div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+FILL IN HERE
+</div>
+</div>
 <div class="callout-body-container callout-body">
 <p>Chromosome level - very high quality. busco score - very close to complete. very good genome</p>
 <p>number of extra scaffolds and contigs is very low (470 s / 996 c - it can be thousands of extra so hundreds is pretty good!)</p>
 <p>scaffold and contig N50. describe these!</p>
 </div>
 </div>
-</div>
-<p><br>
-</p>
+<p>collapse solution when complete</p>
 </div>
 </div>
 <p><br>
 </p>
-<div class="callout callout-style-default callout-tip callout-titled">
+</div>
+</div>
+<p><br>
+</p>
+<div class="callout callout-style-simple callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon"></i>
+<i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 EXERCISE #2 🧠🏋️‍♀️ (3 mins) - Sea Anemone Genome Assembly
@@ -452,35 +534,56 @@ EXERCISE #2 🧠🏋️‍♀️ (3 mins) - Sea Anemone Genome Assembly
 <p><img src="figures/genome-assembly-nemvec-02.png" class="img-fluid"></p>
 <p>Jot down your thoughts before looking at the solution below:</p>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 Sea anemone solution
 </div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+FILL IN HERE
+</div>
+</div>
 <div class="callout-body-container callout-body">
 <p>scaffold level - medium quality. but the N50 is below 1mb, at 472.6kb scaffold. not great! quite fragmented.</p>
 <p>busco score pretty good despite lack of placed scaffolds. contig/scaffold N50 - high enough that most genes are resolved.</p>
 <p>assembly itself not amazing, but annotation is probably good enough for gene level compariosn with other species.</p>
 <p>Larger scale structural variants and synteny difficult or erroneous to resolve. -&gt; is this true?</p>
+</div>
+</div>
+<p>collapse=“true”</p>
 <div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 Extra for experts
 </div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Here is the original paper for the curious: <a href="https://www.science.org/doi/10.1126/science.1139158">Putnam et al.&nbsp;2007.</a></p>
-<p>The authors claim the genome reveals <em>“ancestral eumetazoan genomic organization”</em>. How did they assess this and what conclusion did they make about the eumetazoan ancestor resemblance to modern vertebrates, sea anemones and prokaryotes? Do you think they had a ‘good’ enough genome to assess this?</p>
+<p>The authors claim the genome reveals <em>“ancestral eumetazoan genomic organization”</em>. How did they assess this and what conclusion did they make about the eumetazoan ancestor resemblance to modern vertebrates, sea anemones and protosomes? Do you think they had a ‘good’ enough genome to assess this?</p>
+<div class="callout callout-style-simple callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Extra for experts solution
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>NEED TO FACT CHECK THIS, COLLAPSE WHEN COMPLETE</strong></p>
+<p>The authors used synteny analysis. They found many major genes, such as Hox genes, retained the same intron/exon structure in sea anemones as vertebrates, but this was not retained in model protosome species. Based on this they conlcuded that sea anemone genomes more closely resemble vertebrates than protosome species (fly, nematode, annelid) do. While the genome assembly itself is quite fragmented, the annotations are quite good, indicating that any conclusions the authors made comparing genomes and a gene stucture level are likely quite robust, but it would not be feasible with this assembly to make any conclusions based on larger genomic structure (i.e., at closer to chromosome level).</p>
 </div>
 </div>
 </div>
@@ -491,10 +594,13 @@ Extra for experts
 </p>
 </div>
 </div>
-
-
 </section>
 </section>
+</section>
+<section id="workshop-complete" class="level1">
+<h1>Workshop complete :)</h1>
+
+
 </section>
 
 </main> <!-- /main -->

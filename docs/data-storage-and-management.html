@@ -181,6 +181,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#rakeiora-genomics-platform" id="toc-rakeiora-genomics-platform" class="nav-link" data-scroll-target="#rakeiora-genomics-platform">Rakeiora Genomics platform</a></li>
   </ul></li>
   <li><a href="#public-data" id="toc-public-data" class="nav-link" data-scroll-target="#public-data">Public data</a></li>
+  <li><a href="#discussion" id="toc-discussion" class="nav-link" data-scroll-target="#discussion">DISCUSSION 💬</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -197,6 +198,19 @@ ul.task-list li input[type="checkbox"] {
 <section id="genomic-data-storage-and-management" class="level1">
 <h1>Genomic data storage and management</h1>
 <p>Your samples have been sequenced, now what?</p>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+PICTURE NEEDED
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>progress diagram picture could be nice in this section on all pages of this workshop (i.e, from bench top plan -&gt; DNA molecule -&gt; library -&gt; seq -&gt; data on computer).</p>
+</div>
+</div>
 <section id="genomic-data-files" class="level2">
 <h2 class="anchored" data-anchor-id="genomic-data-files">Genomic data files</h2>
 <p>Genomic data files are huge, and for one project you will often have several hundred gigabytes (GB) to sometimes terabytes (TB) of data (more on the actual genomic file types in the next section <a href="./data-wrangling-and-processing.html">Data wrangling and processing</a>). You most likely won’t be able to store and analyse these on your local computer, or transfer the files in the ‘traditional’ way using portable USB drives, so you’ll need to make use of a high capacity storage (HCS), high performance computing (HPC), and file transfer protocols (FTP). An introduction to genomics is also an introduction to the world of high performance computing!</p>
@@ -220,12 +234,23 @@ ul.task-list li input[type="checkbox"] {
 <p>Once the session is open, you can interact with your files through the directory structure on the left, and open either a Terminal or various other scripting programs through the Launcher. More on using the Terminal (also known as shell / unix shell / bash) in the next lesson.</p>
 <p>For each Project, you will have a <code style="color:blue">nobackup</code> and a <code style="color:blue">project</code> directory. Keep your raw files in the <code style="color:blue">project</code> directory and do your analysis in the <code style="color:blue">nobackup</code> directory. As you can guess by the name, this directory is not backed up, and is best used for working analyses. Additionally, files not modified after 90 days are auto deleted. Final analysed files and imprortant scripts should be copied into the <code style="color:blue">project</code> directory once you have completed your analysis. You may be surprised by how many intermediate files you make and how much ‘tinkering’ you do during your analyses–making use of the two directories helps keep your file system tidier.</p>
 <blockquote class="blockquote">
-<p>Note: It can be a good idea to back-up raw genomic files on a HCS / reannz freezer?</p>
+<p>Note: It can be a good idea to back-up raw genomic files on a HCS / reannz freezer? <strong>FILL</strong></p>
 </blockquote>
 <p><strong><em>Getting your genomic files on to the REANNZ cluster</em></strong></p>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+FILL IN HERE
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>How do we actually get the genomic sequence files from the sequencing facility to the REANNZ cluster?</p>
-<p><strong>FILL IN HERE</strong></p>
 <p>GLOBUS</p>
+</div>
+</div>
 <p><strong><em>Want more info?</em></strong></p>
 <ul>
 <li>REANNZ provide <a href="https://docs.nesi.org.nz/">extensive documentation</a> on how to use their High Performance Computing (HPC) platforms.</li>
@@ -241,7 +266,19 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="other-universities-hpchcs-options" class="level2">
 <h2 class="anchored" data-anchor-id="other-universities-hpchcs-options">Other universities HPC/HCS options?</h2>
-<p>Auckland?</p>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+FILL IN HERE
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Auckland? wellingotn? massey? UC? probably cant cover all but need to list some of these.</p>
+</div>
+</div>
 </section>
 <section id="ethical-data-management" class="level2">
 <h2 class="anchored" data-anchor-id="ethical-data-management">Ethical data management</h2>
@@ -294,12 +331,12 @@ ul.task-list li input[type="checkbox"] {
 <p>Here we will not go into detail on how to either download or upload data to the SRA (see <a href="https://www.ncbi.nlm.nih.gov/sra">documentation on their website</a>). But some points to be aware of are:</p>
 <ul>
 <li><p>A <a href="https://www.ncbi.nlm.nih.gov/bioproject/">BioProject</a> is a way to link all the sequencing and biological data together under one umbrella (as a general rule, 1 publication = 1 BioProject, but many groups use a single BioProject for multiple publications). If you are uploading your own data, we recommend starting with creating a BioProject, which will then give you a single accession (e.g., PRJNA31257) to use for the next steps (BioSample + SRA raw read uploads).</p></li>
-<li><p>A <a href="https://www.ncbi.nlm.nih.gov/biosample">BioSample</a> is a unique descriptor of the biological source material (e.g, all the biological metadata of your sample – species, sex, age, location, tissue). This is often (but not strictly) set up as 1 BioSample = 1 library. Each BioSample accession will be linked to the matching sequence data in the SRA, and all housed under one BioProject accession number.</p></li>
+<li><p>A <a href="https://www.ncbi.nlm.nih.gov/biosample">BioSample</a> is a unique descriptor of the biological source material (e.g, all the biological metadata of your sample – species, sex, age, location, tissue, etc.). This is often (but not strictly) set up as 1 BioSample = 1 library. Each BioSample accession will be linked to the matching sequence data in the SRA, and all housed under one BioProject accession number.</p></li>
 </ul>
 <p>Equally, if you are downloading data from the SRA, you can make use of BioProject and BioSample accessions to identify and orientate yourself to the data.</p>
 <p>Example BioProject:</p>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -308,7 +345,7 @@ Human airway smooth muscle transcriptome study
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>You can see there are 16 SRA experiments and 16 BioSamples – you can guess that these probably match one to one.</p>
 <p>There are also GEO datasets (Gene Expression Omnibus) associated with this study, which are repositories for functional genomic data. These are a more processed form of the data e.g., count tables and differential expression data.</p>
@@ -318,6 +355,26 @@ Human airway smooth muscle transcriptome study
 </div>
 </div>
 <p>This is not the only public repository of sequence reads, some other examples include: <a href="https://www.ebi.ac.uk/ena/browser/home">European Nucleotide Archive (ENA)</a> and the DNA data bank of Japan <a href="https://www.ddbj.nig.ac.jp/dra/index-e.html">DDBJ Sequence Read Archive (DRA)</a>. These data banks are linked together via the <a href="https://www.insdc.org/">International Nucleotide Sequence Database Collaboration</a>. NCBI also details some of the <a href="https://www.ncbi.nlm.nih.gov/genbank/collab/">collaborative projects here</a> (e.g., The Taxonomy Project, The Feature Table).</p>
+</section>
+<section id="discussion" class="level2">
+<h2 class="anchored" data-anchor-id="discussion">DISCUSSION 💬</h2>
+<ol type="1">
+<li><p>What ethical considerations do you need to take into account when storing and sharing your data for your own personal project?</p></li>
+<li></li>
+</ol>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+FILL IN HERE
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Other discussion points?</p>
+</div>
+</div>
 
 
 </section>

@@ -20,10 +20,11 @@ This is a beginner-friendly workshop, designed to get you started with the world
 
 ## What's NOT covered in this workshop
 
-- Non-NGS sequencing and services (e.g., Sanger sequencing, qPCR, genotyping, probe-based applications such as microarrays and NanoString nCounter)  
-- Genomic analysis pipelines (beyond the basics of initial quality checks of raw reads) 
+- Basic descriptions of biological and genetic concepts (i.e., we assume the learner is already familiar with DNA/RNA, PCR, transcription etc. to an undergraduate level).   
+- Non-NGS sequencing and services (e.g., Sanger sequencing, qPCR, genotyping, probe-based applications such as microarrays and NanoString nCounter).  
+- Genomic analysis workflows (beyond the basics of initial quality checks of raw reads) 
 - The basics of cluster or HPC resourcing and specialised software (e.g., we do not cover schedulers such as SLURM, partitions/CPUs/GPUs, chosing compute allocation allowance). See our workshop on [Introduction to Bash Scripting and HPC Job Scheduler](https://genomicsaotearoa.github.io/BioinformaticsTrainingProgramme/portfolio.html#introduction-to-bash-scripting-and-hpc-job-scheduler) for this.
-- Using shell, beyond the very basics (e.g., we do not cover writing/submitting bash scripts, modules, accessing the cluster using ssh) 
+- Using shell or other bioinformatic tools, beyond the very basics (e.g., we do not cover writing/submitting bash scripts, modules, accessing the cluster using ssh).  
 
 ## Glossary
 
@@ -33,7 +34,7 @@ This is a beginner-friendly workshop, designed to get you started with the world
 | bp   | Base pair |
 | HCS   | High Capacity Storage |
 | HPC   | High Performance Computing |
-| Index | Also known as barcode. Short unique sequence added to each DNA molecule in one library, allowing the identification of that library/sample and thereby enabling pooling of the libraries (one run = cheaper). |
+| Index | Also known as a barcode. Short unique sequence added to each DNA molecule in one library, allowing the identification of that library/sample and thereby enabling pooling of the libraries (one run = cheaper). |
 | Mb   | Megabase pair (1,000,000 bp) |
 | MB   | Megabyte |
 | Multiplexing   | Sequencing multiple samples simultaneously in one run by combining libraries into one pool. Samples (i.e., libraries) are de-multiplexed (separated) *in silico* usually by the technician, based on unique indices.  |
@@ -62,12 +63,18 @@ In this workshop, the following lessons were adapted from The Carpentries Data C
 
 :::
 
+Material is used in this workshop from our other Genomics Aotearoa workshops, as below:
+
+- Material from our [Introduction to Shell](https://genomicsaotearoa.github.io/introduction-to-shell/) workshop is **re-used** in the [Genomic data wrangling and processing](data-wrangling-and-processing.qmd) section.   
+- Material from our [Introduction to R workshop - section on working with spreadsheets](https://genomicsaotearoa.github.io/Introduction-to-R/03-basics-factors-dataframes/) is **re-used** in [Organisation and tidy data](organisation-tidiness.qmd). 
+
 Other material used in this workshop:  
 
 - Illumina library prep molecular workflow diagram in [Planning for submission](planning-for-submission.qmd) from Illumina Stranded mRNA Prep, Ligation Data Sheet. M-GL-02143 v1.0  
 - Bioanalyzer trace of final mRNA library in [Planning for submission](planning-for-submission.qmd) from Illumina Stranded mRNA Prep, Ligation Protocol Document # 1000000124518 v04.  
 - PacBio SMRTbell adapters image in [Planning for submission](planning-for-submission.qmd) from Template Preparation and Sequencing Guide P/N 000-710-821-13.  
-- Material from our [Introduction to Shell](https://genomicsaotearoa.github.io/introduction-to-shell/) workshop is re-used in the [Genomic data wrangling and processing](data-wrangling-and-processing.qmd) section.  
+- Adapter dimer image from [Illumina general knowledge base](https://knowledge.illumina.com/library-preparation/general/library-preparation-general-reference_material-list/000003874) used in [Planning for submission](planning-for-submission.qmd). 
+
 
 
 Definitions:   

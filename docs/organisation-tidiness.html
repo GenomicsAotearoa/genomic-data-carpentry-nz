@@ -206,11 +206,11 @@ EXERCISE 🧠🏋️‍♀️ (3 mins)
 </div>
 <div class="callout-body-container callout-body">
 <p>What kind of data and information have you generated (or think you will generate) about your samples that can be considered metadata? How do you store this information?</p>
-<p>Discuss with the group.</p>
-<div class="callout callout-style-simple callout-tip no-icon callout-titled">
+<p>Discuss with the group. When you are ready, click on ‘Solutions’ for a few examples of what these metadata could be.</p>
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 SOLUTIONS
@@ -250,7 +250,6 @@ SOLUTIONS
 </li>
 <li>Export the cleaned data to a text-based format like CSV (comma-separated values) format. This ensures that anyone can use the data, and is required by most data repositories.</li>
 </ul>
-<p><img src="figures/organisation-01.png" class="img-fluid"></p>
 <div class="callout callout-style-simple callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -261,12 +260,14 @@ EXERCISE 🧠🏋️‍♀️ (2 mins)
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Above is some potential spreadsheet data generated about a sequencing experiment.</p>
+<p>Below is some potential spreadsheet data generated about a sequencing experiment.</p>
+<p><img src="figures/organisation-01.png" class="img-fluid"></p>
 <p>Discuss some of the problems with the spreadsheet data shown above. You can look at the image, or download the file to your computer via <a href="https://datacarpentry.github.io/organization-genomics/files/Ecoli_metadata_composite_messy.xlsx">this link</a> and open it in Excel.</p>
-<div class="callout callout-style-simple callout-tip no-icon callout-titled">
+<p>When you are ready, click on ‘Solutions’ to see a clean version of the data.</p>
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 SOLUTIONS
@@ -296,9 +297,49 @@ SOLUTIONS
 </div>
 <section id="tidy-data-principles" class="level3">
 <h3 class="anchored" data-anchor-id="tidy-data-principles">Tidy data principles</h3>
-<p>Best ways to name columns:</p>
+<p>The simplest principle of Tidy data is that we have one row in our spreadsheet for each observation or sample, and one column for every variable that we measure or report on. As simple as this sounds, it’s very easily violated. Most data scientists agree that significant amounts of their time is spent tidying data for analysis.</p>
+<p>The R package <a href="https://tidyverse.org/">Tidyverse</a> was specifically developed to deal with data cleaning and manipulation for analysis. Sidenote: a Genomics Aotearoa workshop on data manipulation with tidyverse tools is in development!</p>
+<div class="callout callout-style-simple callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+EXERCISE 🧠🏋️‍♀️ (1 min)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Have a look at these column names and the differences between the good names and names to avoid:</p>
 <p><img src="figures/organisation-03.png" class="img-fluid"></p>
-<p>Be careful of zero values versus missing values:</p>
+<p>What do you notice? Jot down your thoughts before looking at the ‘Solutions’ below:</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+SOLUTIONS
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ul>
+<li>Good column names avoid using spaces and any special characters beyond underscores (<code style="color:black">_</code>)</li>
+<li><a href="https://en.wikipedia.org/wiki/Camel_case">Camel case</a> is often a good alternative naming convention<br>
+</li>
+<li>Note hyphens (<code style="color:black">-</code>) are also avoided as they can cause headaches with R.<br>
+</li>
+<li>R also does not like column names that begin with a number (e.g., <code style="color:black">Observation_01</code> is fine, <code style="color:black">01_Observation</code> is not)</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>There are lots of different conventions people use to represent missing values. You should especially avoid representing a missing value as a 0 (zero), as zero implies that a measurement was taken and the result was zero.</p>
+<p>The best option is to leave missing values as blank or designate them as an NA in your spreadsheet.</p>
+<p>See below a few common values used for indicating a missing value:</p>
 <p><img src="figures/organisation-04.png" class="img-fluid"></p>
 
 

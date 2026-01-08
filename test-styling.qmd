@@ -68,17 +68,31 @@ stuff in caution appearance="minimal"
 ::: {.callout-warning appearance="minimal"}
 # EXERCISE 🧠🏋️‍♀️ - 3 mins
 
-Text
+Text  callout-warning appearance="minimal"
 
 ::: {.callout-tip collapse="true" appearance="minimal"}
 # SOLUTIONS
- -  text 
+ -  text callout-tip collapse="true" appearance="minimal
  
 
 :::
 
 :::
 
+
+::: {.callout-warning appearance="simple"}
+# EXERCISE 🧠🏋️‍♀️ - 3 mins
+
+Text  callout-warning appearance="simple"
+
+::: {.callout-tip  appearance="simple"}
+# SOLUTIONS
+ -  text callout-tip appearance="simple"
+ 
+
+:::
+
+:::
 
 # Header 1
 
