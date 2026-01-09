@@ -220,10 +220,23 @@ ul.task-list li input[type="checkbox"] {
 <blockquote class="blockquote">
 <p>Note: you’ll hear the terms ‘shell’, ‘bash’, ‘unix’, ‘terminal’ and ‘command-line’ used almost interchangeably. For beginners, you can think of them as essentially all the same thing! As you gain more computational skills, you can dig into the differences.</p>
 </blockquote>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+THOUGHTS
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Debating if it is worth adding in an intro to shell here properly, or just refer people to our intro to shell workshop. Leaning towards not adding it, as it quickly becomes a can of worms</p>
+</div>
+</div>
 </section>
 <section id="first-check-that-the-data-are-not-corrupt" class="level2">
 <h2 class="anchored" data-anchor-id="first-check-that-the-data-are-not-corrupt">First, check that the data are not corrupt</h2>
-<p>Believe it or not, computers can make mistakes! When your data files are being copied over from the sequencing facility to cloud storage, errors can occur that cause your files to become corrupted. This is not always obvious based on file size or a quick look at the contents. The first thing you’ll want to do is run a checksum, which will output a fixed-length message of 16 bytes– a unique identifier of each file. The files should also come with the checksums run by the technician at the sequencing facility. Check out the section on <a href="https://genomicsaotearoa.github.io/shell-for-bioinformatics/2_download_data/">Data Integrity in our GA shell workshop</a> for more information on how to run this.</p>
+<p>Believe it or not, computers can make mistakes! When your data files are being copied over from the sequencing facility to cloud storage, errors can occur that cause your files to become corrupted. This is not always obvious based on file size or a quick look at the contents. The first thing you’ll want to do is run a checksum, which will output a fixed-length message of 16 bytes– a unique identifier of each file. The files should also come with the checksums run by the technician at the sequencing facility. If the files have been corrupted by even one character, the 16 byte unique identifier will be completely different, allowing you to easily and quickly verify the integrity of your files. Check out the section on <a href="https://genomicsaotearoa.github.io/shell-for-bioinformatics/2_download_data/">Data Integrity in our GA shell workshop</a> for more information on how to run this.</p>
 </section>
 <section id="understanding-genomic-file-types" class="level2">
 <h2 class="anchored" data-anchor-id="understanding-genomic-file-types">Understanding genomic file types</h2>
@@ -284,8 +297,8 @@ ul.task-list li input[type="checkbox"] {
 <td>Contains sequence variants called relative to a reference genome. Split into two sections; the header information and the records. See our <a href="https://genomicsaotearoa.github.io/Introduction-to-R/02-data-prelude/#how-variant-calls-are-stored-in-vcf-files">Intro R workshop, section on VCF files</a>.</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;"><code>.gtf</code></td>
-<td>General Feature Format</td>
+<td style="text-align: right;"><code>.gtf</code> or <code>.gff</code></td>
+<td>General Transfer Format or General Feature Format</td>
 <td>Contains genome annotation data.</td>
 </tr>
 </tbody>
@@ -294,7 +307,7 @@ ul.task-list li input[type="checkbox"] {
 </p>
 <p><strong>Real examples:</strong></p>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -303,41 +316,29 @@ FASTA
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>FASTA file containing cds data from a genome, opened in a text editor: <img src="figures/fasta-file.png" class="img-fluid"></p>
-</div>
-</div>
-</div>
+<p>FASTA file containing cds data from a genome, opened in a text editor. Each sequence is preceded by one header line, beginning with an ‘&gt;’ symbol. <img src="figures/fasta-file.png" class="img-fluid"></p>
+<p><br>
+</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-BAM/SAM
+If we did not already know this fasta file contains cds data, what gives it away?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>add screenshots!</p>
+<p>The sequence starts with a start codon ‘ATG’ and ends with a stop codon ‘TAA’. Also, “cds” can be seen in the header lines as part of the sequence accession identification.</p>
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-VCF
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>VCF file opened in excel: <img src="figures/vcf-file.png" class="img-fluid"></p>
+<p><br>
+</p>
 </div>
 </div>
 </div>
@@ -347,13 +348,46 @@ VCF
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-GTF
+BAM/SAM
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>GTF file opened in a text editor: <img src="figures/gtf-file.png" class="img-fluid"></p>
+<p><a href="https://en.wikipedia.org/wiki/SAM_(file_format)">SAM file</a>, opened in a text editor. Note all lines in the header section starts with an ‘@’ symbol, and the number of lines in the header section is variable. There are 11 mandatory fields in the alignment section (not all visible here). <img src="figures/sam-file.png" class="img-fluid"></p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+VCF
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>VCF file opened in excel. Instead of the header sections seen in the other file types, here each column has a name. <img src="figures/vcf-file.png" class="img-fluid"></p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+GTF
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>GTF file opened in a text editor. Note all lines in the header section start with a ‘#’ symbol. Generally each GTF file you encounter will all have 4 or 5 lines in the header section, but the alignment section will vary in size based on number of annotations.<br>
+<img src="figures/gtf-file.png" class="img-fluid"></p>
 </div>
 </div>
 </div>
@@ -375,20 +409,21 @@ GTF
 <p>The quality score is shown on the y-axis. A score of below Q20 (error probabilty = 0.01, or 1 in 100 bases are incorrect on average) is shown as red - boxplots that extend in to this section indicate positions in the read that are poor quality.</p>
 <p>In general, when you are trimming your reads you should pick a quality cut off of at least Q30 (error probabilty = 0.001; 1 in 1000), and some researchers even use Q40 (error probabilty = 0.0001; 1 in 10,000) for newer data. If you are working with older data (10+ years old, sequenced before ~2014), you may need to pick Q20 as a cut-off. These plots help you decide what is best for your data.</p>
 <p>After trimming reads, you should run FastQC again to compare how the average quality has changed and see how many reads are retained after trimming.</p>
+<p>In this ‘good data’ below, all boxplots sit easily in the green range. These reads are excellent quality (i.e., the sequencing itself worked very well).</p>
 <p><strong>Good data:</strong> Per base sequence quality <img src="figures/fastqc-good-01.png" class="img-fluid"></p>
-<p>In this ‘Bad data’ below, we can see most reads are dropping in to the Q20 and below range from about base position 24 onwards to position 40. This is a typical pattern, where sequence quality tends to drop off around the 3’ end for Illumina reads.</p>
+<p>In this ‘Bad data’ below, we can see most reads are dropping in to the Q20 and below range from about base position 24 onwards to position 40. This is a typical pattern, where sequence quality tends to drop off around the 3’ end for Illumina reads (even for good data – and typically for paired end data, the 3’ end of read 2 tends to be slightly poorer quality than read 1).</p>
 <p><strong>Bad data:</strong> Per base sequence quality <img src="figures/fastqc-bad-01.png" class="img-fluid"></p>
 </section>
 <section id="per-sequence-quality-scores" class="level4">
 <h4 class="anchored" data-anchor-id="per-sequence-quality-scores">Per sequence quality scores</h4>
-<p>The <strong>per sequence quality scores</strong> plots the Q-score per sequence, rather than per base position as above. The average Q-score for the whole read is taken, then plotted to show how many reads have that average score. Below we can see that for the good data and bad data, almost all reads sit above Q30.</p>
+<p>The <strong>per sequence quality scores</strong> plots the Q-score per sequence, rather than per base position as we saw above. The average Q-score for the whole read is taken, then plotted to show how many reads have that average score. Below we can see that for the good data and bad data, almost all reads sit above Q30.</p>
 <p><strong>Good data:</strong> Per sequence quality scores <img src="figures/fastqc-good-02.png" class="img-fluid"></p>
 <p>For the bad data, we can see that the larger peak of reads sits at a slightly lower (and wider) Q score, and there is a second peak at a very poor score of around Q17. These data show us that there may be a large proportion of reads with a high Q-score retained after trimming (good news!). The data has been given a ‘pass’ by FastQC, indicating it has not dropped below the threshold for this category to be given a warning or fail.</p>
 <p><strong>Bad data:</strong> Per sequence quality scores <img src="figures/fastqc-bad-02.png" class="img-fluid"></p>
 </section>
 <section id="overrepresented-sequences" class="level4">
 <h4 class="anchored" data-anchor-id="overrepresented-sequences">Overrepresented sequences</h4>
-<p>Multiple sources can cause overrepresented sequences in your dataset. It can be a true biological or experimental effect, for example if you expect a few genes to be exceptionally highly expressed or if you have done targeted amplicon sequencing. However, it often reflects an issue that may have happened during extraction or library prep. Contaminating rRNA is a common culprit in RNAseq, as rRNA exists at a much higher concentration than other mRNAs in the cell. You may have to make a judgement call whether your data is still useable if it is highly contaminated. While contaminating reads can be filtered out, you’ll have less useable reads. PCR overamplification during the library prep can also be an issue - in which case it may be possible to repeat part of the library prep with less PCR cycles.</p>
+<p>Multiple sources can cause overrepresented sequences in your dataset. It can be a true biological or experimental effect, for example if you expect a few genes to be exceptionally highly expressed or if you have done targeted amplicon sequencing. However, it often reflects an issue that may have happened during extraction or library prep. Contaminating rRNA is a common culprit in RNAseq, as rRNA exists at a much higher concentration than other mRNAs in the cell. You may have to make a judgement call whether your data is still useable if it is highly contaminated. While contaminating reads can be filtered out, you’ll have less useable reads. PCR overamplification during the library prep can also cause overrepresentation - in which case it may be possible to repeat part of the library prep with less PCR cycles.</p>
 <p>For our good data, no overrepresented sequences were detected:</p>
 <p><img src="figures/fastqc-good-03.png" class="img-fluid"></p>
 <p>Here is a snippet of our bad data, showing a ‘warning’ with multiple overrepresented sequences detected, and the count and percentage of the total reads is also shown:</p>
@@ -407,7 +442,7 @@ EXERCISE 🧠🏋️‍♀️ (1 min)
 <p>What percentage of reads would need to be overrepresented for this category to be given a fail?</p>
 <p>Use the <a href="https://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/3%20Analysis%20Modules/">FastQC help guide here</a>.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -416,7 +451,7 @@ SOLUTION
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>If any sequence is found to represent more than 1% of the total it will get a fail.</p>
 </div>
@@ -430,24 +465,24 @@ SOLUTION
 <section id="good-genome-bad-genome" class="level2">
 <h2 class="anchored" data-anchor-id="good-genome-bad-genome">Good genome, bad genome?</h2>
 <p>You will often hear geneticists refer (somewhat colloquially) to <em>“good”</em> and <em>“bad”</em> genome assemblies. But what does this actually mean? And how can you tell whether a species you are working on has a good genome assembly?</p>
-<p>In practice, we assess genome assemblies using a few metrics that capture <strong>contiguity</strong> and <strong>completeness</strong>.</p>
+<p>In practice, we assess genome assemblies using a few metrics that capture the three C’s: <strong>contiguity</strong>, <strong>correctness</strong>, and <strong>completeness</strong>.</p>
+<p>In our <a href="https://genomicsaotearoa.github.io/long-read-assembly-one-day/pages/4_assembly_qc/">Long read genome assembly</a> workshop, we go into further detail on how to assess these metrics. For now, we’ll focus on an overview to get you started:</p>
 <p><strong><em>Common genome assembly metrics</em></strong></p>
 <ul>
-<li><p><strong>Contiguity</strong> is often measured as contig and scaffold N50, which is the length cutoff for the longest contigs that contain 50% of the total genome length. In this era of long-read genome assemblies, a contig N50 over 1 Mb is generally considered good. <a href="https://www.pacb.com/blog/beyond-contiguity/">Excerpt taken from PacBio article.</a></p>
-<p>Also see <a href="https://en.wikipedia.org/wiki/N50,_L50,_and_related_statistics">Wiki entry on N50/L50</a>.</p></li>
-<li><p><strong>Completeness</strong> is often measured using a BUSCO (<strong>B</strong>enchmarking <strong>U</strong>niversal <strong>S</strong>ingle-<strong>C</strong>opy <strong>O</strong>rthologs) score, which measures completeness using sets of conserved, single-copy genes expected to be present in most species within a specified lineage.</p></li>
+<li><p><strong>Contiguity</strong> describes how complete or fragmented the genome assembly is. Because we can’t sequence an entire chromosome in one long piece, the genome is first broken into many smaller fragments during library prep and sequencing. The more pieces we can put together (i.e., assemble) to make longer strings of sequence, the more <em>contiguous</em> our assembly is. Contiguity is commonly summarised using contig N50 and scaffold N50. The N50 is a length statistic and you can think of it as similar to the median. The N50 value is the length of the first contig that is equal to or greater than half of the assembly sum. In simple terms, the larger than better. A larger N50 means that more of the genome is contained in longer sequences. In this era of long-read genome assemblies, a contig N50 over 1 Mb is generally considered good - see <a href="https://www.pacb.com/blog/beyond-contiguity/">Excerpt from PacBio article.</a></p></li>
+<li><p><strong>Completeness</strong> can be measured in multiple ways, but it is often measured using a BUSCO (<strong>B</strong>enchmarking <strong>U</strong>niversal <strong>S</strong>ingle-<strong>C</strong>opy <strong>O</strong>rthologs) score. This measures completeness using sets of conserved, single-copy genes expected to be present in most species within a specified lineage, which are reported as percentages of complete, duplicated, fragmented, and missing genes, to a total of 100%. Essentially, we check to see if a bunch of genes we expect to see in every species are present in our assembly.</p></li>
+<li><p><strong>Correctness</strong> describes the base pair and structural accuracy of the genome. It can be measured by comparing your assembly to a reference genome. There are a few limitations to this approach, namely that if a good reference genome for your species does not exist you will have to use a different approach (for which there are solutions - see our long read genome assembly workshop link above).</p></li>
 </ul>
-<p>Reported as percentages of complete, duplicated, fragmented, and missing genes. &lt;- change to example.</p>
-<p>Genome assemblies can be described more qualitatively as (in order of less to more complete):</p>
-<ul>
+<p>Genome assemblies can be described more qualitatively as (in order of least to most complete):</p>
+<ol type="1">
 <li><strong>Contig-level</strong> – sequences are assembled but not ordered or oriented. Often can be thousands to hundreds of thousands of contigs.<br>
 </li>
 <li><strong>Scaffold-level</strong> – contigs linked together, often with gaps. None are placed (i.e., chromosome known) or localised (i.e., orientation on chromosome known).<br>
 </li>
 <li><strong>Chromosome-level</strong> – one or more chromosomes complete, but some unplaced scaffolds may be present.<br>
 </li>
-<li><strong>Complete genome</strong> - all chromosomes are resolved with no gaps. Not necessarily telomere-to-telomere (T2T).</li>
-</ul>
+<li><strong>Complete genome</strong> – all chromosomes are resolved with no gaps. Not necessarily telomere-to-telomere (T2T). Very rare to have a complete genome assembly.</li>
+</ol>
 <p>See <a href="https://www.ncbi.nlm.nih.gov/datasets/docs/v2/glossary/">NCBI Glossary for Assembly level</a>.</p>
 <p><br>
 </p>
@@ -461,16 +496,24 @@ Most expected genes are present (high BUSCO completeness).</p></li>
 <li><p><strong>Structurally accurate</strong><br>
 Large-scale errors such as mis-joins or collapsed repeats are minimised.</p></li>
 </ul>
+<blockquote class="blockquote">
+<p>Note: often the word ‘contig’ is used to refer to any length of assembled (i.e., contiguous) sequence, regardless of if those sequences could technically be long enough to be called scaffolds or chromosomes.</p>
+</blockquote>
 <p><br>
 </p>
 <p><strong><em>Assembly quality vs annotation quality</em></strong></p>
-<p>It is important to distinguish between:</p>
+<p>Lastly, it is important to distinguish between:</p>
 <p><strong>Genome assembly</strong> i.e., the reconstructed DNA sequence itself, and the <strong>Genome annotation</strong>, which is the identification and labelling of genomic features, including gene structures (exons, introns, and CDS), non-coding RNAs (e.g., rRNA, tRNA and lncRNA), and associated identifiers such as gene_id, transcript_id, and database cross-references.</p>
 <p>A genome can be <strong>well assembled but poorly annotated</strong>, or vice versa.</p>
+<blockquote class="blockquote">
+<p>Watch out! It can be tempting based on the BUSCO score to conclude that the “annotations” for a genome are quite good (or bad). The BUSCO score IS NOT the genome annotation; it is an independent analysis of a set of known genes. The annotation file itself (scroll up to section <a href="#understanding-genomic-file-types">Understanding genomic file types</a> for description of annotation files such as GTF files) is not being assessed when we look at the BUSCO score.</p>
+</blockquote>
+<p><br>
+</p>
 <section id="exercises-6-mins" class="level3">
 <h3 class="anchored" data-anchor-id="exercises-6-mins">EXERCISES 🧠🏋️‍♀️ (6 mins):</h3>
 <p><strong><em>How would you describe these genomes?</em></strong></p>
-<p>Look at the assembly stats and make some notes of how ‘good’ you think each assembly is.</p>
+<p>Look at the assembly stats and evaluate how ‘good’ you think each assembly is.</p>
 <div class="callout callout-style-simple callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -481,40 +524,40 @@ EXERCISE #1 🧠🏋️‍♀️ (3 mins) - Human Genome Assembly
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><a href="https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_000001405.40/">Human Genome assembly GRCh38.p14</a></p>
+<p>Link here to <a href="https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_000001405.40/">Human Genome assembly GRCh38.p14</a></p>
 <p><img src="figures/genome-assembly-human-01.png" class="img-fluid"> Note: RefSeq is the curated database. GenBank is the non-curated, anyone-can-submit-to database.</p>
 <p><img src="figures/genome-assembly-human-02.png" class="img-fluid"></p>
-<p>Jot down your thoughts before looking at the solution below:</p>
+<p>Jot down your thoughts before looking at the solution below.</p>
+<p>Here are some points to help you:</p>
+<ul>
+<li>What is the assembly level and where does that fall on our scale level of contig -&gt; scaffold -&gt; chromosome -&gt; complete?<br>
+</li>
+<li>How many chromosomes, if any, are resolved? (Hint: if there are any resolved it is a good assembly!)</li>
+<li>What is the scaffold N50? Is it above 1Mb? (typically considered a fairly good assembly if &gt;1 Mb).</li>
+<li>What is the BUSCO score? Is it approaching 100% complete?</li>
+</ul>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 Human genome solution
 </div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-FILL IN HERE
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Chromosome level - very high quality. busco score - very close to complete. very good genome</p>
-<p>number of extra scaffolds and contigs is very low (470 s / 996 c - it can be thousands of extra so hundreds is pretty good!)</p>
-<p>scaffold and contig N50. describe these!</p>
+<ul>
+<li>The assembly is at Chromosome level - indicates very high quality.</li>
+<li>The BUSCO score is 98.9% - very close to complete.<br>
+</li>
+<li>The number of scaffolds (470) and contigs (996) are very low at less than a thousand each, indicating the majority of sequences are assembled into the chromosomes. Further, the scaffold and contig N50s are very high, well over 1 Mb, indicating further that the majority of these sequences are very long contiguous sequences.</li>
+</ul>
+<p>Conclusion: this is a very good genome assembly.</p>
 </div>
 </div>
-<p>collapse solution when complete</p>
 </div>
-</div>
-<p><br>
-</p>
 </div>
 </div>
 <p><br>
@@ -529,37 +572,36 @@ EXERCISE #2 🧠🏋️‍♀️ (3 mins) - Sea Anemone Genome Assembly
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><a href="https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_000209225.1/"><em>Nematostella vectensis</em> (sea anemone) Genome assembly ASM20922v1</a></p>
+<p>Link here to <a href="https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_000209225.1/"><em>Nematostella vectensis</em> (sea anemone) Genome assembly ASM20922v1</a></p>
 <p><img src="figures/genome-assembly-nemvec-01.png" class="img-fluid"></p>
 <p><img src="figures/genome-assembly-nemvec-02.png" class="img-fluid"></p>
-<p>Jot down your thoughts before looking at the solution below:</p>
+<p>Jot down your thoughts before looking at the solution below.</p>
+<p>Here are some points to help you:</p>
+<ul>
+<li>What is the assembly level and where does that fall on our scale level of contig -&gt; scaffold -&gt; chromosome -&gt; complete?<br>
+</li>
+<li>How many chromosomes, if any, are resolved? (Hint: if there are any resolved it is a good assembly!)</li>
+<li>What is the scaffold N50? Is it above 1Mb? (typically considered a fairly good assembly if &gt;1 Mb).</li>
+<li>What is the BUSCO score? Is it approaching 100% complete?</li>
+</ul>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 Sea anemone solution
 </div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-FILL IN HERE
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>scaffold level - medium quality. but the N50 is below 1mb, at 472.6kb scaffold. not great! quite fragmented.</p>
-<p>busco score pretty good despite lack of placed scaffolds. contig/scaffold N50 - high enough that most genes are resolved.</p>
-<p>assembly itself not amazing, but annotation is probably good enough for gene level compariosn with other species.</p>
-<p>Larger scale structural variants and synteny difficult or erroneous to resolve. -&gt; is this true?</p>
-</div>
-</div>
-<p>collapse=“true”</p>
+<ul>
+<li>The assembly is at scaffold level; no chromosomes are resolved - this is a “medium” quality genome.</li>
+<li>The scaffold N50 is &lt;1 Mb; at 472.6 kb - indicating again the quality is “medium” or “average”.</li>
+<li>The BUSCO score is pretty good at 97.7% single copy orthologs resolved - this indicates that the scaffolds resolved are likely long enough and correct enough to resolve the majority of genes. Functionally, this is quite a useable genome at a gene level.</li>
+</ul>
+<p>Conclusion: this is a medium or average assembly. Larger scale structural variants may be difficult or erroneous to resolve, but gene level comparisons and analyses could be achieved fairly accurately.</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -583,7 +625,8 @@ Extra for experts solution
 </div>
 <div class="callout-body-container callout-body">
 <p><strong>NEED TO FACT CHECK THIS, COLLAPSE WHEN COMPLETE</strong></p>
-<p>The authors used synteny analysis. They found many major genes, such as Hox genes, retained the same intron/exon structure in sea anemones as vertebrates, but this was not retained in model protosome species. Based on this they conlcuded that sea anemone genomes more closely resemble vertebrates than protosome species (fly, nematode, annelid) do. While the genome assembly itself is quite fragmented, the annotations are quite good, indicating that any conclusions the authors made comparing genomes and a gene stucture level are likely quite robust, but it would not be feasible with this assembly to make any conclusions based on larger genomic structure (i.e., at closer to chromosome level).</p>
+<p>The authors used synteny analysis. They found many major genes, such as Hox genes, retained the same intron/exon structure in sea anemones as vertebrates, but this was not retained in model protosome species. Based on this they concluded that sea anemone genomes more closely resemble vertebrates than protosome species (fly, nematode, annelid) do. While the genome assembly itself is somewhat fragmented, the BUSCO score was quite good, indicating that any conclusions the authors made comparing genomes and a gene stucture level are likely quite robust, but it would not be feasible with this assembly to make any conclusions based on larger genomic structure (i.e., at closer to chromosome level).</p>
+</div>
 </div>
 </div>
 </div>
@@ -599,6 +642,19 @@ Extra for experts solution
 </section>
 <section id="workshop-complete" class="level1">
 <h1>Workshop complete :)</h1>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Any thing else I should add?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
 
 
 </section>

@@ -428,10 +428,9 @@ Answer: cost, accuracy at SNP level. dont need to resolve full genomes as that w
 not planning to go into detail at all on non-NGS services around NZ. Sticking to more higher throughput genomics. 
 :::
 
-**Sequencing facilities which offer NGS services:**   
+There are several sequencing facilities which offer NGS services around New Zealand that you can use.
 
-
-[Otago Genomics Facility (OGF)](https://www.otago.ac.nz/genomics)  
+#### Otago Genomics Facility (OGF)
 Location: The University of Otago, Biochemistry Building.  
 
 - Illumina NextSeq 2000  
@@ -440,9 +439,15 @@ Location: The University of Otago, Biochemistry Building.
 - ONT MinION
 - NanoString nCounter Analysis System (non-NGS)
 
-Performs: Moderate to large scale RNAseq, DNAseq, amplicon seq etc 
+Performs: Moderate to large scale RNAseq, DNAseq, amplicon seq etc
+
+Website: [Otago Genomics Facility](https://www.otago.ac.nz/genomics)  
+
+::: {.callout-caution}
+# FILL IN MORE DETAILS
+:::
  
-[Massey Genome Service (MGS)](https://www.massey.ac.nz/about/clinics-and-services-for-the-public/massey-genome-service/)  
+#### Massey Genome Service (MGS)
 Location: Massey University
 
 - 2 x Illumina MiSeq  
@@ -450,10 +455,23 @@ Location: Massey University
 
 Performs: small scale RNA or DNAseq, single gene (Sanger sequencing)
 
+Website: [Massey Genome Service](https://www.massey.ac.nz/about/clinics-and-services-for-the-public/massey-genome-service/)  
+
+::: {.callout-caution}
+# FILL IN MORE DETAILS
+:::
+
+#### Auckland Genomics
+
 [Auckland Genomics](https://www.genomics.auckland.ac.nz/) 
 
-- platforms: Illumina and ONT. They don't list on their website which ones they have. 
+- platforms: Illumina and ONT. Not listed on their website which ones they have.
 
+::: {.callout-caution}
+# FILL IN MORE DETAILS
+:::
+
+#### other stuff
 
 ::: {.callout-caution}
 # FILL IN MORE DETAILS
@@ -468,15 +486,16 @@ See here for [comparison between Illumina TruSeq stranded and Illumina stranded 
 ***Non-service platforms around New Zealand:***
 
 **AgResearch**  
- - GenomNZ https://www.agresearch.co.nz/products-and-services/genomnz/ (Invermay) have a NovaSeq - they will do it if they have time and you ask nicely. They are a commercial animal DNA genotyping laboratory. 
+ - GenomNZ https://www.agresearch.co.nz/products-and-services/genomnz/ (Invermay) have a NovaSeq. They are a commercial animal DNA genotyping laboratory. I believe they will on occasion sequence research samples if there is time/space on the machine - need to check with them.  
+ 
 
 **Lincoln**  
--  have MGI - compatible with Illumina libraries. not on website.   
+-  have MGI - compatible with Illumina libraries. not on website, but i think this is potentially open to other research samples. 
 
-other
 
-**Custom science** (supplier, does not do the sequencing for you)
+**Other**   
 
+**Custom science** (supplier, does not do the sequencing for you)  
 - New [PacBio Revio in Auckland](https://www.customscience.co.nz/kindstar-new-zealand )
 
 
@@ -496,7 +515,7 @@ Do anyone use basespace to share reads with people?
 
 :::
 
-### International sequencing services
+## International sequencing services
 
 ::: {.callout-caution}
 # FILL IN HERE

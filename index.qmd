@@ -20,7 +20,7 @@ This is a beginner-friendly workshop, designed to get you started with the world
 
 ## What's NOT covered in this workshop
 
-- Basic descriptions of biological and genetic concepts (i.e., we assume the learner is already familiar with DNA/RNA, PCR, transcription etc. to an undergraduate level).   
+- Basic descriptions of biological and genetic concepts (i.e., we assume the learner is already familiar with DNA/RNA, PCR, transcription, etc. to an undergraduate level).   
 - Non-NGS sequencing and services (e.g., Sanger sequencing, qPCR, genotyping, probe-based applications such as microarrays and NanoString nCounter).  
 - Genomic analysis workflows (beyond the basics of initial quality checks of raw reads) 
 - The basics of cluster or HPC resourcing and specialised software (e.g., we do not cover schedulers such as SLURM, partitions/CPUs/GPUs, chosing compute allocation allowance). See our workshop on [Introduction to Bash Scripting and HPC Job Scheduler](https://genomicsaotearoa.github.io/BioinformaticsTrainingProgramme/portfolio.html#introduction-to-bash-scripting-and-hpc-job-scheduler) for this.
