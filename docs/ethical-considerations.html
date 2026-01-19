@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>outtakes-notes – Genomic Data Carpentry (Aotearoa edition)</title>
+<title>ethical-considerations – Genomic Data Carpentry (Aotearoa edition)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./index.html" rel="next">
-<link href="./test-styling.html" rel="prev">
+<link href="./organisation-tidiness.html" rel="next">
+<link href="./index.html" rel="prev">
 <link href="./theme-images/GA-image-black-favicon.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -75,6 +75,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="styles.css">
 <meta property="og:title" content="– Genomic Data Carpentry (Aotearoa edition)">
 <meta property="og:description" content="">
+<meta property="og:image" content="figures/ethical-02.png">
 <meta property="og:site_name" content="Genomic Data Carpentry (Aotearoa edition)">
 </head>
 
@@ -87,7 +88,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./outtakes-notes.html">_outtakes/notes</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ethical-considerations.html">Before you begin: Ethical considerations</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -123,7 +124,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./outtakes-notes.html" class="sidebar-item-text sidebar-link active">
+  <a href="./outtakes-notes.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">_outtakes/notes</span></a>
   </div>
 </li>
@@ -135,7 +136,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ethical-considerations.html" class="sidebar-item-text sidebar-link">
+  <a href="./ethical-considerations.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Before you begin: Ethical considerations</span></a>
   </div>
 </li>
@@ -173,14 +174,22 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#outtakes-and-notes" id="toc-outtakes-and-notes" class="nav-link active" data-scroll-target="#outtakes-and-notes">Outtakes and notes</a>
+  <li><a href="#before-you-begin-ethical-considerations" id="toc-before-you-begin-ethical-considerations" class="nav-link active" data-scroll-target="#before-you-begin-ethical-considerations">Before you begin: Ethical considerations</a>
   <ul>
-  <li><a href="#rakeiora-genomics-platform" id="toc-rakeiora-genomics-platform" class="nav-link" data-scroll-target="#rakeiora-genomics-platform">Rakeiora Genomics platform</a></li>
-  <li><a href="#consultation" id="toc-consultation" class="nav-link" data-scroll-target="#consultation">consultation</a></li>
+  <li><a href="#data-collection-perspectives-in-aotearoa" id="toc-data-collection-perspectives-in-aotearoa" class="nav-link" data-scroll-target="#data-collection-perspectives-in-aotearoa">Data collection perspectives in Aotearoa</a>
+  <ul class="collapse">
+  <li><a href="#genomic-research-on-taonga-species" id="toc-genomic-research-on-taonga-species" class="nav-link" data-scroll-target="#genomic-research-on-taonga-species">Genomic research on Taonga species</a></li>
+  <li><a href="#māori-data-sovereignty" id="toc-māori-data-sovereignty" class="nav-link" data-scroll-target="#māori-data-sovereignty">Māori Data Sovereignty</a></li>
+  <li><a href="#government-policy" id="toc-government-policy" class="nav-link" data-scroll-target="#government-policy">Government policy</a></li>
+  <li><a href="#further-training" id="toc-further-training" class="nav-link" data-scroll-target="#further-training">Further training</a></li>
   </ul></li>
-  <li><a href="#genomic-file-types" id="toc-genomic-file-types" class="nav-link" data-scroll-target="#genomic-file-types">genomic file types</a>
-  <ul>
-  <li><a href="#first-check-that-the-data-are-not-corrupt" id="toc-first-check-that-the-data-are-not-corrupt" class="nav-link" data-scroll-target="#first-check-that-the-data-are-not-corrupt">First, check that the data are not corrupt</a></li>
+  <li><a href="#international-agreements-principles-and-protocols" id="toc-international-agreements-principles-and-protocols" class="nav-link" data-scroll-target="#international-agreements-principles-and-protocols">International agreements, principles and protocols</a>
+  <ul class="collapse">
+  <li><a href="#fair-and-care" id="toc-fair-and-care" class="nav-link" data-scroll-target="#fair-and-care">FAIR and CARE</a></li>
+  <li><a href="#nagoya-protocol" id="toc-nagoya-protocol" class="nav-link" data-scroll-target="#nagoya-protocol">Nagoya protocol</a></li>
+  <li><a href="#cites-species" id="toc-cites-species" class="nav-link" data-scroll-target="#cites-species">CITES species</a></li>
+  </ul></li>
+  <li><a href="#discussion" id="toc-discussion" class="nav-link" data-scroll-target="#discussion">DISCUSSION 💬</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -194,39 +203,84 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="outtakes-and-notes" class="level1">
-<h1>Outtakes and notes</h1>
-<p>go back over genmic data carpentry from the carpentries to see what else they go over.</p>
-<p>Assembly QC: biological and technical assessments of the three Cs (contiguity, correctness, completeness). from : https://genomicsaotearoa.github.io/BioinformaticsTrainingProgramme/portfolio.html#long-read-genome-assembly</p>
-<p>why would you chose internantional seq options over nz, cost, local.</p>
-<p>intro to bioinformatics.</p>
+<section id="before-you-begin-ethical-considerations" class="level1">
+<h1>Before you begin: Ethical considerations</h1>
+<p>Before you even begin collecting your samples for genomic analyses, there are many ethical considerations to think about. In a broader, international context there are multiple, multi-party conventions and agreements towards the protecting the use of indigenous and endangered species or and their derived data. Here in Aotearoa New Zealand, we have additional responsibilities to <em>Te Tiriti o Waitangi</em>, including Māori consultation, recognition of <em>taonga</em> species, and considerations around Māori Data Sovereignty and Governance.</p>
+<section id="data-collection-perspectives-in-aotearoa" class="level2">
+<h2 class="anchored" data-anchor-id="data-collection-perspectives-in-aotearoa">Data collection perspectives in Aotearoa</h2>
+<p>Many species in New Zealand are considered <em>taonga</em>, which are species of value to Māori, and this status extends to their ecosystems too. Genomic data collected from <em>taonga</em> species is considered an extension of the individual or species it was collected from and is part of their <em>whakapapa</em>. It is important to acknowledge and engage with Māori perspectives at each stage of collection, processing, analysis and sharing of genomic data to ensure the appropriate care and consultation has been undertaken.</p>
+<p><strong><em>Your University, Institute or Organisation will likely have its own policies, guidelines or frameworks on how to undertake consultation with Māori that you need to investigate for yourself.</em></strong></p>
+<p>Here we have a few resources to get you started with thinking about how to include Māori perspectives in your genomic research project:</p>
+<section id="genomic-research-on-taonga-species" class="level3">
+<h3 class="anchored" data-anchor-id="genomic-research-on-taonga-species">Genomic research on Taonga species</h3>
+<p><a href="https://www.genomics-aotearoa.org.nz/our-work/completed-projects/te-nohonga-kaitiaki">Guidelines for Genomic Research on Taonga Species–Te Nohonga Kaitiaki</a> (below-left). Effective engagement with Māori should be practised at all levels of research, as outlined by this engagement framework from pg 23 (below-right).<br>
+<a href="https://www.genomics-aotearoa.org.nz/sites/default/files/2022-02/Te%20Nohonga%20Kaitiaki%20Guidelines%20for%20genomic%20research%20on%20taonga%20species%20%28with%20background%29.pdf"><img src="figures/ethical-02.png" class="img-fluid" style="width:40.0%"></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="figures/ethical-01.png" class="img-fluid" style="width:50.0%"></p>
+</section>
+<section id="māori-data-sovereignty" class="level3">
+<h3 class="anchored" data-anchor-id="māori-data-sovereignty">Māori Data Sovereignty</h3>
+<p><a href="https://www.temanararaunga.maori.nz/">Te Mana Raraunga</a> - the Māori Data Sovereignty Network advocates for Māori rights and interests in data and has several resources on their website on these principles. This is a broader description of engaging with data; not specific to genomic data.<br>
+<a href="https://www.temanararaunga.maori.nz/"><img src="figures/ethical-05.png" class="img-fluid"></a></p>
+</section>
+<section id="government-policy" class="level3">
+<h3 class="anchored" data-anchor-id="government-policy">Government policy</h3>
+<p>The Ministry of Business, Innovation and Employment (MBIE) outline their <a href="https://www.mbie.govt.nz/science-and-technology/science-and-innovation/agencies-policies-and-budget-initiatives/vision-matauranga-policy">Vision Mātauranga</a> policy for unlocking the science and innovation potential of Māori knowledge, resources and people. If you are writing government-funded or Royal Society funded grants, you’ll need to think about how to incorporate Vision Mātauranga in your research plan.</p>
+</section>
+<section id="further-training" class="level3">
+<h3 class="anchored" data-anchor-id="further-training">Further training</h3>
+<p>Training opportunities are available for indigenous peoples through the Summer internship for INdigenous peoples in Genomics <a href="https://www.singaotearoa.nz/">(SING Aotearoa)</a> and <a href="https://www.indigidataaotearoa.com/">Indigidata Aotearoa wānanga</a>.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://www.singaotearoa.nz/"><img src="figures/ethical-06.png" class="img-fluid" style="width:30.0%"></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://www.indigidataaotearoa.com/"><img src="figures/ethical-07.png" class="img-fluid" style="width:30.0%"></a></p>
+</section>
+</section>
+<section id="international-agreements-principles-and-protocols" class="level2">
+<h2 class="anchored" data-anchor-id="international-agreements-principles-and-protocols">International agreements, principles and protocols</h2>
+<section id="fair-and-care" class="level3">
+<h3 class="anchored" data-anchor-id="fair-and-care">FAIR and CARE</h3>
+<p>In 2016, the <a href="https://www.go-fair.org/fair-principles/">FAIR principles</a> were published in <em>Scientific Data</em>. These guidelines set to provide a standard through which to improve digital assets:</p>
 <ul>
-<li>are there preferential rates for otago/auckland seq services for their own staff / students?<br>
+<li><strong>F</strong>indability<br>
 </li>
-<li>add in logitics of doign nanodrop/quibit and bioanalyzer. cost and location.<br>
+<li><strong>A</strong>ccessibility<br>
 </li>
-<li>range of reads needed for rnaseq - can we break it down furhter? what other factors? species ?<br>
+<li><strong>I</strong>nteroperability<br>
 </li>
-<li>genome seq - combing platforms to polish correct reads</li>
+<li><strong>R</strong>euse</li>
 </ul>
-<section id="rakeiora-genomics-platform" class="level3">
-<h3 class="anchored" data-anchor-id="rakeiora-genomics-platform">Rakeiora Genomics platform</h3>
-<p>The <a href="https://rakeiora.ac.nz/">Rakeiora Genomics Platform</a> is designed to enable and test pilot precision medicine research, linking genomics and health.</p>
-<p>They have chosen a <strong>walled garden</strong> approach to this infrastructure.</p>
-<p><em>“This means that all genomic data and health data, and its analysis, are undertaken only within this computational environment – the data never leave and are certainly never downloaded to a researcher’s own computer or a hospital clinical laboratory computer…<br>
-…Its modular nature will allow linkage (with consent) to other health data systems currently under development in Aotearoa New Zealand. This approach in particular addresses transparency of use and control over narratives. Lack of these features in other precision medicine platforms worldwide has led to significant problems for patients and research participants, including indigenous communities; learning from these negative experiences is key to avoid repeating them.”</em> – From the <a href="https://www.genomics-aotearoa.org.nz/our-work/health-projects/rakeiora-pathfinder-genomic-medicine">Genomics Aotearoa website.</a></p>
+<p>Part of conducting FAIR research is having a <strong>reproducible</strong> research pipeline. One way this can be done is by documenting your work on a version control system like GitHub. (See our GA workshop for more on <a href="https://genomicsaotearoa.github.io/BioinformaticsTrainingProgramme/portfolio.html#reproducibility-with-git-and-quarto">Reproducibility with Git and Quarto</a>).</p>
+<p>Open science advocates have embraced this FAIR framework, while others critise its lack of protection of data, for not considering the rights and interest of those that should hold governance over data, in particular, indigenous peoples. In response to this, the CARE framework has also been proposed by <a href="https://www.gida-global.org/care">Global Indigenous Data Analysis</a>, to complement the existing FAIR principles:</p>
+<ul>
+<li><strong>C</strong>ollective benefit<br>
+</li>
+<li><strong>A</strong>uthority to control<br>
+</li>
+<li><strong>R</strong>esponsibility<br>
+</li>
+<li><strong>E</strong>thics</li>
+</ul>
+<p><img src="figures/fair-care.png" class="img-fluid"></p>
+<p>This story <a href="https://www.science.org/content/article/not-free-all-indigenous-communities-want-limits-how-their-data-are-shared">“Open with care; Indigenous researchers and communities are reshaping how Western science thinks about data ownership”</a> is an interesting read on these perspectives, and importantly how both sets of principles can be implemented together.</p>
 </section>
-<section id="consultation" class="level2">
-<h2 class="anchored" data-anchor-id="consultation">consultation</h2>
-<p>add some news articles about successful and not so succesful consultation (or rather lack of consultation). does not have to just be NZ, can be other countries.</p>
+<section id="nagoya-protocol" class="level3">
+<h3 class="anchored" data-anchor-id="nagoya-protocol">Nagoya protocol</h3>
+<p><a href="https://www.cbd.int/abs/about"><img src="figures/ethical-04.png" class="img-fluid"></a></p>
+<p>The <a href="https://www.cbd.int/abs/default.shtml">Nagoya Protocol</a> on <em>Access to Genetic Resources and the Fair and Equitable Sharing of Benefits Arising from their Utilization to the Convention on Biological Diversity</em> is an international agreement which aims at sharing the benefits arising from the utilization of genetic resources in a fair and equitable way.</p>
+<p>The Nagoya Protocol is a supplementary agreement to the <a href="https://www.cbd.int/">Convention on Biological Diversity</a>. It covers the fair and equitable sharing of benefits arising from the utilisation of genetic resources. New Zealand is not a signatory to the agreement due to the overriding importance of the Treaty of Waitangi in domestic affairs (source: <a href="https://www.genomics-aotearoa.org.nz/our-work/completed-projects/te-nohonga-kaitiaki">Te Nohonga Kaitiaki</a>).</p>
+</section>
+<section id="cites-species" class="level3">
+<h3 class="anchored" data-anchor-id="cites-species">CITES species</h3>
+<p><a href="https://cites.org/eng"><img src="figures/ethical-03.png" class="img-fluid"></a></p>
+<p><a href="https://cites.org/eng/disc/what.php">CITES</a> is the <em>Convention on International Trade in Endangered Species of Wild Fauna and Flora</em>. It is an an international agreement between governments. Its aim is to ensure that international trade in specimens of wild animals and plants does not threaten the survival of the species.</p>
+<p>Some species are therefore subject to certain controls for international trade and require specific authorisation to import, export, re-export or introduce.</p>
+<p>You can search the species list on <a href="https://www.speciesplus.net/">Species+</a>.</p>
+<p>NZ has not ratified or accepted CITES, and as such NZ’s status is ‘accession’ i.e., they have not signed the Convention.</p>
 </section>
 </section>
-<section id="genomic-file-types" class="level1">
-<h1>genomic file types</h1>
-<p>fastq illlumina, OMT pod5 to bam (unaligned). also CRAM file type.</p>
-<section id="first-check-that-the-data-are-not-corrupt" class="level2">
-<h2 class="anchored" data-anchor-id="first-check-that-the-data-are-not-corrupt">First, check that the data are not corrupt</h2>
-<p>Believe it or not, computers can make mistakes! When your data files are being copied over from the sequencing facility to cloud storage, errors can occur that cause your files to become corrupted. This is not always obvious based on file size or a quick look at the contents. The first thing you’ll want to do is run a checksum, which will output a fixed-length message of 16 bytes– a unique identifier of each file. The files should also come with the checksums run by the technician at the sequencing facility. If the files have been corrupted by even one character, the 16 byte unique identifier will be completely different, allowing you to easily and quickly verify the integrity of your files. Check out the section on <a href="https://genomicsaotearoa.github.io/shell-for-bioinformatics/2_download_data/">Data Integrity in our GA shell workshop</a> for more information on how to run this.</p>
+<section id="discussion" class="level2">
+<h2 class="anchored" data-anchor-id="discussion">DISCUSSION 💬</h2>
+<ol type="1">
+<li><p>What ethical considerations do you need to take into account before you begin collecting your samples?</p></li>
+<li><p>Have you ever worked on a project where consultation did not occur? What would you do differently if you could go back and repeat it?</p></li>
+<li><p>???</p></li>
+</ol>
 
 
 </section>
@@ -634,13 +688,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
-      <a href="./test-styling.html" class="pagination-link" aria-label="_test styles">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">_test styles</span>
+      <a href="./index.html" class="pagination-link" aria-label="Home">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Home</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./index.html" class="pagination-link" aria-label="Home">
-        <span class="nav-page-text">Home</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./organisation-tidiness.html" class="pagination-link" aria-label="Organisation and tidy data">
+        <span class="nav-page-text">Organisation and tidy data</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

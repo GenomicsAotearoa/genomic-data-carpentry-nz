@@ -1,0 +1,94 @@
+---
+title: ""
+format: html
+---
+
+# Before you begin: Ethical considerations
+
+Before you even begin collecting your samples for genomic analyses, there are many ethical considerations to think about. In a broader, international context there are multiple, multi-party conventions and agreements towards the protecting the use of indigenous and endangered species or and their derived data. Here in Aotearoa New Zealand, we have additional responsibilities to *Te Tiriti o Waitangi*, including Māori consultation, recognition of *taonga* species, and considerations around Māori Data Sovereignty and Governance.  
+
+## Data collection perspectives in Aotearoa  
+
+Many species in New Zealand are considered *taonga*, which are species of value to Māori, and this status extends to their ecosystems too. Genomic data collected from *taonga* species is considered an extension of the individual or species it was collected from and is part of their *whakapapa*. It is important to acknowledge and engage with Māori perspectives at each stage of collection, processing, analysis and sharing of genomic data to ensure the appropriate care and consultation has been undertaken.  
+
+
+***Your University, Institute or Organisation will likely have its own policies, guidelines or frameworks on how to undertake consultation with Māori that you need to investigate for yourself.*** 
+
+Here we have a few resources to get you started with thinking about how to include Māori perspectives in your genomic research project: 
+
+### Genomic research on Taonga species
+
+[Guidelines for Genomic Research on Taonga Species--Te Nohonga Kaitiaki](https://www.genomics-aotearoa.org.nz/our-work/completed-projects/te-nohonga-kaitiaki) (below-left). Effective engagement with Māori should be practised at all levels of research, as outlined by this engagement framework from pg 23 (below-right).   
+[![](figures/ethical-02.png){width=40%}](https://www.genomics-aotearoa.org.nz/sites/default/files/2022-02/Te%20Nohonga%20Kaitiaki%20Guidelines%20for%20genomic%20research%20on%20taonga%20species%20%28with%20background%29.pdf) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  ![](figures/ethical-01.png){width=50%}
+
+### Māori Data Sovereignty
+
+[Te Mana Raraunga](https://www.temanararaunga.maori.nz/) - the Māori Data Sovereignty Network advocates for Māori rights and interests in data and has several resources on their website on these principles. This is a broader description of engaging with data; not specific to genomic data.  
+[![](figures/ethical-05.png)](https://www.temanararaunga.maori.nz/)
+
+### Government policy
+
+The Ministry of Business, Innovation and Employment (MBIE) outline their [Vision Mātauranga](https://www.mbie.govt.nz/science-and-technology/science-and-innovation/agencies-policies-and-budget-initiatives/vision-matauranga-policy) policy for unlocking the science and innovation potential of Māori knowledge, resources and people. If you are writing government-funded or Royal Society funded grants, you'll need to think about how to incorporate Vision Mātauranga in your research plan.  
+ 
+
+### Further training
+
+Training opportunities are available for indigenous peoples through the Summer internship for INdigenous peoples in Genomics [(SING Aotearoa)](https://www.singaotearoa.nz/) and [Indigidata Aotearoa wānanga](https://www.indigidataaotearoa.com/).  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [![](figures/ethical-06.png){width=30%}](https://www.singaotearoa.nz/) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  [![](figures/ethical-07.png){width=30%}](https://www.indigidataaotearoa.com/)
+
+
+
+## International agreements, principles and protocols
+
+### FAIR and CARE 
+
+In 2016, the [FAIR principles](https://www.go-fair.org/fair-principles/) were published in *Scientific Data*. 
+These guidelines set to provide a standard through which to improve digital assets:
+
+- **F**indability  
+- **A**ccessibility  
+- **I**nteroperability  
+- **R**euse  
+
+Part of conducting FAIR research is having a **reproducible** research pipeline. One way this can be done is by documenting your work on a version control system like GitHub. (See our GA workshop for more on [Reproducibility with Git and Quarto](https://genomicsaotearoa.github.io/BioinformaticsTrainingProgramme/portfolio.html#reproducibility-with-git-and-quarto)). 
+
+Open science advocates have embraced this FAIR framework, while others critise its lack of protection of data, for not considering the rights and interest of those that should hold governance over data, in particular, indigenous peoples. In response to this, the CARE framework has also been proposed by [Global Indigenous Data Analysis](https://www.gida-global.org/care), to complement the existing FAIR principles:
+
+- **C**ollective benefit  
+- **A**uthority to control  
+- **R**esponsibility  
+- **E**thics  
+
+![](figures/fair-care.png)
+
+This story ["Open with care; Indigenous researchers and communities are reshaping how Western science thinks about data ownership"](https://www.science.org/content/article/not-free-all-indigenous-communities-want-limits-how-their-data-are-shared) is an interesting read on these perspectives, and importantly how both sets of principles can be implemented together. 
+
+### Nagoya protocol
+
+[![](figures/ethical-04.png)](https://www.cbd.int/abs/about)
+
+The [Nagoya Protocol](https://www.cbd.int/abs/default.shtml) on *Access to Genetic Resources and the Fair and Equitable Sharing of Benefits Arising from their Utilization to the Convention on Biological Diversity* is an international agreement which aims at sharing the benefits arising from the utilization of genetic resources in a fair and equitable way.  
+
+The Nagoya Protocol is a supplementary agreement to the [Convention on Biological Diversity](https://www.cbd.int/). It covers the fair and equitable sharing of benefits arising from the utilisation of genetic resources. New Zealand is not a signatory to the agreement due to the overriding importance of the Treaty of Waitangi in domestic affairs (source: [Te Nohonga Kaitiaki](https://www.genomics-aotearoa.org.nz/our-work/completed-projects/te-nohonga-kaitiaki)). 
+
+### CITES species
+
+[![](figures/ethical-03.png)](https://cites.org/eng)
+
+[CITES](https://cites.org/eng/disc/what.php) is the *Convention on International Trade in Endangered Species of Wild Fauna and Flora*. It is an an international agreement between governments. Its aim is to ensure that international trade in specimens of wild animals and plants does not threaten the survival of the species. 
+
+Some species are therefore subject to certain controls for international trade and require specific authorisation to import, export, re-export or introduce.
+
+You can search the species list on [Species+](https://www.speciesplus.net/).   
+
+NZ has not ratified or accepted CITES, and as such NZ's status is 'accession' i.e., they have not signed the Convention. 
+
+
+
+## DISCUSSION 💬
+
+1. What ethical considerations do you need to take into account before you begin collecting your samples?
+
+2. Have you ever worked on a project where consultation did not occur? What would you do differently if you could go back and repeat it?
+
+3.  ???

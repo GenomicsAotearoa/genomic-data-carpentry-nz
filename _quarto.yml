@@ -18,6 +18,8 @@ website:
         href: outtakes-notes.qmd
       - text: "Home"
         href: index.qmd
+      - text: "Before you begin: Ethical considerations"
+        href: ethical-considerations.qmd
       - text: "Organisation and tidy data"
         href: organisation-tidiness.qmd
       - text: "Planning for submission"

@@ -11,20 +11,24 @@ format: html
 
 This is a beginner-friendly workshop, designed to get you started with the world of genomics. Whatever you're doing---whether it's transcriptomics, genome assembly, variant calling, metagenomics, or something else---if you will be using genomic data this workshop is for you! 
 
+## Prerequisites
+Learners are expected to have a basic (undergraduate) level understanding of biological and genetic concepts, but no familiarity with genomics or bioinformatic/computational skill is required.
+
 ## What's covered in this workshop
 
+- Ethical data collection from a New Zealand perspective
 - Organisation---from messy lab books and excel spreadsheets to tidy, computer-friendly data  
 - Working with sequencing facilities and understanding genomic data types  
-- Data storage repositories, public services and facilities, and principles of FAIR and CARE 
+- Data storage repositories and public services and facilities  
 - Quality control, wrangling of raw reads and an introduction to genomic terminology  
 
 ## What's NOT covered in this workshop
 
-- Basic descriptions of biological and genetic concepts (i.e., we assume the learner is already familiar with DNA/RNA, PCR, transcription, etc. to an undergraduate level).   
+- Basic descriptions of biological and genetic concepts.  
 - Non-NGS sequencing and services (e.g., Sanger sequencing, qPCR, genotyping, probe-based applications such as microarrays and NanoString nCounter).  
-- Genomic analysis workflows (beyond the basics of initial quality checks of raw reads) 
-- The basics of cluster or HPC resourcing and specialised software (e.g., we do not cover schedulers such as SLURM, partitions/CPUs/GPUs, chosing compute allocation allowance). See our workshop on [Introduction to Bash Scripting and HPC Job Scheduler](https://genomicsaotearoa.github.io/BioinformaticsTrainingProgramme/portfolio.html#introduction-to-bash-scripting-and-hpc-job-scheduler) for this.
-- Using shell or other bioinformatic tools, beyond the very basics (e.g., we do not cover writing/submitting bash scripts, modules, accessing the cluster using ssh).  
+- Genomic analysis workflows. We have multiple dedicated workshops for genomic pipelines; see [our portfolio here](https://genomicsaotearoa.github.io/BioinformaticsTrainingProgramme/portfolio.html).    
+- Using shell or other bioinformatic tools. See our workshops on [Introduction to shell](https://genomicsaotearoa.github.io/BioinformaticsTrainingProgramme/portfolio.html#introduction-to-shell-for-bioinformatics) and [Introduction to R](https://genomicsaotearoa.github.io/BioinformaticsTrainingProgramme/portfolio.html#intermediate-r-for-bioinformatics) to get you started on this. 
+- Understanding the cluster, HPC resourcing and specialised software (e.g., we do not cover schedulers such as SLURM, partitions/CPUs/GPUs, chosing compute allocation allowance). See our workshop on [Introduction to Bash Scripting and HPC Job Scheduler](https://genomicsaotearoa.github.io/BioinformaticsTrainingProgramme/portfolio.html#introduction-to-bash-scripting-and-hpc-job-scheduler) for this.  
 
 ## Glossary
 
@@ -32,22 +36,28 @@ This is a beginner-friendly workshop, designed to get you started with the world
 |----|--------------|
 | Adapter  | Short synthetic DNA sequence ligated to the DNA molecule during library prep which allows the molecule to bind to the flow cell during sequencing and also provides a primer binding site |
 | bp   | Base pair |
+| DGE   | Differential Gene Expression (analysis) |
 | HCS   | High Capacity Storage |
 | HPC   | High Performance Computing |
-| Index | Also known as a barcode. Short unique sequence added to each DNA molecule in one library, allowing the identification of that library/sample and thereby enabling pooling of the libraries (one run = cheaper). |
+| HiFi   | High fidelity (PacBio) |
+| Index | Also known as a barcode. Short unique sequence added to each DNA molecule in one library, allowing the identification of that library/sample and thereby enabling pooling of the libraries for sequencing (one run = cheaper). |
+| Gb   | Gigabase pair (1,000,000,000 bp) |
+| GB   | Gigabyte |
 | Mb   | Megabase pair (1,000,000 bp) |
 | MB   | Megabyte |
 | Multiplexing   | Sequencing multiple samples simultaneously in one run by combining libraries into one pool. Samples (i.e., libraries) are de-multiplexed (separated) *in silico* usually by the technician, based on unique indices.  |
-| Gb   | Gigabase pair (1,000,000,000 bp) |
-| GB   | Gigabyte |
 | NGS  | Next-generation sequencing |
 | SE / PE | Single-end / Paired-end |
+| SMRT | Single molecule real time (PacBio) |
+
 
 
 
 ## Attribution
 
-Parts of this workshop were adapted from and inspired by content from The Carpentries [Data Carpentry lessons on Genomics.](https://datacarpentry.org/lessons/#genomics)  
+This workshop was developed by [Dr Chloé van der Burg](https://github.com/chloevdb) for the [Genomics Aotearoa Bioinformatics Training Programme](https://genomicsaotearoa.github.io/BioinformaticsTrainingProgramme/). 
+
+Parts of this workshop were re-used or adapted from The Carpentries [Data Carpentry lessons on Genomics.](https://datacarpentry.org/lessons/#genomics)  
 
 ::: {.callout-note collapse="true"}
 # Copyright information:
@@ -56,26 +66,39 @@ All Carpentries instructional material is made available under the Creative Comm
 
 In this workshop, the following lessons were adapted from The Carpentries Data Carpentry in the manner stated below:
 
-- [Organisation and tidy data](organisation-tidiness.qmd) section has **re-used material** from [Project Organization and Management for Genomics.](https://datacarpentry.github.io/organization-genomics/)  
+- [Organisation and tidy data](organisation-tidiness.qmd) section has re-used material from Data Carpentry: [Project Organization and Management for Genomics.](https://datacarpentry.github.io/organization-genomics/)  
 
-- [Data Wrangling and Processing for Genomics](https://datacarpentry.github.io/wrangling-genomics/). Currently not using this workshop but likely to re-use.  
+- XXX section here has has re-used material from Data Carpentry: [Data Wrangling and Processing for Genomics](https://datacarpentry.github.io/wrangling-genomics/). Currently not using this workshop but likely to re-use.  
+
+- This workshop has been adapted from the general workflow of the Data Carpentry: [Genomics Workshop Overview](https://datacarpentry.github.io/genomics-workshop/) workshop, which includes the above lessons.  
 
 
 :::
 
-Material is used in this workshop from our other Genomics Aotearoa workshops, as below:
+Material in this workshop was also re-used from our other Genomics Aotearoa workshops, which includes:
 
-- Material from our [Introduction to Shell](https://genomicsaotearoa.github.io/introduction-to-shell/) workshop is **re-used** in the [Genomic data wrangling and processing](data-wrangling-and-processing.qmd) section.   
-- Material from our [Introduction to R workshop - section on working with spreadsheets](https://genomicsaotearoa.github.io/Introduction-to-R/03-basics-factors-dataframes/) is **re-used** in [Organisation and tidy data](organisation-tidiness.qmd). 
+::: {.callout-note collapse="true"}
+# Genomics Aotearoa workshops:
 
-Other material used in this workshop:  
+NOTE: Some of these workshops include attribution to other source materials, see the attribution notices enclosed within.   
+
+- Material from our [Introduction to Shell](https://genomicsaotearoa.github.io/introduction-to-shell/) workshop is re-used in the [Genomic data wrangling and processing](data-wrangling-and-processing.qmd) section.   
+- Material from our [Introduction to R workshop - section on working with spreadsheets](https://genomicsaotearoa.github.io/Introduction-to-R/03-basics-factors-dataframes/) is re-used in [Organisation and tidy data](organisation-tidiness.qmd). 
+
+:::
+
+Diagrams and images were also re-used in this workshop from online reference material, as follows:
+
+::: {.callout-note collapse="true"}
+# Reference material:
+
 
 - Illumina library prep molecular workflow diagram in [Planning for submission](planning-for-submission.qmd) from Illumina Stranded mRNA Prep, Ligation Data Sheet. M-GL-02143 v1.0  
 - Bioanalyzer trace of final mRNA library in [Planning for submission](planning-for-submission.qmd) from Illumina Stranded mRNA Prep, Ligation Protocol Document # 1000000124518 v04.  
 - PacBio SMRTbell adapters image in [Planning for submission](planning-for-submission.qmd) from Template Preparation and Sequencing Guide P/N 000-710-821-13.  
 - Adapter dimer image from [Illumina general knowledge base](https://knowledge.illumina.com/library-preparation/general/library-preparation-general-reference_material-list/000003874) used in [Planning for submission](planning-for-submission.qmd). 
 
-
+:::
 
 Definitions:   
 

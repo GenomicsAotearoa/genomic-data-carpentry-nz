@@ -22,6 +22,12 @@ Genomic data files are huge, and for one project you will often have several hun
 
 You have a few options of how you want to store and analyse your data, which may be through HPC/HCS services offered by your University or Institute, or through the national computing and digital network REANNZ.  
 
+## Research Data Management
+
+Univeristy have RDM policies
+
+eg auckland https://research-hub.auckland.ac.nz/managing-research-data/ethics-integrity-and-compliance/research-data-management-policy-guidance 
+
 ## Research and Education Advanced Network New Zealand (REANNZ)
 
 REANNZ is *"..a Crown-owned membership organisation that powers Aotearoa’s research and education network. Launched in 2007, their high-performance national digital network (or NREN) helps members collaborate and contribute to data-intensive and complex science and research initiatives – both here in New Zealand and across the globe."*
@@ -88,64 +94,32 @@ If you are a University of Otago staff or student, you can use the "Aoraki" HPC 
 https://rtis.cspages.otago.ac.nz/research-computing/cluster/index.html
 
 
+## Centre for eResearch (CeR) at University of Auckland
 
-## Other universities HPC/HCS options?
+research compute, supports access to REANNZ HPC. 
+https://research-hub.auckland.ac.nz/research-infrastructure/research-platforms/eresearch
+
+
+
+
+## Other universities/institutes/organisations HPC/HCS options?
 
 ::: {.callout-caution}
 # FILL IN HERE
 
-Auckland? wellingotn? massey? UC? probably cant cover all but need to list some of these. 
+ wellingotn? massey? UC? PROs? probably cant cover all but need to list some of these. 
 
 :::
 
 
 
-## Ethical data management
-
-
-### FAIR and CARE 
-
-In 2016, the [FAIR principles](https://www.go-fair.org/fair-principles/) were published in *Scientific Data*. 
-These guidelines set to provide a standard through which to improve digital assets:
-
-- **F**indability  
-- **A**ccessibility  
-- **I**nteroperability  
-- **R**euse  
-
-Part of conducting FAIR research is having a **reproducible** research pipeline. One way this can be done is by documenting your work on a version control system like GitHub. See our [GA workshop for more on Reproducibility with Git and Quarto](https://genomicsaotearoa.github.io/BioinformaticsTrainingProgramme/portfolio.html#reproducibility-with-git-and-quarto).
-
-Open science advocates have embraced this FAIR framework, while others critise its lack of protection of data, for not considering the rights and interest of those that should hold governance over data, in particular, indigenous peoples. In response to this, the CARE framework has also been proposed by [Global Indigenous Data Analysis](https://www.gida-global.org/care), to complement the existing FAIR principles:
-
-- **C**ollective benefit  
-- **A**uthority to control  
-- **R**esponsibility  
-- **E**thics  
-
-![](figures/fair-care.png)
-
-This story ["Open with care; Indigenous researchers and communities are reshaping how Western science thinks about data ownership"](https://www.science.org/content/article/not-free-all-indigenous-communities-want-limits-how-their-data-are-shared) is an interesting read on these perspectives.
-
-The Aotearoa Genomic Data Repository (AGDR) and Rakeiora platform are examples of services that have adopted these CARE principles.
-
 ### Aotearoa Genomic Data Repository (AGDR)
+
+The AGDR is enabled by MBIE funding to Genomics Aotearoa. The AGDR is acceptable repository by journals.
 
 From the [AGDR website](https://data.agdr.org.nz/):
 
 *"The Aotearoa Genomic Data Repository provides secure within-nation storage, management and sharing of non-human genomic data generated from biological and environmental samples originating in Aotearoa New Zealand. This resource has been developed to follow the principles of Māori Data Sovereignty, and to enable kaitiakitanga (guardianship), so that iwi, hapū and whānau (tribes, kinship groups and families) can effectively exercise their responsibilities as guardians over biological entities that are taonga (precious or treasured). While the repository is designed to facilitate the sharing of data — making it findable by researchers and interoperable with data held in other genomic repositories — the decision-making process regarding who can access the data is entirely in the hands of those holding kaitiakitanga over each data set."*"
-
-The AGDR is enabled by MBIE funding to Genomics Aotearoa. 
-
-
-### Rakeiora Genomics platform 
-
-The [Rakeiora Genomics Platform](https://rakeiora.ac.nz/) is designed to enable and test pilot precision medicine research, linking genomics and health. 
-
-They have chosen a **walled garden** approach to this infrastructure. 
-
-*"This means that all genomic data and health data, and its analysis, are undertaken only within this computational environment – the data never leave and are certainly never downloaded to a researcher’s own computer or a hospital clinical laboratory computer...   
-...Its modular nature will allow linkage (with consent) to other health data systems currently under development in Aotearoa New Zealand.  This approach in particular addresses transparency of use and control over narratives. Lack of these features in other precision medicine platforms worldwide has led to significant problems for patients and research participants, including indigenous communities; learning from these negative experiences is key to avoid repeating them."* -- From the [Genomics Aotearoa website.](https://www.genomics-aotearoa.org.nz/our-work/health-projects/rakeiora-pathfinder-genomic-medicine)
-
 
 
  
@@ -153,13 +127,13 @@ They have chosen a **walled garden** approach to this infrastructure.
 
 You are probably familiar with using the [NIH NCBI database](https://www.ncbi.nlm.nih.gov/), hosted by the United States Government, for things such as BLAST searches and literature searches. 
 
-NCBI has a repository called the Sequence Read Archive (SRA), which is where a large proportion of genomic data from all over the world is stored, as publicly available raw, high-throughput, sequencing data. 
+NCBI has a repository called the [Sequence Read Archive (SRA)](https://www.ncbi.nlm.nih.gov/sra), which is where a large proportion of genomic data from all over the world is stored, as publicly available raw, high-throughput, sequencing data. 
 
-If your data has no ethical concerns, this can be a great resource for making your data freely available and easily citeable in publications.  
+If your data has no ethical or data sovereignty concerns (e.g., your Māori research partners have agreed to upload the data), this can be a great resource for making your data freely available and easily citeable in publications.  
 
-Here we will not go into detail on how to either download or upload data to the SRA (see [documentation on their website](https://www.ncbi.nlm.nih.gov/sra)). But some points to be aware of are:
+Here we will not go into detail on how to either download or upload data to the SRA (see [SRA documentation on their website](https://www.ncbi.nlm.nih.gov/sra/docs/)). But some points to be aware of are:
 
-- A [BioProject](https://www.ncbi.nlm.nih.gov/bioproject/) is a way to link all the sequencing and biological data together under one umbrella (as a general rule, 1 publication = 1 BioProject, but many groups use a single BioProject for multiple publications). If you are uploading your own data, we recommend starting with creating a BioProject, which will then give you a single accession (e.g., PRJNA31257) to use for the next steps (BioSample + SRA raw read uploads).  
+- A [BioProject](https://www.ncbi.nlm.nih.gov/bioproject/) is a way to link all the sequencing and biological data together under one umbrella (as a general rule, 1 publication = 1 BioProject, but many research groups use a single BioProject for multiple publications). If you are uploading your own data, we recommend starting with creating a BioProject, which will then give you a single accession (e.g., PRJNA31257) to use for the next steps (create BioSample entries and then upload raw reads to SRA).  
 
 - A [BioSample](https://www.ncbi.nlm.nih.gov/biosample) is a unique descriptor of the biological source material (e.g, all the biological metadata of your sample -- species, sex, age, location, tissue, etc.). This is often (but not strictly) set up as 1 BioSample = 1 library. Each BioSample accession will be linked to the matching sequence data in the SRA, and all housed under one BioProject accession number. 
  
@@ -184,16 +158,3 @@ There are also GEO datasets (Gene Expression Omnibus) associated with this study
 
 
 This is not the only public repository of sequence reads, some other examples include: [European Nucleotide Archive (ENA)](https://www.ebi.ac.uk/ena/browser/home) and the DNA data bank of Japan [DDBJ Sequence Read Archive (DRA)](https://www.ddbj.nig.ac.jp/dra/index-e.html). These data banks are linked together via the [International Nucleotide Sequence Database Collaboration](https://www.insdc.org/). NCBI also details some of the [collaborative projects here](https://www.ncbi.nlm.nih.gov/genbank/collab/) (e.g., The Taxonomy Project, The Feature Table).
-
-
-## DISCUSSION 💬
-
-1. What ethical considerations do you need to take into account when storing and sharing your data for your own personal project?
-
-2. 
-
-::: {.callout-caution}
-# FILL IN HERE
-Other discussion points?
-:::
-

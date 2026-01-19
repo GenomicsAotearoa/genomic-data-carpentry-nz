@@ -30,7 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./organisation-tidiness.html" rel="next">
+<link href="./ethical-considerations.html" rel="next">
 <link href="./outtakes-notes.html" rel="prev">
 <link href="./theme-images/GA-image-black-favicon.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
@@ -135,6 +135,12 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./ethical-considerations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Before you begin: Ethical considerations</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./organisation-tidiness.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Organisation and tidy data</span></a>
   </div>
@@ -170,6 +176,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#genomic-data-carpentry-aotearoa-edition" id="toc-genomic-data-carpentry-aotearoa-edition" class="nav-link active" data-scroll-target="#genomic-data-carpentry-aotearoa-edition">Genomic Data Carpentry (Aotearoa edition)</a>
   <ul>
   <li><a href="#getting-started-with-genomics" id="toc-getting-started-with-genomics" class="nav-link" data-scroll-target="#getting-started-with-genomics">Getting started with genomics</a></li>
+  <li><a href="#prerequisites" id="toc-prerequisites" class="nav-link" data-scroll-target="#prerequisites">Prerequisites</a></li>
   <li><a href="#whats-covered-in-this-workshop" id="toc-whats-covered-in-this-workshop" class="nav-link" data-scroll-target="#whats-covered-in-this-workshop">What’s covered in this workshop</a></li>
   <li><a href="#whats-not-covered-in-this-workshop" id="toc-whats-not-covered-in-this-workshop" class="nav-link" data-scroll-target="#whats-not-covered-in-this-workshop">What’s NOT covered in this workshop</a></li>
   <li><a href="#glossary" id="toc-glossary" class="nav-link" data-scroll-target="#glossary">Glossary</a></li>
@@ -195,27 +202,34 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="getting-started-with-genomics">Getting started with genomics</h2>
 <p>This is a beginner-friendly workshop, designed to get you started with the world of genomics. Whatever you’re doing—whether it’s transcriptomics, genome assembly, variant calling, metagenomics, or something else—if you will be using genomic data this workshop is for you!</p>
 </section>
+<section id="prerequisites" class="level2">
+<h2 class="anchored" data-anchor-id="prerequisites">Prerequisites</h2>
+<p>Learners are expected to have a basic (undergraduate) level understanding of biological and genetic concepts, but no familiarity with genomics or bioinformatic/computational skill is required.</p>
+</section>
 <section id="whats-covered-in-this-workshop" class="level2">
 <h2 class="anchored" data-anchor-id="whats-covered-in-this-workshop">What’s covered in this workshop</h2>
 <ul>
+<li>Ethical data collection from a New Zealand perspective</li>
 <li>Organisation—from messy lab books and excel spreadsheets to tidy, computer-friendly data<br>
 </li>
 <li>Working with sequencing facilities and understanding genomic data types<br>
 </li>
-<li>Data storage repositories, public services and facilities, and principles of FAIR and CARE</li>
+<li>Data storage repositories and public services and facilities<br>
+</li>
 <li>Quality control, wrangling of raw reads and an introduction to genomic terminology</li>
 </ul>
 </section>
 <section id="whats-not-covered-in-this-workshop" class="level2">
 <h2 class="anchored" data-anchor-id="whats-not-covered-in-this-workshop">What’s NOT covered in this workshop</h2>
 <ul>
-<li>Basic descriptions of biological and genetic concepts (i.e., we assume the learner is already familiar with DNA/RNA, PCR, transcription, etc. to an undergraduate level).<br>
+<li>Basic descriptions of biological and genetic concepts.<br>
 </li>
 <li>Non-NGS sequencing and services (e.g., Sanger sequencing, qPCR, genotyping, probe-based applications such as microarrays and NanoString nCounter).<br>
 </li>
-<li>Genomic analysis workflows (beyond the basics of initial quality checks of raw reads)</li>
-<li>The basics of cluster or HPC resourcing and specialised software (e.g., we do not cover schedulers such as SLURM, partitions/CPUs/GPUs, chosing compute allocation allowance). See our workshop on <a href="https://genomicsaotearoa.github.io/BioinformaticsTrainingProgramme/portfolio.html#introduction-to-bash-scripting-and-hpc-job-scheduler">Introduction to Bash Scripting and HPC Job Scheduler</a> for this.</li>
-<li>Using shell or other bioinformatic tools, beyond the very basics (e.g., we do not cover writing/submitting bash scripts, modules, accessing the cluster using ssh).</li>
+<li>Genomic analysis workflows. We have multiple dedicated workshops for genomic pipelines; see <a href="https://genomicsaotearoa.github.io/BioinformaticsTrainingProgramme/portfolio.html">our portfolio here</a>.<br>
+</li>
+<li>Using shell or other bioinformatic tools. See our workshops on <a href="https://genomicsaotearoa.github.io/BioinformaticsTrainingProgramme/portfolio.html#introduction-to-shell-for-bioinformatics">Introduction to shell</a> and <a href="https://genomicsaotearoa.github.io/BioinformaticsTrainingProgramme/portfolio.html#intermediate-r-for-bioinformatics">Introduction to R</a> to get you started on this.</li>
+<li>Understanding the cluster, HPC resourcing and specialised software (e.g., we do not cover schedulers such as SLURM, partitions/CPUs/GPUs, chosing compute allocation allowance). See our workshop on <a href="https://genomicsaotearoa.github.io/BioinformaticsTrainingProgramme/portfolio.html#introduction-to-bash-scripting-and-hpc-job-scheduler">Introduction to Bash Scripting and HPC Job Scheduler</a> for this.</li>
 </ul>
 </section>
 <section id="glossary" class="level2">
@@ -241,16 +255,32 @@ ul.task-list li input[type="checkbox"] {
 <td>Base pair</td>
 </tr>
 <tr class="odd">
+<td>DGE</td>
+<td>Differential Gene Expression (analysis)</td>
+</tr>
+<tr class="even">
 <td>HCS</td>
 <td>High Capacity Storage</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>HPC</td>
 <td>High Performance Computing</td>
 </tr>
+<tr class="even">
+<td>HiFi</td>
+<td>High fidelity (PacBio)</td>
+</tr>
 <tr class="odd">
 <td>Index</td>
-<td>Also known as a barcode. Short unique sequence added to each DNA molecule in one library, allowing the identification of that library/sample and thereby enabling pooling of the libraries (one run = cheaper).</td>
+<td>Also known as a barcode. Short unique sequence added to each DNA molecule in one library, allowing the identification of that library/sample and thereby enabling pooling of the libraries for sequencing (one run = cheaper).</td>
+</tr>
+<tr class="even">
+<td>Gb</td>
+<td>Gigabase pair (1,000,000,000 bp)</td>
+</tr>
+<tr class="odd">
+<td>GB</td>
+<td>Gigabyte</td>
 </tr>
 <tr class="even">
 <td>Mb</td>
@@ -265,14 +295,6 @@ ul.task-list li input[type="checkbox"] {
 <td>Sequencing multiple samples simultaneously in one run by combining libraries into one pool. Samples (i.e., libraries) are de-multiplexed (separated) <em>in silico</em> usually by the technician, based on unique indices.</td>
 </tr>
 <tr class="odd">
-<td>Gb</td>
-<td>Gigabase pair (1,000,000,000 bp)</td>
-</tr>
-<tr class="even">
-<td>GB</td>
-<td>Gigabyte</td>
-</tr>
-<tr class="odd">
 <td>NGS</td>
 <td>Next-generation sequencing</td>
 </tr>
@@ -280,12 +302,17 @@ ul.task-list li input[type="checkbox"] {
 <td>SE / PE</td>
 <td>Single-end / Paired-end</td>
 </tr>
+<tr class="odd">
+<td>SMRT</td>
+<td>Single molecule real time (PacBio)</td>
+</tr>
 </tbody>
 </table>
 </section>
 <section id="attribution" class="level2">
 <h2 class="anchored" data-anchor-id="attribution">Attribution</h2>
-<p>Parts of this workshop were adapted from and inspired by content from The Carpentries <a href="https://datacarpentry.org/lessons/#genomics">Data Carpentry lessons on Genomics.</a></p>
+<p>This workshop was developed by <a href="https://github.com/chloevdb">Dr Chloé van der Burg</a> for the <a href="https://genomicsaotearoa.github.io/BioinformaticsTrainingProgramme/">Genomics Aotearoa Bioinformatics Training Programme</a>.</p>
+<p>Parts of this workshop were re-used or adapted from The Carpentries <a href="https://datacarpentry.org/lessons/#genomics">Data Carpentry lessons on Genomics.</a></p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -301,19 +328,48 @@ Copyright information:
 <p>All Carpentries instructional material is made available under the Creative Commons Attribution license CC BY 4.0. The material in this workshop is not endorsed by the Carpentries and has been adapted by Genomics Aotearoa for our own teaching purposes.</p>
 <p>In this workshop, the following lessons were adapted from The Carpentries Data Carpentry in the manner stated below:</p>
 <ul>
-<li><p><a href="./organisation-tidiness.html">Organisation and tidy data</a> section has <strong>re-used material</strong> from <a href="https://datacarpentry.github.io/organization-genomics/">Project Organization and Management for Genomics.</a></p></li>
-<li><p><a href="https://datacarpentry.github.io/wrangling-genomics/">Data Wrangling and Processing for Genomics</a>. Currently not using this workshop but likely to re-use.</p></li>
+<li><p><a href="./organisation-tidiness.html">Organisation and tidy data</a> section has re-used material from Data Carpentry: <a href="https://datacarpentry.github.io/organization-genomics/">Project Organization and Management for Genomics.</a></p></li>
+<li><p>XXX section here has has re-used material from Data Carpentry: <a href="https://datacarpentry.github.io/wrangling-genomics/">Data Wrangling and Processing for Genomics</a>. Currently not using this workshop but likely to re-use.</p></li>
+<li><p>This workshop has been adapted from the general workflow of the Data Carpentry: <a href="https://datacarpentry.github.io/genomics-workshop/">Genomics Workshop Overview</a> workshop, which includes the above lessons.</p></li>
 </ul>
 </div>
 </div>
 </div>
-<p>Material is used in this workshop from our other Genomics Aotearoa workshops, as below:</p>
+<p>Material in this workshop was also re-used from our other Genomics Aotearoa workshops, which includes:</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Genomics Aotearoa workshops:
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>NOTE: Some of these workshops include attribution to other source materials, see the attribution notices enclosed within.</p>
 <ul>
-<li>Material from our <a href="https://genomicsaotearoa.github.io/introduction-to-shell/">Introduction to Shell</a> workshop is <strong>re-used</strong> in the <a href="./data-wrangling-and-processing.html">Genomic data wrangling and processing</a> section.<br>
+<li>Material from our <a href="https://genomicsaotearoa.github.io/introduction-to-shell/">Introduction to Shell</a> workshop is re-used in the <a href="./data-wrangling-and-processing.html">Genomic data wrangling and processing</a> section.<br>
 </li>
-<li>Material from our <a href="https://genomicsaotearoa.github.io/Introduction-to-R/03-basics-factors-dataframes/">Introduction to R workshop - section on working with spreadsheets</a> is <strong>re-used</strong> in <a href="./organisation-tidiness.html">Organisation and tidy data</a>.</li>
+<li>Material from our <a href="https://genomicsaotearoa.github.io/Introduction-to-R/03-basics-factors-dataframes/">Introduction to R workshop - section on working with spreadsheets</a> is re-used in <a href="./organisation-tidiness.html">Organisation and tidy data</a>.</li>
 </ul>
-<p>Other material used in this workshop:</p>
+</div>
+</div>
+</div>
+<p>Diagrams and images were also re-used in this workshop from online reference material, as follows:</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Reference material:
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <ul>
 <li>Illumina library prep molecular workflow diagram in <a href="./planning-for-submission.html">Planning for submission</a> from Illumina Stranded mRNA Prep, Ligation Data Sheet. M-GL-02143 v1.0<br>
 </li>
@@ -323,6 +379,9 @@ Copyright information:
 </li>
 <li>Adapter dimer image from <a href="https://knowledge.illumina.com/library-preparation/general/library-preparation-general-reference_material-list/000003874">Illumina general knowledge base</a> used in <a href="./planning-for-submission.html">Planning for submission</a>.</li>
 </ul>
+</div>
+</div>
+</div>
 <p>Definitions:</p>
 <ul>
 <li><strong>Re-used material:</strong> Almost word-for-word, including images, with minor wording or styling modifications.<br>
@@ -746,8 +805,8 @@ Copyright information:
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./organisation-tidiness.html" class="pagination-link" aria-label="Organisation and tidy data">
-        <span class="nav-page-text">Organisation and tidy data</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./ethical-considerations.html" class="pagination-link" aria-label="Before you begin: Ethical considerations">
+        <span class="nav-page-text">Before you begin: Ethical considerations</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

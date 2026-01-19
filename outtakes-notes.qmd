@@ -5,16 +5,9 @@ format: html
 
 # Outtakes and notes
 
-add a prerequisates section to the home page. this is a 'foundational' level workshop. As with all GA workshops, learners are expected to have a basic (undergraduate) level understanding of biological and genetic concepts. 
 
 
-***Non-NGS sequencing around New Zealand:***  
 
-**Lincoln**  
-- DNA sequencing service (Sanger)
-
-**Otago**
-- Genetic Analysis Service (GAS) (Sanger)
 
 
 go back over genmic data carpentry from the carpentries to see what else they go over. 
@@ -26,3 +19,34 @@ Assembly QC: biological and technical assessments of the three Cs (contiguity, c
 why would you chose internantional seq options over nz, cost, local. 
 
 intro to bioinformatics.
+
+- are there preferential rates for otago/auckland seq services for their own staff / students?  
+- add in logitics of doign nanodrop/quibit and bioanalyzer. cost and location.  
+- range of reads needed for rnaseq - can we break it down furhter? what other factors? species ?  
+- genome seq - combing platforms to polish correct reads   
+
+### Rakeiora Genomics platform 
+
+The [Rakeiora Genomics Platform](https://rakeiora.ac.nz/) is designed to enable and test pilot precision medicine research, linking genomics and health. 
+
+They have chosen a **walled garden** approach to this infrastructure. 
+
+*"This means that all genomic data and health data, and its analysis, are undertaken only within this computational environment – the data never leave and are certainly never downloaded to a researcher’s own computer or a hospital clinical laboratory computer...   
+...Its modular nature will allow linkage (with consent) to other health data systems currently under development in Aotearoa New Zealand.  This approach in particular addresses transparency of use and control over narratives. Lack of these features in other precision medicine platforms worldwide has led to significant problems for patients and research participants, including indigenous communities; learning from these negative experiences is key to avoid repeating them."* -- From the [Genomics Aotearoa website.](https://www.genomics-aotearoa.org.nz/our-work/health-projects/rakeiora-pathfinder-genomic-medicine)
+
+
+## consultation
+
+add some news articles about successful and not so succesful consultation (or rather lack of consultation). does not have to just be NZ, can be other countries. 
+
+
+
+# genomic file types
+
+fastq illlumina, OMT pod5 to bam (unaligned). also CRAM file type. 
+
+
+
+## First, check that the data are not corrupt
+
+Believe it or not, computers can make mistakes! When your data files are being copied over from the sequencing facility to cloud storage, errors can occur that cause your files to become corrupted. This is not always obvious based on file size or a quick look at the contents. The first thing you'll want to do is run a checksum, which will output a fixed-length message of 16 bytes-- a unique identifier of each file. The files should also come with the checksums run by the technician at the sequencing facility. If the files have been corrupted by even one character, the 16 byte unique identifier will be completely different, allowing you to easily and quickly verify the integrity of your files. Check out the section on [Data Integrity in our GA shell workshop](https://genomicsaotearoa.github.io/shell-for-bioinformatics/2_download_data/) for more information on how to run this. 
