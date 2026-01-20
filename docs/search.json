@@ -100,6 +100,16 @@
     ]
   },
   {
+    "objectID": "ethical-considerations.html#discussion",
+    "href": "ethical-considerations.html#discussion",
+    "title": "Before you begin: Ethical considerations",
+    "section": "DISCUSSION 💬",
+    "text": "DISCUSSION 💬\n\nWhat ethical considerations do you need to take into account before you begin collecting your samples?\nHave you ever worked on a project where consultation did not occur? What would you do differently if you could go back and repeat it?\n???",
+    "crumbs": [
+      "Before you begin: Ethical considerations"
+    ]
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Genomic Data Carpentry (Aotearoa edition)",
@@ -210,11 +220,21 @@
     ]
   },
   {
-    "objectID": "outtakes-notes.html#sing",
-    "href": "outtakes-notes.html#sing",
+    "objectID": "outtakes-notes.html#consultation",
+    "href": "outtakes-notes.html#consultation",
     "title": "Outtakes and notes",
-    "section": "SING",
-    "text": "SING",
+    "section": "consultation",
+    "text": "consultation\nadd some news articles about successful and not so succesful consultation (or rather lack of consultation). does not have to just be NZ, can be other countries.",
+    "crumbs": [
+      "_outtakes/notes"
+    ]
+  },
+  {
+    "objectID": "outtakes-notes.html#first-check-that-the-data-are-not-corrupt",
+    "href": "outtakes-notes.html#first-check-that-the-data-are-not-corrupt",
+    "title": "Outtakes and notes",
+    "section": "First, check that the data are not corrupt",
+    "text": "First, check that the data are not corrupt\nBelieve it or not, computers can make mistakes! When your data files are being copied over from the sequencing facility to cloud storage, errors can occur that cause your files to become corrupted. This is not always obvious based on file size or a quick look at the contents. The first thing you’ll want to do is run a checksum, which will output a fixed-length message of 16 bytes– a unique identifier of each file. The files should also come with the checksums run by the technician at the sequencing facility. If the files have been corrupted by even one character, the 16 byte unique identifier will be completely different, allowing you to easily and quickly verify the integrity of your files. Check out the section on Data Integrity in our GA shell workshop for more information on how to run this.",
     "crumbs": [
       "_outtakes/notes"
     ]
@@ -270,6 +290,16 @@
     ]
   },
   {
+    "objectID": "data-storage-and-management.html#research-data-management",
+    "href": "data-storage-and-management.html#research-data-management",
+    "title": "Genomic data storage and management",
+    "section": "Research Data Management",
+    "text": "Research Data Management\nUniveristy have RDM policies\neg auckland https://research-hub.auckland.ac.nz/managing-research-data/ethics-integrity-and-compliance/research-data-management-policy-guidance",
+    "crumbs": [
+      "Genomic data storage and management"
+    ]
+  },
+  {
     "objectID": "data-storage-and-management.html#research-and-education-advanced-network-new-zealand-reannz",
     "href": "data-storage-and-management.html#research-and-education-advanced-network-new-zealand-reannz",
     "title": "Genomic data storage and management",
@@ -290,11 +320,21 @@
     ]
   },
   {
-    "objectID": "data-storage-and-management.html#other-universities-hpchcs-options",
-    "href": "data-storage-and-management.html#other-universities-hpchcs-options",
+    "objectID": "data-storage-and-management.html#centre-for-eresearch-cer-at-university-of-auckland",
+    "href": "data-storage-and-management.html#centre-for-eresearch-cer-at-university-of-auckland",
     "title": "Genomic data storage and management",
-    "section": "Other universities HPC/HCS options?",
-    "text": "Other universities HPC/HCS options?\n\n\n\n\n\n\nFILL IN HERE\n\n\n\nAuckland? wellingotn? massey? UC? probably cant cover all but need to list some of these.\n\n\n\nAotearoa Genomic Data Repository (AGDR)\nThe Aotearoa Genomic Data Repository (AGDR) is an examples of services that have adopted these CARE principles.\nThe AGDR is acceptable repository by journals.\nFrom the AGDR website:\n“The Aotearoa Genomic Data Repository provides secure within-nation storage, management and sharing of non-human genomic data generated from biological and environmental samples originating in Aotearoa New Zealand. This resource has been developed to follow the principles of Māori Data Sovereignty, and to enable kaitiakitanga (guardianship), so that iwi, hapū and whānau (tribes, kinship groups and families) can effectively exercise their responsibilities as guardians over biological entities that are taonga (precious or treasured). While the repository is designed to facilitate the sharing of data — making it findable by researchers and interoperable with data held in other genomic repositories — the decision-making process regarding who can access the data is entirely in the hands of those holding kaitiakitanga over each data set.””\nThe AGDR is enabled by MBIE funding to Genomics Aotearoa.",
+    "section": "Centre for eResearch (CeR) at University of Auckland",
+    "text": "Centre for eResearch (CeR) at University of Auckland\nresearch compute, supports access to REANNZ HPC. https://research-hub.auckland.ac.nz/research-infrastructure/research-platforms/eresearch",
+    "crumbs": [
+      "Genomic data storage and management"
+    ]
+  },
+  {
+    "objectID": "data-storage-and-management.html#other-universitiesinstitutesorganisations-hpchcs-options",
+    "href": "data-storage-and-management.html#other-universitiesinstitutesorganisations-hpchcs-options",
+    "title": "Genomic data storage and management",
+    "section": "Other universities/institutes/organisations HPC/HCS options?",
+    "text": "Other universities/institutes/organisations HPC/HCS options?\n\n\n\n\n\n\nFILL IN HERE\n\n\n\nwellingotn? massey? UC? PROs? probably cant cover all but need to list some of these.\n\n\n\nAotearoa Genomic Data Repository (AGDR)\nThe AGDR is enabled by MBIE funding to Genomics Aotearoa. The AGDR is acceptable repository by journals.\nFrom the AGDR website:\n“The Aotearoa Genomic Data Repository provides secure within-nation storage, management and sharing of non-human genomic data generated from biological and environmental samples originating in Aotearoa New Zealand. This resource has been developed to follow the principles of Māori Data Sovereignty, and to enable kaitiakitanga (guardianship), so that iwi, hapū and whānau (tribes, kinship groups and families) can effectively exercise their responsibilities as guardians over biological entities that are taonga (precious or treasured). While the repository is designed to facilitate the sharing of data — making it findable by researchers and interoperable with data held in other genomic repositories — the decision-making process regarding who can access the data is entirely in the hands of those holding kaitiakitanga over each data set.””",
     "crumbs": [
       "Genomic data storage and management"
     ]
@@ -305,16 +345,6 @@
     "title": "Genomic data storage and management",
     "section": "Public data",
     "text": "Public data\nYou are probably familiar with using the NIH NCBI database, hosted by the United States Government, for things such as BLAST searches and literature searches.\nNCBI has a repository called the Sequence Read Archive (SRA), which is where a large proportion of genomic data from all over the world is stored, as publicly available raw, high-throughput, sequencing data.\nIf your data has no ethical or data sovereignty concerns (e.g., your Māori research partners have agreed to upload the data), this can be a great resource for making your data freely available and easily citeable in publications.\nHere we will not go into detail on how to either download or upload data to the SRA (see SRA documentation on their website). But some points to be aware of are:\n\nA BioProject is a way to link all the sequencing and biological data together under one umbrella (as a general rule, 1 publication = 1 BioProject, but many research groups use a single BioProject for multiple publications). If you are uploading your own data, we recommend starting with creating a BioProject, which will then give you a single accession (e.g., PRJNA31257) to use for the next steps (create BioSample entries and then upload raw reads to SRA).\nA BioSample is a unique descriptor of the biological source material (e.g, all the biological metadata of your sample – species, sex, age, location, tissue, etc.). This is often (but not strictly) set up as 1 BioSample = 1 library. Each BioSample accession will be linked to the matching sequence data in the SRA, and all housed under one BioProject accession number.\n\nEqually, if you are downloading data from the SRA, you can make use of BioProject and BioSample accessions to identify and orientate yourself to the data.\nExample BioProject:\n\n\n\n\n\n\nHuman airway smooth muscle transcriptome study\n\n\n\n\n\nYou can see there are 16 SRA experiments and 16 BioSamples – you can guess that these probably match one to one.\nThere are also GEO datasets (Gene Expression Omnibus) associated with this study, which are repositories for functional genomic data. These are a more processed form of the data e.g., count tables and differential expression data.\n\n\n\n\n\nThis is not the only public repository of sequence reads, some other examples include: European Nucleotide Archive (ENA) and the DNA data bank of Japan DDBJ Sequence Read Archive (DRA). These data banks are linked together via the International Nucleotide Sequence Database Collaboration. NCBI also details some of the collaborative projects here (e.g., The Taxonomy Project, The Feature Table).",
-    "crumbs": [
-      "Genomic data storage and management"
-    ]
-  },
-  {
-    "objectID": "data-storage-and-management.html#discussion",
-    "href": "data-storage-and-management.html#discussion",
-    "title": "Genomic data storage and management",
-    "section": "DISCUSSION 💬",
-    "text": "DISCUSSION 💬\n\nWhat ethical considerations do you need to take into account when storing and sharing your data for your own personal project?\n\n\n\n\n\n\n\n\nFILL IN HERE\n\n\n\nOther discussion points?",
     "crumbs": [
       "Genomic data storage and management"
     ]
@@ -335,16 +365,6 @@
     "title": "Genomic data wrangling and processing",
     "section": "Command-line interface (CLI) vs graphical user interface (GUI)",
     "text": "Command-line interface (CLI) vs graphical user interface (GUI)\nCommand line interface (CLI) and graphic user interface (GUI) are different ways of interacting with a computer’s operating system. They have different pros and cons. Most people are familiar with the GUI (i.e., point and click) as it is the default interface for most software, particularly on Windows and Mac OS. When using the GUI, you see and interact with visual representations of files, folders, applications, and most other functions of your computer. When using the CLI, you work largely with text representations of software, files, folders, input and output. The shell is a program that allows you to control your computer by typing instructions on the CLI with a keyboard.\nThere are several reasons to learn how to use the CLI:\n\nFor most bioinformatics tools, there are no graphical interfaces. If you want to work in metagenomics or genomics, you’re going to need to use the CLI/ shell.\n\nThe shell gives you power and allows you to work more efficiently. Tasks that are repetitive (e.g. renaming hundreds of files) can be automated. Tasks that are tedious (e.g. testing a range of input parameters) can be simplified.\n\nTo use remote computers or cloud computing, you often need to use the shell.\n\nHere we will not show you how to use the shell; we recommend checking out our workshops on Introduction to Shell and Intermediate Shell.\n\nNote: you’ll hear the terms ‘shell’, ‘bash’, ‘unix’, ‘terminal’ and ‘command-line’ used almost interchangeably. For beginners, you can think of them as essentially all the same thing! As you gain more computational skills, you can dig into the differences.",
-    "crumbs": [
-      "Genomic data wrangling and processing"
-    ]
-  },
-  {
-    "objectID": "data-wrangling-and-processing.html#first-check-that-the-data-are-not-corrupt",
-    "href": "data-wrangling-and-processing.html#first-check-that-the-data-are-not-corrupt",
-    "title": "Genomic data wrangling and processing",
-    "section": "First, check that the data are not corrupt",
-    "text": "First, check that the data are not corrupt\nBelieve it or not, computers can make mistakes! When your data files are being copied over from the sequencing facility to cloud storage, errors can occur that cause your files to become corrupted. This is not always obvious based on file size or a quick look at the contents. The first thing you’ll want to do is run a checksum, which will output a fixed-length message of 16 bytes– a unique identifier of each file. The files should also come with the checksums run by the technician at the sequencing facility. If the files have been corrupted by even one character, the 16 byte unique identifier will be completely different, allowing you to easily and quickly verify the integrity of your files. Check out the section on Data Integrity in our GA shell workshop for more information on how to run this.",
     "crumbs": [
       "Genomic data wrangling and processing"
     ]
@@ -377,76 +397,6 @@
     "text": "Good genome, bad genome?\n\n\n\n\n\n\nTHOUGHTS\n\n\n\nThis section sits out a little odd here, but I think its needed in the workshop. To me its sort of ‘wrangling your brain’ around genomes\n\n\nYou will often hear geneticists refer (somewhat colloquially) to “good” and “bad” genome assemblies. But what does this actually mean? And how can you tell whether a species you are working on has a good genome assembly?\nIn practice, we assess genome assemblies using a few metrics that capture the three C’s: contiguity, correctness, and completeness.\nIn our Long read genome assembly workshop, we go into further detail on how to assess these metrics. For now, we’ll focus on an overview to get you started:\nCommon genome assembly metrics\n\nContiguity describes how complete or fragmented the genome assembly is. Because we can’t sequence an entire chromosome in one long piece, the genome is first broken into many smaller fragments during library prep and sequencing. The more pieces we can put together (i.e., assemble) to make longer strings of sequence, the more contiguous our assembly is. Contiguity is commonly summarised using contig N50 and scaffold N50. The N50 is a length statistic and you can think of it as similar to the median. The N50 value is the length of the first contig that is equal to or greater than half of the assembly sum. In simple terms, the larger than better. A larger N50 means that more of the genome is contained in longer sequences. In this era of long-read genome assemblies, a contig N50 over 1 Mb is generally considered good - see Excerpt from PacBio article.\nCompleteness can be measured in multiple ways, but it is often measured using a BUSCO (Benchmarking Universal Single-Copy Orthologs) score. This measures completeness using sets of conserved, single-copy genes expected to be present in most species within a specified lineage, which are reported as percentages of complete, duplicated, fragmented, and missing genes, to a total of 100%. Essentially, we check to see if a bunch of genes we expect to see in every species are present in our assembly.\nCorrectness describes the base pair and structural accuracy of the genome. It can be measured by comparing your assembly to a reference genome. There are a few limitations to this approach, namely that if a good reference genome for your species does not exist you will have to use a different approach (for which there are solutions - see our long read genome assembly workshop link above).\n\nGenome assemblies can be described more qualitatively as (in order of least to most complete):\n\nContig-level – sequences are assembled but not ordered or oriented. Often can be thousands to hundreds of thousands of contigs.\n\nScaffold-level – contigs linked together, often with gaps. None are placed (i.e., chromosome known) or localised (i.e., orientation on chromosome known).\n\nChromosome-level – one or more chromosomes complete, but some unplaced scaffolds may be present.\n\nComplete genome – all chromosomes are resolved with no gaps. Not necessarily telomere-to-telomere (T2T). Very rare to have a complete genome assembly.\n\nSee NCBI Glossary for Assembly level.\n\n\nWhat do we mean by a “good” genome?\nA good genome assembly is typically one that is:\n\nHighly contiguous\nReads have been assembled into long sequences called contigs, ideally approaching full chromosome lengths.\nBiologically complete\nMost expected genes are present (high BUSCO completeness).\nStructurally accurate\nLarge-scale errors such as mis-joins or collapsed repeats are minimised.\n\n\nNote: often the word ‘contig’ is used to refer to any length of assembled (i.e., contiguous) sequence, regardless of if those sequences could technically be long enough to be called scaffolds or chromosomes.\n\n\n\nAssembly quality vs annotation quality\nLastly, it is important to distinguish between:\nGenome assembly i.e., the reconstructed DNA sequence itself, and the Genome annotation, which is the identification and labelling of genomic features, including gene structures (exons, introns, and CDS), non-coding RNAs (e.g., rRNA, tRNA and lncRNA), and associated identifiers such as gene_id, transcript_id, and database cross-references.\nA genome can be well assembled but poorly annotated, or vice versa.\n\nWatch out! It can be tempting based on the BUSCO score to conclude that the “annotations” for a genome are quite good (or bad). The BUSCO score IS NOT the genome annotation; it is an independent analysis of a set of known genes. The annotation file itself (scroll up to section Understanding genomic file types for description of annotation files such as GTF files) is not being assessed when we look at the BUSCO score.\n\n\n\n\nEXERCISES 🧠🏋️‍♀️ (6 mins):\nHow would you describe these genomes?\nLook at the assembly stats and evaluate how ‘good’ you think each assembly is.\n\n\n\n\n\n\nEXERCISE #1 🧠🏋️‍♀️ (3 mins) - Human Genome Assembly\n\n\n\nLink here to Human Genome assembly GRCh38.p14\n Note: RefSeq is the curated database. GenBank is the non-curated, anyone-can-submit-to database.\n\nJot down your thoughts before looking at the solution below.\nHere are some points to help you:\n\nWhat is the assembly level and where does that fall on our scale level of contig -&gt; scaffold -&gt; chromosome -&gt; complete?\n\nHow many chromosomes, if any, are resolved? (Hint: if there are any resolved it is a good assembly!)\nWhat is the scaffold N50? Is it above 1Mb? (typically considered a fairly good assembly if &gt;1 Mb).\nWhat is the BUSCO score? Is it approaching 100% complete?\n\n\n\n\n\n\n\nHuman genome solution\n\n\n\n\n\n\nThe assembly is at Chromosome level - indicates very high quality.\nThe BUSCO score is 98.9% - very close to complete.\n\nThe number of scaffolds (470) and contigs (996) are very low at less than a thousand each, indicating the majority of sequences are assembled into the chromosomes. Further, the scaffold and contig N50s are very high, well over 1 Mb, indicating further that the majority of these sequences are very long contiguous sequences.\n\nConclusion: this is a very good genome assembly.\n\n\n\n\n\n\n\n\n\n\n\n\n\nEXERCISE #2 🧠🏋️‍♀️ (3 mins) - Sea Anemone Genome Assembly\n\n\n\nLink here to Nematostella vectensis (sea anemone) Genome assembly ASM20922v1\n\n\nJot down your thoughts before looking at the solution below.\nHere are some points to help you:\n\nWhat is the assembly level and where does that fall on our scale level of contig -&gt; scaffold -&gt; chromosome -&gt; complete?\n\nHow many chromosomes, if any, are resolved? (Hint: if there are any resolved it is a good assembly!)\nWhat is the scaffold N50? Is it above 1Mb? (typically considered a fairly good assembly if &gt;1 Mb).\nWhat is the BUSCO score? Is it approaching 100% complete?\n\n\n\n\n\n\n\nSea anemone solution\n\n\n\n\n\n\nThe assembly is at scaffold level; no chromosomes are resolved - this is a “medium” quality genome.\nThe scaffold N50 is &lt;1 Mb; at 472.6 kb - indicating again the quality is “medium” or “average”.\nThe BUSCO score is pretty good at 97.7% single copy orthologs resolved - this indicates that the scaffolds resolved are likely long enough and correct enough to resolve the majority of genes. Functionally, this is quite a useable genome at a gene level.\n\nConclusion: this is a medium or average assembly. Larger scale structural variants may be difficult or erroneous to resolve, but gene level comparisons and analyses could be achieved fairly accurately.\n\n\n\n\n\n\nExtra for experts\n\n\n\nHere is the original paper for the curious: Putnam et al. 2007.\nThe authors claim the genome reveals “ancestral eumetazoan genomic organization”. How did they assess this and what conclusion did they make about the eumetazoan ancestor resemblance to modern vertebrates, sea anemones and protosomes? Do you think they had a ‘good’ enough genome to assess this?\n\n\n\n\n\n\nExtra for experts solution\n\n\n\nNEED TO FACT CHECK THIS, COLLAPSE WHEN COMPLETE\nThe authors used synteny analysis. They found many major genes, such as Hox genes, retained the same intron/exon structure in sea anemones as vertebrates, but this was not retained in model protosome species. Based on this they concluded that sea anemone genomes more closely resemble vertebrates than protosome species (fly, nematode, annelid) do. While the genome assembly itself is somewhat fragmented, the BUSCO score was quite good, indicating that any conclusions the authors made comparing genomes and a gene stucture level are likely quite robust, but it would not be feasible with this assembly to make any conclusions based on larger genomic structure (i.e., at closer to chromosome level).",
     "crumbs": [
       "Genomic data wrangling and processing"
-    ]
-  },
-  {
-    "objectID": "ethical-considerations.html#discussion",
-    "href": "ethical-considerations.html#discussion",
-    "title": "Before you begin: Ethical considerations",
-    "section": "DISCUSSION 💬",
-    "text": "DISCUSSION 💬\n\nWhat ethical considerations do you need to take into account before you begin collecting your samples?\nHave you ever worked on a project where consultation did not occur? What would you do differently if you could go back and repeat it?\n???",
-    "crumbs": [
-      "Before you begin: Ethical considerations"
-    ]
-  },
-  {
-    "objectID": "outtakes-notes.html#consultation",
-    "href": "outtakes-notes.html#consultation",
-    "title": "Outtakes and notes",
-    "section": "consultation",
-    "text": "consultation\nadd some news articles about successful and not so succesful consultation (or rather lack of consultation). does not have to just be NZ, can be other countries.",
-    "crumbs": [
-      "_outtakes/notes"
-    ]
-  },
-  {
-    "objectID": "data-storage-and-management.html#research-data-management",
-    "href": "data-storage-and-management.html#research-data-management",
-    "title": "Genomic data storage and management",
-    "section": "Research Data Management",
-    "text": "Research Data Management\nUniveristy have RDM policies\neg auckland https://research-hub.auckland.ac.nz/managing-research-data/ethics-integrity-and-compliance/research-data-management-policy-guidance",
-    "crumbs": [
-      "Genomic data storage and management"
-    ]
-  },
-  {
-    "objectID": "data-storage-and-management.html#centre-for-eresearch-at-university-of-auckland",
-    "href": "data-storage-and-management.html#centre-for-eresearch-at-university-of-auckland",
-    "title": "Genomic data storage and management",
-    "section": "Centre for eResearch at University of Auckland",
-    "text": "Centre for eResearch at University of Auckland\nresearch compute, supports access to REANNZ HPC. https://research-hub.auckland.ac.nz/research-infrastructure/research-platforms/eresearch",
-    "crumbs": [
-      "Genomic data storage and management"
-    ]
-  },
-  {
-    "objectID": "data-storage-and-management.html#centre-for-eresearch-cer-at-university-of-auckland",
-    "href": "data-storage-and-management.html#centre-for-eresearch-cer-at-university-of-auckland",
-    "title": "Genomic data storage and management",
-    "section": "Centre for eResearch (CeR) at University of Auckland",
-    "text": "Centre for eResearch (CeR) at University of Auckland\nresearch compute, supports access to REANNZ HPC. https://research-hub.auckland.ac.nz/research-infrastructure/research-platforms/eresearch",
-    "crumbs": [
-      "Genomic data storage and management"
-    ]
-  },
-  {
-    "objectID": "data-storage-and-management.html#other-universitiesinstitutesorganisations-hpchcs-options",
-    "href": "data-storage-and-management.html#other-universitiesinstitutesorganisations-hpchcs-options",
-    "title": "Genomic data storage and management",
-    "section": "Other universities/institutes/organisations HPC/HCS options?",
-    "text": "Other universities/institutes/organisations HPC/HCS options?\n\n\n\n\n\n\nFILL IN HERE\n\n\n\nwellingotn? massey? UC? PROs? probably cant cover all but need to list some of these.\n\n\n\nAotearoa Genomic Data Repository (AGDR)\nThe AGDR is enabled by MBIE funding to Genomics Aotearoa. The AGDR is acceptable repository by journals.\nFrom the AGDR website:\n“The Aotearoa Genomic Data Repository provides secure within-nation storage, management and sharing of non-human genomic data generated from biological and environmental samples originating in Aotearoa New Zealand. This resource has been developed to follow the principles of Māori Data Sovereignty, and to enable kaitiakitanga (guardianship), so that iwi, hapū and whānau (tribes, kinship groups and families) can effectively exercise their responsibilities as guardians over biological entities that are taonga (precious or treasured). While the repository is designed to facilitate the sharing of data — making it findable by researchers and interoperable with data held in other genomic repositories — the decision-making process regarding who can access the data is entirely in the hands of those holding kaitiakitanga over each data set.””",
-    "crumbs": [
-      "Genomic data storage and management"
-    ]
-  },
-  {
-    "objectID": "outtakes-notes.html#first-check-that-the-data-are-not-corrupt",
-    "href": "outtakes-notes.html#first-check-that-the-data-are-not-corrupt",
-    "title": "Outtakes and notes",
-    "section": "First, check that the data are not corrupt",
-    "text": "First, check that the data are not corrupt\nBelieve it or not, computers can make mistakes! When your data files are being copied over from the sequencing facility to cloud storage, errors can occur that cause your files to become corrupted. This is not always obvious based on file size or a quick look at the contents. The first thing you’ll want to do is run a checksum, which will output a fixed-length message of 16 bytes– a unique identifier of each file. The files should also come with the checksums run by the technician at the sequencing facility. If the files have been corrupted by even one character, the 16 byte unique identifier will be completely different, allowing you to easily and quickly verify the integrity of your files. Check out the section on Data Integrity in our GA shell workshop for more information on how to run this.",
-    "crumbs": [
-      "_outtakes/notes"
     ]
   }
 ]

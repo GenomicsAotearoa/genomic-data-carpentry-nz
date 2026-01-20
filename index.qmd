@@ -5,7 +5,9 @@ format: html
 
 # Genomic Data Carpentry (Aotearoa edition)
 
-![](theme-images/GDC-A_image.png)
+::: {style="text-align: center;"}
+![](theme-images/GDC-A_image-withouttext.png){width=80%}
+:::
 
 ## Getting started with genomics
 
