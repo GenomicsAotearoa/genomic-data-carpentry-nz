@@ -30,7 +30,7 @@ Learners are expected to have a basic (undergraduate) level understanding of bio
 - Traditional sequencing and services (e.g., Sanger sequencing, qPCR, genotyping, probe-based applications such as microarrays and NanoString nCounter).  
 - Genomic analysis workflows. We have multiple dedicated workshops for genomic pipelines; see [our portfolio here](https://genomicsaotearoa.github.io/BioinformaticsTrainingProgramme/portfolio.html).    
 - Using shell or other bioinformatic tools. See our workshops on [Introduction to shell](https://genomicsaotearoa.github.io/BioinformaticsTrainingProgramme/portfolio.html#introduction-to-shell-for-bioinformatics) and [Introduction to R](https://genomicsaotearoa.github.io/BioinformaticsTrainingProgramme/portfolio.html#intermediate-r-for-bioinformatics) to get you started on this. 
-- Understanding the cluster, HPC resourcing and specialised software (e.g., we do not cover schedulers such as SLURM, partitions/CPUs/GPUs, chosing compute allocation allowance). See our workshop on [Introduction to Bash Scripting and HPC Job Scheduler](https://genomicsaotearoa.github.io/BioinformaticsTrainingProgramme/portfolio.html#introduction-to-bash-scripting-and-hpc-job-scheduler) for this.  
+- Understanding the cluster, HPC resourcing and specialised software (e.g., we do not cover schedulers such as SLURM, partitions/CPUs/GPUs, choosing compute allocation allowance). See our workshop on [Introduction to Bash Scripting and HPC Job Scheduler](https://genomicsaotearoa.github.io/BioinformaticsTrainingProgramme/portfolio.html#introduction-to-bash-scripting-and-hpc-job-scheduler) for this.  
 
 ## Glossary
 
