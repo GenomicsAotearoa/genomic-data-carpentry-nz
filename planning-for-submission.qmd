@@ -117,7 +117,7 @@ There are different library prep methods (i.e., protocols) for each platform tha
 - The species/tissue type you extracted your RNA/DNA from (e.g., plants have rRNA types that require plant-specific depletion kits, some tissues have high mitochondrial RNA content).    
 - The type of analysis you want to do i.e., what is your research question  
 
-For example, if you are doing a 'generic' RNA sequencing project (e.g,. you plan to do differential gene expression analysis to compare different samples), a  common choice is **Illumina stranded mRNA library prep**, which uses polyA selection to capture mRNA.  However, you may chose **Illumina Stranded total RNA library prep** with ribo-depletion, which is more expensive, but it has some advantages such as: it can capture non-polyadenylated RNAs (more comprehensive RNA profile) and and is a better option if your samples are partially degraded (it can also handle FFPE samples).
+For example, if you are doing a 'generic' RNA sequencing project (e.g., you plan to do differential gene expression analysis to compare different samples), a  common choice is **Illumina stranded mRNA library prep**, which uses polyA selection to capture mRNA.  However, you may chose **Illumina Stranded total RNA library prep** with ribo-depletion, which is more expensive, but it has some advantages such as: it can capture non-polyadenylated RNAs (more comprehensive RNA profile) and and is a better option if your samples are partially degraded (it can also handle FFPE samples).
 
 ::: {.callout-tip collapse="true"}
 # **Extra for the curious:** **The two main chemistries for Illumina RNA library prep.** 
