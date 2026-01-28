@@ -230,7 +230,7 @@ When you get in contact with a sequencing facility, the question they will ask y
 
 \
 
-The next thing the sequencing facility will ask you if you are doing short-read sequencing (Illumina) is do you want *single-end* or *paired-end* reads. This refers to whether you want a single read (read 1), sequenced from only one end of the library molecule (fragment), or if you want two reads per library molecule (read 1 and read 2, antisense and sense strands). Paired-end costs more, but gives you more resolution.
+The next thing the sequencing facility will ask you if you are doing short-read sequencing (Illumina) is: do you want *single-end* or *paired-end* reads? This refers to whether you want a single read (read 1), sequenced from only one end of the library molecule (fragment), or if you want two reads per library molecule (read 1 and read 2, antisense and sense strands). Paired-end costs more, but gives you more resolution.
 
 There are ***pros*** and ***cons*** to choosing either chemistry:
 
