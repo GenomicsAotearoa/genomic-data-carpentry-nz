@@ -78,7 +78,7 @@ Here is a clean version of the data ([download link here](https://raw.githubuser
 
 ### Tidy data principles
 
-The simplest principle of Tidy data is that we have one row in our spreadsheet for each observation or sample, and one column for every variable that we measure or report on. As simple as this sounds, it's very easily violated. Most data scientists agree that significant amounts of their time is spent tidying data for analysis. 
+The simplest principle of Tidy data is that we have one row in our spreadsheet for each observation or sample, and one column for every variable that we measure or report on. As simple as this sounds, it's very easily violated. Most data scientists agree that a significant amount of their time is spent tidying data for analysis. 
 
 The R package [Tidyverse](https://tidyverse.org/) was specifically developed to deal with data cleaning and manipulation for analysis. Sidenote: a Genomics Aotearoa workshop on data manipulation with tidyverse tools is in development!
 
