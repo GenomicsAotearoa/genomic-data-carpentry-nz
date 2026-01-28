@@ -170,7 +170,7 @@ Image from [Illumina general knowledge base](https://knowledge.illumina.com/libr
 
 ## Flow cells and sequencing platforms 101
 
-The three major sequencing platform and consumables companies are Illumina, Pacific Biosystems (PacBio) and Oxford Nanopore Technologies (ONT). Each make different platforms/instruments that can handle different levels of throughput, but the chemistry and the 'reading' of the sequencing is the main point of difference between the three companies.
+The three major sequencing platform and consumables companies are Illumina, Pacific Biosciences (PacBio) and Oxford Nanopore Technologies (ONT). Each make different platforms/instruments that can handle different levels of throughput, but the chemistry and the 'reading' of the sequencing is the main point of difference between the three companies.
 
 A few examples of the different platforms are:
 
