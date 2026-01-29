@@ -16,7 +16,7 @@ progress diagram picture could be nice in this section on all pages of this work
 
 ## Genomic data files
 
-Genomic data files are huge, and for one project you will often have several hundred gigabytes (GB) to sometimes terabytes (TB) of data (more on the actual genomic file types in the next section [Data wrangling and processing](data-wrangling-and-processing.qmd)). You most likely won't be able to store and analyse these on your local computer, or transfer the files in the 'traditional' way using portable USB drives, so you'll need to make use of a high capacity storage (HCS), high performance computing (HPC), and file transfer protocols (FTP). An introduction to genomics is also an introduction to the world of high performance computing! 
+Genomic data files are often huge, and for one project you will often have several hundred gigabytes (GB) to sometimes terabytes (TB) of data (more on the actual genomic file types in the next section [Data wrangling and processing](data-wrangling-and-processing.qmd)). You most likely won't be able to store and analyse these on your local computer, or transfer the files in the 'traditional' way using portable USB drives, so you'll need to make use of a high capacity storage (HCS), high performance computing (HPC), and file transfer protocols (FTP). An introduction to genomics is also an introduction to the world of high performance computing! 
 
 *Caveat: small genomes such as from bacteria often can be transferred, stored and analysed on your local computer.* 
 
@@ -115,7 +115,7 @@ https://research-hub.auckland.ac.nz/research-infrastructure/research-platforms/e
 
 ### Aotearoa Genomic Data Repository (AGDR)
 
-The AGDR is enabled by MBIE funding to Genomics Aotearoa. The AGDR is acceptable repository by journals.
+The AGDR is enabled by MBIE funding to Genomics Aotearoa. The AGDR is accepted as a suitable repository for (non-human) genomic data by many journals.
 
 From the [AGDR website](https://data.agdr.org.nz/):
 
@@ -129,7 +129,7 @@ You are probably familiar with using the [NIH NCBI database](https://www.ncbi.nl
 
 NCBI has a repository called the [Sequence Read Archive (SRA)](https://www.ncbi.nlm.nih.gov/sra), which is where a large proportion of genomic data from all over the world is stored, as publicly available raw, high-throughput, sequencing data. 
 
-If your data has no ethical or data sovereignty concerns (e.g., your Māori research partners have agreed to upload the data), this can be a great resource for making your data freely available and easily citeable in publications.  
+If your data has no ethical or data sovereignty concerns (e.g., your Māori research partners have approved uploading the data), this can be a great resource for making your data freely available and easily citeable in publications.  
 
 Here we will not go into detail on how to either download or upload data to the SRA (see [SRA documentation on their website](https://www.ncbi.nlm.nih.gov/sra/docs/)). But some points to be aware of are:
 

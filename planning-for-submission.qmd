@@ -46,7 +46,7 @@ Together, these will give you an almost complete picture of your sample, ready f
 
 ## Sequencing libraries  
 
-The first thing that needs to be done for Illumina, PacBio or Oxford Nanopore (ONT) sequencing is to turn the DNA or RNA sample into something called a *library*. This converts the raw nucleic acids into a form that the sequencer can actually read. This is generally done by the technician that will also sequence your samples, but some labs may do library prep in-house (i.e., *you* may do it yourself!). For Illumina and PacBio, RNA is first converted into DNA during the library prep process. ONT is a little different, in that it can sequence native RNA directly, with minimal prep before sequencing. DNA library preparation for ONT sequencing is also generally simpler than for Illumina and PacBio. This is because the technology used to sequence the DNA/RNA using ONT is quite different to how Illumina and PacBio achieve it--more on that in the next section on [flow cells and sequencing platforms 101](#flow-cells-and-sequencing-platforms-101)
+The first thing that needs to be done for Illumina, PacBio or Oxford Nanopore (ONT) sequencing is to turn the DNA or RNA sample into something called a *library*. This converts the raw nucleic acids into a form that the sequencer can actually read. This is generally done by the technician who will also sequence your samples, but some labs may do library prep in-house (i.e., *you* may do it yourself!). For Illumina and PacBio, RNA is first converted into DNA during the library prep process. ONT is a little different, in that it can sequence native RNA directly, with minimal prep before sequencing. DNA library preparation for ONT sequencing is also generally simpler than for Illumina and PacBio. This is because the technology used to sequence the DNA/RNA using ONT is quite different to how Illumina and PacBio achieve it--more on that in the next section on [flow cells and sequencing platforms 101](#flow-cells-and-sequencing-platforms-101)
 
 >Handy note: You can think of one library as being equivalent to one sample. It is possible to make multiple libraries from a single sample, but it is not often done this way.   
 
@@ -117,7 +117,7 @@ There are different library prep methods (i.e., protocols) for each platform tha
 - The species/tissue type you extracted your RNA/DNA from (e.g., plants have rRNA types that require plant-specific depletion kits, some tissues have high mitochondrial RNA content).    
 - The type of analysis you want to do i.e., what is your research question  
 
-For example, if you are doing a 'generic' RNA sequencing project (e.g,. you plan to do differential gene expression analysis to compare different samples), a  common choice is **Illumina stranded mRNA library prep**, which uses polyA selection to capture mRNA.  However, you may chose **Illumina Stranded total RNA library prep** with ribo-depletion, which is more expensive, but it has some advantages such as: it can capture non-polyadenylated RNAs (more comprehensive RNA profile) and and is a better option if your samples are partially degraded (it can also handle FFPE samples).
+For example, if you are doing a 'generic' RNA sequencing project (e.g., you plan to do differential gene expression analysis to compare different samples), a  common choice is **Illumina stranded mRNA library prep**, which uses polyA selection to capture mRNA.  However, you may chose **Illumina Stranded total RNA library prep** with ribo-depletion, which is more expensive, but it has some advantages such as: it can capture non-polyadenylated RNAs (more comprehensive RNA profile) and and is a better option if your samples are partially degraded (it can also handle FFPE samples).
 
 ::: {.callout-tip collapse="true"}
 # **Extra for the curious:** **The two main chemistries for Illumina RNA library prep.** 
@@ -170,7 +170,7 @@ Image from [Illumina general knowledge base](https://knowledge.illumina.com/libr
 
 ## Flow cells and sequencing platforms 101
 
-The three major sequencing platform and consumables companies are Illumina, Pacific Biosystems (PacBio) and Oxford Nanopore Technologies (ONT). Each make different platforms/instruments that can handle different levels of throughput, but the chemistry and the 'reading' of the sequencing is the main point of difference between the three companies.
+The three major sequencing platform and consumables companies are Illumina, Pacific Biosciences (PacBio) and Oxford Nanopore Technologies (ONT). Each make different platforms/instruments that can handle different levels of throughput, but the chemistry and the 'reading' of the sequencing is the main point of difference between the three companies.
 
 A few examples of the different platforms are (throughput in brackets): 
 
@@ -230,7 +230,7 @@ When you get in contact with a sequencing facility, the question they will ask y
 
 \
 
-The next thing the sequencing facility will ask you if you are doing short-read sequencing (Illumina) is do you want *single-end* or *paired-end* reads. This refers to whether you want a single read (read 1), sequenced from only one end of the library molecule (fragment), or if you want two reads per library molecule (read 1 and read 2, antisense and sense strands). Paired-end costs more, but gives you more resolution.
+The next thing the sequencing facility will ask you if you are doing short-read sequencing (Illumina) is: do you want *single-end* or *paired-end* reads? This refers to whether you want a single read (read 1), sequenced from only one end of the library molecule (fragment), or if you want two reads per library molecule (read 1 and read 2, antisense and sense strands). Paired-end costs more, but gives you more resolution.
 
 There are ***pros*** and ***cons*** to choosing either chemistry:
 

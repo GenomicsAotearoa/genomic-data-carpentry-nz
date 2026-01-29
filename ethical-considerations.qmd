@@ -5,7 +5,7 @@ format: html
 
 # Before you begin: Ethical considerations
 
-Before you even begin collecting your samples for genomic analyses, there are many ethical considerations to think about. In a broader, international context there are multiple, multi-party conventions and agreements towards the protecting the use of indigenous and endangered species or and their derived data. Here in Aotearoa New Zealand, we have additional responsibilities to *Te Tiriti o Waitangi*, including Māori consultation, recognition of *taonga* species, and considerations around Māori Data Sovereignty and Governance.  
+Before you even begin collecting your samples for genomic analyses, there are many ethical considerations to think about. In a broader, international context there are multiple, multi-party conventions and agreements towards the protecting the use of indigenous and endangered species and/or their derived data. Here in Aotearoa New Zealand, we have additional responsibilities to *Te Tiriti o Waitangi*, including Māori consultation, recognition of *taonga* species, and considerations around Māori Data Sovereignty and Governance.  
 
 ## Data collection perspectives in Aotearoa  
 

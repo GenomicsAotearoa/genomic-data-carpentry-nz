@@ -69,7 +69,7 @@ We can assess the quality score across all reads using software called [FastQC](
 
 #### ONT
 
-Nanopore sequencing works quite differently to Illumina and PacBio. The default read output is pod5 and this is converted to unaligned bam. 
+Nanopore sequencing works quite differently to Illumina and PacBio. The default read output is POD5 and this is converted to unaligned bam. 
 
 ::: {.callout-caution}
 # FILL OUT 
