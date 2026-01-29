@@ -8,7 +8,19 @@ format: html
 
 
 
+### Peter notes to add in 
 
+Couple of points
+
+- in the ethical considerations section- can you craft a question/discussion that puts the research into the minds of mana whenua?- try to get them to see things from a kaitiaki perspective- Tracey might have some ideas here.
+
+- For the metadata stuff, can you add “photos of the specimen, GPS coordinates, specimen accession numbers"
+
+- might want to add the P2 solo to the ONT sequencing equipment- though I think they are discontinuing it.  I think these are more common than the gridion
+
+- For the section on overseas sequencing, would it be worth having something about RNA stability, and the need to preserve RNA (by freezing or other) for overseas sequencing?  we use silicon tubes that will keep the RNA good and reduce sequencing costs, but many people dont seem to know about that option.
+
+### chloe notes
 
 go back over genmic data carpentry from the carpentries to see what else they go over. 
 
@@ -35,18 +47,18 @@ They have chosen a **walled garden** approach to this infrastructure.
 ...Its modular nature will allow linkage (with consent) to other health data systems currently under development in Aotearoa New Zealand.  This approach in particular addresses transparency of use and control over narratives. Lack of these features in other precision medicine platforms worldwide has led to significant problems for patients and research participants, including indigenous communities; learning from these negative experiences is key to avoid repeating them."* -- From the [Genomics Aotearoa website.](https://www.genomics-aotearoa.org.nz/our-work/health-projects/rakeiora-pathfinder-genomic-medicine)
 
 
-## consultation
+### consultation
 
 add some news articles about successful and not so succesful consultation (or rather lack of consultation). does not have to just be NZ, can be other countries. 
 
 
 
-# genomic file types
+### genomic file types
 
 fastq illlumina, OMT pod5 to bam (unaligned). also CRAM file type. 
 
 
 
-## First, check that the data are not corrupt
+### First, check that the data are not corrupt
 
 Believe it or not, computers can make mistakes! When your data files are being copied over from the sequencing facility to cloud storage, errors can occur that cause your files to become corrupted. This is not always obvious based on file size or a quick look at the contents. The first thing you'll want to do is run a checksum, which will output a fixed-length message of 16 bytes-- a unique identifier of each file. The files should also come with the checksums run by the technician at the sequencing facility. If the files have been corrupted by even one character, the 16 byte unique identifier will be completely different, allowing you to easily and quickly verify the integrity of your files. Check out the section on [Data Integrity in our GA shell workshop](https://genomicsaotearoa.github.io/shell-for-bioinformatics/2_download_data/) for more information on how to run this. 

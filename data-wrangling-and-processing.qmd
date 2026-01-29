@@ -47,7 +47,7 @@ This is the instrument-specific, run identifier and read identifiying informatio
 
 Each instrument and chemistry will have slightly different header information. The main thing to look out for are indications of the data being read 1 or read 2 (indicates antisense or sense strand data, for protocols that can differentiate strandedness) and whether it is part of a mate pair (indicated by the `/1`{style="color:black"} or `/2`{style="color:black"})
 
-The **second line is the actual sequence**. Count the number of bases --which read length was chosen for this dataset?
+The **second line is the actual sequence**. Count the number of bases -- which read length was chosen for this dataset? (It's ok you don't have to count - it's 100)
 
 The **third line is just a "+"**. This can be optionally followed by the same sequence identifier (and any description) again.
 
@@ -285,21 +285,22 @@ A genome can be **well assembled but poorly annotated**, or vice versa.
 
 \
 
-### EXERCISES 🧠🏋️‍♀️ (6 mins):
+### EXERCISES 🧠🏋️‍♀️ (8 mins):
 
 ***How would you describe these genomes?*** 
 
 Look at the assembly stats and evaluate how 'good' you think each assembly is.  
 
+Note: RefSeq is the curated database. GenBank is the non-curated, anyone-can-submit-to database. They can be different, but not always. Use the RefSeq stats to make your decision. 
+
 
 ::: {.callout-tip appearance="minimal"}
 
-# EXERCISE #1 🧠🏋️‍♀️ (3 mins) - Human Genome Assembly
+# EXERCISE #1 🧠🏋️‍♀️ (4 mins) - Human Genome Assembly
 
 Link here to [Human Genome assembly GRCh38.p14](https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_000001405.40/)
 
 ![](figures/genome-assembly-human-01.png)
-Note: RefSeq is the curated database. GenBank is the non-curated, anyone-can-submit-to database.
 
 ![](figures/genome-assembly-human-02.png)
 
@@ -332,7 +333,7 @@ Conclusion: this is a very good genome assembly.
 
 ::: {.callout-tip appearance="minimal"}
 
-# EXERCISE #2 🧠🏋️‍♀️ (3 mins) - Sea Anemone Genome Assembly
+# EXERCISE #2 🧠🏋️‍♀️ (4 mins) - Sea Anemone Genome Assembly
 
 Link here to [*Nematostella vectensis* (sea anemone) Genome assembly ASM20922v1](https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_000209225.1/)
 

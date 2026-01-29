@@ -172,7 +172,7 @@ Image from [Illumina general knowledge base](https://knowledge.illumina.com/libr
 
 The three major sequencing platform and consumables companies are Illumina, Pacific Biosystems (PacBio) and Oxford Nanopore Technologies (ONT). Each make different platforms/instruments that can handle different levels of throughput, but the chemistry and the 'reading' of the sequencing is the main point of difference between the three companies.
 
-A few examples of the different platforms are:
+A few examples of the different platforms are (throughput in brackets): 
 
 **Illumina**  
 
@@ -189,7 +189,7 @@ A few examples of the different platforms are:
 
 - MinION (small)  
 - GridION (medium)   
-- PromethION (large)  
+- PromethION 2 Solo / 2 Integrated / 24 (large - very large)  
 
 A **flow cell** is the physical surface inside the sequencing machine (or platform) where the actual reading of DNA or RNA occurs. There are different sizes you can chose from, depending on how many reads you need. Although Illumina, PacBio, and ONT all call their consumables “flow cells,” the underlying technologies are very different.
 
@@ -216,7 +216,7 @@ Here are the major differences between the technologies:
 
 Choosing a platform to do your sequencing comes down to the question you are trying to answer. See the last row in the table above 'Best use for' for some examples of why you might pick one platform over another!  
 
-When you get in contact with a sequencing facility, the question they will ask you is not *how many samples are you sequencing*, but rather, *how many reads do you need?* This will determine what size flow cell you need, and to some extent, which platform you will use, as different platforms have different capacity (e.g,. Illumina NextSeq is a 'medium throughput' platform, NovaSeq is a 'large throughput' platform). The number of reads you need scale with the size of the genome and/or complexity of your transcriptome. 
+When you get in contact with a sequencing facility, the question they will ask you is not *how many samples are you sequencing*, but rather, *how many reads do you need?* This will determine what size flow cell you need, and to some extent, which platform you will use, as different platforms have different capacity (e.g,. Illumina NextSeq is a 'medium throughput' platform, NovaSeq is a 'large throughput' platform). The number of reads you end up with per library will be approximately evenly distributed across all libraries, as they all get pooled together in equimolar amounts into one tube before loading on to the flow cell. The number of reads you need per library scales with the size of the genome and/or complexity of your transcriptome. 
 
 ***As a general rule of thumb,*** for ***transcriptome sequencing*** you will need:
 
@@ -551,6 +551,13 @@ Do anyone use basespace to share reads with people?
 ::: {.callout-caution}
 # FILL IN HERE
 International sequencing services - touch on this, why you may chose over NZ (or not chose!) then point towards the next section on ethical data management. 
+
+Shipping and storage logistics:  
+
+- RNA stability, and the need to preserve RNA (by freezing or other) for overseas sequencing?   
+- silicon tubes that will keep the RNA good and reduce sequencing costs  
+
+
 :::
 
 

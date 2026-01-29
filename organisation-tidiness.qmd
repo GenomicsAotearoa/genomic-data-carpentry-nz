@@ -22,7 +22,7 @@ Discuss with the group. When you are ready, click on 'Solutions' for a few examp
 
 ::: {.callout-note collapse="true"}
 # SOLUTIONS 
- - Experimental conditions describing the biological samples, such as: temperature, weight, length, treatment.
+ - Experimental conditions describing the collection of biological samples, such as: temperature, weight, length, treatment, photos of the specimen, GPS coordinates, specimen accession numbers.  
  - Laboratory/technical data, such as: protocol or kit used to extract DNA/RNA, specific processing equipment, concentrations or quality indicators (e.g., Nanodrop, Qubit, or Bioanalyzer results)  
  - Lab notebook notes about how you conducted those experiments.  
  - Spreadsheet or tabular data with the data from your experiment and whatever you were measuring for your study.
@@ -47,7 +47,7 @@ The cardinal rules of using spreadsheet programs for data:
 
 
 ::: {.callout-tip appearance="minimal"}
-# EXERCISE 🧠🏋️‍♀️ (2 mins)
+# EXERCISE 🧠🏋️‍♀️ (3 mins)
 
 Below is some potential spreadsheet data generated about a sequencing experiment. 
 
@@ -84,7 +84,7 @@ The R package [Tidyverse](https://tidyverse.org/) was specifically developed to 
 
 
 ::: {.callout-tip appearance="minimal"}
-# EXERCISE 🧠🏋️‍♀️ (1 min)
+# EXERCISE 🧠🏋️‍♀️ (2 min)
 
 Have a look at these column names and the differences between the good names and names to avoid:
 

@@ -482,7 +482,7 @@ Why do you think size selection is such an important step? What would happen if 
 <section id="flow-cells-and-sequencing-platforms-101" class="level2">
 <h2 class="anchored" data-anchor-id="flow-cells-and-sequencing-platforms-101">Flow cells and sequencing platforms 101</h2>
 <p>The three major sequencing platform and consumables companies are Illumina, Pacific Biosystems (PacBio) and Oxford Nanopore Technologies (ONT). Each make different platforms/instruments that can handle different levels of throughput, but the chemistry and the ‘reading’ of the sequencing is the main point of difference between the three companies.</p>
-<p>A few examples of the different platforms are:</p>
+<p>A few examples of the different platforms are (throughput in brackets):</p>
 <p><strong>Illumina</strong></p>
 <ul>
 <li>MiSeq i100 (small)<br>
@@ -503,7 +503,7 @@ Why do you think size selection is such an important step? What would happen if 
 </li>
 <li>GridION (medium)<br>
 </li>
-<li>PromethION (large)</li>
+<li>PromethION 2 Solo / 2 Integrated / 24 (large - very large)</li>
 </ul>
 <p>A <strong>flow cell</strong> is the physical surface inside the sequencing machine (or platform) where the actual reading of DNA or RNA occurs. There are different sizes you can chose from, depending on how many reads you need. Although Illumina, PacBio, and ONT all call their consumables “flow cells,” the underlying technologies are very different.</p>
 <p>For the most part, and in-depth knowledge of how these flow cells work is not needed to get you started with your sequencing project.</p>
@@ -590,7 +590,7 @@ Why do you think size selection is such an important step? What would happen if 
 <section id="decision-points" class="level2">
 <h2 class="anchored" data-anchor-id="decision-points">Decision points 🤔</h2>
 <p>Choosing a platform to do your sequencing comes down to the question you are trying to answer. See the last row in the table above ‘Best use for’ for some examples of why you might pick one platform over another!</p>
-<p>When you get in contact with a sequencing facility, the question they will ask you is not <em>how many samples are you sequencing</em>, but rather, <em>how many reads do you need?</em> This will determine what size flow cell you need, and to some extent, which platform you will use, as different platforms have different capacity (e.g,. Illumina NextSeq is a ‘medium throughput’ platform, NovaSeq is a ‘large throughput’ platform). The number of reads you need scale with the size of the genome and/or complexity of your transcriptome.</p>
+<p>When you get in contact with a sequencing facility, the question they will ask you is not <em>how many samples are you sequencing</em>, but rather, <em>how many reads do you need?</em> This will determine what size flow cell you need, and to some extent, which platform you will use, as different platforms have different capacity (e.g,. Illumina NextSeq is a ‘medium throughput’ platform, NovaSeq is a ‘large throughput’ platform). The number of reads you end up with per library will be approximately evenly distributed across all libraries, as they all get pooled together in equimolar amounts into one tube before loading on to the flow cell. The number of reads you need per library scales with the size of the genome and/or complexity of your transcriptome.</p>
 <p><strong><em>As a general rule of thumb,</em></strong> for <strong><em>transcriptome sequencing</em></strong> you will need:</p>
 <p><strong>Table 1:</strong> Reads per sample</p>
 <table class="caption-top table">
@@ -1135,6 +1135,12 @@ FILL IN HERE
 </div>
 <div class="callout-body-container callout-body">
 <p>International sequencing services - touch on this, why you may chose over NZ (or not chose!) then point towards the next section on ethical data management.</p>
+<p>Shipping and storage logistics:</p>
+<ul>
+<li>RNA stability, and the need to preserve RNA (by freezing or other) for overseas sequencing?<br>
+</li>
+<li>silicon tubes that will keep the RNA good and reduce sequencing costs</li>
+</ul>
 </div>
 </div>
 
