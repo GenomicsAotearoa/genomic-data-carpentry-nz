@@ -16,7 +16,7 @@ progress diagram picture could be nice in this section on all pages of this work
 
 ## Genomic data files
 
-Genomic data files can be huge, and for one project you will often have several hundred gigabytes (GB) to sometimes terabytes (TB) of data (more on the actual genomic file types in the next section [Data wrangling and processing](data-wrangling-and-processing.qmd)). You most likely won't be able to store and analyse these on your local computer, or transfer the files in the 'traditional' way using portable USB drives, so you'll need to make use of a high capacity storage (HCS), high performance computing (HPC), and file transfer protocols (FTP). An introduction to genomics is also an introduction to the world of high performance computing! 
+Genomic data files are often huge, and for one project you will often have several hundred gigabytes (GB) to sometimes terabytes (TB) of data (more on the actual genomic file types in the next section [Data wrangling and processing](data-wrangling-and-processing.qmd)). You most likely won't be able to store and analyse these on your local computer, or transfer the files in the 'traditional' way using portable USB drives, so you'll need to make use of a high capacity storage (HCS), high performance computing (HPC), and file transfer protocols (FTP). An introduction to genomics is also an introduction to the world of high performance computing! 
 
 *Caveat: small genomes such as from bacteria often can be transferred, stored and analysed on your local computer.* 
 
