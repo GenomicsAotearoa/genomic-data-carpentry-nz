@@ -115,7 +115,7 @@ https://research-hub.auckland.ac.nz/research-infrastructure/research-platforms/e
 
 ### Aotearoa Genomic Data Repository (AGDR)
 
-The AGDR is enabled by MBIE funding to Genomics Aotearoa. The AGDR is acceptable repository by journals.
+The AGDR is enabled by MBIE funding to Genomics Aotearoa. The AGDR is accepted as a suitable repository for (non-human) genomic data by many journals.
 
 From the [AGDR website](https://data.agdr.org.nz/):
 
