@@ -129,7 +129,7 @@ You are probably familiar with using the [NIH NCBI database](https://www.ncbi.nl
 
 NCBI has a repository called the [Sequence Read Archive (SRA)](https://www.ncbi.nlm.nih.gov/sra), which is where a large proportion of genomic data from all over the world is stored, as publicly available raw, high-throughput, sequencing data. 
 
-If your data has no ethical or data sovereignty concerns (e.g., your Māori research partners have agreed to upload the data), this can be a great resource for making your data freely available and easily citeable in publications.  
+If your data has no ethical or data sovereignty concerns (e.g., your Māori research partners have approved uploading the data), this can be a great resource for making your data freely available and easily citeable in publications.  
 
 Here we will not go into detail on how to either download or upload data to the SRA (see [SRA documentation on their website](https://www.ncbi.nlm.nih.gov/sra/docs/)). But some points to be aware of are:
 
