@@ -3,7 +3,7 @@ title: ""
 format: html
 ---
 
-# Planning for submission
+# Preparing for sequencing
 
 You've done your experiment, extracted some DNA or RNA, and want to sequence it, but now what?
 
@@ -11,7 +11,7 @@ You've done your experiment, extracted some DNA or RNA, and want to sequence it,
 
 Your DNA or RNA samples will need to pass certain quality cut-offs for sequencing, which the sequencing facility will ask for and will have thresholds they require upon submission (e.g., see the [Otago Genomics Facility requirements here](https://www.otago.ac.nz/genomics/project-sample-info/requirements)). After you have done your extractions in the lab, you should perform QC with:
 
-1. A microvolume spectrophotometer (e.g., NanoDrop, DeNovix), which will give you a good indication of the purity/contamination of your sample through 260/280 and 260/230 ratios. This method is not very reliable for determining concentration of your nucleic acid.
+1. A microvolume spectrophotometer (e.g., NanoDrop, DeNovix), which will give you a good indication of the purity/contamination of your sample through [260/280 and 260/230 ratios](https://documents.thermofisher.com/TFS-Assets/CAD/Product-Bulletins/TN52646-E-0215M-NucleicAcid.pdf). This method is not very reliable for determining concentration of your nucleic acid.
 
 ::: {.callout-tip collapse="true"}
 # NanoDrop logistics:
@@ -199,24 +199,24 @@ Here are the major differences between the technologies:
 
 | Feature | Illumina | PacBio | Oxford Nanopore (ONT) |
 |--------|----------------|---------------------|----------------------|
-| **How sequencing works** | Sequencing-by-synthesis (fluorescent nucleotides added one base at a time) | Single-molecule real-time (SMRT) sequencing (polymerase incorporates fluorescent bases inside ZMWs) | Nanopore sensing (changes in ionic current as DNA/RNA passes through a pore) |
-| **Flow cell structure** | Patterned flow cell with billions of oligos that form clonal clusters | SMRT Cell containing millions of Zero-Mode Waveguides (ZMWs) | Membrane embedded with thousands of protein nanopores |
-| **What binds to the flow cell** | Libraries bind via adapters to oligos → amplified into clusters | A single SMRTbell + polymerase complex loads into each ZMW | DNA or RNA strand with a motor protein threads into a nanopore |
+| **How sequencing works** | Sequencing-by-synthesis (fluorescent nucleotides added one base at a time) | Single-molecule real-time (SMRT) sequencing (polymerase incorporates fluorescent bases inside Zero-Mode Waveguides (ZMW)) | Nanopore sensing (changes in ionic current as DNA/RNA passes through a pore) |
+| **Flow cell structure** | Patterned flow cell with billions of oligonucelotides that form clonal clusters | SMRT Cell containing millions of ZMWs | Membrane embedded with thousands of protein nanopores |
+| **What binds to the flow cell** | Libraries bind via adapters to oligonucelotides → amplified into clusters | A single SMRTbell + polymerase complex loads into each ZMW | DNA or RNA strand with a motor protein threads into a nanopore |
 | **Signal detected** | Fluorescent signal imaged each cycle | Fluorescent flashes when each base is incorporated | Changes in electrical current across the pore |
 | **Amplification?** | Yes — cluster generation required | No — true single-molecule reads | No (PCR-free), though can use PCR in library prep |
-| **Typical read length** | 100–300 bp | 10–25 kb HiFi reads | 10 kb to >100 kb (ultra-long >1 Mb possible) |
+| **Typical read length** | 100–300 bp | 10–25 kbp HiFi reads | 10 kbp to >100 kbp (ultra-long >1 Mbp possible) |
 | **Can sequence native RNA?** | No — convert to cDNA library | No — convert to cDNA library | Yes — direct RNA sequencing |
-| **Strengths** | High accuracy, high throughput, cost-efficient, chemistry highly compatible with different species/tissues | Highly accurate long reads; excellent for haplotype resolution | Ultra-long reads; portable; real-time analysis; can detect base mods |
+| **Strengths** | High accuracy; high throughput; cost-efficient; chemistry highly compatible with different species/tissues | Highly accurate long reads; excellent for haplotype resolution | Ultra-long reads; portable; real-time analysis; can detect base modifications |
 | **Limitations** | Short reads only | Lower throughput than Illumina; expensive | Higher raw error rate; pore lifetime limits yield and susceptible to clogging |
-| **Best used for** | Standard RNA-seq (DGE); de novo transcriptomes; high-depth short-read assays; metagenomics; error-correcting long reads | Genome assembly (chromosome-level with HiFi); full-length RNA (Iso-Seq for isoforms); structural variant detection | Field-based sequencing (e.g, rapid microbial identification); genome assembly; native RNA including modification detection (e.g., methylation) |
+| **Best used for** | Standard RNA-seq (DGE); de novo transcriptomes; high-depth short-read assays; metagenomics; error-correcting long reads | Genome assembly (chromosome-level with HiFi); full-length RNA (Iso-Seq for isoforms); structural variant detection | Field-based sequencing (e.g., rapid microbial identification); genome assembly; native RNA including modification detection (e.g., methylation) |
 
 
 
 ## Decision points 🤔
 
-Choosing a platform to do your sequencing comes down to the question you are trying to answer. See the last row in the table above 'Best use for' for some examples of why you might pick one platform over another!  
+Choosing a platform to do your sequencing comes down to the question you are trying to answer. See the last row in the table above **'Best used for'** for some examples of why you might pick one platform over another!  
 
-When you get in contact with a sequencing facility, the question they will ask you is not *how many samples are you sequencing*, but rather, *how many reads do you need?* This will determine what size flow cell you need, and to some extent, which platform you will use, as different platforms have different capacity (e.g,. Illumina NextSeq is a 'medium throughput' platform, NovaSeq is a 'large throughput' platform). The number of reads you end up with per library will be approximately evenly distributed across all libraries, as they all get pooled together in equimolar amounts into one tube before loading on to the flow cell. The number of reads you need per library scales with the size of the genome and/or complexity of your transcriptome. 
+When you get in contact with a sequencing facility, the question they will ask you is not *how many samples are you sequencing*, but rather, *how many reads do you need?*  The number of reads you end up with per library will be approximately evenly distributed across all libraries, as they all get pooled together in equimolar amounts into one tube before loading on to the flow cell. The more libraries in the pool, the less reads per library. Hence, it does not matter how many samples you have (to an extent), what matters is how many reads you need in total. This will determine what size flow cell you need and which platform you will use, as different platforms have different capacity (e.g,. Illumina NextSeq is a 'medium throughput' platform, NovaSeq is a 'large throughput' platform). The number of reads you need per library scales with the size of the genome and/or complexity of your transcriptome. 
 
 ***As a general rule of thumb,*** for ***transcriptome sequencing*** you will need:
 
@@ -227,6 +227,8 @@ When you get in contact with a sequencing facility, the question they will ask y
 | Gene expression profiling            | 5–25 million          | 
 | Complete expression + alternative splicing | 30–60+ million   | 
 | *De novo* transcriptome assembly       | ~100+ million         | 
+
+You may be thinking that these values above are very broad ranges. How can you really know how many reads you need? The short answer is you don't. You can use other publications as a guide and you can talk to other genomics people, but it is often an approximation. This section is here to give you a guide on how you can make a pretty good approximation of what you will need!
 
 \
 
@@ -289,7 +291,7 @@ Based on table 1 above, how many reads do you need per sample?
 ::: {.callout-note collapse="true"}
 # Reads per sample choice:
 
-You decide you need 30 million reads per sample. You pick the lower end of the scale, as you suspect the genes you are most interested in will be highly expressed, and don't expect your tissue to have a particular high transcript diversity that would require more reads. 
+You decide you need 30 million reads per sample. You pick the lower end of the scale for 'alternate splicing' type sequencing, as you suspect the genes you are most interested in will be highly expressed, and don't expect your tissue to have a particular high transcript diversity that would require more reads. 
 
 You work out what minimum output you need from the flow cell:   
 30 mil reads * 40 samples = 1200 million reads (1.2B).
@@ -343,7 +345,7 @@ Flow cell options:
 - **P3 → 240 Gb (fits 1.2B reads requirement exactly - best choice!)**  
 - P4 → 360 Gb (oversized for this project)  
 
-Note: the maximum output stated for the flow cell is under optimal conditions, so the P3 flow cell choice just fits, but it is possible you will have less reads then anticipated (e.g., instead of 30 mil reads per sample, you may 28 mil per sample). 
+Note: the maximum output stated for the flow cell is under optimal conditions, so the P3 flow cell choice just fits, but it is possible you will have less reads then anticipated (e.g., instead of 30 mil reads per sample, you may end up with 28 mil per sample). 
 
 :::
 
@@ -433,8 +435,8 @@ What did they use it for? Why do you think they chose to do Illumina sequencing 
 # FILL IN - THIS EXERCISE NOT COMPLETE
 :::
 
-Answer: 30 x samples at low coverage for resequencing.   
-Answer: cost, accuracy at SNP level. dont need to resolve full genomes as that was not their question.
+Answer: The used Illumina sequencing for 30 x samples at low coverage for resequencing.   
+Answer: The reason you would chose Illumina over PacBio for this application is cost and  accuracy at the SNP level. They didn't need to resolve full genomes as that was not needed for their research question for those samples.
 
 :::
 

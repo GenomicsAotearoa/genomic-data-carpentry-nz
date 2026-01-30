@@ -14,16 +14,14 @@ website:
     contents:
       - text: "_test styles"
         href: test-styling.qmd
-      - text: "_outtakes/notes"
-        href: outtakes-notes.qmd
       - text: "Home"
         href: index.qmd
       - text: "Before you begin: Ethical considerations"
         href: ethical-considerations.qmd
       - text: "Organisation and tidy data"
         href: organisation-tidiness.qmd
-      - text: "Planning for submission"
-        href: planning-for-submission.qmd
+      - text: "Preparing for sequencing"
+        href: preparing-for-sequencing.qmd
       - text: "Genomic data storage and management"
         href: data-storage-and-management.qmd
       - text: "Genomic data wrangling and processing"

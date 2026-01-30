@@ -49,8 +49,11 @@ Learners are expected to have a basic (undergraduate) level understanding of bio
 | MB   | Megabyte |
 | Multiplexing   | Sequencing multiple samples simultaneously in one run by combining libraries into one pool. Samples (i.e., libraries) are de-multiplexed (separated) *in silico* usually by the technician, based on unique indices.  |
 | NGS  | Next-generation sequencing |
+| PacBio | Pacific Biosystems (sequencing company) |
+| Resequencing | Sequencing part of an individual's genome in order to detect sequence differences between the individual and the standard genome of the species. Often performed to detect SNPs, genotypes, variants.  |
 | SE / PE | Single-end / Paired-end |
 | SMRT | Single molecule real time (PacBio) |
+
 
 
 
@@ -95,10 +98,10 @@ Diagrams and images were also re-used in this workshop from online reference mat
 # Reference material:
 
 
-- Illumina library prep molecular workflow diagram in [Planning for submission](planning-for-submission.qmd) from Illumina Stranded mRNA Prep, Ligation Data Sheet. M-GL-02143 v1.0  
-- Bioanalyzer trace of final mRNA library in [Planning for submission](planning-for-submission.qmd) from Illumina Stranded mRNA Prep, Ligation Protocol Document # 1000000124518 v04.  
-- PacBio SMRTbell adapters image in [Planning for submission](planning-for-submission.qmd) from Template Preparation and Sequencing Guide P/N 000-710-821-13.  
-- Adapter dimer image from [Illumina general knowledge base](https://knowledge.illumina.com/library-preparation/general/library-preparation-general-reference_material-list/000003874) used in [Planning for submission](planning-for-submission.qmd). 
+- Illumina library prep molecular workflow diagram in [Preparing for sequencing](preparing-for-sequencing.qmd) from Illumina Stranded mRNA Prep, Ligation Data Sheet. M-GL-02143 v1.0  
+- Bioanalyzer trace of final mRNA library in [Preparing for sequencing](preparing-for-sequencing.qmd) from Illumina Stranded mRNA Prep, Ligation Protocol Document # 1000000124518 v04.  
+- PacBio SMRTbell adapters image in [Preparing for sequencing](preparing-for-sequencing.qmd) from Template Preparation and Sequencing Guide P/N 000-710-821-13.  
+- Adapter dimer image from [Illumina general knowledge base](https://knowledge.illumina.com/library-preparation/general/library-preparation-general-reference_material-list/000003874) used in [Preparing for sequencing](preparing-for-sequencing.qmd). 
 
 :::
 

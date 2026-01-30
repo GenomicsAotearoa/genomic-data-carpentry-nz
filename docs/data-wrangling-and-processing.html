@@ -123,12 +123,6 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./outtakes-notes.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">_outtakes/notes</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Home</span></a>
   </div>
@@ -147,8 +141,8 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./planning-for-submission.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Planning for submission</span></a>
+  <a href="./preparing-for-sequencing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preparing for sequencing</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -194,8 +188,8 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
   <li><a href="#exercises-8-mins" id="toc-exercises-8-mins" class="nav-link" data-scroll-target="#exercises-8-mins">EXERCISES 🧠🏋️‍♀️ (8 mins):</a></li>
   </ul></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
   </ul></li>
-  <li><a href="#workshop-complete" id="toc-workshop-complete" class="nav-link" data-scroll-target="#workshop-complete">Workshop complete :)</a></li>
   </ul>
 </nav>
     </div>
@@ -222,7 +216,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
 <li>To use remote computers or cloud computing, you often need to use the shell.</li>
 </ul>
-<p>Here we will not show you how to use the shell; we recommend checking out our workshops on <a href="https://genomicsaotearoa.github.io/BioinformaticsTrainingProgramme/portfolio.html#introduction-to-shell-for-bioinformatics">Introduction to Shell</a> and <a href="https://genomicsaotearoa.github.io/BioinformaticsTrainingProgramme/portfolio.html#intermediate-shell-for-bioinformatics">Intermediate Shell</a>.</p>
+<p>Here we will not show you how to use the CLI; we recommend checking out our workshops on <a href="https://genomicsaotearoa.github.io/BioinformaticsTrainingProgramme/portfolio.html#introduction-to-shell-for-bioinformatics">Introduction to Shell</a> and <a href="https://genomicsaotearoa.github.io/BioinformaticsTrainingProgramme/portfolio.html#intermediate-shell-for-bioinformatics">Intermediate Shell</a>.</p>
 <blockquote class="blockquote">
 <p>Note: you’ll hear the terms ‘shell’, ‘bash’, ‘unix’, ‘terminal’ and ‘command-line’ used almost interchangeably. For beginners, you can think of them as essentially all the same thing! As you gain more computational skills, you can dig into the differences.</p>
 </blockquote>
@@ -259,7 +253,7 @@ ul.task-list li input[type="checkbox"] {
 <p>We can assess the quality score across all reads using software called <a href="https://www.bioinformatics.babraham.ac.uk/projects/fastqc/">FastQC</a>, and trim down reads to remove poorer quality bases below a set threshold (generally with newer sequence data, you can use Q30 or Q40 as a cut-off). We won’t cover trimming here, see our workshop on <a href="https://genomicsaotearoa.github.io/BioinformaticsTrainingProgramme/portfolio.html#rna-seq-data-analysis">RNA-seq Data Analysis</a> for a step-by-step guide.</p>
 <section id="ont" class="level4">
 <h4 class="anchored" data-anchor-id="ont">ONT</h4>
-<p>Nanopore sequencing works quite differently to Illumina and PacBio. The default read output is pod5 and this is converted to unaligned bam.</p>
+<p>Nanopore sequencing works quite differently to Illumina and PacBio. The default read output is POD5 and this is converted to unaligned bam.</p>
 <div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -296,7 +290,7 @@ FILL OUT
 <tr class="even">
 <td style="text-align: right;"><code>.bam</code> <code>.sam</code></td>
 <td><strong>B</strong>inary/<strong>S</strong>equence Alignment Map</td>
-<td>Contains alignment information of your reads/sequences that are mapped against a reference sequence (e.g., genome). BAM are the compressed, computer-readable only version; SAM are human-readable but larger files. Somewhat interchangeable file types. Note for ONT files, the bam file is often used in an un-aligned format.</td>
+<td>Contains alignment information of your reads/sequences that are mapped against a reference sequence (e.g., genome). BAM are the compressed, computer-readable only version; SAM are human-readable but larger files. Somewhat interchangeable file types. Note for ONT files, the bam file is often used in an un-aligned format. You may also encounter <code>.cram</code> files, which are <strong>C</strong>ompressed <strong>R</strong>eference-oriented <strong>A</strong>lignment <strong>M</strong>ap designed to be an efficient reference-based alternative to bam/sam</td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;"><code>.vcf</code></td>
@@ -361,7 +355,7 @@ BAM/SAM
 </div>
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><a href="https://en.wikipedia.org/wiki/SAM_(file_format)">SAM file</a>, opened in a text editor. Note all lines in the header section starts with an ‘@’ symbol, and the number of lines in the header section is variable. There are 11 mandatory fields in the alignment section (not all visible here). <img src="figures/sam-file.png" class="img-fluid"></p>
+<p><a href="https://en.wikipedia.org/wiki/SAM_(file_format)">SAM file</a>, opened in a text editor. Note all lines in the header section starts with an ‘@’ symbol, and the number of lines in the header section is variable. There are 11 mandatory fields in the alignment section (not all visible here as they run off the window to the right). <img src="figures/sam-file.png" class="img-fluid"></p>
 </div>
 </div>
 </div>
@@ -377,7 +371,7 @@ VCF
 </div>
 <div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>VCF file opened in excel. Instead of the header sections seen in the other file types, here each column has a name. <img src="figures/vcf-file.png" class="img-fluid"></p>
+<p>VCF file opened in excel. Instead of the header sections seen in the other file types, here each column has a name. (not all columns visible as they run off the window to the right) <img src="figures/vcf-file.png" class="img-fluid"></p>
 </div>
 </div>
 </div>
@@ -403,13 +397,17 @@ GTF
 <section id="fastqc---quality-scoring-of-raw-reads" class="level2">
 <h2 class="anchored" data-anchor-id="fastqc---quality-scoring-of-raw-reads">FASTQC - quality scoring of raw reads</h2>
 <p>All <code>fastq</code> files, regardless of which kind of sequencing was performed, should be interrogated using a program called <a href="https://www.bioinformatics.babraham.ac.uk/projects/fastqc/">FastQC</a>. Most HPC services (e.g., REANNZ) come with this program (and many other commonly used programs) pre-installed, so you likely will not need to install it anywhere.</p>
+<p>Two of our genomic analysis workshops (<a href="https://genomicsaotearoa.github.io/BioinformaticsTrainingProgramme/portfolio.html#rna-seq-data-analysis">RNA-Seq Data Analysis</a> and <a href="https://genomicsaotearoa.github.io/BioinformaticsTrainingProgramme/portfolio.html#microbial-genome-assembly-with-short-reads">Microbial genome assembly</a>) teach you how to run fastqc on your files. Here, we will give you an introduction to what it is and how to interpret the results.</p>
 <p>FastQC will give you a good overview of the quality of the reads (i.e., how confidently each base was called by the sequencing platform) and a few other statistics about the reads. Each statistic will be assigned a PASS, WARNING or FAIL:</p>
 <p><img src="figures/fastqc-pass.png" class="img-fluid" style="width:8.0%"> PASS &nbsp;&nbsp;&nbsp; <img src="figures/fastqc-warn.png" class="img-fluid" style="width:8.0%"> WARNING &nbsp;&nbsp;&nbsp; <img src="figures/fastqc-fail.png" class="img-fluid" style="width:8.0%"> FAIL</p>
 <p>The following examples come from the ‘<a href="https://www.bioinformatics.babraham.ac.uk/projects/fastqc/good_sequence_short_fastqc.html">Good Illumina Data</a>’ and ‘<a href="https://www.bioinformatics.babraham.ac.uk/projects/fastqc/bad_sequence_fastqc.html">Bad Illumina Data</a>’ reports from the <a href="https://www.bioinformatics.babraham.ac.uk/index.html">Babraham Bioinformatics website</a>.</p>
+<blockquote class="blockquote">
+<p>Caveat: FastQC can be run on any <code>.fastq</code> data, but the pass, warning, fail metrics are based on Illumina data. ONT data in particular may receive fails, even when it is perfectly usable.</p>
+</blockquote>
 <section id="examples-good-vs-bad-sequence-data" class="level3">
 <h3 class="anchored" data-anchor-id="examples-good-vs-bad-sequence-data">EXAMPLES: Good vs bad sequence data</h3>
 <p>Below are the summarised pass, warning, fail statistics for the good (left) and bad (right) data. <img src="figures/fastqc-good-bad-summary.png" class="img-fluid" style="width:80.0%"></p>
-<p>Here we will choose a few of these as examples to delve into:</p>
+<p>Here we will choose a few of these statistics as examples to delve into:</p>
 <section id="per-base-sequence-quality" class="level4">
 <h4 class="anchored" data-anchor-id="per-base-sequence-quality">Per base sequence quality</h4>
 <p>The <strong>per base sequence quality</strong> is the first plot you can use to assess the quality. You can picture the reads as being all stacked on top of each other, and the average quality at each position (x-axis) shown as a boxplot (i.e., position 1 shows a boxplot of the quality scores of base pair #1 in all reads, position 2 shows a boxplot for base pair #2, and so on).</p>
@@ -660,24 +658,13 @@ Extra for experts solution
 </div>
 </section>
 </section>
+<section id="summary" class="level2">
+<h2 class="anchored" data-anchor-id="summary">Summary</h2>
+<p>close off with a quick summary of what the workshop has covered,</p>
+<p>a bullet point list of other GA workshops (with links) and a one sentence description of what is covered.</p>
+
+
 </section>
-<section id="workshop-complete" class="level1">
-<h1>Workshop complete :)</h1>
-<div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Any thing else I should add?
-</div>
-</div>
-<div class="callout-body-container callout-body">
-
-</div>
-</div>
-
-
 </section>
 
 </main> <!-- /main -->

@@ -8,34 +8,14 @@ format: html
 
 
 
-### Peter notes to add in 
-
-Couple of points
-
-- in the ethical considerations section- can you craft a question/discussion that puts the research into the minds of mana whenua?- try to get them to see things from a kaitiaki perspective- Tracey might have some ideas here.
-
-- For the metadata stuff, can you add “photos of the specimen, GPS coordinates, specimen accession numbers"
-
-- might want to add the P2 solo to the ONT sequencing equipment- though I think they are discontinuing it.  I think these are more common than the gridion
-
-- For the section on overseas sequencing, would it be worth having something about RNA stability, and the need to preserve RNA (by freezing or other) for overseas sequencing?  we use silicon tubes that will keep the RNA good and reduce sequencing costs, but many people dont seem to know about that option.
 
 ### chloe notes
 
 go back over genmic data carpentry from the carpentries to see what else they go over. 
 
-Assembly QC: biological and technical assessments of the three Cs (contiguity, correctness, completeness). from : https://genomicsaotearoa.github.io/BioinformaticsTrainingProgramme/portfolio.html#long-read-genome-assembly
 
-
-
-why would you chose internantional seq options over nz, cost, local. 
-
-intro to bioinformatics.
-
-- are there preferential rates for otago/auckland seq services for their own staff / students?  
-- add in logitics of doign nanodrop/quibit and bioanalyzer. cost and location.  
-- range of reads needed for rnaseq - can we break it down furhter? what other factors? species ?  
-- genome seq - combing platforms to polish correct reads   
+ 
+- genome seq - combining platforms to polish correct reads   
 
 ### Rakeiora Genomics platform 
 
@@ -47,15 +27,6 @@ They have chosen a **walled garden** approach to this infrastructure.
 ...Its modular nature will allow linkage (with consent) to other health data systems currently under development in Aotearoa New Zealand.  This approach in particular addresses transparency of use and control over narratives. Lack of these features in other precision medicine platforms worldwide has led to significant problems for patients and research participants, including indigenous communities; learning from these negative experiences is key to avoid repeating them."* -- From the [Genomics Aotearoa website.](https://www.genomics-aotearoa.org.nz/our-work/health-projects/rakeiora-pathfinder-genomic-medicine)
 
 
-### consultation
-
-add some news articles about successful and not so succesful consultation (or rather lack of consultation). does not have to just be NZ, can be other countries. 
-
-
-
-### genomic file types
-
-fastq illlumina, OMT pod5 to bam (unaligned). also CRAM file type. 
 
 
 

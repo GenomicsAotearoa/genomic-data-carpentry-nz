@@ -17,7 +17,7 @@ There are several reasons to learn how to use the CLI:
 - The shell gives you power and allows you to work more efficiently. Tasks that are repetitive (e.g. renaming hundreds of files) can be automated. Tasks that are tedious (e.g. testing a range of input parameters) can be simplified.  
 - To use remote computers or cloud computing, you often need to use the shell.
 
-Here we will not show you how to use the shell; we recommend checking out our workshops on [Introduction to Shell](https://genomicsaotearoa.github.io/BioinformaticsTrainingProgramme/portfolio.html#introduction-to-shell-for-bioinformatics) and 
+Here we will not show you how to use the CLI; we recommend checking out our workshops on [Introduction to Shell](https://genomicsaotearoa.github.io/BioinformaticsTrainingProgramme/portfolio.html#introduction-to-shell-for-bioinformatics) and 
 [Intermediate Shell](https://genomicsaotearoa.github.io/BioinformaticsTrainingProgramme/portfolio.html#intermediate-shell-for-bioinformatics). 
 
 >Note: you'll hear the terms 'shell', 'bash', 'unix', 'terminal' and 'command-line' used almost interchangeably. For beginners, you can think of them as essentially all the same thing! As you gain more computational skills, you can dig into the differences.    
@@ -89,7 +89,7 @@ You should also be aware that the extension on the file type is largely there ju
 | Extension | Name                    | Description                                                                 |
 |----------:|-------------------------|-----------------------------------------------------------------------------|
 | `.fasta` or `.fa`, `.fna`, `.faa`    | FASTA, FASTA nucleic acid, FASTA amino acid | Contains sequence data. Each sequence starts with a single header line starting with a `>`{style="color:black"}, followed by the nucleotide (or amino acid in case of `.faa`) sequence on the second line. No quality encoding included.  |
-| `.bam` `.sam`  | **B**inary/**S**equence Alignment Map  | Contains alignment information of your reads/sequences that are mapped against a reference sequence (e.g., genome). BAM are the compressed, computer-readable only version; SAM are human-readable but larger files. Somewhat interchangeable file types. Note for ONT files, the bam file is often used in an un-aligned format.  |
+| `.bam` `.sam`  | **B**inary/**S**equence Alignment Map  | Contains alignment information of your reads/sequences that are mapped against a reference sequence (e.g., genome). BAM are the compressed, computer-readable only version; SAM are human-readable but larger files. Somewhat interchangeable file types. Note for ONT files, the bam file is often used in an un-aligned format. You may also encounter `.cram` files, which are **C**ompressed **R**eference-oriented **A**lignment **M**ap designed to be an efficient reference-based alternative to bam/sam |
 | `.vcf`    | Variant Call Format     | Contains sequence variants called relative to a reference genome. Split into two sections; the header information and the records. See our [Intro R workshop, section on VCF files](https://genomicsaotearoa.github.io/Introduction-to-R/02-data-prelude/#how-variant-calls-are-stored-in-vcf-files).  |
 | `.gtf` or `.gff`   | General Transfer Format or General Feature Format   | Contains genome annotation data.   |
 
@@ -118,14 +118,14 @@ The sequence starts with a start codon 'ATG' and ends with a stop codon 'TAA'. A
 ::: {.callout-note collapse="true"}
 # BAM/SAM
 
-[SAM file](https://en.wikipedia.org/wiki/SAM_(file_format)), opened in a text editor. Note all lines in the header section starts with an '@' symbol, and the number of lines in the header section is variable. There are 11 mandatory fields in the alignment section (not all visible here). 
+[SAM file](https://en.wikipedia.org/wiki/SAM_(file_format)), opened in a text editor. Note all lines in the header section starts with an '@' symbol, and the number of lines in the header section is variable. There are 11 mandatory fields in the alignment section (not all visible here as they run off the window to the right). 
 ![](figures/sam-file.png)
 :::
 
 ::: {.callout-note collapse="true"}
 # VCF
 
-VCF file opened in excel. Instead of the header sections seen in the other file types, here each column has a name. 
+VCF file opened in excel. Instead of the header sections seen in the other file types, here each column has a name. (not all columns visible as they run off the window to the right)
 ![](figures/vcf-file.png)
 :::
 
@@ -141,19 +141,23 @@ GTF file opened in a text editor. Note all lines in the header section start wit
 
 All `fastq` files, regardless of which kind of sequencing was performed, should be interrogated using a program called [FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/). Most HPC services (e.g., REANNZ) come with this program (and many other commonly used programs) pre-installed, so you likely will not need to install it anywhere. 
 
+Two of our genomic analysis workshops ([RNA-Seq Data Analysis](https://genomicsaotearoa.github.io/BioinformaticsTrainingProgramme/portfolio.html#rna-seq-data-analysis) and [Microbial genome assembly](https://genomicsaotearoa.github.io/BioinformaticsTrainingProgramme/portfolio.html#microbial-genome-assembly-with-short-reads)) teach you how to run fastqc on your files. Here, we will give you an introduction to what it is and how to interpret the results. 
+
 FastQC will give you a good overview of the quality of the reads (i.e., how confidently each base was called by the sequencing platform) and a few other statistics about the reads.  Each statistic will be assigned a PASS, WARNING or FAIL:
 
 ![](figures/fastqc-pass.png){width="8%"}  PASS   &nbsp;&nbsp;&nbsp;    ![](figures/fastqc-warn.png){width="8%"}  WARNING  &nbsp;&nbsp;&nbsp;    ![](figures/fastqc-fail.png){width="8%"}  FAIL  
 
 
-The following examples come from the '[Good Illumina Data](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/good_sequence_short_fastqc.html)' and '[Bad Illumina Data](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/bad_sequence_fastqc.html)' reports from the [Babraham Bioinformatics website](https://www.bioinformatics.babraham.ac.uk/index.html).  
+The following examples come from the '[Good Illumina Data](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/good_sequence_short_fastqc.html)' and '[Bad Illumina Data](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/bad_sequence_fastqc.html)' reports from the [Babraham Bioinformatics website](https://www.bioinformatics.babraham.ac.uk/index.html).
+
+>Caveat: FastQC can be run on any `.fastq` data, but the pass, warning, fail metrics are based on Illumina data. ONT data in particular may receive fails, even when it is perfectly usable. 
 
 ### EXAMPLES: Good vs bad sequence data 
 
 Below are the summarised pass, warning, fail statistics for the good (left) and bad (right) data. 
 ![](figures/fastqc-good-bad-summary.png){width="80%"}
 
-Here we will choose a few of these as examples to delve into:
+Here we will choose a few of these statistics as examples to delve into:
 
 #### Per base sequence quality
 The **per base sequence quality** is the first plot you can use to assess the quality. You can picture the reads as being all stacked on top of each other, and the average quality at each position (x-axis) shown as a boxplot (i.e., position 1 shows a boxplot of the quality scores of base pair #1 in all reads, position 2 shows a boxplot for base pair #2, and so on).
@@ -386,8 +390,11 @@ The authors used synteny analysis. They found many major genes, such as Hox gene
 :::
 
 
-# Workshop complete :) 
+## Summary
 
-::: {.callout-caution}
-# Any thing else I should add?
-:::
+
+close off with a quick summary of what the workshop has covered,  
+
+a bullet point list of other GA workshops (with links) and a one sentence description of what is covered.
+
+

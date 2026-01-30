@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>planning-for-submission – Genomic Data Carpentry (Aotearoa edition)</title>
+<title>preparing-for-sequencing – Genomic Data Carpentry (Aotearoa edition)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -88,7 +88,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./planning-for-submission.html">Planning for submission</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./preparing-for-sequencing.html">Preparing for sequencing</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -124,12 +124,6 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./outtakes-notes.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">_outtakes/notes</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Home</span></a>
   </div>
@@ -148,8 +142,8 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./planning-for-submission.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Planning for submission</span></a>
+  <a href="./preparing-for-sequencing.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Preparing for sequencing</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -174,7 +168,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#planning-for-submission" id="toc-planning-for-submission" class="nav-link active" data-scroll-target="#planning-for-submission">Planning for submission</a>
+  <li><a href="#preparing-for-sequencing" id="toc-preparing-for-sequencing" class="nav-link active" data-scroll-target="#preparing-for-sequencing">Preparing for sequencing</a>
   <ul>
   <li><a href="#quality-control-of-dnarna" id="toc-quality-control-of-dnarna" class="nav-link" data-scroll-target="#quality-control-of-dnarna">Quality control of DNA/RNA</a></li>
   <li><a href="#sequencing-libraries" id="toc-sequencing-libraries" class="nav-link" data-scroll-target="#sequencing-libraries">Sequencing libraries</a>
@@ -205,14 +199,14 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="planning-for-submission" class="level1">
-<h1>Planning for submission</h1>
+<section id="preparing-for-sequencing" class="level1">
+<h1>Preparing for sequencing</h1>
 <p>You’ve done your experiment, extracted some DNA or RNA, and want to sequence it, but now what?</p>
 <section id="quality-control-of-dnarna" class="level2">
 <h2 class="anchored" data-anchor-id="quality-control-of-dnarna">Quality control of DNA/RNA</h2>
 <p>Your DNA or RNA samples will need to pass certain quality cut-offs for sequencing, which the sequencing facility will ask for and will have thresholds they require upon submission (e.g., see the <a href="https://www.otago.ac.nz/genomics/project-sample-info/requirements">Otago Genomics Facility requirements here</a>). After you have done your extractions in the lab, you should perform QC with:</p>
 <ol type="1">
-<li>A microvolume spectrophotometer (e.g., NanoDrop, DeNovix), which will give you a good indication of the purity/contamination of your sample through 260/280 and 260/230 ratios. This method is not very reliable for determining concentration of your nucleic acid.</li>
+<li>A microvolume spectrophotometer (e.g., NanoDrop, DeNovix), which will give you a good indication of the purity/contamination of your sample through <a href="https://documents.thermofisher.com/TFS-Assets/CAD/Product-Bulletins/TN52646-E-0215M-NucleicAcid.pdf">260/280 and 260/230 ratios</a>. This method is not very reliable for determining concentration of your nucleic acid.</li>
 </ol>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
@@ -278,7 +272,7 @@ Fragment analysis logistics:
 </section>
 <section id="sequencing-libraries" class="level2">
 <h2 class="anchored" data-anchor-id="sequencing-libraries">Sequencing libraries</h2>
-<p>The first thing that needs to be done for Illumina, PacBio or Oxford Nanopore (ONT) sequencing is to turn the DNA or RNA sample into something called a <em>library</em>. This converts the raw nucleic acids into a form that the sequencer can actually read. This is generally done by the technician that will also sequence your samples, but some labs may do library prep in-house (i.e., <em>you</em> may do it yourself!). For Illumina and PacBio, RNA is first converted into DNA during the library prep process. ONT is a little different, in that it can sequence native RNA directly, with minimal prep before sequencing. DNA library preparation for ONT sequencing is also generally simpler than for Illumina and PacBio. This is because the technology used to sequence the DNA/RNA using ONT is quite different to how Illumina and PacBio achieve it–more on that in the next section on <a href="#flow-cells-and-sequencing-platforms-101">flow cells and sequencing platforms 101</a></p>
+<p>The first thing that needs to be done for Illumina, PacBio or Oxford Nanopore (ONT) sequencing is to turn the DNA or RNA sample into something called a <em>library</em>. This converts the raw nucleic acids into a form that the sequencer can actually read. This is generally done by the technician who will also sequence your samples, but some labs may do library prep in-house (i.e., <em>you</em> may do it yourself!). For Illumina and PacBio, RNA is first converted into DNA during the library prep process. ONT is a little different, in that it can sequence native RNA directly, with minimal prep before sequencing. DNA library preparation for ONT sequencing is also generally simpler than for Illumina and PacBio. This is because the technology used to sequence the DNA/RNA using ONT is quite different to how Illumina and PacBio achieve it–more on that in the next section on <a href="#flow-cells-and-sequencing-platforms-101">flow cells and sequencing platforms 101</a></p>
 <blockquote class="blockquote">
 <p>Handy note: You can think of one library as being equivalent to one sample. It is possible to make multiple libraries from a single sample, but it is not often done this way.</p>
 </blockquote>
@@ -383,7 +377,7 @@ SOLUTION
 </li>
 <li>The type of analysis you want to do i.e., what is your research question</li>
 </ul>
-<p>For example, if you are doing a ‘generic’ RNA sequencing project (e.g,. you plan to do differential gene expression analysis to compare different samples), a common choice is <strong>Illumina stranded mRNA library prep</strong>, which uses polyA selection to capture mRNA. However, you may chose <strong>Illumina Stranded total RNA library prep</strong> with ribo-depletion, which is more expensive, but it has some advantages such as: it can capture non-polyadenylated RNAs (more comprehensive RNA profile) and and is a better option if your samples are partially degraded (it can also handle FFPE samples).</p>
+<p>For example, if you are doing a ‘generic’ RNA sequencing project (e.g., you plan to do differential gene expression analysis to compare different samples), a common choice is <strong>Illumina stranded mRNA library prep</strong>, which uses polyA selection to capture mRNA. However, you may chose <strong>Illumina Stranded total RNA library prep</strong> with ribo-depletion, which is more expensive, but it has some advantages such as: it can capture non-polyadenylated RNAs (more comprehensive RNA profile) and and is a better option if your samples are partially degraded (it can also handle FFPE samples).</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -481,7 +475,7 @@ Why do you think size selection is such an important step? What would happen if 
 </section>
 <section id="flow-cells-and-sequencing-platforms-101" class="level2">
 <h2 class="anchored" data-anchor-id="flow-cells-and-sequencing-platforms-101">Flow cells and sequencing platforms 101</h2>
-<p>The three major sequencing platform and consumables companies are Illumina, Pacific Biosystems (PacBio) and Oxford Nanopore Technologies (ONT). Each make different platforms/instruments that can handle different levels of throughput, but the chemistry and the ‘reading’ of the sequencing is the main point of difference between the three companies.</p>
+<p>The three major sequencing platform and consumables companies are Illumina, Pacific Biosciences (PacBio) and Oxford Nanopore Technologies (ONT). Each make different platforms/instruments that can handle different levels of throughput, but the chemistry and the ‘reading’ of the sequencing is the main point of difference between the three companies.</p>
 <p>A few examples of the different platforms are (throughput in brackets):</p>
 <p><strong>Illumina</strong></p>
 <ul>
@@ -527,18 +521,18 @@ Why do you think size selection is such an important step? What would happen if 
 <tr class="odd">
 <td><strong>How sequencing works</strong></td>
 <td>Sequencing-by-synthesis (fluorescent nucleotides added one base at a time)</td>
-<td>Single-molecule real-time (SMRT) sequencing (polymerase incorporates fluorescent bases inside ZMWs)</td>
+<td>Single-molecule real-time (SMRT) sequencing (polymerase incorporates fluorescent bases inside Zero-Mode Waveguides (ZMW))</td>
 <td>Nanopore sensing (changes in ionic current as DNA/RNA passes through a pore)</td>
 </tr>
 <tr class="even">
 <td><strong>Flow cell structure</strong></td>
-<td>Patterned flow cell with billions of oligos that form clonal clusters</td>
-<td>SMRT Cell containing millions of Zero-Mode Waveguides (ZMWs)</td>
+<td>Patterned flow cell with billions of oligonucelotides that form clonal clusters</td>
+<td>SMRT Cell containing millions of ZMWs</td>
 <td>Membrane embedded with thousands of protein nanopores</td>
 </tr>
 <tr class="odd">
 <td><strong>What binds to the flow cell</strong></td>
-<td>Libraries bind via adapters to oligos → amplified into clusters</td>
+<td>Libraries bind via adapters to oligonucelotides → amplified into clusters</td>
 <td>A single SMRTbell + polymerase complex loads into each ZMW</td>
 <td>DNA or RNA strand with a motor protein threads into a nanopore</td>
 </tr>
@@ -557,8 +551,8 @@ Why do you think size selection is such an important step? What would happen if 
 <tr class="even">
 <td><strong>Typical read length</strong></td>
 <td>100–300 bp</td>
-<td>10–25 kb HiFi reads</td>
-<td>10 kb to &gt;100 kb (ultra-long &gt;1 Mb possible)</td>
+<td>10–25 kbp HiFi reads</td>
+<td>10 kbp to &gt;100 kbp (ultra-long &gt;1 Mbp possible)</td>
 </tr>
 <tr class="odd">
 <td><strong>Can sequence native RNA?</strong></td>
@@ -568,9 +562,9 @@ Why do you think size selection is such an important step? What would happen if 
 </tr>
 <tr class="even">
 <td><strong>Strengths</strong></td>
-<td>High accuracy, high throughput, cost-efficient, chemistry highly compatible with different species/tissues</td>
+<td>High accuracy; high throughput; cost-efficient; chemistry highly compatible with different species/tissues</td>
 <td>Highly accurate long reads; excellent for haplotype resolution</td>
-<td>Ultra-long reads; portable; real-time analysis; can detect base mods</td>
+<td>Ultra-long reads; portable; real-time analysis; can detect base modifications</td>
 </tr>
 <tr class="odd">
 <td><strong>Limitations</strong></td>
@@ -582,15 +576,15 @@ Why do you think size selection is such an important step? What would happen if 
 <td><strong>Best used for</strong></td>
 <td>Standard RNA-seq (DGE); de novo transcriptomes; high-depth short-read assays; metagenomics; error-correcting long reads</td>
 <td>Genome assembly (chromosome-level with HiFi); full-length RNA (Iso-Seq for isoforms); structural variant detection</td>
-<td>Field-based sequencing (e.g, rapid microbial identification); genome assembly; native RNA including modification detection (e.g., methylation)</td>
+<td>Field-based sequencing (e.g., rapid microbial identification); genome assembly; native RNA including modification detection (e.g., methylation)</td>
 </tr>
 </tbody>
 </table>
 </section>
 <section id="decision-points" class="level2">
 <h2 class="anchored" data-anchor-id="decision-points">Decision points 🤔</h2>
-<p>Choosing a platform to do your sequencing comes down to the question you are trying to answer. See the last row in the table above ‘Best use for’ for some examples of why you might pick one platform over another!</p>
-<p>When you get in contact with a sequencing facility, the question they will ask you is not <em>how many samples are you sequencing</em>, but rather, <em>how many reads do you need?</em> This will determine what size flow cell you need, and to some extent, which platform you will use, as different platforms have different capacity (e.g,. Illumina NextSeq is a ‘medium throughput’ platform, NovaSeq is a ‘large throughput’ platform). The number of reads you end up with per library will be approximately evenly distributed across all libraries, as they all get pooled together in equimolar amounts into one tube before loading on to the flow cell. The number of reads you need per library scales with the size of the genome and/or complexity of your transcriptome.</p>
+<p>Choosing a platform to do your sequencing comes down to the question you are trying to answer. See the last row in the table above <strong>‘Best used for’</strong> for some examples of why you might pick one platform over another!</p>
+<p>When you get in contact with a sequencing facility, the question they will ask you is not <em>how many samples are you sequencing</em>, but rather, <em>how many reads do you need?</em> The number of reads you end up with per library will be approximately evenly distributed across all libraries, as they all get pooled together in equimolar amounts into one tube before loading on to the flow cell. The more libraries in the pool, the less reads per library. Hence, it does not matter how many samples you have (to an extent), what matters is how many reads you need in total. This will determine what size flow cell you need and which platform you will use, as different platforms have different capacity (e.g,. Illumina NextSeq is a ‘medium throughput’ platform, NovaSeq is a ‘large throughput’ platform). The number of reads you need per library scales with the size of the genome and/or complexity of your transcriptome.</p>
 <p><strong><em>As a general rule of thumb,</em></strong> for <strong><em>transcriptome sequencing</em></strong> you will need:</p>
 <p><strong>Table 1:</strong> Reads per sample</p>
 <table class="caption-top table">
@@ -615,9 +609,10 @@ Why do you think size selection is such an important step? What would happen if 
 </tr>
 </tbody>
 </table>
+<p>You may be thinking that these values above are very broad ranges. How can you really know how many reads you need? The short answer is you don’t. You can use other publications as a guide and you can talk to other genomics people, but it is often an approximation. This section is here to give you a guide on how you can make a pretty good approximation of what you will need!</p>
 <p><br>
 </p>
-<p>The next thing the sequencing facility will ask you if you are doing short-read sequencing (Illumina) is do you want <em>single-end</em> or <em>paired-end</em> reads. This refers to whether you want a single read (read 1), sequenced from only one end of the library molecule (fragment), or if you want two reads per library molecule (read 1 and read 2, antisense and sense strands). Paired-end costs more, but gives you more resolution.</p>
+<p>The next thing the sequencing facility will ask you if you are doing short-read sequencing (Illumina) is: do you want <em>single-end</em> or <em>paired-end</em> reads? This refers to whether you want a single read (read 1), sequenced from only one end of the library molecule (fragment), or if you want two reads per library molecule (read 1 and read 2, antisense and sense strands). Paired-end costs more, but gives you more resolution.</p>
 <p>There are <strong><em>pros</em></strong> and <strong><em>cons</em></strong> to choosing either chemistry:</p>
 <p><strong>Table 2:</strong> Single-end vs paired-end chemistry (short-read Illumina sequencing)</p>
 <table class="caption-top table">
@@ -734,7 +729,7 @@ Reads per sample choice:
 </div>
 <div id="callout-14" class="callout-14-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>You decide you need 30 million reads per sample. You pick the lower end of the scale, as you suspect the genes you are most interested in will be highly expressed, and don’t expect your tissue to have a particular high transcript diversity that would require more reads.</p>
+<p>You decide you need 30 million reads per sample. You pick the lower end of the scale for ‘alternate splicing’ type sequencing, as you suspect the genes you are most interested in will be highly expressed, and don’t expect your tissue to have a particular high transcript diversity that would require more reads.</p>
 <p>You work out what minimum output you need from the flow cell:<br>
 30 mil reads * 40 samples = 1200 million reads (1.2B).</p>
 </div>
@@ -808,7 +803,7 @@ Which flow cell will you pick?
 </li>
 <li>P4 → 360 Gb (oversized for this project)</li>
 </ul>
-<p>Note: the maximum output stated for the flow cell is under optimal conditions, so the P3 flow cell choice just fits, but it is possible you will have less reads then anticipated (e.g., instead of 30 mil reads per sample, you may 28 mil per sample).</p>
+<p>Note: the maximum output stated for the flow cell is under optimal conditions, so the P3 flow cell choice just fits, but it is possible you will have less reads then anticipated (e.g., instead of 30 mil reads per sample, you may end up with 28 mil per sample).</p>
 </div>
 </div>
 </div>
@@ -972,8 +967,8 @@ FILL IN - THIS EXERCISE NOT COMPLETE
 
 </div>
 </div>
-<p>Answer: 30 x samples at low coverage for resequencing.<br>
-Answer: cost, accuracy at SNP level. dont need to resolve full genomes as that was not their question.</p>
+<p>Answer: The used Illumina sequencing for 30 x samples at low coverage for resequencing.<br>
+Answer: The reason you would chose Illumina over PacBio for this application is cost and accuracy at the SNP level. They didn’t need to resolve full genomes as that was not needed for their research question for those samples.</p>
 </div>
 </div>
 <p><br>

@@ -57,7 +57,7 @@ Click on 'Jupyter Lab' and then you can chose a few different settings before la
 
 ![](figures/reannz-04.png){width=100%} 
 
-Once the session is open, you can interact with your files through the directory structure on the left, and open either a Terminal or various other scripting programs through the Launcher. More on using the Terminal (also known as shell / unix shell / bash) in the next lesson.  
+Once the session is open, you can interact with your files through the directory structure on the left, and open either a Terminal (see our [Introduction to Shell](https://genomicsaotearoa.github.io/BioinformaticsTrainingProgramme/portfolio.html#introduction-to-shell-for-bioinformatics) workshop for more on using Terminal) or various other scripting programs through the Launcher. 
 
 For each Project, you will have a `nobackup`{style="color:blue"} and a `project`{style="color:blue"} directory. Keep your raw files in the `project`{style="color:blue"} directory and do your analysis in the `nobackup`{style="color:blue"} directory. As you can guess by the name, this directory is not backed up, and is best used for working analyses. Additionally, files not modified after 90 days are auto deleted. Final analysed files and imprortant scripts should be copied into the `project`{style="color:blue"} directory once you have completed your analysis. You may be surprised by how many intermediate files you make and how much 'tinkering' you do during your analyses--making use of the two directories helps keep your file system tidier. 
 
