@@ -495,7 +495,7 @@ There are several dedicated sequencing facilities which offer NGS services aroun
 
 #### Otago Genomics Facility (OGF)
 **Location:** The University of Otago, Biochemistry Building, 710 Cumberland st.      
-**Performs:** Moderate to large scale RNAseq, DNAseq, amplicon sequencing, other sequencing.  
+**Performs:** Moderate to large scale RNAseq, DNAseq, amplicon sequencing, other sequencing (Illumina library prep and sequencing provided as a service; ONT platform requires the users to undertake the library and sequencing themselves with supported training and trouble-shooting advice).   
 **Website:** [Otago Genomics Facility](https://www.otago.ac.nz/genomics)  
 
 **Platforms available:**  
@@ -507,9 +507,6 @@ There are several dedicated sequencing facilities which offer NGS services aroun
 - NanoString nCounter Analysis System (non-NGS)
 
 
-::: {.callout-caution}
-# FILL IN MORE DETAILS
-:::
  
 #### Massey Genome Service (MGS)
 **Location:** Massey University, ADDRESS   
