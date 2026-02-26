@@ -11,7 +11,15 @@ You've done your experiment, extracted some DNA or RNA, and want to sequence it,
 
 Your DNA or RNA samples will need to pass certain quality cut-offs for sequencing, which the sequencing facility will ask for and will have thresholds they require upon submission (e.g., see the [Otago Genomics Facility requirements here](https://www.otago.ac.nz/genomics/project-sample-info/requirements)). After you have done your extractions in the lab, you should perform QC with:
 
-1. A microvolume spectrophotometer (e.g., NanoDrop, DeNovix), which will give you a good indication of the purity/contamination of your sample through [260/280 and 260/230 ratios](https://documents.thermofisher.com/TFS-Assets/CAD/Product-Bulletins/TN52646-E-0215M-NucleicAcid.pdf). This method is not very reliable for determining concentration of your nucleic acid.
+1. Agarose gel electrophoresis. For RNA, this will give you a good indication of the integrity of your RNA sample; generally you will expect to see two clear bands for the 28S and 18S rRNA subunits. For DNA samples, in particular for long-read sequencing, you want to see a high molecular weight band with minimal smearing (which would indicate degradation). Getting the high-molecular-weight gDNA (i.e., long gDNA fragments) is critical to obtaining high-quality data for WGS using ONT/PacBio.
+
+::: {.callout-tip collapse="true"}
+# Agarose gel electrophoresis logistics:
+Making and performing agarose gel electrophoresis is a core molecular biology skill that we expect almost all readers will have learnt, so we will not go into further details here. Note for RNA samples, different species can have different rRNA banding patterns that may not look like a 'classic' 28S/18S pattern (for eukaryotes), and different tissue types can have different levels of small RNAs, which can appear like degraded RNA on a gel. You may need to do some literature searching if you have odd results.  For high molecular weight DNA (*i.e.,* for genome sequencing), you may need to run a special gel *e.g.,* a pulsed-field gel electrophoresis or a capillary-based system such as [Agilent Femto Pulse System](https://www.agilent.com/en/product/automated-electrophoresis/femto-pulse-systems). See also [assessing molecular weight in Nanopore documentation.](https://nanoporetech.com/document/input-dna-rna-qc#assessing-molecular-weight)
+:::
+
+
+2. A microvolume spectrophotometer (e.g., NanoDrop, DeNovix), which will give you a good indication of the purity/contamination of your sample through [260/280 and 260/230 ratios](https://documents.thermofisher.com/TFS-Assets/CAD/Product-Bulletins/TN52646-E-0215M-NucleicAcid.pdf). This method is not very reliable for determining concentration of your nucleic acid.
 
 ::: {.callout-tip collapse="true"}
 # NanoDrop logistics:
@@ -19,14 +27,14 @@ Your DNA or RNA samples will need to pass certain quality cut-offs for sequencin
 There is usually a NanoDrop or DeNovix in most labs as standard benchtop equipment (NanoDrops are more common and most people refer to this QC method simply as 'nanodrop'). It is free to run (no additional reagents required beyond UltraPure water/ddH~2~O) and only requires 1-2 μL of your sample. Results appear on the screen within seconds. Gently clean with UltraPure water and a kimwipe between samples; do not use ethanol on platform. While the nanodrop is not a great option for definitive quantification of your sample concentration, it can be a good starting indication as it can measure a broader concentration range than the Qubit. It will almost always overestimate the concentration. If your Qubit to nanodrop concentration ratio is more than 50% different (e.g., nanodrop says 100 ng/μL, Qubit says <50ng/μL), this could indicate substantial contamination of the undesired nucleic acid or other contaminant and you may need to re-purify / clean and concentrate samples. 
 :::
 
-2. A fluorescent-based quantification method (e.g., Qubit), which will give you a very accurate indication of concentration of your nucleic acid (but not of any contaminants).  
+3. A fluorescent-based quantification method (e.g., Qubit), which will give you a very accurate indication of concentration of your nucleic acid (but not of any contaminants).  
 
 ::: {.callout-tip collapse="true"}
 # Qubit logistics:
 Many labs have a Qubit (e.g., see [Qubit 4 model](https://www.thermofisher.com/nz/en/home/industrial/spectroscopy-elemental-isotope-analysis/molecular-spectroscopy/fluorometers/qubit/models/qubit-4.html); other models exist), but they are less common than microvolume spectrophotometers. You may need to ask around your department/faculty to see where one is and who owns it. There are a few ongoing costs associated with using the Qubit (standards, buffers, dyes and tubes are required consumables), so if you are borrowing this from another group you will need to work out how the costs should be covered. The estimated cost is around $1 per sample (adds up fast when you have many samples + technical replication!). You will also have to determine which kit you need, often either the dsDNA HS (high sensitivity) assay kit or the RNA HS kit; there are also broad range kits, see [assay types here](https://www.thermofisher.com/nz/en/home/industrial/spectroscopy-elemental-isotope-analysis/molecular-spectroscopy/fluorometers/qubit/qubit-assays.html#rna-quantification-assays). The Qubit generally requires 1 μL of your sample to run. Samples for the Qubit take a few mins to prep, then results are read within seconds and displayed on the screen. DNA/RNA concentrations can both be measured very accurately, but not simultaneously. The Qubit is very sensitive, but in a more narrow concentration range to the NanoDrop. You may need to use the NanoDrop concentration as a general indication for diluting your samples to the concentration range of the Qubit kit you are using, so read the kit information to determine which one you need. 
 :::
 
-3.  A fragment analysis instrument (e.g., Agilent 2100 Bioanalyzer, Agilent 5300 Fragment Analyzer or Agilent TapeStation), which you can think of like a high-tech agarose gel. It will give you a good indication of your 28S/18S ratio for RNA (this is used to determine the overall RIN - RNA integrity number*) or your fragment size distribution for DNA. 
+4.  A fragment analysis instrument (e.g., Agilent 2100 Bioanalyzer, Agilent 5300 Fragment Analyzer or Agilent TapeStation), which you can think of like a high-tech agarose gel. It will give you a good indication of your 28S/18S ratio for RNA (this is used to determine the overall RIN - RNA integrity number*) or your fragment size distribution for DNA. 
 
 ::: {.callout-tip collapse="true"}
 # Fragment analysis logistics:
