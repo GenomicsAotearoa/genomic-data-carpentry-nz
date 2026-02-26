@@ -44,11 +44,12 @@ Learners are expected to have a basic (undergraduate) level understanding of bio
 | HiFi   | High fidelity (PacBio) |
 | Index | Also known as a barcode. Short unique sequence added to each DNA molecule in one library, allowing the identification of that library/sample and thereby enabling pooling of the libraries for sequencing (one run = cheaper). |
 | Gb   | Gigabase pair (1,000,000,000 bp) |
-| GB   | Gigabyte |
+| GB   | Gigabyte (file size / storage size) |
 | Mb   | Megabase pair (1,000,000 bp) |
-| MB   | Megabyte |
+| MB   | Megabyte (file size / storage size) |
 | Multiplexing   | Sequencing multiple samples simultaneously in one run by combining libraries into one pool. Samples (i.e., libraries) are de-multiplexed (separated) *in silico* usually by the technician, based on unique indices.  |
 | NGS  | Next-generation sequencing |
+| ONT  | Oxford Nanopore Technologies (sequencing company). Often referred to as "Nanopore".  |
 | PacBio | Pacific Biosystems (sequencing company) |
 | Resequencing | Sequencing part of an individual's genome in order to detect sequence differences between the individual and the standard genome of the species. Often performed to detect SNPs, genotypes, variants.  |
 | SE / PE | Single-end / Paired-end |

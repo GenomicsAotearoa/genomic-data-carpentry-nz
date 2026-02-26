@@ -272,18 +272,18 @@ Fragment analysis logistics:
 </section>
 <section id="sequencing-libraries" class="level2">
 <h2 class="anchored" data-anchor-id="sequencing-libraries">Sequencing libraries</h2>
-<p>The first thing that needs to be done for Illumina, PacBio or Oxford Nanopore (ONT) sequencing is to turn the DNA or RNA sample into something called a <em>library</em>. This converts the raw nucleic acids into a form that the sequencer can actually read. This is generally done by the technician who will also sequence your samples, but some labs may do library prep in-house (i.e., <em>you</em> may do it yourself!). For Illumina and PacBio, RNA is first converted into DNA during the library prep process. ONT is a little different, in that it can sequence native RNA directly, with minimal prep before sequencing. DNA library preparation for ONT sequencing is also generally simpler than for Illumina and PacBio. This is because the technology used to sequence the DNA/RNA using ONT is quite different to how Illumina and PacBio achieve it–more on that in the next section on <a href="#flow-cells-and-sequencing-platforms-101">flow cells and sequencing platforms 101</a></p>
+<p>The first thing that needs to be done for Illumina, PacBio or Oxford Nanopore (ONT) sequencing is to turn the DNA or RNA sample into something called a <em>library</em>. This converts the raw nucleic acids into a form that the sequencer can actually read. This is generally done by the technician who will also sequence your samples, but some labs may do library prep in-house (i.e., <em>you</em> may do it yourself!). For RNA samples, the Illumina and PacBio platfomrs require that the RNA is first converted into DNA during the library prep process. The ONT has the added advantage to sequence native RNA directly, in addition to converting it to cDNA for sequencing. DNA library preparation for ONT sequencing is also generally simpler than for Illumina and PacBio. This is because the technology used to sequence the DNA/RNA using ONT is quite different to how Illumina and PacBio achieve it–more on that in the next section on <a href="#flow-cells-and-sequencing-platforms-101">flow cells and sequencing platforms 101</a></p>
 <blockquote class="blockquote">
 <p>Handy note: You can think of one library as being equivalent to one sample. It is possible to make multiple libraries from a single sample, but it is not often done this way.</p>
 </blockquote>
-<p>Library preparation (for Illumina and PacBio) generally involves the following steps, and takes 1-2 days in the lab:</p>
+<p>Library preparation generally involves the following steps, and takes 1-2 days in the lab for Illumina and PacBio, and half a day to 1 day for ONT:</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Illumina lib prep molecular workflow diagram
+Illumina lib prep molecular workflow diagram:
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -293,22 +293,39 @@ Illumina lib prep molecular workflow diagram
 </div>
 </div>
 </div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+ONT direct cDNA lib prep molecular workflow diagram:
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><img src="figures/ont-lib-prep-cdna-01.png" class="img-fluid"></p>
+<p>Image from <a href="https://nanoporetech.com/document/ligation-sequencing-v14-direct-cdna-sequencing">link here.</a></p>
+</div>
+</div>
+</div>
 <ol type="1">
 <li><p><strong>(Optional) Target enrichment / RNA selection</strong><br>
 Selectively enriching for your target molecule (e.g., for standard RNAseq you likely will do polyA capture).<br>
 </p></li>
-<li><p><strong>(RNAseq only)</strong> Converting your RNA into cDNA using reverse transcriptase.<br>
+<li><p><strong>(RNAseq only)</strong> Converting your RNA into cDNA using reverse transcriptase. *ONT also allows for direct RNA sequencing; see note below.<br>
 </p></li>
-<li><p><strong>Fragmentation (if needed</strong>) Some kits fragment RNA before reverse transcription, others fragment cDNA/DNA after.<br>
-This ensures fragments are the right size for the platform (e.g., ~200–400 bp for Illumina).</p></li>
+<li><p><strong>Fragmentation (if needed)</strong> Some kits fragment RNA before reverse transcription, others fragment cDNA/DNA after.<br>
+This ensures fragments are the right size for the platform (e.g., ~200–400 bp short reads for Illumina). Long-read platforms (ONT and PacBio) generally do not require fragmentation, but some size selection or shearing may be performed.</p></li>
 <li><p><strong>End repair and A-tailing</strong><br>
 Ends are cleaned up so adapters can be ligated efficiently.</p></li>
 <li><p><strong>Adapter ligation</strong><br>
-Adapters are short sequences that enable library binding to the flow cell (Illumina) or capture for SMRTbells (PacBio).<br>
+Adapters are short sequences that enable library binding to the flow cell (Illumina or ONT) or capture for SMRTbells (PacBio).<br>
 Some kits combine this with indexing.</p></li>
 </ol>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -317,7 +334,7 @@ PacBio lib prep - SMRTbell adapters
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><img src="figures/pacbio-libprep-01.png" class="img-fluid"></p>
 <p>Note: the SMRTbell technology allows HiFi (high fidelity) long read sequencing. The DNA becomes circularised, which allows the polymerase to make repeated passes around the DNA and the consensus sequence therefore has a higher accuracy than single pass sequencing.</p>
@@ -326,16 +343,16 @@ PacBio lib prep - SMRTbell adapters
 </div>
 <ol start="6" type="1">
 <li><p><strong>Indexing (barcoding)</strong><br>
-Indices allow multiple samples to be pooled together and sequenced on the same flow cell, then computationally separated afterward (called mulitplexing and demultiplexing).</p></li>
+Indices allow multiple samples to be pooled together and sequenced on the same flow cell, then computationally (<em>in silico</em>) separated afterward (called mulitplexing and demultiplexing).</p></li>
 <li><p><strong>Size selection / cleanup</strong><br>
 Typically done with magnetic beads to remove adapter dimers and select the desired fragment range.</p></li>
 <li><p><strong>Library amplification (if required)</strong><br>
-Some protocols use PCR to enrich adapter-ligated molecules; others (e.g., some PacBio) are PCR-free.</p></li>
+Some protocols use PCR to enrich adapter-ligated molecules; others (e.g., some PacBio) are PCR-free. ONT has a cDNA-PCR sequencing protocol for lower input RNA samples.</p></li>
 <li><p><strong>Final QC and quantification</strong><br>
 Using Qubit, Bioanalyzer/Tapestation/Fragment Analyzer, etc. This step ensures your library meets sequencing requirements.</p></li>
 </ol>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -344,12 +361,12 @@ Bioanalyzer trace of final library (Illumina mRNA lib prep)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><img src="figures/illumina-libprep-02.png" class="img-fluid"></p>
 <p>Q: What do you think the two large narrow peaks are around 15 bp and 1500bp?</p>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -358,7 +375,7 @@ SOLUTION
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>The two narrow peaks are ladder sequence. These are internal standards of known size we add in for quality control. These can also be used for concentration estimation, but fluorescence-based quantification (e.g., Qubit) is more accurate.</p>
 </div>
@@ -369,17 +386,38 @@ SOLUTION
 </div>
 </div>
 </div>
+<blockquote class="blockquote">
+<p>*Direct RNA sequencing with ONT: Native RNA can be sequenced directly with ONT, which allows exploring of modified bases (e.g., methylated bases). It takes approximately 140 mins to complete library preparation. Currently, there is no option for multiplexing, although a multiplexing kit is scheduled for release in 2026.</p>
+</blockquote>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+ONT Direct RNA sequencing library prep workflow diagram:
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><img src="figures/ont-lib-prep-rna-03.png" class="img-fluid"></p>
+<p>Note that the second complementary cDNA strand is synthesised for stability by reverse transcription. The cDNA strand is not sequenced, but improves the RNA sequencing output.</p>
+<p><a href="https://nanoporetech.com/document/direct-rna-sequencing-sqk-rna004">Image from link here.</a></p>
+</div>
+</div>
+</div>
 <p>There are different library prep methods (i.e., protocols) for each platform that you will need to chose. This will depend on a few things, such as:</p>
 <ul>
 <li>The quality of your RNA/DNA (e.g., high-quality RNA allows polyA selection; degraded samples may require ribo-depletion or specialised kits).<br>
 </li>
 <li>The species/tissue type you extracted your RNA/DNA from (e.g., plants have rRNA types that require plant-specific depletion kits, some tissues have high mitochondrial RNA content).<br>
 </li>
-<li>The type of analysis you want to do i.e., what is your research question</li>
+<li>The type of analysis you want to do i.e., what is your research question.</li>
 </ul>
 <p>For example, if you are doing a ‘generic’ RNA sequencing project (e.g., you plan to do differential gene expression analysis to compare different samples), a common choice is <strong>Illumina stranded mRNA library prep</strong>, which uses polyA selection to capture mRNA. However, you may chose <strong>Illumina Stranded total RNA library prep</strong> with ribo-depletion, which is more expensive, but it has some advantages such as: it can capture non-polyadenylated RNAs (more comprehensive RNA profile) and and is a better option if your samples are partially degraded (it can also handle FFPE samples).</p>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -388,7 +426,7 @@ SOLUTION
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>There are two main versions of the Illumina RNA library prep kit chemistry. The “Illumina TruSeq” kit uses an older chemistry and the “Illumina Stranded” kit uses a newer chemistry. Within each of these versions are also several types of kits for specific purposes (e.g,. total RNA or mRNA). Both chemistries are very robust options and produce good quality sequence data. The TruSeq chemistry requires a slightly higher minimum mRNA input (100 ng) vs.&nbsp;the minimum mRNA input for Illumina Stranded (25 ng). The newer “Illumina Stranded” also has the advantages of being a slightly faster protocol to complete, and allows for higher multiplexing (up to 384 samples, vs up to 96 samples for TruSeq). Note that both chemistries do strand specific sequencing. For most generic RNAseq projects, it won’t matter which one you use.<br>
 See here for <a href="https://knowledge.illumina.com/library-preparation/rna-library-prep/library-preparation-rna-library-prep-faq-list/000005928">comparison between Illumina TruSeq stranded and Illumina stranded mRNA kits</a></p>
@@ -398,7 +436,7 @@ See here for <a href="https://knowledge.illumina.com/library-preparation/rna-lib
 <section id="discussion" class="level4">
 <h4 class="anchored" data-anchor-id="discussion">DISCUSSION 💬</h4>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -407,25 +445,9 @@ Why do you think polyA capture is used for ‘standard’ RNAseq?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Mature mRNAs have polyA tails, which can be selectively isolated using oligo DT coated beads that bind mature RNAs only. All other non-polyadenylated nucleic acids and cellular debris can then be washed away.</p>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Why do you think we bother adding “index” sequences to libraries at all? Why not sequence each sample separately?
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-10" class="callout-10-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Indexing (barcoding) allows multiple samples to be pooled in a single sequencing run. This massively reduces cost and time. Because each library carries a unique index, they can be mixed (i.e., pooled) together and sequenced simultaneously, and downstream software can computationally separate (demultiplex) them accurately afterward.</p>
 </div>
 </div>
 </div>
@@ -435,11 +457,27 @@ Why do you think we bother adding “index” sequences to libraries at all? Why
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Why do you think size selection is such an important step? What would happen if we skipped it?
+Why do you think we bother adding “index” sequences to libraries at all? Why not sequence each sample separately?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Indexing (barcoding) allows multiple samples to be pooled in a single sequencing run. This massively reduces cost and time. Because each library carries a unique index, they can be mixed (i.e., pooled) together and sequenced simultaneously, and downstream software can computationally separate (demultiplex) them accurately afterward.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Why do you think size selection is such an important step? What would happen if we skipped it?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Size selection ensures that fragments fall within the size range the sequencer expects. Without it, you may get:</p>
 <ul>
@@ -449,7 +487,7 @@ Why do you think size selection is such an important step? What would happen if 
 <li><p>too-long fragments (which may not fully sequence or reduce yield)</p></li>
 </ul>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -458,7 +496,7 @@ Why do you think size selection is such an important step? What would happen if 
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>The final fragment analysis (e.g., Bioanalyzer) trace of the library will show you. See below a picture of a trace with adapter dimers present (~120-150bp peak).</p>
 <p><em>Tip: You can repeat the final wash step in the library prep protocol to remove adapter dimers and re-run Bioanalyzer to confirm. Sometimes a very small peak will still be present which will not overly affect the run (you can see one on the previous image above!)</em></p>
@@ -545,38 +583,38 @@ Why do you think size selection is such an important step? What would happen if 
 <tr class="odd">
 <td><strong>Amplification?</strong></td>
 <td>Yes — cluster generation required</td>
-<td>No — true single-molecule reads</td>
+<td>No — single-molecule sequencing. HiFi (high fidelity) reads are generated by multiple passes of the same circular molecule to create a consensus</td>
 <td>No (PCR-free), though can use PCR in library prep</td>
 </tr>
 <tr class="even">
 <td><strong>Typical read length</strong></td>
 <td>100–300 bp</td>
 <td>10–25 kbp HiFi reads</td>
-<td>10 kbp to &gt;100 kbp (ultra-long &gt;1 Mbp possible)</td>
+<td>10 kbp to &gt;100 kbp (ultra-long &gt;1 Mbp possible). Short reads <em>e.g.,</em> 100bp also possible.</td>
 </tr>
 <tr class="odd">
 <td><strong>Can sequence native RNA?</strong></td>
 <td>No — convert to cDNA library</td>
 <td>No — convert to cDNA library</td>
-<td>Yes — direct RNA sequencing</td>
+<td>Yes — direct RNA sequencing. Recognises standard and certain modified bases <em>e.g.,</em> pseudouridine and m6A</td>
 </tr>
 <tr class="even">
 <td><strong>Strengths</strong></td>
 <td>High accuracy; high throughput; cost-efficient; chemistry highly compatible with different species/tissues</td>
 <td>Highly accurate long reads; excellent for haplotype resolution</td>
-<td>Ultra-long reads; portable; real-time analysis; can detect base modifications</td>
+<td>Long and Ultra-long reads; portable; real-time analysis; can detect base modifications; enables adaptive sampling (unique software-based target enrichment or depletion method that provides multiomic view of the genome)</td>
 </tr>
 <tr class="odd">
 <td><strong>Limitations</strong></td>
 <td>Short reads only</td>
 <td>Lower throughput than Illumina; expensive</td>
-<td>Higher raw error rate; pore lifetime limits yield and susceptible to clogging</td>
+<td>Higher raw error rate; pore lifetime limits yield and susceptible to clogging; short reads possible but less accurate and lower yield</td>
 </tr>
 <tr class="even">
 <td><strong>Best used for</strong></td>
-<td>Standard RNA-seq (DGE); de novo transcriptomes; high-depth short-read assays; metagenomics; error-correcting long reads</td>
+<td>Standard RNA-seq; differential gene expression (DGE); de novo transcriptomes; high-depth short-read assays; metagenomics; error-correcting long reads</td>
 <td>Genome assembly (chromosome-level with HiFi); full-length RNA (Iso-Seq for isoforms); structural variant detection</td>
-<td>Field-based sequencing (e.g., rapid microbial identification); genome assembly; native RNA including modification detection (e.g., methylation)</td>
+<td>Field-based sequencing (e.g., rapid microbial identification); genome assembly; native and full-length RNA including modification detection (<em>e.g.,</em> methylation); isoforms detection as well as differential expression; structural variant detection</td>
 </tr>
 </tbody>
 </table>
@@ -584,7 +622,7 @@ Why do you think size selection is such an important step? What would happen if 
 <section id="decision-points" class="level2">
 <h2 class="anchored" data-anchor-id="decision-points">Decision points 🤔</h2>
 <p>Choosing a platform to do your sequencing comes down to the question you are trying to answer. See the last row in the table above <strong>‘Best used for’</strong> for some examples of why you might pick one platform over another!</p>
-<p>When you get in contact with a sequencing facility, the question they will ask you is not <em>how many samples are you sequencing</em>, but rather, <em>how many reads do you need?</em> The number of reads you end up with per library will be approximately evenly distributed across all libraries, as they all get pooled together in equimolar amounts into one tube before loading on to the flow cell. The more libraries in the pool, the less reads per library. Hence, it does not matter how many samples you have (to an extent), what matters is how many reads you need in total. This will determine what size flow cell you need and which platform you will use, as different platforms have different capacity (e.g,. Illumina NextSeq is a ‘medium throughput’ platform, NovaSeq is a ‘large throughput’ platform). The number of reads you need per library scales with the size of the genome and/or complexity of your transcriptome.</p>
+<p>When you get in contact with a sequencing facility, the question they will ask you is not <em>how many samples are you sequencing</em>, but rather, <em>how many reads do you need?</em> The number of reads you end up with per library will be approximately evenly distributed across all libraries, as they all get pooled together in equimolar amounts into one tube before loading on to the flow cell. The more libraries in the pool, the less reads per library. Hence, it does not matter how many samples you have (to an extent), what matters is how many reads you need in total. This will determine what size flow cell you need and which platform you will use, as different platforms have different capacity (<em>e.g.,</em> Illumina NextSeq is a ‘medium throughput’ platform, NovaSeq is a ‘large throughput’ platform). The number of reads you need per library scales with the size of the genome and/or complexity of your transcriptome.</p>
 <p><strong><em>As a general rule of thumb,</em></strong> for <strong><em>transcriptome sequencing</em></strong> you will need:</p>
 <p><strong>Table 1:</strong> Reads per sample</p>
 <table class="caption-top table">
@@ -643,7 +681,7 @@ Why do you think size selection is such an important step? What would happen if 
 </table>
 <p><br>
 </p>
-<p>Lastly, if you are doing short-read sequencing (i.e., Illumina), the sequencing facility will ask you <em>what read length you want</em>. You can typically chose from between 50bp-300bp (platform-dependent). The choice between a lower or higher read length will be a balance of cost (higher read length = higher cost) and the level of information you need (complex, novel or <em>de novo</em> transcriptomes require higher read lengths; more straight forward analyses with well-annotated genomes can utilise lower read lengths). In contrast, for long-read sequencing platforms (ONT and PacBio), you do not specify a fixed read length. Instead, reads are generated as single, continuous sequences, and their length is determined by the size of the input molecules, the library preparation method, and the sequencing chemistry.</p>
+<p>Lastly, if you are doing short-read sequencing (<em>i.e.,</em> Illumina), the sequencing facility will ask you <em>what read length you want</em>. You can typically chose from between 50bp-300bp (platform-dependent). The choice between a lower or higher read length will be a balance of cost (higher read length = higher cost) and the level of information you need (complex, novel or <em>de novo</em> transcriptomes require higher read lengths; more straight forward analyses with well-annotated genomes can utilise lower read lengths). In contrast, for long-read sequencing platforms (ONT and PacBio), you do not specify a fixed read length. Instead, reads are generated as single, continuous sequences, and their length is determined by the size of the input molecules, the library preparation method, and the sequencing chemistry.</p>
 <p>Choosing a <strong><em>read length</em></strong> is a <strong><em>trade-off between cost, and the amount of information</em></strong> you will recover:</p>
 <p><strong>Table 3:</strong> Read length (short-read Illumina sequencing)</p>
 <table class="caption-top table">
@@ -699,7 +737,7 @@ EXERCISE #1 🧠🏋️‍♀️ (15 mins)
 <p>You are particularly interested in alternative splicing and novel splice junctions, as you suspect that cancer-associated genes are often regulated at the isoform level.</p>
 <p>You will sequence your samples at the Otago Genomics Facility, and see on <a href="https://www.otago.ac.nz/genomics">their website</a> they have an Illumina MiSeq and an Illumina NextSeq 2000. Use this <a href="https://sapac.illumina.com/systems/sequencing-platforms.html">Illumina benchtop sequencing platforms comparison</a> guide to help you decide.</p>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -708,7 +746,7 @@ Which platform will you chose?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div id="callout-15" class="callout-15-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>The Illumina NextSeq 2000 is a ‘medium’ sized short read sequencing platform, ideal for standard RNAseq, and is well-suited to this project. It can output up to 540Gb.</p>
 <p>The Illumina MiSeq is a ‘small’ sized short read sequencing platform, better suited to QC or amplicon sequencing, and can output up to 30Gb. It is too small for this project.</p>
@@ -718,7 +756,7 @@ Which platform will you chose?
 <p>Next you need to decide how many reads you need.</p>
 <p>Based on table 1 above, how many reads do you need per sample?</p>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -727,7 +765,7 @@ Reads per sample choice:
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div id="callout-16" class="callout-16-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>You decide you need 30 million reads per sample. You pick the lower end of the scale for ‘alternate splicing’ type sequencing, as you suspect the genes you are most interested in will be highly expressed, and don’t expect your tissue to have a particular high transcript diversity that would require more reads.</p>
 <p>You work out what minimum output you need from the flow cell:<br>
@@ -738,7 +776,7 @@ Reads per sample choice:
 <p>Now you need to decide if you want paired-end or single-end reads.</p>
 <p>Based on table 2 above, what would you pick?</p>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -747,7 +785,7 @@ Paired-end vs single end choice:
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-15" class="callout-15-contents callout-collapse collapse">
+<div id="callout-17" class="callout-17-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Paired-end sequencing will give better detection of novel isoforms and splice junctions.</p>
 <p>This doubles the number of reads generated per fragment and will give you better resolution.</p>
@@ -756,7 +794,7 @@ Paired-end vs single end choice:
 </div>
 <p>You now need to decide which read length you need. Given the mouse genome is well-annotated, but you are looking for potentially novel isoforms, which read length would you pick, based on table 3?</p>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -765,7 +803,7 @@ Read length choice:
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-16" class="callout-16-contents callout-collapse collapse">
+<div id="callout-18" class="callout-18-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>50 bp would be a good choice for a well-annotated genome like mouse for standard RNAseq, but does not suit this experiment, as you are looking for novel isoforms/alternative splicing.</p>
 <p>100bp is probably the best choice, balancing cost with novel isoform discovery.</p>
@@ -775,7 +813,7 @@ Read length choice:
 </div>
 <p>You are now ready to pick your flow cell. Check out the <a href="https://sapac.illumina.com/systems/sequencing-platforms/nextseq-1000-2000/specifications.html">Illumina NextSeq2000 flow cell specifications</a> and chose which flow cell will suit this project best. There are four flow cells in ascending output size you can choose from: P1, P2, P3 and P4.</p>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -784,7 +822,7 @@ Which flow cell will you pick?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-17" class="callout-17-contents callout-collapse collapse">
+<div id="callout-19" class="callout-19-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Choices from earlier:</p>
 <ul>
@@ -928,7 +966,7 @@ FILL IN - THIS EXERCISE NOT COMPLETE
 <p>Based on genome sizes of related Syzygium and Myrtaceae species (e.g., <em>Syzygium aromaticum</em> ~370 Mb, <em>S. grande</em> ~405 Mb), you expect the <em>S. maire</em> genome to be on the order of ~350–400 Mb.</p>
 <p><em>De novo</em> genome assembly requires long read sequencing to resolve the longest contiguous sequences possible (ideally the full chromosome length, but that is often not easy or possible to achieve!).</p>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-24-contents" aria-controls="callout-24" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -937,7 +975,7 @@ Which long-read sequencing platform should you chose?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-22" class="callout-22-contents callout-collapse collapse show">
+<div id="callout-24" class="callout-24-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <p>There are two long-read platforms – PacBio and ONT. <strong>PacBio better for throughput (amount of reads you can get back) and for accuracy than ONT. FILL IN.</strong></p>
 </div>
