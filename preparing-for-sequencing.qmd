@@ -74,10 +74,13 @@ Library preparation generally involves the following steps, and takes 1-2 days i
 Image from [link here.](https://nanoporetech.com/document/ligation-sequencing-v14-direct-cdna-sequencing)
 :::
 
+::: {.callout-caution appearance="minimal"} 
 **is it too convoluted to try and cover all kinds of library prep in one general methods here??**
+:::
 
-1. **(Optional) Target enrichment / RNA selection**  
-Selectively enriching for your target molecule (e.g., for standard RNAseq you likely will do polyA capture). Total RNA library prep with ribo-depletion is also an option. For DNA, **is somethign else approproaite here or is it covered in later steps?**
+1. **(Optional) Target enrichment / molecule selection**  
+Selectively enriching for your target molecule (*e.g.,* polyA capture for standard RNAseq; exome or targeted gene panels in DNA sequencing). The timing of this step depends on the platform and molecule type. 
+
 2. **(RNAseq only)** Converting your RNA into cDNA using reverse transcriptase. ONT also allows for direct RNA sequencing; see note below.  
 3. **Fragmentation (if needed)**
 Some kits fragment RNA before reverse transcription, others fragment cDNA/DNA after.  
