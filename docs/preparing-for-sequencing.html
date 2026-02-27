@@ -174,6 +174,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#sequencing-libraries" id="toc-sequencing-libraries" class="nav-link" data-scroll-target="#sequencing-libraries">Sequencing libraries</a>
   <ul class="collapse">
   <li><a href="#discussion" id="toc-discussion" class="nav-link" data-scroll-target="#discussion">DISCUSSION 💬</a></li>
+  <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading">Further reading 📚</a></li>
   </ul></li>
   <li><a href="#flow-cells-and-sequencing-platforms-101" id="toc-flow-cells-and-sequencing-platforms-101" class="nav-link" data-scroll-target="#flow-cells-and-sequencing-platforms-101">Flow cells and sequencing platforms 101</a></li>
   <li><a href="#decision-points" id="toc-decision-points" class="nav-link" data-scroll-target="#decision-points">Decision points 🤔</a></li>
@@ -291,7 +292,7 @@ Fragment analysis logistics:
 </section>
 <section id="sequencing-libraries" class="level2">
 <h2 class="anchored" data-anchor-id="sequencing-libraries">Sequencing libraries</h2>
-<p>The first thing that needs to be done for Illumina, PacBio or Oxford Nanopore (ONT) sequencing is to turn the DNA or RNA sample into something called a <em>library</em>. This converts the raw nucleic acids into a form that the sequencer can actually read. This is generally done by the technician who will also sequence your samples, but some labs may do library prep in-house (i.e., <em>you</em> may do it yourself!). For RNA samples, the Illumina and PacBio platfomrs require that the RNA is first converted into DNA during the library prep process. The ONT has the added advantage to sequence native RNA directly, in addition to converting it to cDNA for sequencing. DNA library preparation for ONT sequencing is also generally simpler than for Illumina and PacBio. This is because the technology used to sequence the DNA/RNA using ONT is quite different to how Illumina and PacBio achieve it–more on that in the next section on <a href="#flow-cells-and-sequencing-platforms-101">flow cells and sequencing platforms 101</a></p>
+<p>The first thing that needs to be done for Illumina, PacBio or Oxford Nanopore (ONT) sequencing is to turn the DNA or RNA sample into something called a <em>library</em>. This converts the raw nucleic acids into a form that the sequencer can actually read. This is generally done by the technician who will also sequence your samples, but some labs may do library prep in-house (i.e., <em>you</em> may do it yourself!). For RNA samples, the Illumina and PacBio platforms require that the RNA is first converted into DNA during the library prep process. ONT has the added advantage that you can sequence native RNA directly, or you can convert it to cDNA for sequencing. DNA library preparation for ONT sequencing is also generally simpler than for Illumina and PacBio. This is because the technology used to sequence the DNA/RNA using ONT is quite different to how Illumina and PacBio achieve it. There are pros and cons to all three technologies–more on that in the next section on <a href="#flow-cells-and-sequencing-platforms-101">flow cells and sequencing platforms 101</a>.</p>
 <blockquote class="blockquote">
 <p>Handy note: You can think of one library as being equivalent to one sample. It is possible to make multiple libraries from a single sample, but it is not often done this way.</p>
 </blockquote>
@@ -329,11 +330,11 @@ ONT direct cDNA lib prep molecular workflow diagram:
 </div>
 </div>
 </div>
+<p><strong>is it too convoluted to try and cover all kinds of library prep in one general methods here??</strong></p>
 <ol type="1">
 <li><p><strong>(Optional) Target enrichment / RNA selection</strong><br>
-Selectively enriching for your target molecule (e.g., for standard RNAseq you likely will do polyA capture).<br>
-</p></li>
-<li><p><strong>(RNAseq only)</strong> Converting your RNA into cDNA using reverse transcriptase. *ONT also allows for direct RNA sequencing; see note below.<br>
+Selectively enriching for your target molecule (e.g., for standard RNAseq you likely will do polyA capture). Total RNA library prep with ribo-depletion is also an option. For DNA, <strong>is somethign else approproaite here or is it covered in later steps?</strong></p></li>
+<li><p><strong>(RNAseq only)</strong> Converting your RNA into cDNA using reverse transcriptase. ONT also allows for direct RNA sequencing; see note below.<br>
 </p></li>
 <li><p><strong>Fragmentation (if needed)</strong> Some kits fragment RNA before reverse transcription, others fragment cDNA/DNA after.<br>
 This ensures fragments are the right size for the platform (e.g., ~200–400 bp short reads for Illumina). Long-read platforms (ONT and PacBio) generally do not require fragmentation, but some size selection or shearing may be performed.</p></li>
@@ -406,7 +407,7 @@ SOLUTION
 </div>
 </div>
 <blockquote class="blockquote">
-<p>*Direct RNA sequencing with ONT: Native RNA can be sequenced directly with ONT, which allows exploring of modified bases (e.g., methylated bases). It takes approximately 140 mins to complete library preparation. Currently, there is no option for multiplexing, although a multiplexing kit is scheduled for release in 2026.</p>
+<p>Direct RNA sequencing with ONT: Native RNA can be sequenced directly with ONT, which allows exploring of modified bases (e.g., methylated bases). It takes approximately 140 mins to complete library preparation. Currently, there is no option for multiplexing, although a multiplexing kit is scheduled for release in 2026.</p>
 </blockquote>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
@@ -435,7 +436,10 @@ ONT Direct RNA sequencing library prep workflow diagram:
 <li>The type of analysis you want to do i.e., what is your research question.</li>
 </ul>
 <p>For example, if you are doing a ‘generic’ RNA sequencing project (e.g., you plan to do differential gene expression analysis to compare different samples), a common choice is <strong>Illumina stranded mRNA library prep</strong>, which uses polyA selection to capture mRNA. However, you may chose <strong>Illumina Stranded total RNA library prep</strong> with ribo-depletion, which is more expensive, but it has some advantages such as: it can capture non-polyadenylated RNAs (more comprehensive RNA profile) and and is a better option if your samples are partially degraded (it can also handle FFPE samples).</p>
-<div class="callout callout-style-default callout-tip callout-titled">
+<blockquote class="blockquote">
+<p>Total RNA library prep with ribo-depletion is the only option for prokaryotic RNA sequencing, as prokaryotes do not have polyA tails.</p>
+</blockquote>
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -447,8 +451,8 @@ ONT Direct RNA sequencing library prep workflow diagram:
 </div>
 <div id="callout-11" class="callout-11-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>There are two main versions of the Illumina RNA library prep kit chemistry. The “Illumina TruSeq” kit uses an older chemistry and the “Illumina Stranded” kit uses a newer chemistry. Within each of these versions are also several types of kits for specific purposes (e.g,. total RNA or mRNA). Both chemistries are very robust options and produce good quality sequence data. The TruSeq chemistry requires a slightly higher minimum mRNA input (100 ng) vs.&nbsp;the minimum mRNA input for Illumina Stranded (25 ng). The newer “Illumina Stranded” also has the advantages of being a slightly faster protocol to complete, and allows for higher multiplexing (up to 384 samples, vs up to 96 samples for TruSeq). Note that both chemistries do strand specific sequencing. For most generic RNAseq projects, it won’t matter which one you use.<br>
-See here for <a href="https://knowledge.illumina.com/library-preparation/rna-library-prep/library-preparation-rna-library-prep-faq-list/000005928">comparison between Illumina TruSeq stranded and Illumina stranded mRNA kits</a></p>
+<p>There are two main versions of the Illumina RNA library prep kit chemistry. The “Illumina TruSeq” kit uses an older chemistry and the “Illumina Stranded” kit uses a newer chemistry. Within each of these versions are also several types of kits for specific purposes (e.g,. total RNA or mRNA). Both chemistries are very robust options and produce good quality sequence data. The TruSeq chemistry requires a slightly higher minimum mRNA input (100 ng) vs.&nbsp;the minimum mRNA input for Illumina Stranded (25 ng), so if you have very low amounts of RNA you may need to use the “Illumina Stranded” kit. The newer “Illumina Stranded” also has the advantages of being a slightly faster protocol to complete, and allows for higher multiplexing (up to 384 samples, vs up to 96 samples for TruSeq). Note that both chemistries do strand specific sequencing. For most generic RNAseq projects, it won’t matter which one you use. You may note that some NZ sequencing facilities only offer one or the other chemistry.<br>
+See here for <a href="https://knowledge.illumina.com/library-preparation/rna-library-prep/library-preparation-rna-library-prep-faq-list/000005928">comparison between Illumina TruSeq stranded and Illumina stranded mRNA kits</a>.</p>
 </div>
 </div>
 </div>
@@ -529,10 +533,16 @@ Why do you think size selection is such an important step? What would happen if 
 </div>
 </div>
 </section>
+<section id="further-reading" class="level4">
+<h4 class="anchored" data-anchor-id="further-reading">Further reading 📚</h4>
+<p>Auckland Genomics provide great documention on choosing an approach for your sequencing project.</p>
+<p><strong>DNA sequencing:</strong> <a href="https://www.genomics.auckland.ac.nz/services/metagenomic-sequencing/">whole genome, shotgun or metagenomic; which one is right for you?</a></p>
+<p><strong>RNA sequencing:</strong> <a href="https://www.genomics.auckland.ac.nz/services/rna-sequencing/">bulk RNA-seq, single cell RNA-seq, mRNA vs total, ONT RNA-seq; which one is right for you?</a></p>
+</section>
 </section>
 <section id="flow-cells-and-sequencing-platforms-101" class="level2">
 <h2 class="anchored" data-anchor-id="flow-cells-and-sequencing-platforms-101">Flow cells and sequencing platforms 101</h2>
-<p>The three major sequencing platform and consumables companies are Illumina, Pacific Biosciences (PacBio) and Oxford Nanopore Technologies (ONT). Each make different platforms/instruments that can handle different levels of throughput, but the chemistry and the ‘reading’ of the sequencing is the main point of difference between the three companies.</p>
+<p>The three major sequencing companies are Illumina, Pacific Biosciences (PacBio) and Oxford Nanopore Technologies (ONT), which each produce their own platforms (<em>i.e.,</em> the instruments or machines that perform the sequencing) and consumables (<em>i.e.,</em> the flow cells and reagents). Each make different platforms that can handle different levels of throughput, but the chemistry and the ‘reading’ of the sequencing is the main point of difference between the three companies.</p>
 <p>A few examples of the different platforms are (throughput in brackets):</p>
 <p><strong>Illumina</strong></p>
 <ul>
@@ -557,15 +567,9 @@ Why do you think size selection is such an important step? What would happen if 
 <li>PromethION 2 Solo / 2 Integrated / 24 (large - very large)</li>
 </ul>
 <p>A <strong>flow cell</strong> is the physical surface inside the sequencing machine (or platform) where the actual reading of DNA or RNA occurs. There are different sizes you can chose from, depending on how many reads you need. Although Illumina, PacBio, and ONT all call their consumables “flow cells,” the underlying technologies are very different.</p>
-<p>For the most part, and in-depth knowledge of how these flow cells work is not needed to get you started with your sequencing project.</p>
+<p>For the most part, and in-depth knowledge of how these flow cells work is not needed to get you started with your sequencing project. The more important thing to understand is the strengths and limitations of the different technologies and how to chose the right kind of sequencing for your research project.</p>
 <p>Here are the major differences between the technologies:</p>
 <table class="caption-top table">
-<colgroup>
-<col style="width: 11%">
-<col style="width: 23%">
-<col style="width: 31%">
-<col style="width: 32%">
-</colgroup>
 <thead>
 <tr class="header">
 <th>Feature</th>
@@ -577,9 +581,9 @@ Why do you think size selection is such an important step? What would happen if 
 <tbody>
 <tr class="odd">
 <td><strong>How sequencing works</strong></td>
-<td>Sequencing-by-synthesis (fluorescent nucleotides added one base at a time)</td>
-<td>Single-molecule real-time (SMRT) sequencing (polymerase incorporates fluorescent bases inside Zero-Mode Waveguides (ZMW))</td>
-<td>Nanopore sensing (changes in ionic current as DNA/RNA passes through a pore)</td>
+<td><a href="https://www.youtube.com/watch?v=EDVKxSNdSic&amp;t=2s">Sequencing-by-synthesis</a> (fluorescent nucleotides added one base at a time)</td>
+<td><a href="https://www.youtube.com/watch?v=7yYPHatccgw">Single-molecule real-time (SMRT) sequencing</a> (polymerase incorporates fluorescent bases inside Zero-Mode Waveguides (ZMW))</td>
+<td><a href="https://www.youtube.com/watch?v=RcP85JHLmnI&amp;list=PLxpxXZj-IgXyR0it4QjoBETC5JeEanW-o&amp;index=1">Nanopore sensing</a> (changes in ionic current as DNA/RNA passes through a pore)</td>
 </tr>
 <tr class="even">
 <td><strong>Flow cell structure</strong></td>
